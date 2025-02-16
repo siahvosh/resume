@@ -1,15 +1,150 @@
 #root {
-  max-width: 1280px;
-  height: 100%;
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  /*text-align: center;*/
+  transform-style: preserve-3d;
+
+  background: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
+body{
+  transform-style: preserve-3d !important;
+}
 
+.template{
+  height: 100vh;
+  /*width: 100vw;*/
+  /*border: 2px solid red;*/
+}
+
+.toolbar{
+  height: 3%;
+  /*border: 2px solid #404042;*/
+  border-radius: 8px;
+  padding: 15px;
+  position: relative;
+  justify-content: center;
+}
+
+.grids{
+  display: flex;
+  padding: 9px;
+  justify-content: center;
+  /*border: 2px solid green;*/
+}
 
 .card {
   padding: 2em;
 }
 
 .read-the-docs {
-  color: #888;
+  color: #000000;
 }
+
+span{
+  font-weight: 600;
+  color: #ffffff;
+  font-size: clamp(12px, 0.5vw, 1vw);
+}
+
+.items{
+  cursor: pointer;
+  justify-content: center;
+  display: flex;
+  font-weight: 600;
+}
+
+.items:hover{
+  color: #58c0bd;
+
+}
+
+.cont-1{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform-style: preserve-3d;
+  background-image: url('./../src/assets/background.jpg');
+}
+
+.home-page{
+  /*border: 2px solid red;*/
+  border-radius: 8px;
+
+  height: 97%;
+  display: flex;
+  align-items: center !important;
+
+}
+
+.text-box{
+  display: flex;
+  /*padding: 50px;*/
+  margin-left: 5%;
+  /*margin-top: 5%;*/
+  flex-direction: column !important;
+}
+.img-box{
+  width: 35%;
+  display: flex;
+  /*border: 2px solid red;*/
+  height: 35%;
+
+}
+
+.text{
+  text-align: left;
+  font-size: clamp(23px, 6vw, 6vw);
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.description{
+  font-size: clamp(0.5rem, 1vw, 3rem);
+  margin: 20px 0 0 0;
+  font-weight: 100;
+}
+
+.btn{
+  margin-top: 20px !important;
+  width: clamp(110px, 15vw, 250px);
+  background-color: #98E5DD !important;
+}
+
+.cont-2{
+  /*border: 1px solid blue;*/
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.step-box{
+  /*border: 1px solid red;*/
+  display: flex;
+  padding: 30px;
+  margin-left: 5%;
+  flex-direction: column !important;
+  height: 100vh;
+  width: 50vw;
+  justify-content: center;
+
+
+}
+
+.step-box > span{
+  color: #ffffff !important;
+  font-size: clamp(35px, 3vw, 5vw);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.step-description{
+  font-weight: 100;
+  display: flex;
+  text-align: center !important;
+
+}
+
+

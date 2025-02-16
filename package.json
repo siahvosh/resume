@@ -18,8 +18,11 @@
     "@toolpad/core": "^0.12.0",
     "@visx/visx": "^3.12.0",
     "axios": "^1.7.9",
+    "framer-motion": "^12.4.3",
+    "motion": "^12.4.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-intersection-observer": "^9.15.1",
     "react-router-dom": "^7.1.5",
     "recharts": "^2.15.1"
   },

@@ -8,8 +8,9 @@ import LayersIcon from '@mui/icons-material/Layers';
 import { AppProvider } from '@toolpad/core/AppProvider';
 import { DashboardLayout } from '@toolpad/core/DashboardLayout';
 import { PageContainer } from '@toolpad/core/PageContainer';
+import StockChart, {AreaChart} from "./AreaChart.tsx";
 
-const NAVIGATION = [
+const NAVIGATION: Navigation = [
     {
         kind: 'header',
         title: 'Main items',
@@ -18,6 +19,8 @@ const NAVIGATION = [
         segment: 'dashboard',
         title: 'Dashboard',
         icon: <DashboardIcon />,
+        navigator:<StockChart width={400} height={200}/>,
+
     },
     {
         segment: 'orders',
@@ -67,31 +70,72 @@ const demoTheme = extendTheme({
             xl: 1536,
         },
     },
+    components: {
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    "&:hover": {
+                        backgroundColor: "#d30202", // رنگ هنگام هاور
+                        color: "#fff",
+                    },
+                },
+            },
+        },
+        MuiListItem: {
+            styleOverrides: {
+                root: {
+                    "&.Mui-selected": {
+                        backgroundColor: "#da0909", // رنگ سلکت شده
+                        color: "#a41b1b",
+                        "&:hover": {
+                            backgroundColor: "#d30202", // رنگ هاور وقتی سلکت شده
+                        },
+                    },
+                },
+            },
+        },
+    },
 });
 
-function useDemoRouter(initialPath) {
+function useDemoRouter(initialPath: string): Router {
     const [pathname, setPathname] = React.useState(initialPath);
 
     const router = React.useMemo(() => {
         return {
             pathname,
             searchParams: new URLSearchParams(),
-            navigate: (path) => setPathname(String(path)),
+            navigate: (path: string | URL) => setPathname(String(path)),
         };
     }, [pathname]);
 
     return router;
 }
 
-const Skeleton = styled('div')(({ theme, height }) => ({
-    backgroundColor: theme.palette.action.hover,
-    borderRadius: theme.shape.borderRadius,
-    height,
-    content: '" "',
-}));
 
-export const NavBar = (props) => {
-
+export const NavBar = (props:  any) => {
+        const [session, setSession] = React.useState<Session | null>({
+            user: {
+                name: 'Bharat Kashyap',
+                email: 'bharatkashyap@outlook.com',
+                image: 'https://avatars.githubusercontent.com/u/19550456',
+            },
+        });
+        const authentication = React.useMemo(() => {
+            return {
+                signIn: () => {
+                    setSession({
+                        user: {
+                            name: 'Bharat Kashyap',
+                            email: 'bharatkashyap@outlook.com',
+                            image: 'https://avatars.githubusercontent.com/u/19550456',
+                        },
+                    });
+                },
+                signOut: () => {
+                    setSession(null);
+                },
+            };
+        }, []);
         const { window } = props;
 
         const router = useDemoRouter('/dashboard');
@@ -99,17 +143,25 @@ export const NavBar = (props) => {
         const demoWindow = window ? window() : undefined;
 
         return (
-        <AppProvider
-            navigation={NAVIGATION}
-            router={router}
-            theme={demoTheme}
-            window={demoWindow}
-        >
-            <DashboardLayout>
-                <PageContainer>
-
-                </PageContainer>
-            </DashboardLayout>
-        </AppProvider>
-    )
+            <AppProvider
+                session={session}
+                navigation={NAVIGATION}
+                router={router}
+                authentication={authentication}
+                theme={demoTheme}
+                window={demoWindow}
+                branding={{
+                    logo: <img/>,
+                    title: 'BI Dashboard',
+                    homeUrl: '/toolpad/core/introduction',
+                }}
+            >
+                <DashboardLayout>
+                    <PageContainer>
+                        {/*<StockChart width={400} height={200} />*/}
+                        {router.pathname === '/dashboard' && <StockChart width={400} height={200} />}
+                    </PageContainer>
+                </DashboardLayout>
+            </AppProvider>
+        )
 }
