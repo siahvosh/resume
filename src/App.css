@@ -3,7 +3,7 @@
   height: 100vh;
   /*text-align: center;*/
   transform-style: preserve-3d;
-
+  overflow-x: hidden;
   background: black;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
@@ -113,22 +113,38 @@ span{
 }
 
 .cont-2{
-  /*border: 1px solid blue;*/
-  position: relative;
+  border: 1px solid blue;
+  position: relative !important;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /*width: 100%;*/
+
+}
+
+.box{
+  /*border: 2px solid red;*/
+  /*position: sticky !important;*/
+  /*height: 300px;*/
+  /*margin-top: 250px;*/
+  /*margin-bottom: 250px;*/
+  /*top: 35%;*/
+  /*left: 3%;*/
+  /*bottom: 35%;*/
+  position: sticky;
+  top: 20%; /* موقعیت sticky را تنظیم کنید */
+  left: 3%;
+  height: 300px;
+  margin-top: 250px;
+  margin-bottom: 250px;
 }
 
 .step-box{
   /*border: 1px solid red;*/
   display: flex;
   padding: 30px;
-  margin-left: 5%;
   flex-direction: column !important;
-  height: 100vh;
+  /*height: 100vh;*/
   width: 50vw;
-  justify-content: center;
+  /*justify-content: center;*/
 
 
 }
