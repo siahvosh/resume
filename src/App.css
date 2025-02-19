@@ -4,12 +4,13 @@
   /*text-align: center;*/
   transform-style: preserve-3d;
   /*overflow-x: hidden;*/
-  background: black;
+  /*background: black !important;*/
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 body{
   transform-style: preserve-3d !important;
+
 }
 
 span{
@@ -104,10 +105,11 @@ span{
 
 .cont-2{
   position: relative !important;
-  height: 700vh;
-  background-color: black;
+  height: 1000vh;
+  background-image: linear-gradient(to bottom, #00050a, #000610, #010713, #010715, #020716);
   display: flex;
   justify-content: center;
+
 }
 
 .scroll-box{
@@ -127,7 +129,9 @@ span{
   /*border: 2px solid red;*/
   /*overflow: hidden;*/
   /*height: 30vh;*/
+  /*margin-top: 5%;*/
   align-content: center;
+  /*justify-content: center;*/
 
 }
 
@@ -136,13 +140,13 @@ span{
   display: flex;
   /*align-items: center;*/
   align-content: center;
-
   color: #6c6c6c;
   font-size: clamp(25px, 2vw, 5vw);
   transition: all 0.4s ease-in-out;
 }
 
 .text-title.active {
+  text-shadow: 2px 2px 5px #d0cfcf;
   color: white;
   font-size: clamp(30px, 5vw, 6vw);
   font-weight: 500;
@@ -150,6 +154,7 @@ span{
 }
 
 .images-box{
+  z-index: -1 !important;
   /*border: 2px solid red;*/
   display: flex;
   justify-content: right;
@@ -159,18 +164,18 @@ span{
   /*width: 50%;*/
   /*height: 100%;*/
   /*margin: 0 !important;*/
-  filter: brightness(90%) grayscale(100%);
+  /*filter: brightness(90%) grayscale(100%);*/
   /*display: flex;*/
   /*box-shadow:  0 0 50px black inset;*/
 
 }
 
 .img{
-  height: 50vh;
-  /*margin-top: 5rem;*/
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 2s ease-in-out, transform 0.5s ease-in-out;
+  height: 40vh;
+  margin-top: 3rem;
+  transform-style: preserve-3d;
+  transform: translateX(-100px);
+  box-shadow: 0px 0px 15px rgba(94, 92, 92, 0.25);
 }
 
 .fade-in {
@@ -182,8 +187,8 @@ span{
 .details {
   font-weight: 200;
   color: white;
-  font-size: 0.9rem;
-  padding-left: 1rem;
+  font-size: clamp(10px, 0.5vw, 3rem);
+  margin: 1rem;
   display: none;
   transform: translateY(10px);
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
@@ -202,8 +207,9 @@ span{
     height: 80vh;
   }
   .img{
-    height: 35vh;
-    margin-top: 3rem;
+    height: 26vh;
+    margin-top: 8rem;
+    left: 3.5rem;
   }
   .images-box{
     justify-content: center;
@@ -330,22 +336,23 @@ span{
 
 .cont-3 {
   position: relative;
-  width: 98vw;
+  border: 2px solid red;
+  /*width: 100vw;*/
   height: 100vh;
   background-color: black;
   /*border: 2px solid red;*/
   display: flex;
-  overflow: hidden;
+  /*overflow: hidden;*/
   justify-content: center !important;
 
 }
 
 .img-group-container {
-
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
+
   white-space: nowrap;
 }
 
@@ -377,3 +384,4 @@ footer {
   align-items: center;
   justify-content: center;
 }
+
