@@ -50,7 +50,7 @@ function App() {
     const [show, setShow] = useState(false);
 
     useEffect(() => {
-        setShow(true); // هنگام mount شدن، نمایش داده شود
+        setShow(true);
     }, []);
 
     return (

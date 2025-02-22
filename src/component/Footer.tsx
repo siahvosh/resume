@@ -45,7 +45,7 @@ export const Footer = () => {
                     </span>
                     <span className={'footer-description'}>
                         <WhatsAppIcon style={{color: 'gray', marginTop: '3px'}} fontSize="small"/>
-                        Whats app
+                        WhatsApp
                     </span>
                     <span className={'footer-description'}>
                         <GitHubIcon style={{color: 'gray', marginTop: '3px'}} fontSize="small"/>
