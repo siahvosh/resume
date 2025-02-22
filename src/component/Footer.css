@@ -1,0 +1,33 @@
+
+
+.container{
+   padding: 80px;
+   background: white;
+   justify-content: center;
+   /*box-shadow: inset 0px 0px 100px rgb(0, 0, 0) !important;*/
+   background-size: contain;
+   /*background-position: top;*/
+   /*background-repeat: no-repeat;*/
+   background-image: url('./../assets/footer.png');
+}
+
+
+.footer-title{
+   font-weight: 700;
+   font-size: x-large;
+   color: black;
+   display: flex;
+   margin-top: 5px;
+
+}
+
+.footer-description{
+   color: #585859;
+   display: flex;
+   /*justify-content: center;*/
+   text-align:  start !important;
+   font-weight: 500;
+   font-size: medium;
+   margin-top: 2px;
+   padding: 0;
+}

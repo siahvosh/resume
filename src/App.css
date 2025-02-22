@@ -1,16 +1,14 @@
 #root {
   width: 100vw;
   height: 100vh;
-  /*text-align: center;*/
   transform-style: preserve-3d;
-  /*overflow-x: hidden;*/
-  /*background: black !important;*/
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
 }
 
 body{
   transform-style: preserve-3d !important;
-
+  background: white;
 }
 
 span{
@@ -28,6 +26,7 @@ span{
 .cont-1{
   background-position: center;
   background-repeat: no-repeat;
+  height: 100vh;
   background-size: cover;
   transform-style: preserve-3d;
   background-image: url('./../src/assets/background.jpg');
@@ -38,8 +37,9 @@ span{
   /*border: 2px solid #404042;*/
   border-radius: 8px;
   padding: 15px;
-  position: relative;
+  position: sticky;
   justify-content: center;
+
 }
 
 .grids{
@@ -66,7 +66,6 @@ span{
 
 .items:hover{
   color: #58c0bd;
-
 }
 
 .home-page{
@@ -104,41 +103,30 @@ span{
 }
 
 .cont-2{
-  position: relative !important;
+  /*border: 1px solid green;*/
   height: 1000vh;
-  background-image: linear-gradient(to bottom, #00050a, #000610, #010713, #010715, #020716);
   display: flex;
+  background: black;
   justify-content: center;
-
 }
 
 .scroll-box{
   /*border: 2px solid green;*/
-  width: 80vw;
+  width: 80%;
   position: sticky;
   display: flex;
   flex-direction: column;
   top: 50%;
   transform: translateY(-50%);
-  height: 50vh;
+  height: 60vh;
   margin-top: 50vh;
   margin-bottom: 50vh;
   padding: 2em;
 }
-.text-container{
-  /*border: 2px solid red;*/
-  /*overflow: hidden;*/
-  /*height: 30vh;*/
-  /*margin-top: 5%;*/
-  align-content: center;
-  /*justify-content: center;*/
 
-}
 
 .text-title{
-  /*border: 2px solid red;*/
   display: flex;
-  /*align-items: center;*/
   align-content: center;
   color: #6c6c6c;
   font-size: clamp(25px, 2vw, 5vw);
@@ -148,33 +136,25 @@ span{
 .text-title.active {
   text-shadow: 2px 2px 5px #d0cfcf;
   color: white;
-  font-size: clamp(30px, 5vw, 6vw);
+  font-size: clamp(40px, 5vw, 6vw);
   font-weight: 500;
   transform: scale(1.1) translateY(-5px) translateX(2pc);
 }
 
 .images-box{
+  /*border: 5px solid #d0cfcf;*/
   z-index: -1 !important;
-  /*border: 2px solid red;*/
+  position: relative;
   display: flex;
-  justify-content: right;
-  /*background-position: center;*/
-  /*background-size: cover;*/
-  /*background-image: url(https://img.freepik.com/free-vector/expansion-cyber-life-vector-ai-neuron-network-small-particles-defined-motion-organic-geometric-growth-tentacles-space-colonization-burst-explosion-backdrop_1217-6146.jpg?t=st=1739908484~exp=1739912084~hmac=c269563a62348ec7f58231e9497c8444d5f41c30faeab32ac80c2fe983e66c41&w=996);*/
-  /*width: 50%;*/
-  /*height: 100%;*/
-  /*margin: 0 !important;*/
-  /*filter: brightness(90%) grayscale(100%);*/
-  /*display: flex;*/
-  /*box-shadow:  0 0 50px black inset;*/
-
+  justify-content: center;
+  align-self: center;
+  height: 50vh;
 }
 
 .img{
-  height: 40vh;
-  margin-top: 3rem;
-  transform-style: preserve-3d;
-  transform: translateX(-100px);
+  /*margin: auto;*/
+  margin-top: 15vh;
+  width: 30vw;
   box-shadow: 0px 0px 15px rgba(94, 92, 92, 0.25);
 }
 
@@ -187,8 +167,8 @@ span{
 .details {
   font-weight: 200;
   color: white;
-  font-size: clamp(10px, 0.5vw, 3rem);
-  margin: 1rem;
+  font-size: clamp(8px, 0.5vw, 3rem);
+  /*margin: 1rem;*/
   display: none;
   transform: translateY(10px);
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
@@ -197,44 +177,26 @@ span{
 .details.show {
   display: flex;
   transform: translateY(0);
+
 }
 
 @media screen and (max-width: 900px) {
   .text-box{
     align-items: center;
   }
-  .scroll-box{
-    height: 80vh;
+  .text-title:not(.active) {
+    display: none;
   }
   .img{
-    height: 26vh;
-    margin-top: 8rem;
-    left: 3.5rem;
+    width: 45vw;
+    margin-top: 5rem;
   }
-  .images-box{
-    justify-content: center;
+  .details.show{
+    justify-content: start;
   }
 
 }
 
-@media screen and (max-width: 2000px) {
-  .images-box{
-    justify-content: center;
-  }
-
-  /*.cont-2 {*/
-  /*  flex-direction: column;*/
-  /*  align-items: center;*/
-  /*}*/
-  /*.images-box{*/
-  /*  top: 45vh !important;*/
-  /*  !*margin-top: 200px !important;*!*/
-  /*}*/
-  /*.box{*/
-  /*  top: 20vh !important;*/
-  /*  margin-top: 500px;*/
-  /*}*/
-}
 
 .wrapper, .wrapper-1 {
    /*border: 1px solid red;*/
@@ -336,13 +298,15 @@ span{
 
 .cont-3 {
   position: relative;
-  border: 2px solid red;
-  /*width: 100vw;*/
+  /*border: 2px solid red;*/
+  width: 99vw;
   height: 100vh;
+
   background-color: black;
   /*border: 2px solid red;*/
   display: flex;
-  /*overflow: hidden;*/
+  overflow: hidden;
+  /*background-image: linear-gradient(to top, #00050a, #000610, #010713, #010715, #020716);*/
   justify-content: center !important;
 
 }
@@ -379,9 +343,23 @@ span{
 
 footer {
   height: 50vh;
-  background: #f1f1f1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+@keyframes square-in-hesitate {
+  0% {
+    clip-path: inset(100% 100% 100% 100%);
+  }
+  40% {
+    clip-path: inset(33% 33% 33% 33%);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+[transition-style="in:square:hesitate"] {
+  animation: 1s cubic-bezier(.25, 1, .30, 1) square-in-hesitate both;
+}
