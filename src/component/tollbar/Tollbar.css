@@ -1,0 +1,47 @@
+.toolbar{
+    height: 80px ;
+    box-shadow: 0 4px 30px rgba(23, 15, 15, 0.1);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(5px);
+    position: sticky;
+    background: black;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    z-index: 1;
+
+}
+
+.logo{
+    width: 80px;
+    height: 80px;
+}
+
+.grids{
+    color: black;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.login{
+    background: transparent;
+    border: 1px solid #58c0bd !important;
+    width: 1rem;
+    height: 1.5rem;
+    font-size: 0.6rem !important;
+    color: #ffffff !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.items{
+    cursor: pointer;
+    justify-content: start;
+    display: flex;
+    font-weight: 700;
+}
+
+.items:hover{
+    color: #58c0bd;
+}

@@ -1,0 +1,346 @@
+
+
+.cont-1{
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+    transform-style: preserve-3d;
+    background-image: url('./../src/assets/background.jpg');
+}
+
+
+.home-page{
+    /*border: 2px solid red;*/
+
+    border-radius: 8px;
+    height: 100%;
+    display: flex;
+    align-items: center !important;
+}
+
+.text-box{
+    display: flex;
+    width: 100%;
+    padding: 3em;
+    flex-direction: column !important;
+}
+
+.text{
+    text-align: left;
+    font-size: clamp(30px, 6vw, 6vw);
+    font-weight: 700;
+    line-height: 100%;
+}
+
+.description{
+    font-size: clamp(0.5rem, 1vw, 3rem);
+    margin: 20px 0 0 0;
+    font-weight: 100;
+}
+
+.btn{
+    margin-top: 20px !important;
+    width: clamp(150px, 15vw, 250px);
+    background-color: #98E5DD !important;
+}
+
+
+.middle{
+    height: 20vh;
+    background: white !important;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.mid-text{
+    font-size: clamp(1rem, 2vw, 3rem);
+    color: black;
+}
+
+.cont-2{
+    /*border: 1px solid green;*/
+    height: 800vh;
+    display: flex;
+    background: black;
+    justify-content: center;
+
+}
+
+.scroll-box{
+    /*border: 2px solid green;*/
+    width: 80%;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60vh;
+    margin-top: 50vh;
+    /*margin-bottom: 50vh;*/
+    padding: 2em;
+}
+
+.text-box-animation{
+    /*border: 2px solid red;*/
+    /*position: relative;*/
+    /*width: 50%;*/
+    /*display: flex !important;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    position: relative;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    /*align-items: center;*/
+    height: 50vh;
+}
+
+
+.text-title{
+    display: flex;
+    align-content: center;
+    color: #6c6c6c;
+    font-size: clamp(25px, 2vw, 5vw);
+    transition: all 0.4s ease-in-out;
+}
+
+.text-title.active {
+    text-shadow: 2px 2px 5px #d0cfcf;
+    color: white;
+    font-size: clamp(40px, 5vw, 6vw);
+    font-weight: 500;
+    transform: scale(1.1) translateY(-5px) translateX(2pc);
+}
+
+.images-box{
+    z-index: -1 !important;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.img{
+    margin-top: 4vh;
+    width: 30vw;
+    box-shadow: 0px 0px 15px rgba(94, 92, 92, 0.25);
+}
+
+.fade-in {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.details {
+    font-weight: 200;
+    color: white;
+    font-size: clamp(8px, 0.5vw, 3rem);
+    display: none;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.details.show {
+    display: flex;
+    transform: translateY(0);
+}
+
+@media screen and (max-width: 1200px) {
+    .text-box-animation{
+        height: 0;
+    }
+
+    .text-box{
+        align-items: center;
+    }
+
+    .text-title:not(.active) {
+        display: none;
+    }
+
+    .img{
+        width: 80vw;
+        margin-top: 5rem;
+    }
+
+    .details.show{
+        justify-content: center;
+    }
+
+}
+
+.second-middle{
+    height: 20vh;
+    padding-bottom: 5vh;
+}
+
+.wrapper, .wrapper-1 {
+    width: 100%;
+    max-width: 2300px;
+    margin-inline: auto;
+    position: relative;
+    height: 100px;
+    overflow: hidden;
+    mask-image: linear-gradient(
+            to right,
+            rgba(0,0,0,0),
+            rgba(0,0,0,1) 20%,
+            rgba(0,0,0,1) 80%,
+            rgba(0,0,0,0)
+    );
+}
+
+.wrapper-1{
+    margin-top: 0;
+}
+
+@keyframes scrollleft {
+    to{
+        left: -200px
+    }
+}
+@keyframes scrollright {
+    to{
+        right: -200px
+    }
+}
+
+.item{
+    width: 200px;
+    font-size: clamp(20px, 1vw, 3rem);
+    font-weight: 500;
+    height: 100px;
+    /* background-color: red; */
+    border-radius: 12px;
+    position: absolute;
+    left: max(calc(200px * 8), 100%);
+    animation: scrollleft;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    color: #ffffff;
+    animation-iteration-count: infinite;
+    /* animation-delay: -10s; */
+
+}
+
+.item-1{
+    width: 200px;
+    font-size: clamp(20px, 1vw, 3rem);
+    font-weight: 500;
+    height: 100px;
+    /* background-color: red; */
+    border-radius: 12px;
+    position: absolute;
+    right: max(calc(200px * 8), 100%);
+    animation: scrollright;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    color: #ffffff;
+    animation-iteration-count: infinite;
+}
+
+.item1{
+    animation-delay: calc(30s / 8 * (8 - 1) * -1) ;
+}
+
+.item2{
+    animation-delay: calc(30s / 8 * (8 - 2) * -1) ;
+}
+
+.item3{
+    animation-delay: calc(30s / 8 * (8 - 3) * -1) ;
+}
+
+.item4{
+    animation-delay: calc(30s / 8 * (8 - 4) * -1 ) ;
+}
+
+.item5{
+    animation-delay: calc(30s / 8 * (8 - 5) * -1) ;
+}
+
+.item6{
+    animation-delay: calc(30s / 8 * (8 - 6) * -1) ;
+}
+
+.item7{
+    animation-delay: calc(30s / 8 * (8 - 7) * -1) ;
+}
+
+.item8{
+    animation-delay: calc(30s / 8 * (8 - 8) * -1) ;
+}
+
+.cont-3 {
+    position: relative;
+    /*border: 2px solid red;*/
+    width: 99vw;
+    height: 100vh;
+
+    background-color: black;
+    /*border: 2px solid red;*/
+    display: flex;
+    overflow: hidden;
+    /*background-image: linear-gradient(to top, #00050a, #000610, #010713, #010715, #020716);*/
+    justify-content: center !important;
+
+}
+
+.img-group-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    white-space: nowrap;
+}
+
+.img-group {
+    display: flex;
+    width: fit-content;
+    transition: transform 0.3s ease-out;
+}
+
+.img-container {
+    flex: 0 0 auto;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.img-container img {
+    width: 300px;
+    height: 400px;
+}
+
+footer {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes square-in-hesitate {
+    0% {
+        clip-path: inset(100% 100% 100% 100%);
+    }
+    40% {
+        clip-path: inset(33% 33% 33% 33%);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+[transition-style="in:square:hesitate"] {
+    animation: 2.5s cubic-bezier(.25, 1, .30, 1) square-in-hesitate both;
+}

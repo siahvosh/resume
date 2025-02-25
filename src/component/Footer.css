@@ -1,13 +1,9 @@
 
 
 .container{
-   padding: 80px;
+   padding: 50px;
    background: white;
    justify-content: center;
-   /*box-shadow: inset 0px 0px 100px rgb(0, 0, 0) !important;*/
-   background-size: contain;
-   /*background-position: top;*/
-   /*background-repeat: no-repeat;*/
    background-image: url('./../assets/footer.png');
 }
 

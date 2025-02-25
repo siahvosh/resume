@@ -14,7 +14,6 @@ export const Footer = () => {
                     <span className={'footer-description'}>Uiverse | The universe of UI</span>
                     <span className={'footer-title'}>MIT License</span>
                     <span className={'footer-description'}>All content (UI elements) on this site are published under the MIT License.</span>
-
                 </Grid2>
                 <Grid2 size={{xs: 6, sm: 6, md: 6, lg: 2}}>
                     <span className={'footer-title'}>Resources</span>
@@ -51,7 +50,6 @@ export const Footer = () => {
                         <GitHubIcon style={{color: 'gray', marginTop: '3px'}} fontSize="small"/>
                         GitHubIcon
                     </span>
-
                 </Grid2>
             </Grid2>
         </div>
