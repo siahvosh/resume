@@ -2,8 +2,10 @@
 
 .container{
    padding: 50px;
-   background: white;
+   /*height: 10rem;*/
+   /*background: white;*/
    justify-content: center;
+
    background-image: url('./../assets/footer.png');
 }
 

@@ -1,0 +1,21 @@
+.about{
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /*background-image: var(--url);*/
+}
+
+.about-title{
+    font-weight: 800;
+    font-size: 5vw;
+}
+
+.about-description{
+    font-size: 2vw;
+}

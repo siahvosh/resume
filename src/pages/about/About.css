@@ -1,0 +1,22 @@
+
+.about-body{
+    background: black;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.body-title{
+    font-weight: 800;
+    color: white;
+    font-size: clamp(2rem, 4vw, 4rem);
+
+}
+
+.body-description{
+    font-weight: 200;
+    color: white;
+    font-size: clamp(1rem, 1.2vw, 4rem);
+    margin-top: 1.2rem;
+}
+

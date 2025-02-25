@@ -6,12 +6,11 @@ import {Footer} from "../../component/Footer.tsx";
 export const Root = () => {
     return (
         <>
-            <Tollbar/>
-            <main>
-                <Outlet/>
-            </main>
-            <Footer/>
-
+          <Tollbar/>
+          <main>
+              <Outlet/>
+          </main>
+          <Footer/>
         </>
     )
 }

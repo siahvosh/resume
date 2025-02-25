@@ -15,6 +15,7 @@
 .logo{
     width: 80px;
     height: 80px;
+    cursor: pointer;
 }
 
 .grids{
@@ -43,5 +44,8 @@
 }
 
 .items:hover{
-    color: #58c0bd;
+    color: #58c0bd !important;
 }
+
+
+

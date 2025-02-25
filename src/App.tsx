@@ -3,6 +3,10 @@ import './App.css';
 import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 import {HomePage} from "./pages/homePage/HomePage.tsx";
 import {Root} from "./pages/Routers/Root.tsx";
+import {About} from "./pages/about/About.tsx";
+import {Services} from "./pages/Services/Services.tsx";
+import {Section1} from "./pages/Services/Section1.tsx";
+import {Section2} from "./pages/Services/Section2.tsx";
 
 function App() {
     const router = createBrowserRouter([
@@ -12,15 +16,17 @@ function App() {
             element: <Root />,
             errorElement: <div style={{color:'red'}}>404</div>,
             children:[
-                {path: '/', element: <HomePage /> },
-                // {path: '/game', element: <Game /> },
-                // {path: '/product-detail/:productId', element: <ProductsDetail /> },
+                {path: '/Home', element: <HomePage /> },
+                {path: '/About', element: <About /> },
+                {path: '/Services', element: <Services />},
+                {path: '/section1', element: <Section1 />},
+                {path: '/section2', element: <Section2 />}
             ]
         },
     ])
 
     return (
-        <div style={{position: "relative"}}>
+        <div>
             <RouterProvider router={router}/>
         </div>
     );
