@@ -1,18 +1,27 @@
 import './App.css';
-import {Footer} from "./component/Footer.tsx";
-import {Tollbar} from "./component/tollbar/Tollbar.tsx";
+
+import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 import {HomePage} from "./pages/homePage/HomePage.tsx";
+import {Root} from "./pages/Routers/Root.tsx";
 
 function App() {
+    const router = createBrowserRouter([
 
+        {
+            path: '/',
+            element: <Root />,
+            errorElement: <div style={{color:'red'}}>404</div>,
+            children:[
+                {path: '/', element: <HomePage /> },
+                // {path: '/game', element: <Game /> },
+                // {path: '/product-detail/:productId', element: <ProductsDetail /> },
+            ]
+        },
+    ])
 
     return (
         <div style={{position: "relative"}}>
-            <Tollbar/>
-            <div className={'template'}>
-                <HomePage/>
-            </div>
-            <Footer/>
+            <RouterProvider router={router}/>
         </div>
     );
 }
