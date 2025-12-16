@@ -113,6 +113,7 @@ export const HomePage = () => {
                                       </span>
                                       <div style={{ flexDirection: 'column'}} className={`details ${activeIndex === index ? 'show' : ''}`}>
                                           {item.description}
+
                                           {/*{item.description}*/}
                                           {/*<Button*/}
                                           {/*    style={{*/}
