@@ -1,5 +1,4 @@
 import './App.css';
-
 import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 import {HomePage} from "./pages/homePage/HomePage.tsx";
 import {Root} from "./pages/Routers/Root.tsx";
@@ -7,29 +6,33 @@ import {About} from "./pages/about/About.tsx";
 import {Services} from "./pages/Services/Services.tsx";
 import {Section1} from "./pages/Services/Section1.tsx";
 import {Section2} from "./pages/Services/Section2.tsx";
+import {Section3} from "./pages/Services/Section3.tsx";
+import {Section4} from "./pages/Services/Section4.tsx";
+import {Section5} from "./pages/Services/Section5.tsx";
+import {Error404} from "./pages/errors/404.tsx";
 
 function App() {
     const router = createBrowserRouter([
-
         {
             path: '/',
-            element: <Root />,
-            errorElement: <div style={{color:'red'}}>404</div>,
+            element: <Root/>,
+            errorElement: <Error404/>,
             children:[
-                {path: '/Home', element: <HomePage /> },
+                {index: true, element: <HomePage /> },
+                {path: '/home', element: <HomePage /> },
                 {path: '/About', element: <About /> },
                 {path: '/Services', element: <Services />},
-                {path: '/section1', element: <Section1 />},
-                {path: '/section2', element: <Section2 />}
+                {path: 'section1', element: <Section1 />},
+                {path: 'section2', element: <Section2 />},
+                {path: 'section3', element: <Section3 />},
+                {path: 'section4', element: <Section4 />},
+                {path: 'section5', element: <Section5 />},
             ]
         },
     ])
 
-    return (
-        <div>
-            <RouterProvider router={router}/>
-        </div>
-    );
+    return <RouterProvider router={router}/>
+
 }
 
 

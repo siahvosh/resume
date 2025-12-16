@@ -5,7 +5,6 @@
    /*height: 10rem;*/
    /*background: white;*/
    justify-content: center;
-
    background-image: url('./../assets/footer.png');
 }
 
@@ -16,7 +15,6 @@
    color: black;
    display: flex;
    margin-top: 5px;
-
 }
 
 .footer-description{
@@ -27,5 +25,11 @@
    font-weight: 500;
    font-size: medium;
    margin-top: 2px;
+   cursor: pointer;
    padding: 0;
+}
+
+.footer-description:hover{
+   color: #58c0bd;
+   font-weight: 800;
 }

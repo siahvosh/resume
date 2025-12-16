@@ -1,15 +1,18 @@
 .toolbar{
+    /*border: 2px solid red;*/
     height: 80px ;
     box-shadow: 0 4px 30px rgba(23, 15, 15, 0.1);
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(5px);
     position: sticky;
     background: black;
+    border-bottom: 1px solid #232222;
     top: 0;
     left: 0;
+    display: flex;
     justify-content: center;
+    align-items: center;
     z-index: 1;
-
 }
 
 .logo{
@@ -19,10 +22,10 @@
 }
 
 .grids{
-    color: black;
-    align-items: center;
-    display: flex;
-    justify-content: center;
+    /*color: black;*/
+    /*align-items: center;*/
+    /*display: flex;*/
+    /*justify-content: center;*/
 }
 
 .login{
@@ -36,11 +39,13 @@
     align-items: center;
     justify-content: center;
 }
+
 .items{
+    font-size: 16px;
     cursor: pointer;
     justify-content: start;
     display: flex;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .items:hover{

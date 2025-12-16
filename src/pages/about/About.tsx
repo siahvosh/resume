@@ -8,7 +8,7 @@ export const About = () => {
             <TopCard
                 title={'Know more about us '}
                 description={'Know more about us'}
-                image={'https://img.freepik.com/free-photo/diverse-businesspeople-having-meeting_53876-103954.jpg?t=st=1740507043~exp=1740510643~hmac=456662c1fd31bbdf14620080e0e28e4550ebed81c06f90a3a3486529bde9bfb1&w=2000'}
+                // image={'https://img.freepik.com/free-photo/diverse-businesspeople-having-meeting_53876-103954.jpg?t=st=1740507043~exp=1740510643~hmac=456662c1fd31bbdf14620080e0e28e4550ebed81c06f90a3a3486529bde9bfb1&w=2000'}
             />
             <div className={'about-body'}>
                 <span className={'body-title'}>Our story</span>

@@ -5,20 +5,21 @@ import * as React from "react";
 import Menu from "@mui/material/Menu";
 import Fade from "@mui/material/Fade";
 import MenuItem from "@mui/material/MenuItem";
-import { useNavigate, useLocation } from "react-router-dom"; // اضافه کردن useLocation
+import { useNavigate, useLocation } from "react-router-dom";
+import logImg from '../../assets/logo.png'
 
 export const Tollbar = () => {
     const [items] = useState([
-        { title: 'Home', path: '/home' },
+        { title: 'Home', path: '/' },
         { title: 'About', path: '/about' },
         { title: 'Services', path: '/services' },
-        { title: 'Form', path: '/form' },
+        // { title: 'Form', path: '/form' },
     ]);
-    const [selectedItem, setSelectedItem] = useState<string>('Home'); // State برای مدیریت آیتم انتخاب شده
+    const [selectedItem, setSelectedItem] = useState<string>('Home');
     const navigate = useNavigate();
-    const location = useLocation(); // دریافت pathname فعلی
+    const location = useLocation()
 
-    // useEffect برای تنظیم selectedItem بر اساس pathname
+
     useEffect(() => {
         const currentItem = items.find(item => item.path === location.pathname);
         if (currentItem) {
@@ -28,13 +29,10 @@ export const Tollbar = () => {
 
     return (
         <div className={'toolbar'}>
-            <Grid2 container spacing={0} className={'grids'}>
-                <Grid2 size={3}>
-                    <img onClick={() => navigate('/home')} className={'logo'} src="./../src/assets/logo.png" alt="logo" />
-                </Grid2>
+            <Grid2 container spacing={10} size={12}>
 
                 {items.map((item, index) => (
-                    <Grid2 size={1} style={{ display: 'flex', justifyContent: 'center' }} key={index}>
+                    <Grid2 size={{xs: 4,sm: 4, md: 4, lg: 4}} style={{ display: 'flex', justifyContent: 'center' }} key={index}>
                         <FadeMenu
                             items={item}
                             selectedItem={selectedItem}
@@ -42,12 +40,11 @@ export const Tollbar = () => {
                         />
                     </Grid2>
                 ))}
-
-                <Grid2 size={3} style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '-3px' }}>
-                    <Button className={'login'}>
-                        Login
-                    </Button>
-                </Grid2>
+                {/*<Grid2 size={{xs: 6, sm : 6, md: 6, lg: 6}} style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '-3px' }}>*/}
+                    {/*<Button className={'login'}>*/}
+                    {/*    Login*/}
+                    {/*</Button>*/}
+                {/*</Grid2>*/}
             </Grid2>
         </div>
     )
@@ -60,22 +57,26 @@ export const FadeMenu = (props: any) => {
 
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
-        if (event.currentTarget.innerHTML !== 'Services') {
+        // if (event.currentTarget.innerHTML !== 'Services') {
             navigate(`/${event.currentTarget.innerHTML.toLowerCase()}`);
-            props.setSelectedItem(event.currentTarget.innerHTML); // به‌روزرسانی state با آیتم انتخاب شده
-        }
+            props.setSelectedItem(event.currentTarget.innerHTML);
+        // }
     };
 
     const handleClose = (section: string) => {
         setAnchorEl(null);
         if (section === 'Service') {
-            navigate('/services');
+            navigate('/Services');
         } else if (section === 'part1') {
             navigate('/section1');
         } else if (section === 'part2') {
             navigate('/section2');
         }else if (section === 'part3') {
             navigate('/section3');
+        }else if (section === 'part4') {
+            navigate('/section4');
+        }else if (section === 'part5') {
+            navigate('/section5');
         }
     };
 
@@ -88,7 +89,7 @@ export const FadeMenu = (props: any) => {
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
                 className={'items'}
-                style={{ color: props.selectedItem === props.items.title ? '#58c0bd' : 'white' }} // تغییر رنگ متن
+                style={{ color: props.selectedItem === props.items.title ? '#58c0bd' : 'white' }}
             >
                 {props.items.title}
             </span>

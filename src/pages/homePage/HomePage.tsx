@@ -1,29 +1,62 @@
 import {Button, Grid2} from "@mui/material";
 import {AnimatePresence, motion} from "framer-motion";
 import {useEffect, useRef, useState} from "react";
-import img from "../../assets/img1.png";
+import img from "../../assets/4x/redCard.png";
 import img2 from "../../assets/img2.png";
 import img3 from "../../assets/img3.png";
 import img4 from "../../assets/img4.png";
+import img5 from "../../assets/2x/Asset 9@2x.png";
+import img6 from "../../assets/4x/dot2.png";
+import img7 from "../../assets/2x/Asset 9@2x.png";
+import img8 from "../../assets/2x/Asset 9@2x.png";
+import bgImg from "../../assets/bgnew.jpg";
+
 import './HomePage.css'
 import './../../App.css'
+import {useNavigate} from "react-router-dom";
 
 
 
 export const HomePage = () => {
+    const [rotate, setRotate] = useState({ x: 0, y: 0 });
+
+    const handleMouseMove = (e) => {
+        const x = (window.innerWidth / 2 - e.clientX) / 25;
+        const y = (window.innerHeight / 2 - e.clientY) / 25;
+        setRotate({ x, y });
+    };
+
+
     const [activeIndex, setActiveIndex] = useState(0);
     const cont2Ref = useRef(null);
-
+    const navigate = useNavigate();
     const [stepperDetail] = useState([
-        {title: 'Simple', description: 'Motion for React examples\n' + 'Official free and premium examples to kickstart your next project..', image: `${img}`},
-        {title: 'BI Dashboard', description: 'Lorem ipsum Animate every transform axis independently, without needing multiple elements.', image: `${img2}`},
-        {title: 'React library', description: 'Without needing multiple elements. Lorem ipsum dolor sit amet.', image: `${img3}`},
-        {title: 'More', description: 'Axis independently, without needing Lorem ipsum dolor sit amet.', image: `${img4}`},
+        {title: 'Responsive', description: '- Design and development of a responsive version of the company website for a better user experience on mobile devices\n' +
+                '- Add key additional sections( buy and renewal of services) of the website on mobile devices\n' +
+                '- Optimizing the billing section in performance and user experience of the website on mobile devices\n', image: `${img}`, image1: `${img5}`, path: '/section1'},
+        {title: 'Refactor UI Project', description: '- Refactoring and optimizing significant sections of the front-end project\n' +
+                '\n' +
+                '-\tSolving different issues and code bugs, eliminate redundant functions, optimizing load times by up to 40%\n', image: `${img2}`, image1: `${img6}`, path: '/section2'},
+        {title: 'Onboarding', description: '- Design and implementation of the onboarding process for new employees in front-end and UI/UX team  \n' +
+                '\n' +
+                '- Introducing new members to various components of the project, development workflows, and coding standards to accelerate integration and productivity.\n' +
+                '\n' +
+                '- Training new employees, transferring the hands-on experience to reduce time-to-productivity for new team members.\n', image: `${img3}`, image1: `../../assets/dot.png`, path: '/section3'},
+        {title: 'BI Dashboard', description: '-Development of the business intelligence analytics dashboard for sales, purchase, human resource, customer finance team\n' +
+                '\n' +
+                '-\tImplementation of live charts and dashboards. There are manual KPIs and AI generated KPIs with real word data of the different businesses\n', image: `${img4}`, image1: `../../assets/dot.png`, path: '/section4'},
+        {title: 'End', description: 'Axis independently, without needing Lorem ipsum dolor sit amet.', image: `${img4}`, image1: `../../assets/dot.png`, path: '/section5'},
     ]);
 
     const detailHandler = (idx: any) => {
         setActiveIndex(idx);
     }
+
+    const handelNav = (path: any) => {
+        // console.log(path);
+        navigate(path);
+    }
+
     useEffect(() => {
         const handleScroll = () => {
             if (cont2Ref.current) {
@@ -35,56 +68,75 @@ export const HomePage = () => {
             }
         };
 
-
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
     return (
         <>
           <div className={'cont-1'}>
-              <div className={'home-page'}>
-                  <Grid2 className={'text-box'}>
-                      <span className={'text'}>Scale design & <span className={'text'} style={{color: '#EEB491'}}>dev</span></span>
-                      <span className={'text'}>BI Dashboard</span>
-                      <span className={'text'}>React library</span>
-                      <span className={'description'}>Sync design and developer workflows in one powerful tool <br/> while making your procurement happy</span>
-                      <Button className={'btn'} variant="contained">
-                          <span style={{color: 'black'}}>Contact us</span>
-                      </Button>
-                  </Grid2>
+              <div className={'titleCard'}>
+                  <span className={'name'}>Siavash Miralikhani</span>
+                  <span className={'job'}>FRONT END <span className={'dev'} style={{color: '#EEB491'}}>DEVELOPER</span></span>
+                  <span className={'contact'}>
+                          <a href="tel:+989124949401" style={{color: 'white'}}>📞 +98 912 49 49 401 | </a>
+                          <a href="#" id="openGmailCompose" style={{color: 'white'}}>✉️ GTSIAVASH@GMAIL.COM | </a>
+                             SHIRAZ
+                      </span>
               </div>
           </div>
           <div className={'middle'}>
-                  <span className={'mid-text'} style={{fontWeight: '700'}}>
-                      AI reduces human effort by handling repetitive tasks
-                  </span>
-              <span className={'mid-text'} style={{fontWeight: '100', justifyContent: 'center'}}>
-                      AI reduces human effort by handling repetitive tasks
-                  </span>
+              <span className={'mid-text'}>
+                  SUMMARY
+              </span>
+              <h1 className={'mid-text-description'} >
+                    Front-End Developer with 3+ years of experience building responsive, user-friendly web applications using
+                    JavaScript, React (MUI), Vue2 (Vuetify), HTML, Bootstrap ,CSS. Skilled in translating UI/UX designs into highperformance interfaces. I am also highly responsible, detail-oriented, and skilled in project management,
+                    ensuring timely delivery of high-quality work.
+              </h1>
           </div>
           <div className={'cont-2'} ref={cont2Ref}>
-              <Grid2 container spacing={10} className={'scroll-box'}>
-                  <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}}>
+              <Grid2 container spacing={0} className={'scroll-box'}>
+                  <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}} style={{}}>
+                      <div className={'experience-title-box'}>
+                          <span className={'experience-title'}>
+                              EXPERIENCE
+                          </span>
+                      </div>
+                  </Grid2>
+                  <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}} style={{}}>
                       <div className={'text-box-animation'}>
                           {stepperDetail.map((item, index) => (
                           <div key={index} onClick={() => detailHandler(index)}>
-                              <div  key={index} onClick={() => setActiveIndex(index)}>
-                                               <span
-                                                   className={`text-title ${activeIndex === index ? 'active' : ''}`}>
-                                                   {item.title}
-                                               </span>
-                                  <div className={`details ${activeIndex === index ? 'show' : ''}`}>
-                                      {item.description} <br/>
+                              <div key={index} onClick={() => setActiveIndex(index)}>
+                                  <span className={`text-title ${activeIndex === index ? 'active' : ''}`}>
+                                      {item.title}
+                                  </span>
+                                  <div style={{ flexDirection: 'column'}} className={`details ${activeIndex === index ? 'show' : ''}`}>
                                       {item.description}
+                                      {/*{item.description}*/}
+                                      {/*<Button*/}
+                                      {/*    style={{*/}
+                                      {/*        marginTop: '0.5rem',*/}
+                                      {/*        marginBottom: '1rem',*/}
+                                      {/*        width: '150px',*/}
+                                      {/*        height: '25px',*/}
+                                      {/*        background: "transparent",*/}
+                                      {/*        color: 'white',*/}
+                                      {/*        border: '1px solid #58c0bd'*/}
+                                      {/*}}*/}
+                                      {/*    variant="contained">*/}
+                                      {/*    <span onClick={() => handelNav(item.path)} style={{ fontSize: '0.7rem', fontWeight: '100'}}>More ...</span>*/}
+                                      {/*</Button>*/}
                                   </div>
                               </div>
                           </div>
                       ))}
                       </div>
                   </Grid2>
-                  <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}}>
+                  <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}} style={{}}>
                       <div className="images-box">
-                          <AnimatePresence>
+                          <AnimatePresence >
                               {stepperDetail.slice(0, activeIndex + 1).map((item, index) => (
                                   <motion.img
                                       key={item.image}
@@ -93,8 +145,10 @@ export const HomePage = () => {
                                       className="img"
                                       style={{
                                           position: "absolute",
-                                          // top: index * -60,
+                                          // top: index * -40,
+                                          marginTop: 0,
                                           zIndex: index,
+                                          skewX: 0,
                                       }}
                                       initial={{
                                           opacity: 0,
@@ -106,11 +160,56 @@ export const HomePage = () => {
                                       }}
                                       animate={{
                                           opacity: index === activeIndex ? 1 : 0.5,
-                                          scale: 1,
+                                          scale: 1.3,
                                           rotate: 0,
                                           skewX: 0,
                                           translateX: 0,
                                           skew: 0
+                                      }}
+                                      exit={{
+                                          opacity: 0,
+                                          scale: 1.1,
+                                          rotate: 0,
+                                          skewX: 0,
+                                          translateX: 100,
+                                          skew: 0
+                                      }}
+                                      transition={{duration: 1.5}}
+                                  />
+                              ))}
+                          </AnimatePresence>
+                          <AnimatePresence>
+                              {stepperDetail.slice(0, activeIndex + 1).map((item, index) => (
+                                  <motion.img
+                                      key={item.image}
+                                      src={item.image1}
+                                      alt=""
+                                      className="img"
+                                      style={{
+                                          position: "absolute",
+                                          // top: 400,
+                                          // marginTop: 450,
+                                          left: 0,
+                                          top: 0,
+                                          zIndex: index,
+                                          skewX: 0,
+                                      }}
+                                      initial={{
+                                          opacity: 0,
+                                          scale: 1,
+                                          rotate: 0,
+                                          skewX: 0,
+                                          translateX: -100,
+                                          skew: 0
+                                      }}
+                                      animate={{
+                                          opacity: index === activeIndex ? 1 : 0,
+                                          scale: 1.3,
+                                          rotate: 0,
+                                          skewX: 0,
+                                          translateX: 0,
+                                          skew: 0,
+                  
                                       }}
                                       exit={{
                                           opacity: 0,
@@ -129,7 +228,7 @@ export const HomePage = () => {
               </Grid2>
           </div>
           <div className={'second-middle'} style={{background: 'black'}}>
-                <Grid2 size={12}>
+              {/*<div style={{display: 'flex', justifyContent:'center', fontSize: '7vw', fontWeight:'900'}}>SKILL</div>*/}
                     <div className="wrapper">
                         <div className="item item1">SnapFood</div>
                         <div className="item item2">Tapsi</div>
@@ -150,7 +249,7 @@ export const HomePage = () => {
                         <div className="item-1 item7">Irancell</div>
                         <div className="item-1 item8">Shatel</div>
                     </div>
-                </Grid2>
+
             </div>
         </>
     )

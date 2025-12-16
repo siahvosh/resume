@@ -4,6 +4,7 @@ import {TopCard} from "../../component/topCard/TopCard.tsx";
 export const Services = () => {
     return (
         <div style={{display: 'flex', flexDirection: 'column', position: 'relative'}}>
+
             <TopCard
                 title={'The services we offer'}
                 description={'The services we offer'}
@@ -18,6 +19,7 @@ export const Services = () => {
                 <span className={'body-description'}>Heritage Type customers loved purchasing unique fonts and frequently asked for the ability to edit fonts on demand. That’s how Heritage Designer was born – Nico and Tobi’s intuitive editing platform that helped users edit fonts and other graphic elements without advanced design skills. The platform attracted over 10,000 users shortly after its release, which highlighted the potential for the tool to serve a wider audience.</span>
                 <span className={'body-description'}>Heritage Type customers loved purchasing unique fonts and frequently asked for the ability to edit fonts on demand. That’s how Heritage Designer was born – Nico and Tobi’s intuitive editing platform that helped users edit fonts and other graphic elements without advanced design skills. The platform attracted over 10,000 users shortly after its release, which highlighted the potential for the tool to serve a wider audience.</span>
             </div>
+
         </div>
     )
 }
