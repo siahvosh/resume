@@ -218,7 +218,7 @@
     justify-content: center;
     align-items: center;
     height: 15vh;
-    border: 2px solid #32c039;
+
 }
 .experience-title{
     font-weight: 900;
@@ -247,8 +247,8 @@
     font-size: clamp(25px, 3vw, 5vw);
     font-weight: 700;
     display: flex;
-    justify-content: start;
-    text-align: center !important;
+    /*justify-content: start;*/
+    /*text-align: center !important;*/
     transform: scale(1) translateY(0px);
 }
 
@@ -259,14 +259,13 @@
     position: relative;
     justify-content: center;
     align-items: center;
-    border: 2px solid #ac9a9a;
-
+    border: 2px solid red;
 }
 .img{
-
     position: absolute;
     width: 50%;
-    z-index: 1111 !important;
+
+
 }
 .fade-in {
     opacity: 1;
@@ -278,7 +277,7 @@
     color: white;
     font-size: clamp(10px, 0.5vw, 3rem);
     display: none;
-    text-align: center;
+    text-align: start;
     transform: translateY(10px);
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }

@@ -98,7 +98,6 @@ export const HomePage = () => {
           </div>
           <div className={'cont-2'} ref={cont2Ref}>
               <div className={'scroll-box'}>
-
                   <Grid2 container spacing={1}>
                       <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
                           <div className={'experience-title-box'}>
@@ -108,7 +107,7 @@ export const HomePage = () => {
                           </div>
                       </Grid2>
                       <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}}>
-                          <div className={'text-box-animation'} style={{border: '2px solid red'}}>
+                          <div className={'text-box-animation'}>
                              {stepperDetail.map((item, index) => (
                                 <div key={index} onClick={() => detailHandler(index)}>
                                               <div key={index} onClick={() => setActiveIndex(index)}>
@@ -149,6 +148,7 @@ export const HomePage = () => {
                                           className="img"
                                           style={{
                                               // top: index * -40,
+
                                               marginTop: 0,
                                               zIndex: index,
                                               skewX: 0,
@@ -181,51 +181,49 @@ export const HomePage = () => {
                                       />
                                   ))}
                               </AnimatePresence>
-                              {/*<AnimatePresence>*/}
-                              {/*                {stepperDetail.slice(0, activeIndex + 1).map((item, index) => (*/}
-                              {/*                    <motion.img*/}
-                              {/*                        key={item.image1}*/}
-                              {/*                        src={item.image1}*/}
-                              {/*                        alt=""*/}
-                              {/*                        className=""*/}
-                              {/*                        style={{*/}
-                              {/*                            zIndex: -0,*/}
-                              {/*                            position: "absolute",*/}
-                              {/*                            width: 200,*/}
-                              {/*                            skewX: 0,*/}
-                              {/*                            opacity: 0,*/}
+                              <AnimatePresence>
+                                              {stepperDetail.slice(0, activeIndex + 1).map((item, index) => (
+                                                  <motion.img
+                                                      key={item.image1}
+                                                      src={item.image1}
+                                                      alt=""
+                                                      className=""
+                                                      style={{
+                                                          zIndex: -0,
+                                                          width: '30%',
+                                                          skewX: 0,
+                                                          opacity: 0,
 
-                              {/*                        }}*/}
-                              {/*                        initial={{*/}
-                              {/*                            opacity: 0,*/}
-                              {/*                            scale: 1,*/}
-                              {/*                            rotate: 0,*/}
-                              {/*                            skewX: 0,*/}
-                              {/*                            translateY: 0,*/}
-                              {/*                            skew: 0*/}
-                              {/*                        }}*/}
-                              {/*                        animate={{*/}
-                              {/*                            opacity: index === activeIndex ? 1 : 0,*/}
-                              {/*                            scale: 1.3,*/}
-                              {/*                            rotate: 0,*/}
-                              {/*                            skewX: 0,*/}
-                              {/*                            translateY: 110,*/}
-                              {/*                            skew: 0,*/}
-                              {/*                            zIndex: -1,*/}
-
-                              {/*                        }}*/}
-                              {/*                        exit={{*/}
-                              {/*                            opacity: 0,*/}
-                              {/*                            scale: 1.1,*/}
-                              {/*                            rotate: 0,*/}
-                              {/*                            skewX: 0,*/}
-                              {/*                            translateY: 0,*/}
-                              {/*                            skew: 0,*/}
-                              {/*                        }}*/}
-                              {/*                        transition={{duration: 0.5, }}*/}
-                              {/*                    />*/}
-                              {/*                ))}*/}
-                              {/*            </AnimatePresence>*/}
+                                                      }}
+                                                      initial={{
+                                                          opacity: 0,
+                                                          scale: 1,
+                                                          rotate: 0,
+                                                          skewX: 0,
+                                                          translateY: 110,
+                                                          skew: 0
+                                                      }}
+                                                      animate={{
+                                                          opacity: index === activeIndex ? 1 : 0,
+                                                          scale: 1.3,
+                                                          rotate: 0,
+                                                          skewX: 0,
+                                                          translateY: '100px',
+                                                          skew: 0,
+                                                          zIndex: -1,
+                                                      }}
+                                                      exit={{
+                                                          opacity: 0,
+                                                          scale: 1.1,
+                                                          rotate: 0,
+                                                          skewX: 0,
+                                                          translateY: 0,
+                                                          skew: 0,
+                                                      }}
+                                                      transition={{duration: 0.5}}
+                                                  />
+                                              ))}
+                                          </AnimatePresence>
                           </div>
                       </Grid2>
                   </Grid2>
