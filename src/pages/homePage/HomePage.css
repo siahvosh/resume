@@ -9,6 +9,12 @@
     align-items: center;
     display: flex;
 }
+.lottie{
+    color: blue !important;
+    width: 80vw;
+    height: 100vh;
+    position: absolute;
+}
 .card{
     /*border: 2px solid gray;*/
     padding: 2rem;
@@ -19,12 +25,9 @@
     justify-content: center;
     align-items: center;
     color: ghostwhite ;
-
 }
 .front-end{
     font-family: "Grape Nuts", cursive;
-    /*font-weight: 400;*/
-    /*font-style: normal;*/
     font-size: clamp(17px, 2vw, 2vw);
 }
 .name{
@@ -197,14 +200,28 @@ a:hover{
     }
 }
 
-
+.video-bg {
+    border: 2px solid red;
+    position: absolute;
+        width: 100%;
+    height: 500px;
+    z-index: 11111;
+    /*overflow: hidden;*/
+}
+.video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .middle{
     background: white !important;
     border-radius: 14px;
     height: 45vh;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1111 !important;
 }
 .middle-text{
     padding: 2rem;
@@ -213,6 +230,7 @@ a:hover{
     justify-content: center;
     flex-direction: column;
     align-items: center;
+
 }
 .mid-text{
     font-size: clamp(50px, 7vw, 8rem);
@@ -230,10 +248,12 @@ a:hover{
 .cont-2{
     height: 600vh;
     background: black;
+    margin-top: -15rem;
+    z-index: -1111 !important;
 }
 .scroll-box{
     position: sticky;
-    top: 15vh;
+    top: 10vh;
     height: 80vh;
     border: 2px solid blue;
     padding: 1rem;
@@ -260,6 +280,7 @@ a:hover{
 
 }
 .text-title{
+
     cursor: pointer;
     color: #5b5a5a;
     font-size: clamp(25px, 1vw, 2vw);

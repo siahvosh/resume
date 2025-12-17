@@ -10,6 +10,10 @@ import img6 from "../../assets/4x/dot2.png";
 import img7 from "../../assets/2x/Asset 9@2x.png";
 import img8 from "../../assets/2x/Asset 9@2x.png";
 import bgImg from "../../assets/bgnew.jpg";
+import videoCode from "../../assets/videoCode.mp4";
+
+import Lottie from "lottie-react";
+import animationData from "../../lottie/circle.json";
 
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -84,6 +88,13 @@ export const HomePage = () => {
     return (
         <>
           <div className={'cont-1'}>
+              <Lottie
+                  animationData={animationData}
+                  loop
+                  autoplay
+                  className={'lottie'}
+
+              />
               <div className={'card'}>
                   <span className={'front-end'}>FRONT-END <span className={'dev'} style={{color: '#EEB491'}}>DEVELOPER</span></span>
                   <span className={'name'}>SIAVASH MIRALIKHANI</span>
@@ -99,9 +110,10 @@ export const HomePage = () => {
                           GTSIAVASH@gmail.com
                       </a>
                       <LocationOnIcon style={{fontSize: "clamp(12px, 2vw, 1.8vw)"}}/>
-                          <a   href="https://www.google.com/maps/search/?api=1&query=Shiraz"
+                          <a
+                              href="https://www.google.com/maps/search/?api=1&query=Shiraz"
                                target="_blank"
-                               rel="noopener noreferrer">  SHIRAZ</a>
+                               rel="noopener noreferrer">SHIRAZ</a>
                   </div>
                   <div className={'social'}>
                       <GitHubIcon sx={{fontSize: '30px'}}/>
@@ -143,20 +155,6 @@ export const HomePage = () => {
                                                   <div style={{ flexDirection: 'column'}} className={`details ${activeIndex === index ? 'show' : ''}`}>
                                                       {item.description}
 
-                                                      {/*{item.description}*/}
-                                                      {/*<Button*/}
-                                                      {/*    style={{*/}
-                                                      {/*        marginTop: '0.5rem',*/}
-                                                      {/*        marginBottom: '1rem',*/}
-                                                      {/*        width: '150px',*/}
-                                                      {/*        height: '25px',*/}
-                                                      {/*        background: "transparent",*/}
-                                                      {/*        color: 'white',*/}
-                                                      {/*        border: '1px solid #58c0bd'*/}
-                                                      {/*}}*/}
-                                                      {/*    variant="contained">*/}
-                                                      {/*    <span onClick={() => handelNav(item.path)} style={{ fontSize: '0.7rem', fontWeight: '100'}}>More ...</span>*/}
-                                                      {/*</Button>*/}
                                                   </div>
                                               </div>
                                           </div>
