@@ -23,16 +23,15 @@
 }
 .front-end{
     font-family: "Grape Nuts", cursive;
-    font-weight: 400;
-    font-style: normal;
+    /*font-weight: 400;*/
+    /*font-style: normal;*/
     font-size: clamp(17px, 2vw, 2vw);
 }
 .name{
     font-family: "Roboto", sans-serif;
     font-weight: 900;
-    font-size: clamp(12px, 3vw, 5vw);
-    letter-spacing: 10px;
-
+    font-size: clamp(20px, 4vw, 5vw);
+    letter-spacing: 5px;
 }
 .titleCard{
     padding: 25px;
@@ -47,25 +46,28 @@
     border: 1px solid rgba(225, 155, 72, 0.32);
 }
 .dev{
-    font-weight: 500;
+    font-weight: 900;
     font-size: clamp(18px, 2vw, 4vw);
     animation: flicker-out-1 5s linear reverse infinite forwards;
-    text-shadow: 1px 1px 25px #de5401;
-    /*color: #de5401;*/
+    text-shadow: 1px 1px 2px #7f3306 !important;
+    color: #EEB491;
 }
 .contact{
-    font-weight: 350;
-    font-size: clamp(8px, 1.2vw, 2vw);;
+    display: inline-flex;
+}
+a{
+    color: white;
+    font-size: clamp(9px, 1.2vw, 2vw);;
+}
+a:hover{
+    color: white;
 }
 .social{
     display: flex;
     margin-top: 1rem;
-    color: #c15715;
-    /*border: 2px solid red;*/
+    color: #ac7553;
     width: 20vw;
     justify-content: space-around;
-    /*width: 50px;*/
-    /*background: red;*/
 }
 @keyframes flicker-out-1 {
     0% {
@@ -207,7 +209,6 @@
 .middle-text{
     padding: 2rem;
     display: flex;
-    /*border: 2px solid red;*/
     width: 70%;
     justify-content: center;
     flex-direction: column;

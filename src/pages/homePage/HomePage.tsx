@@ -14,6 +14,9 @@ import bgImg from "../../assets/bgnew.jpg";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import CallIcon from '@mui/icons-material/Call';
+import EmailIcon from '@mui/icons-material/Email';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 import './HomePage.css'
 import './../../App.css'
@@ -84,11 +87,14 @@ export const HomePage = () => {
               <div className={'card'}>
                   <span className={'front-end'}>FRONT-END <span className={'dev'} style={{color: '#EEB491'}}>DEVELOPER</span></span>
                   <span className={'name'}>SIAVASH MIRALIKHANI</span>
-                  <span className={'contact'}>
-                              <a href="tel:+989124949401" style={{color: 'white'}}>📞 +98 912 49 49 401 | </a>
-                              <a href="#" id="openGmailCompose" style={{color: 'white'}}>✉️ GTSIAVASH@GMAIL.COM | </a>
-                                 SHIRAZ
-                          </span>
+                  <div className={'contact'}>
+                      <CallIcon style={{fontSize: "clamp(12px, 2vw, 1.8vw)"}}/>
+                         <a href="tel:+989124949401"> +98 912 49 49 401 | </a>
+                      <EmailIcon style={{fontSize: "clamp(12px, 2vw,  1.8vw)"}}/>
+                          <a href="#" id="openGmailCompose"> GTSIAVASH@GMAIL.COM |</a>
+                      <LocationOnIcon style={{fontSize: "clamp(12px, 2vw, 1.8vw)"}}/>
+                          <a href="#" id="openGmailCompose">  SHIRAZ</a>
+                  </div>
                   <div className={'social'}>
                       <GitHubIcon sx={{fontSize: '30px'}}/>
                       <LinkedInIcon sx={{fontSize: '30px'}}/>
