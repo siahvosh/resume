@@ -91,9 +91,17 @@ export const HomePage = () => {
                       <CallIcon style={{fontSize: "clamp(12px, 2vw, 1.8vw)"}}/>
                          <a href="tel:+989124949401"> +98 912 49 49 401 | </a>
                       <EmailIcon style={{fontSize: "clamp(12px, 2vw,  1.8vw)"}}/>
-                          <a href="#" id="openGmailCompose"> GTSIAVASH@GMAIL.COM |</a>
+                      <a
+                          href="https://mail.google.com/mail/?view=cm&fs=1&to=GTSIAVASH@gmail.com&su=Contact%20from%20website&body=Hi%20Siavash,%0A%0AI'm%20contacting%20you%20through%20your%20website."
+                          target="_blank"
+                          rel="noopener noreferrer"
+                      >
+                          GTSIAVASH@gmail.com
+                      </a>
                       <LocationOnIcon style={{fontSize: "clamp(12px, 2vw, 1.8vw)"}}/>
-                          <a href="#" id="openGmailCompose">  SHIRAZ</a>
+                          <a   href="https://www.google.com/maps/search/?api=1&query=Shiraz"
+                               target="_blank"
+                               rel="noopener noreferrer">  SHIRAZ</a>
                   </div>
                   <div className={'social'}>
                       <GitHubIcon sx={{fontSize: '30px'}}/>
