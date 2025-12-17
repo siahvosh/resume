@@ -1,43 +1,41 @@
 .cont-1{
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
     background-size: cover;
-    /*background: #212121;*/
     background-image: url("../../assets/bgnew.jpg") ;
-    display: flex;
+    height: 95vh;
+    overflow-x: hidden;
     justify-content: center;
     align-items: center;
-    /*padding: 12px;*/
+    display: flex;
 }
 
-card{
-    border: 2px solid gray;
+.card{
+    /*border: 2px solid gray;*/
     padding: 2rem;
+    position: relative;
     font-family: "Orbitron", sans-serif;
-    font-optical-sizing: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    color: ghostwhite ;
 
 }
+
 .front-end{
     font-family: "Grape Nuts", cursive;
     font-weight: 400;
     font-style: normal;
-    font-size: clamp(25px, 2vw, 2vw);
+    font-size: clamp(17px, 2vw, 2vw);
 }
-
 .name{
     font-family: "Roboto", sans-serif;
     font-weight: 900;
-    font-size: clamp(30px, 4vw, 4vw);
+    font-size: clamp(20px, 4vw, 4vw);
     letter-spacing: 5px;
 
 }
-
 .titleCard{
     padding: 25px;
     display: flex;
@@ -50,19 +48,16 @@ card{
     -webkit-backdrop-filter: blur(18.8px);
     border: 1px solid rgba(225, 155, 72, 0.32);
 }
-/*.name{*/
-/*    font-weight: 700;*/
-
-/*    transition: transform 1s;*/
-/*    font-size: clamp(30px, 5vw, 5vw);*/
-/*}*/
-
 .dev{
     font-weight: 500;
-    font-size: clamp(20px, 2vw, 4vw);
+    font-size: clamp(18px, 2vw, 4vw);
     animation: flicker-out-1 5s linear reverse infinite forwards;
     text-shadow: 1px 1px 25px #de5401;
     /*color: #de5401;*/
+}
+.contact{
+    font-weight: 350;
+    font-size: clamp(10px, 1vw, 2vw);;
 }
 @keyframes flicker-out-1 {
     0% {
@@ -191,10 +186,7 @@ card{
         opacity: 1;
     }
 }
-.contact{
-    font-weight: 350;
-    font-size: clamp(12px, 1vw, 2vw);;
-}
+
 
 
 .middle{

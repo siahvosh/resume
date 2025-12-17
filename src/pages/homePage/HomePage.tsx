@@ -15,6 +15,7 @@ import './HomePage.css'
 import './../../App.css'
 import {useNavigate} from "react-router-dom";
 import {Grid} from "@visx/visx";
+import {Tollbar} from "../../component/tollbar/Tollbar";
 
 
 
@@ -75,8 +76,9 @@ export const HomePage = () => {
 
     return (
         <>
+
           <div className={'cont-1'}>
-              <card>
+              <div className={'card'}>
                   <span className={'front-end'}>FRONT-END <span className={'dev'} style={{color: '#EEB491'}}>DEVELOPER</span></span>
                   <span className={'name'}>SIAVASH MIRALIKHANI</span>
                   <span className={'contact'}>
@@ -84,8 +86,9 @@ export const HomePage = () => {
                               <a href="#" id="openGmailCompose" style={{color: 'white'}}>✉️ GTSIAVASH@GMAIL.COM | </a>
                                  SHIRAZ
                           </span>
-              </card>
-              <div style={{position: 'absolute', top: '25rem',}}>sfjkhdfgj</div>
+
+              </div>
+
 
               {/*<div className={'titleCard'}>*/}
               {/*    <span className={'name'}>Siavash Miralikhani</span>*/}

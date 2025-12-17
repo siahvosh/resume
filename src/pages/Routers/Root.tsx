@@ -13,11 +13,10 @@ export const Root = () => {
 
     return (
         <div>
-
-          <main>
-              <Tollbar/>
-              <Outlet/>
-          </main>
+            <Tollbar/>
+            <main>
+                <Outlet/>
+            </main>
           <Footer/>
         </div>
     )

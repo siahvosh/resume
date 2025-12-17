@@ -1,11 +1,11 @@
 .toolbar{
     /*border: 2px solid red;*/
-    height: 80px ;
+    height: 5vh ;
     box-shadow: 0 4px 30px rgba(23, 15, 15, 0.1);
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(5px);
     position: sticky;
-    background: #000000;
+    background: black;
     border-bottom: 1px solid #232222;
     top: 0;
     left: 0;
