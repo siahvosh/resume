@@ -13,8 +13,9 @@ export const Root = () => {
 
     return (
         <div>
-          <Tollbar/>
+
           <main>
+              <Tollbar/>
               <Outlet/>
           </main>
           <Footer/>

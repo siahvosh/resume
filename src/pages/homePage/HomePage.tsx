@@ -76,15 +76,26 @@ export const HomePage = () => {
     return (
         <>
           <div className={'cont-1'}>
-              <div className={'titleCard'}>
-                  <span className={'name'}>Siavash Miralikhani</span>
-                  <span className={'job'}>FRONT END <span className={'dev'} style={{color: '#EEB491'}}>DEVELOPER</span></span>
+              <card>
+                  <span className={'front-end'}>FRONT-END <span className={'dev'} style={{color: '#EEB491'}}>DEVELOPER</span></span>
+                  <span className={'name'}>SIAVASH MIRALIKHANI</span>
                   <span className={'contact'}>
-                          <a href="tel:+989124949401" style={{color: 'white'}}>📞 +98 912 49 49 401 | </a>
-                          <a href="#" id="openGmailCompose" style={{color: 'white'}}>✉️ GTSIAVASH@GMAIL.COM | </a>
-                             SHIRAZ
-                      </span>
-              </div>
+                              <a href="tel:+989124949401" style={{color: 'white'}}>📞 +98 912 49 49 401 | </a>
+                              <a href="#" id="openGmailCompose" style={{color: 'white'}}>✉️ GTSIAVASH@GMAIL.COM | </a>
+                                 SHIRAZ
+                          </span>
+              </card>
+              <div style={{position: 'absolute', top: '25rem',}}>sfjkhdfgj</div>
+
+              {/*<div className={'titleCard'}>*/}
+              {/*    <span className={'name'}>Siavash Miralikhani</span>*/}
+              {/*    <span className={'job'}>FRONT END <span className={'dev'} style={{color: '#EEB491'}}>DEVELOPER</span></span>*/}
+              {/*    <span className={'contact'}>*/}
+              {/*            <a href="tel:+989124949401" style={{color: 'white'}}>📞 +98 912 49 49 401 | </a>*/}
+              {/*            <a href="#" id="openGmailCompose" style={{color: 'white'}}>✉️ GTSIAVASH@GMAIL.COM | </a>*/}
+              {/*               SHIRAZ*/}
+              {/*        </span>*/}
+              {/*</div>*/}
           </div>
           <div className={'middle'}>
               <span className={'mid-text'}>
