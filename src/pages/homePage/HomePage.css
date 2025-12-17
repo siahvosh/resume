@@ -9,7 +9,6 @@
     align-items: center;
     display: flex;
 }
-
 .card{
     /*border: 2px solid gray;*/
     padding: 2rem;
@@ -22,7 +21,6 @@
     color: ghostwhite ;
 
 }
-
 .front-end{
     font-family: "Grape Nuts", cursive;
     font-weight: 400;
@@ -32,8 +30,8 @@
 .name{
     font-family: "Roboto", sans-serif;
     font-weight: 900;
-    font-size: clamp(20px, 4vw, 4vw);
-    letter-spacing: 5px;
+    font-size: clamp(12px, 3vw, 5vw);
+    letter-spacing: 10px;
 
 }
 .titleCard{
@@ -57,7 +55,17 @@
 }
 .contact{
     font-weight: 350;
-    font-size: clamp(10px, 1vw, 2vw);;
+    font-size: clamp(8px, 1.2vw, 2vw);;
+}
+.social{
+    display: flex;
+    margin-top: 1rem;
+    color: #c15715;
+    /*border: 2px solid red;*/
+    width: 20vw;
+    justify-content: space-around;
+    /*width: 50px;*/
+    /*background: red;*/
 }
 @keyframes flicker-out-1 {
     0% {
@@ -188,44 +196,44 @@
 }
 
 
-
 .middle{
-    /*border: 2px solid red;*/
-
     background: white !important;
-    border-radius: 5px;
+    border-radius: 14px;
+    height: 45vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 100px;
+}
+.middle-text{
+    padding: 2rem;
+    display: flex;
+    /*border: 2px solid red;*/
+    width: 70%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .mid-text{
-    font-size: clamp(2rem, 5vw, 8rem);
-    /*border: 2px solid red;*/
+    font-size: clamp(50px, 7vw, 8rem);
     color: black;
-    display: flex;
-    justify-content: center;
     font-weight: 900;
 }
 .mid-text-description{
-    /*border: 2px solid red;*/
     text-align: center;
     color: black;
     font-size: clamp(1rem, 2vw, 2rem);
-    font-weight: 350;
+    font-weight: 300;
 }
 
-.cont-2{
-    /*border: 10px solid green;*/
-    height: 600vh;
 
+.cont-2{
+    height: 600vh;
     background: black;
 }
 .scroll-box{
     position: sticky;
     top: 15vh;
-    /*height: 80vh;*/
+    height: 80vh;
     border: 2px solid blue;
     padding: 1rem;
 }
@@ -275,7 +283,7 @@
     position: relative;
     justify-content: center;
     align-items: center;
-    border: 2px solid red;
+    /*border: 2px solid red;*/
 }
 .img{
     position: absolute;

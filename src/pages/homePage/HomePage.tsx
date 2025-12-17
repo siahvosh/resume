@@ -11,6 +11,10 @@ import img7 from "../../assets/2x/Asset 9@2x.png";
 import img8 from "../../assets/2x/Asset 9@2x.png";
 import bgImg from "../../assets/bgnew.jpg";
 
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
+
 import './HomePage.css'
 import './../../App.css'
 import {useNavigate} from "react-router-dom";
@@ -76,7 +80,6 @@ export const HomePage = () => {
 
     return (
         <>
-
           <div className={'cont-1'}>
               <div className={'card'}>
                   <span className={'front-end'}>FRONT-END <span className={'dev'} style={{color: '#EEB491'}}>DEVELOPER</span></span>
@@ -86,29 +89,24 @@ export const HomePage = () => {
                               <a href="#" id="openGmailCompose" style={{color: 'white'}}>✉️ GTSIAVASH@GMAIL.COM | </a>
                                  SHIRAZ
                           </span>
-
+                  <div className={'social'}>
+                      <GitHubIcon sx={{fontSize: '30px'}}/>
+                      <LinkedInIcon sx={{fontSize: '30px'}}/>
+                      <InstagramIcon sx={{fontSize: '30px'}}/>
+                  </div>
               </div>
-
-
-              {/*<div className={'titleCard'}>*/}
-              {/*    <span className={'name'}>Siavash Miralikhani</span>*/}
-              {/*    <span className={'job'}>FRONT END <span className={'dev'} style={{color: '#EEB491'}}>DEVELOPER</span></span>*/}
-              {/*    <span className={'contact'}>*/}
-              {/*            <a href="tel:+989124949401" style={{color: 'white'}}>📞 +98 912 49 49 401 | </a>*/}
-              {/*            <a href="#" id="openGmailCompose" style={{color: 'white'}}>✉️ GTSIAVASH@GMAIL.COM | </a>*/}
-              {/*               SHIRAZ*/}
-              {/*        </span>*/}
-              {/*</div>*/}
           </div>
           <div className={'middle'}>
-              <span className={'mid-text'}>
-                  SUMMARY
-              </span>
-              <h1 className={'mid-text-description'} >
-                    Front-End Developer with 3+ years of experience building responsive, user-friendly web applications using
-                    JavaScript, React (MUI), Vue2 (Vuetify), HTML, Bootstrap ,CSS. Skilled in translating UI/UX designs into highperformance interfaces. I am also highly responsible, detail-oriented, and skilled in project management,
-                    ensuring timely delivery of high-quality work.
-              </h1>
+              <div className={'middle-text'}>
+                  <span className={'mid-text'}>
+                      SUMMARY
+                  </span>
+                  <h1 className={'mid-text-description'} >
+                        Front-End Developer with 3+ years of experience building responsive, user-friendly web applications using
+                        JavaScript, React (MUI), Vue2 (Vuetify), HTML, Bootstrap ,CSS. Skilled in translating UI/UX designs into highperformance interfaces. I am also highly responsible, detail-oriented, and skilled in project management,
+                        ensuring timely delivery of high-quality work.
+                  </h1>
+              </div>
           </div>
           <div className={'cont-2'} ref={cont2Ref}>
               <div className={'scroll-box'}>
