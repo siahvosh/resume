@@ -75,12 +75,12 @@ export const HomePage = () => {
             },
             items: [
                 {
-                    src: `${img2}`,
+                    src: `${img}`,
                     initial: { x: -150, y: -100, scale: 0.8, opacity: 0 },
                     animate: { x: 0, y: 0, scale: 1, opacity: 1 },
                 },
                 {
-                    src: `${img3}`,
+                    src: `${img}`,
                     initial: { x: 150, y: -80, scale: 0.8, opacity: 0 },
                     animate: { x: 0, y: 0, scale: 1, opacity: 1 },
                 },
@@ -295,9 +295,9 @@ export const HomePage = () => {
                              </span>
                           </div>
                       </Grid2>
-                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 7}}>
+                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
                           <div className={'text-box-animation'}>
-                              <div style={{width: '45vw', border: '2px solid green'}}>
+                              <div style={{width: '45vw'}}>
                                  {stepsVisuals.map((item, index) => (
                                     <div key={index} onClick={() => detailHandler(index)}>
                                         <div key={index} onClick={() => setActiveIndex(index)}>
@@ -313,19 +313,19 @@ export const HomePage = () => {
                               </div>
                           </div>
                       </Grid2>
-                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 5}}>
+                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
                           <div className={'images-box'}>
                               <AnimatePresence>
                                   {stepsVisuals.slice(0, activeIndex + 1).map((item, index) => (
-
                                       <motion.img
-                                          key={item.items[activeIndex].id}
+                                          key={item.id}
                                           src={item.background.src}
                                           alt=""
                                           className="img"
                                           style={{
-                                              marginTop: 0,
-                                              zIndex: index,
+
+                                              // marginTop: -10,
+                                              // zIndex: index,
                                               skewX: 0,
                                           }}
                                           initial={{
@@ -333,72 +333,37 @@ export const HomePage = () => {
                                               scale: 1,
                                               rotate: 0,
                                               skewX: 0,
-                                              translateX: -100,
+                                              translateY: 200,
                                               skew: 0
                                           }}
                                           animate={{
-                                              opacity: index === activeIndex ? 1 : 0.5,
+                                              opacity: index === activeIndex ? 1 : 0,
                                               scale: 1.3,
-                                              rotate: 0,
+                                              rotate: 10,
                                               skewX: 0,
-                                              translateX: 0,
-                                              skew: 0
+                                              translateY: 0,
+                                              skew: 0,
+                                              y: [0, -15, 0] ,
                                           }}
                                           exit={{
                                               opacity: 0,
                                               scale: 1.1,
-                                              rotate: 0,
                                               skewX: 0,
-                                              translateX: 100,
+                                              rotate: 0,
+                                              translateY: 200,
                                               skew: 0
                                           }}
-                                          transition={{duration: 1.5}}
+                                          transition={{duration: 0.5,y: {
+                                                  duration: 3.5,
+                                                  repeat: Infinity,
+                                                  ease: "easeInOut",
+                                              },}}
                                       />
+
+
                                   ))}
                               </AnimatePresence>
-                              {/*<AnimatePresence>*/}
-                              {/*                {stepperDetail.slice(0, activeIndex + 1).map((item, index) => (*/}
-                              {/*                    <motion.img*/}
-                              {/*                        key={item.image1}*/}
-                              {/*                        src={item.image1}*/}
-                              {/*                        alt=""*/}
-                              {/*                        className=""*/}
-                              {/*                        style={{*/}
-                              {/*                            zIndex: -0,*/}
-                              {/*                            width: '30%',*/}
-                              {/*                            skewX: 0,*/}
-                              {/*                            opacity: 0,*/}
 
-                              {/*                        }}*/}
-                              {/*                        initial={{*/}
-                              {/*                            opacity: 0,*/}
-                              {/*                            scale: 1,*/}
-                              {/*                            rotate: 0,*/}
-                              {/*                            skewX: 0,*/}
-                              {/*                            translateY: 110,*/}
-                              {/*                            skew: 0*/}
-                              {/*                        }}*/}
-                              {/*                        animate={{*/}
-                              {/*                            opacity: index === activeIndex ? 1 : 0,*/}
-                              {/*                            scale: 1.3,*/}
-                              {/*                            rotate: 0,*/}
-                              {/*                            skewX: 0,*/}
-                              {/*                            translateY: '100px',*/}
-                              {/*                            skew: 0,*/}
-                              {/*                            zIndex: -1,*/}
-                              {/*                        }}*/}
-                              {/*                        exit={{*/}
-                              {/*                            opacity: 0,*/}
-                              {/*                            scale: 1.1,*/}
-                              {/*                            rotate: 0,*/}
-                              {/*                            skewX: 0,*/}
-                              {/*                            translateY: 0,*/}
-                              {/*                            skew: 0,*/}
-                              {/*                        }}*/}
-                              {/*                        transition={{duration: 0.5}}*/}
-                              {/*                    />*/}
-                              {/*                ))}*/}
-                              {/*            </AnimatePresence>*/}
                           </div>
                       </Grid2>
                   </Grid2>

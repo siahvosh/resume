@@ -242,7 +242,7 @@ a:hover{
     position: sticky;
     top: 10vh;
     height: 80vh;
-    border: 2px solid blue;
+    /*border: 2px solid blue;*/
     /*background-image: url("../../assets/background.jpg");*/
     /*inset: 0;*/
     padding: 1rem;
@@ -263,15 +263,15 @@ a:hover{
 
 .text-box-animation{
     border: 2px solid blue;
-    padding: 3rem;
-    height: 45vh;
+    padding: 1rem;
+    height: 30vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
 .text-title{
-
+    display: none;
     cursor: pointer;
     color: #5b5a5a;
     font-size: clamp(25px, 1vw, 2vw);
@@ -292,7 +292,9 @@ a:hover{
 .images-box{
     padding: 3rem;
     display: flex;
-    height: 45vh;
+    height: 25vh;
+    width: 80vw;
+    margin: auto;
     position: relative;
     justify-content: center;
     align-items: center;
@@ -304,13 +306,16 @@ a:hover{
     animation: float 4s ease-in-out infinite;
     transition: transform 0.2s ease;
     position: absolute;
-    width: 60%;
+    width: 25rem;
+    display: block;
+    top: -100px;
+    border: 2px solid red;
 }
-@keyframes float {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-15px); }
-    100% { transform: translateY(0); }
-}
+/*@keyframes float {*/
+/*    0%   { transform: translateY(0); }*/
+/*    50%  { transform: translateY(-15px); }*/
+/*    100% { transform: translateY(0); }*/
+/*}*/
 
 .fade-in {
     opacity: 1;
@@ -354,7 +359,7 @@ a:hover{
 }
 
 .second-middle{
-    border: 2px solid red;
+    /*border: 2px solid red;*/
     height: 25vh;
     padding: 5vh;
     justify-content: center;
