@@ -312,12 +312,17 @@ export const HomePage = () => {
                                         <div className={'side-1'}>
                                             <motion.div
                                                 className=" text"
-                                                transition={{duration: 2}}
+                                                transition={{duration: 1}}
                                                 initial={{ y: -80, opacity: 0 }}
                                                 animate={{ y: 150, opacity: 1 }}
-                                                exit={{ y: -80, opacity: 0 }}
+                                                exit={{ y: 250, opacity: 0 }}
                                             >
-                                                TEXT 1
+                                                <div style={{border : '2px solid red', display: 'flex',  flexDirection: 'column', alignItems: 'center'}}>
+                                                    <span>Responsive Site</span>
+                                                    <span>Where Passion</span>
+                                                    <span>Ignite and soar</span>
+                                                    <span>Responsive Site</span>
+                                                </div>
                                             </motion.div>
                                         </div>
                                         <div className={'side-2'}>
