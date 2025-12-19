@@ -312,27 +312,31 @@ export const HomePage = () => {
                                         <div className={'side-1'}>
                                             <motion.div
                                                 className=" text"
-                                                transition={{duration: 1}}
-                                                initial={{ y: -80, opacity: 0 }}
-                                                animate={{ y: 150, opacity: 1 }}
-                                                exit={{ y: 250, opacity: 0 }}
+                                                transition={{duration: 1.2}}
+                                                initial={{ y: -80,opacity: 0 }}
+                                                animate={{ y: '120%', opacity: 1 }}
+                                                exit={{ y: 80, opacity: 0 }}
                                             >
-                                                <div style={{border : '2px solid red', display: 'flex',  flexDirection: 'column', alignItems: 'center'}}>
+                                                <div style={{display: 'flex',flexDirection: 'column', alignItems: 'center',justifyItems: 'center',  }}>
                                                     <span>Responsive Site</span>
                                                     <span>Where Passion</span>
                                                     <span>Ignite and soar</span>
-                                                    <span>Responsive Site</span>
+                                                    <span>READ MORE</span>
                                                 </div>
                                             </motion.div>
                                         </div>
                                         <div className={'side-2'}>
                                               <motion.div
                                                   className="img-1"
-                                                  transition={{duration: 1 }}
-                                                  initial={{height: '100%', width: 0 }}
-                                                  animate={{height: '100%', width: '100%' }}
-                                                  exit={{ height: 0 }}
+                                                  transition={{duration: 1.2 }}
+                                                  initial={{ y: 700, opacity: 1 }}
+                                                  animate={{ y: 0, opacity: 1 }}
+                                                  exit={{ y: 500, opacity: 1 }}
+                                              //     initial={{width: '100%' }}
+                                              //     animate={{ width: '100%' }}
+                                              //     exit={{ height: 100 }}
                                               />
+
                                           </div>
                                       </motion.section>
 
@@ -349,18 +353,22 @@ export const HomePage = () => {
                                           <div className={'side-3'}>
                                               <motion.div
                                                   className="img-2"
-                                                  transition={{duration: 1 }}
-                                                  initial={{ height: 0 }}
-                                                  animate={{ height: "100%", animationDuration: '2s' }}
-                                                  exit={{ height: 0 }}
+                                                  transition={{duration: 1.2 }}
+                                                  // initial={{ width: '0' , height: '100%'}}
+                                                  // animate={{ width: "100%", height: '100%'}}
+                                                  // exit={{ width: '0', height: '100%' }}
+
+                                                  initial={{ x: -1000, opacity: 1 }}
+                                                  animate={{ x: 0, opacity: 1 }}
+                                                  exit={{ y: -500, opacity: 1 }}
                                               />
                                           </div>
                                           <div className={'side-4'}>
                                               <motion.div
                                                   className=""
-                                                  // initial={{ x: 100, opacity: 0 }}
-                                                  // animate={{ x: 0, opacity: 1 }}
-                                                  // exit={{ x: -100, opacity: 0 }}
+                                                  initial={{ x: 100, opacity: 0 }}
+                                                  animate={{ x: 0, opacity: 1 }}
+                                                  exit={{ x: -100, opacity: 0 }}
                                               >sfsf</motion.div>
                                           </div>
 
