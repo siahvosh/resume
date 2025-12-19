@@ -10,7 +10,6 @@
     display: flex;
 }
 .lottie{
-    color: blue !important;
     width: 80vw;
     height: 100vh;
     position: absolute;
@@ -200,19 +199,7 @@ a:hover{
     }
 }
 
-.video-bg {
-    border: 2px solid red;
-    position: absolute;
-        width: 100%;
-    height: 500px;
-    z-index: 11111;
-    /*overflow: hidden;*/
-}
-.video-bg video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+
 .middle{
     background: white !important;
     border-radius: 14px;
@@ -221,7 +208,7 @@ a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1111 !important;
+    z-index: 1 !important;
 }
 .middle-text{
     padding: 2rem;
@@ -246,16 +233,18 @@ a:hover{
 
 
 .cont-2{
-    height: 600vh;
+    height: 800vh;
     background: black;
     margin-top: -15rem;
-    z-index: -1111 !important;
+    z-index: -1 !important;
 }
 .scroll-box{
     position: sticky;
     top: 10vh;
     height: 80vh;
     border: 2px solid blue;
+    /*background-image: url("../../assets/background.jpg");*/
+    /*inset: 0;*/
     padding: 1rem;
 }
 .experience-title-box{
@@ -268,16 +257,18 @@ a:hover{
 .experience-title{
     font-weight: 900;
     font-size: clamp(50px, 7vw, 8rem);
+
 }
 
 
 .text-box-animation{
+    border: 2px solid blue;
     padding: 3rem;
     height: 45vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
-
+    align-items: center;
 }
 .text-title{
 
@@ -305,14 +296,22 @@ a:hover{
     position: relative;
     justify-content: center;
     align-items: center;
-    /*border: 2px solid red;*/
+    border: 2px solid red;
+    background-image: url("../../assets/bgnew1.jpg");
 }
 .img{
+    z-index: 111111111;
+    animation: float 4s ease-in-out infinite;
+    transition: transform 0.2s ease;
     position: absolute;
-    width: 50%;
-
-
+    width: 60%;
 }
+@keyframes float {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
 .fade-in {
     opacity: 1;
     transform: scale(1.2);
@@ -510,3 +509,5 @@ footer {
 [transition-style="in:square:hesitate"] {
     animation: 2.5s cubic-bezier(.25, 1, .30, 1) square-in-hesitate both;
 }
+
+

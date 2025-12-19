@@ -1,7 +1,7 @@
 import {Box, Button, Grid2, ListItem} from "@mui/material";
 import {AnimatePresence, motion} from "framer-motion";
 import {useEffect, useRef, useState} from "react";
-import img from "../../assets/4x/redCard.png";
+import img from "../../assets/phone1.png";
 import img2 from "../../assets/img2.png";
 import img3 from "../../assets/img3.png";
 import img4 from "../../assets/img4.png";
@@ -61,7 +61,158 @@ export const HomePage = () => {
         {title: 'End', description: 'Axis independently, without needing Lorem ipsum dolor sit amet.', image: `${img4}`, image1: `../../assets/dot.png`, path: '/section5'},
     ]);
 
+    const stepsVisuals = [
+        {
+            id: 0,
+            title: 'Responsive', description: '- Design and development of a responsive version of the company website for a better user experience on mobile devices\n' +
+                '- Add key additional sections( buy and renewal of services) of the website on mobile devices\n' +
+                '- Optimizing the billing section in performance and user experience of the website on mobile devices\n',
+            background: {
+                src: `${img}`,
+                initial: { y: -200, opacity: 0 },
+                animate: { y: 0, opacity: 1 },
+                exit: { y: 200, opacity: 0 },
+            },
+            items: [
+                {
+                    src: `${img2}`,
+                    initial: { x: -150, y: -100, scale: 0.8, opacity: 0 },
+                    animate: { x: 0, y: 0, scale: 1, opacity: 1 },
+                },
+                {
+                    src: `${img3}`,
+                    initial: { x: 150, y: -80, scale: 0.8, opacity: 0 },
+                    animate: { x: 0, y: 0, scale: 1, opacity: 1 },
+                },
+                {
+                    src: `${img4}`,
+                    initial: { x: 0, y: 150, scale: 0.8, opacity: 0 },
+                    animate: { x: 0, y: 0, scale: 1, opacity: 1 },
+                },
+            ],
+        },
+        {
+            id: 1,
+            title: 'Onboard', description: '- rsion of the company website for a better user experience on mobile devices\n' +
+                '- Add key additional sections( buy and renewal of services) of the website on mobile devices\n' +
+                '- Optimizing the billing section in performance and user experience of the website on mobile devices\n',
+            background: {
+                src: `${img}`,
+                initial: { scale: 0.9, opacity: 0 },
+                animate: { scale: 1, opacity: 1 },
+                exit: { scale: 1.1, opacity: 0 },
+            },
+            items: [
+                {
+                    src: `${img2}`,
+                    initial: { x: -200, opacity: 0 },
+                    animate: { x: 0, opacity: 1 },
+                },
+                {
+                    src: `${img3}`,
+                    initial: { y: 200, opacity: 0 },
+                    animate: { y: 0, opacity: 1 },
+                },
+                {
+                    src: `${img4}`,
+                    initial: { x: 200, opacity: 0 },
+                    animate: { x: 0, opacity: 1 },
+                },
+            ],
+        },
+        {
+            id: 2,
+            title: 'Responsive', description: '- Design and development of a responsive version of the company website for a better user experience on mobile devices\n' +
+                '- Add key additional sections( buy and renewal of services) of the website on mobile devices\n' +
+                '- Optimizing the billing section in performance and user experience of the website on mobile devices\n',
+            background: {
+                src: `${img}`,
+                initial: { rotate: -5, scale: 0.95, opacity: 0 },
+                animate: { rotate: 0, scale: 1, opacity: 1 },
+                exit: { rotate: 5, scale: 1.05, opacity: 0 },
+            },
+            items: [
+                {
+                    src: `${img2}`,
+                    initial: { x: -120, y: 120, opacity: 0 },
+                    animate: { x: 0, y: 0, opacity: 1 },
+                },
+                {
+                    src: `${img3}`,
+                    initial: { y: -200, opacity: 0 },
+                    animate: { y: 0, opacity: 1 },
+                },
+                {
+                    src: `${img4}`,
+                    initial: { x: 120, y: 120, opacity: 0 },
+                    animate: { x: 0, y: 0, opacity: 1 },
+                },
+            ],
+        },
+        {
+            title: 'Responsive', description: '- Design and development of a responsive version of the company website for a better user experience on mobile devices\n' +
+                '- Add key additional sections( buy and renewal of services) of the website on mobile devices\n' +
+                '- Optimizing the billing section in performance and user experience of the website on mobile devices\n',
+            id: 3,
+            background: {
+                src: `${img}`,
+                initial: { x: -300, opacity: 0 },
+                animate: { x: 0, opacity: 1 },
+                exit: { x: 300, opacity: 0 },
+            },
+            items: [
+                {
+                    src: `${img2}`,
+                    initial: { scale: 0, opacity: 0 },
+                    animate: { scale: 1, opacity: 1 },
+                },
+                {
+                    src: `${img3}`,
+                    initial: { scale: 0, opacity: 0 },
+                    animate: { scale: 1, opacity: 1 },
+                },
+                {
+                    src: `${img4}`,
+                    initial: { scale: 0, opacity: 0 },
+                    animate: { scale: 1, opacity: 1 },
+                },
+            ],
+        },
+        {
+            id: 4,
+            title: 'Responsive', description: '- Design and development of a responsive version of the company website for a better user experience on mobile devices\n' +
+                '- Add key additional sections( buy and renewal of services) of the website on mobile devices\n' +
+                '- Optimizing the billing section in performance and user experience of the website on mobile devices\n',
+            background: {
+                src: `${img}`,
+                initial: { opacity: 0, filter: "blur(20px)" },
+                animate: { opacity: 1, filter: "blur(0px)" },
+                exit: { opacity: 0, filter: "blur(20px)" },
+            },
+            items: [
+                {
+                    src: `${img2}`,
+                    initial: { y: 100, opacity: 0 },
+                    animate: { y: 0, opacity: 1 },
+                },
+                {
+                    src: `${img3}`,
+                    initial: { y: 140, opacity: 0 },
+                    animate: { y: 0, opacity: 1 },
+                },
+                {
+                    src: `${img4}`,
+                    initial: { y: 180, opacity: 0 },
+                    animate: { y: 0, opacity: 1 },
+                },
+            ],
+        },
+    ];
+
+
+
     const detailHandler = (idx: any) => {
+        console.log({idx:idx})
         setActiveIndex(idx);
     }
 
@@ -75,7 +226,7 @@ export const HomePage = () => {
             if (cont2Ref.current) {
                 const { offsetTop, offsetHeight } = cont2Ref.current;
                 const scrollPosition = window.scrollY;
-                const sectionHeight = offsetHeight / stepperDetail.length;
+                const sectionHeight = offsetHeight / stepsVisuals.length;
                 const index = Math.floor((scrollPosition - offsetTop) / sectionHeight);
                 setActiveIndex(index);
             }
@@ -93,8 +244,8 @@ export const HomePage = () => {
                   loop
                   autoplay
                   className={'lottie'}
-
               />
+
               <div className={'card'}>
                   <span className={'front-end'}>FRONT-END <span className={'dev'} style={{color: '#EEB491'}}>DEVELOPER</span></span>
                   <span className={'name'}>SIAVASH MIRALIKHANI</span>
@@ -139,40 +290,40 @@ export const HomePage = () => {
                   <Grid2 container spacing={1}>
                       <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
                           <div className={'experience-title-box'}>
-                     <span className={'experience-title'}>
-                         EXPERIENCE
-                     </span>
+                             <span className={'experience-title'}>
+                                 EXPERIENCE
+                             </span>
                           </div>
                       </Grid2>
-                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}}>
+                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 7}}>
                           <div className={'text-box-animation'}>
-                             {stepperDetail.map((item, index) => (
-                                <div key={index} onClick={() => detailHandler(index)}>
-                                              <div key={index} onClick={() => setActiveIndex(index)}>
-                                                  <span className={`text-title ${activeIndex === index ? 'active' : ''}`}>
-                                                      {item.title}
-                                                  </span>
-                                                  <div style={{ flexDirection: 'column'}} className={`details ${activeIndex === index ? 'show' : ''}`}>
-                                                      {item.description}
-
-                                                  </div>
-                                              </div>
-                                          </div>
-                             ))}
+                              <div style={{width: '45vw', border: '2px solid green'}}>
+                                 {stepsVisuals.map((item, index) => (
+                                    <div key={index} onClick={() => detailHandler(index)}>
+                                        <div key={index} onClick={() => setActiveIndex(index)}>
+                                            <span className={`text-title ${activeIndex === index ? 'active' : ''}`}>
+                                                {item.title}
+                                            </span>
+                                            <div style={{ flexDirection: 'column'}} className={`details ${activeIndex === index ? 'show' : ''}`}>
+                                                {item.description}
+                                            </div>
+                                        </div>
+                                    </div>
+                                 ))}
+                              </div>
                           </div>
                       </Grid2>
-                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}}>
+                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 5}}>
                           <div className={'images-box'}>
                               <AnimatePresence>
-                                  {stepperDetail.slice(0, activeIndex + 1).map((item, index) => (
+                                  {stepsVisuals.slice(0, activeIndex + 1).map((item, index) => (
+
                                       <motion.img
-                                          key={item.image}
-                                          src={item.image}
+                                          key={item.items[activeIndex].id}
+                                          src={item.background.src}
                                           alt=""
                                           className="img"
                                           style={{
-                                              // top: index * -40,
-
                                               marginTop: 0,
                                               zIndex: index,
                                               skewX: 0,
@@ -205,202 +356,82 @@ export const HomePage = () => {
                                       />
                                   ))}
                               </AnimatePresence>
-                              <AnimatePresence>
-                                              {stepperDetail.slice(0, activeIndex + 1).map((item, index) => (
-                                                  <motion.img
-                                                      key={item.image1}
-                                                      src={item.image1}
-                                                      alt=""
-                                                      className=""
-                                                      style={{
-                                                          zIndex: -0,
-                                                          width: '30%',
-                                                          skewX: 0,
-                                                          opacity: 0,
+                              {/*<AnimatePresence>*/}
+                              {/*                {stepperDetail.slice(0, activeIndex + 1).map((item, index) => (*/}
+                              {/*                    <motion.img*/}
+                              {/*                        key={item.image1}*/}
+                              {/*                        src={item.image1}*/}
+                              {/*                        alt=""*/}
+                              {/*                        className=""*/}
+                              {/*                        style={{*/}
+                              {/*                            zIndex: -0,*/}
+                              {/*                            width: '30%',*/}
+                              {/*                            skewX: 0,*/}
+                              {/*                            opacity: 0,*/}
 
-                                                      }}
-                                                      initial={{
-                                                          opacity: 0,
-                                                          scale: 1,
-                                                          rotate: 0,
-                                                          skewX: 0,
-                                                          translateY: 110,
-                                                          skew: 0
-                                                      }}
-                                                      animate={{
-                                                          opacity: index === activeIndex ? 1 : 0,
-                                                          scale: 1.3,
-                                                          rotate: 0,
-                                                          skewX: 0,
-                                                          translateY: '100px',
-                                                          skew: 0,
-                                                          zIndex: -1,
-                                                      }}
-                                                      exit={{
-                                                          opacity: 0,
-                                                          scale: 1.1,
-                                                          rotate: 0,
-                                                          skewX: 0,
-                                                          translateY: 0,
-                                                          skew: 0,
-                                                      }}
-                                                      transition={{duration: 0.5}}
-                                                  />
-                                              ))}
-                                          </AnimatePresence>
+                              {/*                        }}*/}
+                              {/*                        initial={{*/}
+                              {/*                            opacity: 0,*/}
+                              {/*                            scale: 1,*/}
+                              {/*                            rotate: 0,*/}
+                              {/*                            skewX: 0,*/}
+                              {/*                            translateY: 110,*/}
+                              {/*                            skew: 0*/}
+                              {/*                        }}*/}
+                              {/*                        animate={{*/}
+                              {/*                            opacity: index === activeIndex ? 1 : 0,*/}
+                              {/*                            scale: 1.3,*/}
+                              {/*                            rotate: 0,*/}
+                              {/*                            skewX: 0,*/}
+                              {/*                            translateY: '100px',*/}
+                              {/*                            skew: 0,*/}
+                              {/*                            zIndex: -1,*/}
+                              {/*                        }}*/}
+                              {/*                        exit={{*/}
+                              {/*                            opacity: 0,*/}
+                              {/*                            scale: 1.1,*/}
+                              {/*                            rotate: 0,*/}
+                              {/*                            skewX: 0,*/}
+                              {/*                            translateY: 0,*/}
+                              {/*                            skew: 0,*/}
+                              {/*                        }}*/}
+                              {/*                        transition={{duration: 0.5}}*/}
+                              {/*                    />*/}
+                              {/*                ))}*/}
+                              {/*            </AnimatePresence>*/}
                           </div>
                       </Grid2>
                   </Grid2>
-                  {/*<Grid2 container spacing={0} style={{height: '60vh'}}>*/}
-                  {/*    <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 5}} style={{}}>*/}
-                  {/*        <div className={'text-box-animation'}>*/}
-                  {/*            {stepperDetail.map((item, index) => (*/}
-                  {/*            <div key={index} onClick={() => detailHandler(index)}>*/}
-                  {/*                <div key={index} onClick={() => setActiveIndex(index)}>*/}
-                  {/*                    <span className={`text-title ${activeIndex === index ? 'active' : ''}`}>*/}
-                  {/*                        {item.title}*/}
-                  {/*                    </span>*/}
-                  {/*                    <div style={{ flexDirection: 'column'}} className={`details ${activeIndex === index ? 'show' : ''}`}>*/}
-                  {/*                        {item.description}*/}
-
-                  {/*                        /!*{item.description}*!/*/}
-                  {/*                        /!*<Button*!/*/}
-                  {/*                        /!*    style={{*!/*/}
-                  {/*                        /!*        marginTop: '0.5rem',*!/*/}
-                  {/*                        /!*        marginBottom: '1rem',*!/*/}
-                  {/*                        /!*        width: '150px',*!/*/}
-                  {/*                        /!*        height: '25px',*!/*/}
-                  {/*                        /!*        background: "transparent",*!/*/}
-                  {/*                        /!*        color: 'white',*!/*/}
-                  {/*                        /!*        border: '1px solid #58c0bd'*!/*/}
-                  {/*                        /!*}}*!/*/}
-                  {/*                        /!*    variant="contained">*!/*/}
-                  {/*                        /!*    <span onClick={() => handelNav(item.path)} style={{ fontSize: '0.7rem', fontWeight: '100'}}>More ...</span>*!/*/}
-                  {/*                        /!*</Button>*!/*/}
-                  {/*                    </div>*/}
-                  {/*                </div>*/}
-                  {/*            </div>*/}
-                  {/*        ))}*/}
-                  {/*        </div>*/}
-                  {/*    </Grid2>*/}
-                  {/*    <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 7}} style={{border: '2px  '}}>*/}
-                  {/*        <div className="images-box">*/}
-                  {/*            <AnimatePresence >*/}
-                  {/*                {stepperDetail.slice(0, activeIndex + 1).map((item, index) => (*/}
-                  {/*                    <motion.img*/}
-                  {/*                        key={item.image}*/}
-                  {/*                        src={item.image}*/}
-                  {/*                        alt=""*/}
-                  {/*                        className="img"*/}
-                  {/*                        style={{*/}
-                  {/*                            position: "absolute",*/}
-                  {/*                            // top: index * -40,*/}
-                  {/*                            marginTop: 0,*/}
-                  {/*                            zIndex: index,*/}
-                  {/*                            skewX: 0,*/}
-                  {/*                        }}*/}
-                  {/*                        initial={{*/}
-                  {/*                            opacity: 0,*/}
-                  {/*                            scale: 1,*/}
-                  {/*                            rotate: 0,*/}
-                  {/*                            skewX: 0,*/}
-                  {/*                            translateX: -100,*/}
-                  {/*                            skew: 0*/}
-                  {/*                        }}*/}
-                  {/*                        animate={{*/}
-                  {/*                            opacity: index === activeIndex ? 1 : 0.5,*/}
-                  {/*                            scale: 1.3,*/}
-                  {/*                            rotate: 0,*/}
-                  {/*                            skewX: 0,*/}
-                  {/*                            translateX: 0,*/}
-                  {/*                            skew: 0*/}
-                  {/*                        }}*/}
-                  {/*                        exit={{*/}
-                  {/*                            opacity: 0,*/}
-                  {/*                            scale: 1.1,*/}
-                  {/*                            rotate: 0,*/}
-                  {/*                            skewX: 0,*/}
-                  {/*                            translateX: 100,*/}
-                  {/*                            skew: 0*/}
-                  {/*                        }}*/}
-                  {/*                        transition={{duration: 1.5}}*/}
-                  {/*                    />*/}
-                  {/*                ))}*/}
-                  {/*            </AnimatePresence>*/}
-                  {/*            <AnimatePresence>*/}
-                  {/*                {stepperDetail.slice(0, activeIndex + 1).map((item, index) => (*/}
-                  {/*                    <motion.img*/}
-                  {/*                        key={item.image1}*/}
-                  {/*                        src={item.image1}*/}
-                  {/*                        alt=""*/}
-                  {/*                        className=""*/}
-                  {/*                        style={{*/}
-                  {/*                            zIndex: -0,*/}
-                  {/*                            position: "absolute",*/}
-                  {/*                            width: 200,*/}
-                  {/*                            skewX: 0,*/}
-                  {/*                            opacity: 0,*/}
-
-                  {/*                        }}*/}
-                  {/*                        initial={{*/}
-                  {/*                            opacity: 0,*/}
-                  {/*                            scale: 1,*/}
-                  {/*                            rotate: 0,*/}
-                  {/*                            skewX: 0,*/}
-                  {/*                            translateY: 0,*/}
-                  {/*                            skew: 0*/}
-                  {/*                        }}*/}
-                  {/*                        animate={{*/}
-                  {/*                            opacity: index === activeIndex ? 1 : 0,*/}
-                  {/*                            scale: 1.3,*/}
-                  {/*                            rotate: 0,*/}
-                  {/*                            skewX: 0,*/}
-                  {/*                            translateY: 110,*/}
-                  {/*                            skew: 0,*/}
-                  {/*                            zIndex: -1,*/}
-
-                  {/*                        }}*/}
-                  {/*                        exit={{*/}
-                  {/*                            opacity: 0,*/}
-                  {/*                            scale: 1.1,*/}
-                  {/*                            rotate: 0,*/}
-                  {/*                            skewX: 0,*/}
-                  {/*                            translateY: 0,*/}
-                  {/*                            skew: 0,*/}
-                  {/*                        }}*/}
-                  {/*                        transition={{duration: 0.5, }}*/}
-                  {/*                    />*/}
-                  {/*                ))}*/}
-                  {/*            </AnimatePresence>*/}
-                  {/*        </div>*/}
-                  {/*    </Grid2>*/}
-                  {/*</Grid2>*/}
               </div>
           </div>
           <div className={'second-middle'} style={{background: 'black'}}>
               {/*<div style={{display: 'flex', justifyContent:'center', fontSize: '7vw', fontWeight:'900'}}>SKILL</div>*/}
                     <div className="wrapper">
-                        <div className="item item1">SnapFood</div>
-                        <div className="item item2">Tapsi</div>
-                        <div className="item item3">Janboo</div>
-                        <div className="item item4">Digikala</div>
-                        <div className="item item5">Divar</div>
-                        <div className="item item6">Torob</div>
-                        <div className="item item7">Irancell</div>
-                        <div className="item item8">Shatel</div>
+                        <div className="item item1">React.js</div>
+                        <div className="item item2">Vue.js</div>
+                        <div className="item item3">JavaScript</div>
+                        <div className="item item4">Vuetify</div>
+                        <div className="item item5">Material UI</div>
+                        <div className="item item6">Node.js</div>
+                        <div className="item item7">HTML</div>
+                        <div className="item item8">CSS</div>
                     </div>
                     <div className="wrapper-1">
-                        <div className="item-1 item1">SnapFood</div>
-                        <div className="item-1 item2">Tapsi</div>
-                        <div className="item-1 item3">Janboo</div>
-                        <div className="item-1 item4">Digikala</div>
-                        <div className="item-1 item5">Divar</div>
-                        <div className="item-1 item6">Torob</div>
-                        <div className="item-1 item7">Irancell</div>
-                        <div className="item-1 item8">Shatel</div>
+                        <div className="item-1 item1">Git</div>
+                        <div className="item-1 item2">Postman</div>
+                        <div className="item-1 item3">Figma</div>
+                        <div className="item-1 item4">Python</div>
+                        <div className="item-1 item5">Sql</div>
+                        <div className="item-1 item6">UI/UX</div>
+                        <div className="item-1 item7">Motion</div>
+                        <div className="item-1 item8">Lottie</div>
                     </div>
 
             </div>
         </>
     )
 }
+
+
+
+
