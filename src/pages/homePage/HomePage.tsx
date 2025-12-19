@@ -222,19 +222,22 @@ export const HomePage = () => {
     }
 
     useEffect(() => {
-        const handleScroll = () => {
-            if (cont2Ref.current) {
-                const { offsetTop, offsetHeight } = cont2Ref.current;
-                const scrollPosition = window.scrollY;
-                const sectionHeight = offsetHeight / stepsVisuals.length;
-                const index = Math.floor((scrollPosition - offsetTop) / sectionHeight);
-                setActiveIndex(index);
-            }
-        };
+    const handleScroll = () => {
+           if (cont2Ref.current) {
+               const { offsetTop, offsetHeight } = cont2Ref.current;
+               const scrollPosition = window.scrollY;
+               const sectionHeight = offsetHeight / stepsVisuals.length;
+               const index = Math.floor((scrollPosition - offsetTop) / sectionHeight);
+               setActiveIndex(index);
+               console.log({index: index})
+           }
+       };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+       window.addEventListener('scroll', handleScroll);
+       return () => window.removeEventListener('scroll', handleScroll);
+   }, []);
+
+
 
     return (
         <>
@@ -285,7 +288,7 @@ export const HomePage = () => {
                   </h1>
               </div>
           </div>
-          <div className={'cont-2'} ref={cont2Ref}>
+          <div className={'cont-2'}  ref={cont2Ref}>
               <div className={'scroll-box'}>
                   <Grid2 container spacing={1}>
                       <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
@@ -296,74 +299,71 @@ export const HomePage = () => {
                           </div>
                       </Grid2>
                       <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
-                          <div className={'text-box-animation'}>
-                              <div style={{width: '45vw'}}>
-                                 {stepsVisuals.map((item, index) => (
-                                    <div key={index} onClick={() => detailHandler(index)}>
-                                        <div key={index} onClick={() => setActiveIndex(index)}>
-                                            <span className={`text-title ${activeIndex === index ? 'active' : ''}`}>
-                                                {item.title}
-                                            </span>
-                                            <div style={{ flexDirection: 'column'}} className={`details ${activeIndex === index ? 'show' : ''}`}>
-                                                {item.description}
-                                            </div>
+                          <div className="container-animation">
+                              <AnimatePresence mode="wait">
+                                  {activeIndex === 0 && (
+                                      <motion.section
+                                          key="one"
+                                          className="container-animation"
+                                          initial={{ opacity: 0 }}
+                                          animate={{ opacity: 1 }}
+                                          exit={{ opacity: 1 }}
+                                      >
+                                        <div className={'side-1'}>
+                                            <motion.div
+                                                className=" text"
+                                                transition={{duration: 2}}
+                                                initial={{ y: -80, opacity: 0 }}
+                                                animate={{ y: 150, opacity: 1 }}
+                                                exit={{ y: -80, opacity: 0 }}
+                                            >
+                                                TEXT 1
+                                            </motion.div>
                                         </div>
-                                    </div>
-                                 ))}
-                              </div>
-                          </div>
-                      </Grid2>
-                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
-                          <div className={'images-box'}>
-                              <AnimatePresence>
-                                  {stepsVisuals.slice(0, activeIndex + 1).map((item, index) => (
-                                      <motion.img
-                                          key={item.id}
-                                          src={item.background.src}
-                                          alt=""
-                                          className="img"
-                                          style={{
+                                        <div className={'side-2'}>
+                                              <motion.div
+                                                  className="img-1"
+                                                  transition={{duration: 1 }}
+                                                  initial={{height: '100%', width: 0 }}
+                                                  animate={{height: '100%', width: '100%' }}
+                                                  exit={{ height: 0 }}
+                                              />
+                                          </div>
+                                      </motion.section>
 
-                                              // marginTop: -10,
-                                              // zIndex: index,
-                                              skewX: 0,
-                                          }}
-                                          initial={{
-                                              opacity: 0,
-                                              scale: 1,
-                                              rotate: 0,
-                                              skewX: 0,
-                                              translateY: 200,
-                                              skew: 0
-                                          }}
-                                          animate={{
-                                              opacity: index === activeIndex ? 1 : 0,
-                                              scale: 1.3,
-                                              rotate: 10,
-                                              skewX: 0,
-                                              translateY: 0,
-                                              skew: 0,
-                                              y: [0, -15, 0] ,
-                                          }}
-                                          exit={{
-                                              opacity: 0,
-                                              scale: 1.1,
-                                              skewX: 0,
-                                              rotate: 0,
-                                              translateY: 200,
-                                              skew: 0
-                                          }}
-                                          transition={{duration: 0.5,y: {
-                                                  duration: 3.5,
-                                                  repeat: Infinity,
-                                                  ease: "easeInOut",
-                                              },}}
-                                      />
+                                  )}
+
+                                  {activeIndex === 1 && (
+                                      <motion.section
+                                          key="two"
+                                          className="container-animation"
+                                          initial={{ opacity: 0 }}
+                                          animate={{ opacity: 1 }}
+                                          exit={{ opacity: 1 }}
+                                      >
+                                          <div className={'side-3'}>
+                                              <motion.div
+                                                  className="img-2"
+                                                  transition={{duration: 1 }}
+                                                  initial={{ height: 0 }}
+                                                  animate={{ height: "100%", animationDuration: '2s' }}
+                                                  exit={{ height: 0 }}
+                                              />
+                                          </div>
+                                          <div className={'side-4'}>
+                                              <motion.div
+                                                  className=""
+                                                  // initial={{ x: 100, opacity: 0 }}
+                                                  // animate={{ x: 0, opacity: 1 }}
+                                                  // exit={{ x: -100, opacity: 0 }}
+                                              >sfsf</motion.div>
+                                          </div>
 
 
-                                  ))}
+
+                                      </motion.section>
+                                  )}
                               </AnimatePresence>
-
                           </div>
                       </Grid2>
                   </Grid2>
@@ -400,3 +400,74 @@ export const HomePage = () => {
 
 
 
+// <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
+//     <div className={'text-box-animation'}>
+//         <div style={{width: '45vw'}}>
+//             {stepsVisuals.map((item, index) => (
+//                 <div key={index} onClick={() => detailHandler(index)}>
+//                     <div key={index} onClick={() => setActiveIndex(index)}>
+//                                             <span className={`text-title ${activeIndex === index ? 'active' : ''}`}>
+//                                                 {item.title}
+//                                             </span>
+//                         <div style={{ flexDirection: 'column'}} className={`details ${activeIndex === index ? 'show' : ''}`}>
+//                             {item.description}
+//                         </div>
+//                     </div>
+//                 </div>
+//             ))}
+//         </div>
+//     </div>
+// </Grid2>
+// <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
+//     <div className={'images-box'}>
+//         <AnimatePresence>
+//             {stepsVisuals.slice(0, activeIndex + 1).map((item, index) => (
+//                 <motion.img
+//                     key={item.id}
+//                     src={item.background.src}
+//                     alt=""
+//                     className="img"
+//                     style={{
+//
+//                         // marginTop: -10,
+//                         // zIndex: index,
+//                         skewX: 0,
+//                     }}
+//                     initial={{
+//                         opacity: 0,
+//                         scale: 1,
+//                         rotate: 0,
+//                         skewX: 0,
+//                         translateY: 200,
+//                         skew: 0
+//                     }}
+//                     animate={{
+//                         opacity: index === activeIndex ? 1 : 0,
+//                         scale: 1.3,
+//                         rotate: 10,
+//                         skewX: 0,
+//                         translateY: 0,
+//                         skew: 0,
+//                         y: [0, -15, 0] ,
+//                     }}
+//                     exit={{
+//                         opacity: 0,
+//                         scale: 1.1,
+//                         skewX: 0,
+//                         rotate: 0,
+//                         translateY: 200,
+//                         skew: 0
+//                     }}
+//                     transition={{duration: 0.5,y: {
+//                             duration: 3.5,
+//                             repeat: Infinity,
+//                             ease: "easeInOut",
+//                         },}}
+//                 />
+//
+//
+//             ))}
+//         </AnimatePresence>
+//
+//     </div>
+// </Grid2>
