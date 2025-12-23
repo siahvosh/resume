@@ -320,8 +320,7 @@ export const HomePage = () => {
                                             >
                                                     <div className={'detail-text'}>
                                                         <span>RESPONSIVE PAGE</span>
-                                                        <span>How do you make a</span>
-                                                        <span>website responsive</span>
+                                                        <span>How do you make a website responsive</span>
                                                         <span>learn more</span>
 
                                                     </div>
