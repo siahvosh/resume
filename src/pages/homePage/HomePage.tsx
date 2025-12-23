@@ -370,19 +370,27 @@ export const HomePage = () => {
                                           </div>
                                           <div className={'side-4'}>
                                               <motion.div
-                                                  className=""
-                                                  initial={{ x: 100, opacity: 0 }}
-                                                  animate={{ x: 0, opacity: 1 }}
-                                                  exit={{ x: -100, opacity: 0 }}
-                                              >sfsf</motion.div>
-                                          </div>
+                                                  className="side-1-text"
+                                                  style={{height: '30vh'}}
+                                                  transition={{duration: 1.2}}
+                                                  initial={{ y: -100,opacity: 0 }}
+                                                  animate={{ y: '0', opacity: 1 }}
+                                                  exit={{ y: -100, opacity: 0 }}
+                                              >
+                                                  <div className={'detail-text'}>
+                                                      <span>Project Refactor</span>
+                                                      <span>How do you make a Refactor Project</span>
+                                                      <span>learn more</span>
 
+                                                  </div>
+                                              </motion.div>
+                                          </div>
                                           <div className={'detail-img'}>
                                               <motion.div
                                                   className="worker"
                                                   transition={{duration: 1, delay: 0.3 }}
                                                   initial={{ y: 0 ,x: '100vw', opacity: 1 }}
-                                                  animate={{y: 0 , x: '20vw', opacity: 1,}}
+                                                  animate={{y: '0vw' , x: '20vw', opacity: 1,}}
                                                   exit={{ y: 700,x: '20vw', opacity: 1 }}>
                                               </motion.div>
 

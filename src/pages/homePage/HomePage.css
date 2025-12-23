@@ -240,11 +240,8 @@ a:hover{
 }
 .scroll-box{
     position: sticky;
-    top: 10vh;
+    top: 5vh;
     height: 80vh;
-    /*border: 2px solid blue;*/
-    /*background-image: url("../../assets/background.jpg");*/
-    /*inset: 0;*/
     padding: 1rem;
 }
 .experience-title-box{
@@ -252,30 +249,46 @@ a:hover{
     justify-content: center;
     align-items: center;
     height: 15vh;
-    /*border: 2px solid blue;*/
-
 }
 .experience-title{
     font-weight: 900;
-    font-size: clamp(50px, 7vw, 8rem);
+    font-size: clamp(50px, 7vw, 7rem);
 }
 .container-animation{
     height: 70vh;
     position: relative;
 }
+
+
 .side-1, .side-2, .side-3, .side-4{
-    height: 35vh;
+    /*height: 45vh;*/
     overflow: hidden;
+
 }
 
+.side-1{
+    border: 2px solid gray;
+    height: 40%;
+}
+.side-2{
+    height: 60%;
+}
+.side-3{
+    height: 60%;
+}
+.side-4{
+    height: 40%;
+}
 
 .side-1-text{
     /*border: 2px solid gray;*/
+
     align-items: center;
     display: flex;
 }
 .detail-text{
     /*border: 2px solid gray;*/
+    /*z-index: 1111;*/
     padding: 1rem;
     width: 60%;
     display: flex;
