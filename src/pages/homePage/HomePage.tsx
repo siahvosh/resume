@@ -311,18 +311,33 @@ export const HomePage = () => {
                                       >
                                         <div className={'side-1'}>
                                             <motion.div
-                                                className=" text"
+                                                className=" "
+                                                style={{height: '30vh'}}
                                                 transition={{duration: 1.2}}
-                                                initial={{ y: -80,opacity: 0 }}
-                                                animate={{ y: '120%', opacity: 1 }}
-                                                exit={{ y: 80, opacity: 0 }}
+                                                initial={{ y: 0,opacity: 0 }}
+                                                animate={{ y: '0', opacity: 1 }}
+                                                exit={{ y: 0, opacity: 0 }}
                                             >
-                                                <div style={{display: 'flex',flexDirection: 'column', alignItems: 'center',justifyItems: 'center',  }}>
-                                                    <span>Responsive Site</span>
-                                                    <span>Where Passion</span>
-                                                    <span>Ignite and soar</span>
-                                                    <span>READ MORE</span>
+                                                {/*<div style={{border : '2px solid green', display: 'flex', height: '100%'}}>*/}
+                                                {/*    <div style={{width: '50%',display: 'flex',flexDirection: 'column', alignItems: 'center',justifyItems: 'center',  border: '2px solid red'}}>*/}
+                                                {/*        <span>Responsive Site</span>*/}
+                                                {/*        <span>Where Passion</span>*/}
+                                                {/*        <span>Ignite and soar</span>*/}
+                                                {/*        <span>READ MORE</span>*/}
+                                                {/*    </div>*/}
+                                                {/*    <div className={'phone-img'}>*/}
+                                                {/*    </div>*/}
+                                                {/*</div>*/}
+
+                                                <div className={'side-1-detail'}>
+                                                    <div className={'detail-text'}>
+                                                        <span>responsive</span>
+                                                        <span>responsive</span>
+                                                        <span>responsive</span>
+                                                    </div>
+
                                                 </div>
+
                                             </motion.div>
                                         </div>
                                         <div className={'side-2'}>
@@ -336,12 +351,12 @@ export const HomePage = () => {
                                               //     animate={{ width: '100%' }}
                                               //     exit={{ height: 100 }}
                                               />
-
+                                          </div>
+                                          <div className={'detail-img'}>
+                                              <div className={'phone-img'}/>
                                           </div>
                                       </motion.section>
-
                                   )}
-
                                   {activeIndex === 1 && (
                                       <motion.section
                                           key="two"
@@ -357,7 +372,6 @@ export const HomePage = () => {
                                                   // initial={{ width: '0' , height: '100%'}}
                                                   // animate={{ width: "100%", height: '100%'}}
                                                   // exit={{ width: '0', height: '100%' }}
-
                                                   initial={{ x: -1000, opacity: 1 }}
                                                   animate={{ x: 0, opacity: 1 }}
                                                   exit={{ y: -500, opacity: 1 }}

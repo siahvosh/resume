@@ -267,23 +267,81 @@ a:hover{
 .side-1, .side-2, .side-3, .side-4{
     height: 50%;
     overflow: hidden;
+
     /*border: 2px solid red;*/
 }
-
+.side-1{
+    /*z-index: 1111 !important;*/
+}
 .side-2{
     display: flex;
     align-items: end;
 }
+
+.side-1-detail{
+    /*border: 2px solid red;*/
+    display: flex;
+    height: 100%;
+
+
+}
+.detail-text{
+    width: 100%;
+    border: 2px solid red;
+    height: 30vh;
+    /*position: relative;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.detail-img{
+    display: flex;
+    /*border: 2px solid #4f0404;*/
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+
+
+}
+
+.phone-img{
+    background-image: url("../../assets/phone1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid blue;
+    width: 100%;
+    transform: translate(20vw, 0);
+    /*margin-left: 50vw;*/
+    /*min-width: 100%;*/
+    filter: drop-shadow(-20px 0px 50px #050404);
+
+    /*width: 400px;*/
+    /*height: 500px;*/
+
+
+    /*z-index: 111111 !important;*/
+}
+
+
 .img-1 {
-    background-image: url("../../assets/setup.jpg");
+    background-image: url("../../assets/banner.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
     height: 100%;
     width: 100%;
-    /*background-position: center;*/
+    z-index: -11111;
+
+    background-position: bottom;
     /*background-repeat: no-repeat;*/
     /*animation: forwards;*/
-    inset: 0;
+
+
 }
+
 
 .img-2{
     background-image: url("../../assets/refactor.png");
@@ -291,7 +349,7 @@ a:hover{
     background-position: center;
     background-repeat: no-repeat;
     height: 100%;
-    animation: forwards;
+    /*animation: forwards;*/
 }
 
 
