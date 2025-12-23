@@ -255,29 +255,20 @@ a:hover{
     font-size: clamp(50px, 7vw, 7rem);
 }
 .container-animation{
-    height: 70vh;
+    height: 80vh;
     position: relative;
 }
 
 
 .side-1, .side-2, .side-3, .side-4{
     /*height: 45vh;*/
+    height: 50%;
     overflow: hidden;
 
 }
 
 .side-1{
-    border: 2px solid gray;
-    height: 40%;
-}
-.side-2{
-    height: 60%;
-}
-.side-3{
-    height: 60%;
-}
-.side-4{
-    height: 40%;
+    /*border: 2px solid gray;*/
 }
 
 .side-1-text{
@@ -321,7 +312,7 @@ a:hover{
     position: absolute;
     inset: 0;
     overflow: hidden;
-
+    border: 2px solid blue;
 
 }
 
@@ -330,9 +321,10 @@ a:hover{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    /*border: 2px solid blue;*/
-    width: 100%;
+    width: 50%;
     height: 80%;
+    position: absolute;
+
     /*filter: drop-shadow(-20px 0px 50px #232222);*/
 }
 
