@@ -311,33 +311,20 @@ export const HomePage = () => {
                                       >
                                         <div className={'side-1'}>
                                             <motion.div
-                                                className=" "
+                                                className="side-1-text"
                                                 style={{height: '30vh'}}
                                                 transition={{duration: 1.2}}
-                                                initial={{ y: 0,opacity: 0 }}
+                                                initial={{ y: -100,opacity: 0 }}
                                                 animate={{ y: '0', opacity: 1 }}
-                                                exit={{ y: 0, opacity: 0 }}
+                                                exit={{ y: -100, opacity: 0 }}
                                             >
-                                                {/*<div style={{border : '2px solid green', display: 'flex', height: '100%'}}>*/}
-                                                {/*    <div style={{width: '50%',display: 'flex',flexDirection: 'column', alignItems: 'center',justifyItems: 'center',  border: '2px solid red'}}>*/}
-                                                {/*        <span>Responsive Site</span>*/}
-                                                {/*        <span>Where Passion</span>*/}
-                                                {/*        <span>Ignite and soar</span>*/}
-                                                {/*        <span>READ MORE</span>*/}
-                                                {/*    </div>*/}
-                                                {/*    <div className={'phone-img'}>*/}
-                                                {/*    </div>*/}
-                                                {/*</div>*/}
-
-                                                <div className={'side-1-detail'}>
                                                     <div className={'detail-text'}>
-                                                        <span>responsive</span>
-                                                        <span>responsive</span>
-                                                        <span>responsive</span>
+                                                        <span>RESPONSIVE PAGE</span>
+                                                        <span>How do you make a</span>
+                                                        <span>website responsive</span>
+                                                        <span>learn more</span>
+
                                                     </div>
-
-                                                </div>
-
                                             </motion.div>
                                         </div>
                                         <div className={'side-2'}>
@@ -347,14 +334,19 @@ export const HomePage = () => {
                                                   initial={{ y: 700, opacity: 1 }}
                                                   animate={{ y: 0, opacity: 1 }}
                                                   exit={{ y: 500, opacity: 1 }}
-                                              //     initial={{width: '100%' }}
-                                              //     animate={{ width: '100%' }}
-                                              //     exit={{ height: 100 }}
                                               />
                                           </div>
-                                          <div className={'detail-img'}>
-                                              <div className={'phone-img'}/>
-                                          </div>
+                                        <div className={'detail-img'}>
+                                            <motion.div
+                                                className="phone-img"
+                                                transition={{duration: 1, delay: 0.3 }}
+                                                initial={{ y: 800 ,x: '20vw', opacity: 1 }}
+                                                animate={{ x: '20vw', opacity: 1, y: 0 }}
+                                                exit={{ y: 800,x: '20vw', opacity: 1 }}>
+                                            </motion.div>
+
+                                        </div>
+
                                       </motion.section>
                                   )}
                                   {activeIndex === 1 && (
