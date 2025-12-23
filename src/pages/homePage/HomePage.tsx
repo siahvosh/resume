@@ -377,7 +377,16 @@ export const HomePage = () => {
                                               >sfsf</motion.div>
                                           </div>
 
+                                          <div className={'detail-img'}>
+                                              <motion.div
+                                                  className="worker"
+                                                  transition={{duration: 1, delay: 0.3 }}
+                                                  initial={{ y: 0 ,x: '100vw', opacity: 1 }}
+                                                  animate={{y: 0 , x: '20vw', opacity: 1,}}
+                                                  exit={{ y: 700,x: '20vw', opacity: 1 }}>
+                                              </motion.div>
 
+                                          </div>
 
                                       </motion.section>
                                   )}
