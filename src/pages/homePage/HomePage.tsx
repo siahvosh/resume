@@ -25,6 +25,25 @@ import AlertDialog from '../../component/dialog/experience'
 
 
 export const HomePage = () => {
+    const dialogText = [
+        {
+            title: 'At Derak Cloud',
+            date: 'August 2022 - March 2025',
+            description: 'Designed and implemented a fully responsive user and admin panel at Abr Dorak, ensuring optimal usability across all devices and screen sizes. This included making the user dashboard, purchase and renewal workflows fully responsive, as well as adapting key admin panel features for mobile access, enabling administrators to manage user needs efficiently in any situation.',
+            secondTitle: 'At Mehr Pars',
+            secondDate: 'May 2025 – October 2025',
+            secondDescription: 'Developed a fully responsive company website with parallax scrolling, delivering a smooth and engaging experience across all devices and screen sizes.'
+        },
+        {
+            title: 'At Derak Cloud',
+            date: 'August 2022 - March 2025',
+            description: 'Designed and implemented a fully responsive user and admin panel at Abr Dorak, ensuring optimal usability across all devices and screen sizes. This included making the user dashboard, purchase and renewal workflows fully responsive, as well as adapting key admin panel features for mobile access, enabling administrators to manage user needs efficiently in any situation.',
+
+        }
+    ]
+
+
+
     const [activeIndex, setActiveIndex] = useState(0);
     const cont2Ref = useRef(null);
     const stepsVisuals = [
@@ -175,6 +194,7 @@ export const HomePage = () => {
         },
     ];
     const [open, setOpen] = React.useState(false);
+    const [stepDialog, setStepDialog] = React.useState();
 
     useEffect(() => {
     const handleScroll = () => {
@@ -191,6 +211,13 @@ export const HomePage = () => {
        window.addEventListener('scroll', handleScroll);
        return () => window.removeEventListener('scroll', handleScroll);
    }, []);
+
+
+    const handleDialog = (step, show) => {
+        setOpen(show)
+        setStepDialog(step)
+        console.log({step})
+    };
 
     return (
         <>
@@ -273,7 +300,7 @@ export const HomePage = () => {
                                                     <div className={'detail-text'}>
                                                         <span>RESPONSIVE PAGE</span>
                                                         <span>How do you make a website responsive</span>
-                                                        <Button color={'white'} variant={'text'} size={"small"} onClick={() => setOpen(true)}>
+                                                        <Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(0, true)}>
                                                             LEARN MORE
                                                         </Button>
 
@@ -332,9 +359,12 @@ export const HomePage = () => {
                                                   <div className={'detail-text'}>
                                                       <span>Project Refactor</span>
                                                       <span>How do you make a Refactor Project</span>
-                                                      <span>learn more</span>
+                                                      <Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>
+                                                          LEARN MORE
+                                                      </Button>
 
                                                   </div>
+
                                               </motion.div>
                                           </div>
                                           {/*<div className={'detail-img'}>*/}
@@ -359,6 +389,7 @@ export const HomePage = () => {
               <AlertDialog
                   open={open}
                   onClose={() => setOpen(false)}
+                  stepDialog={dialogText[stepDialog]}
               />
           </div>
           <div className={'second-middle'} style={{background: 'black'}}>

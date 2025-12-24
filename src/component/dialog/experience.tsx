@@ -12,8 +12,9 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import {useState} from "react";
 
-export default function AlertDialog({ open, onClose }) {
-
+export default function AlertDialog({ open, onClose, stepDialog }) {
+    console.log({stepDialog: stepDialog})
+    if (!stepDialog) return null;
     return (
         <Dialog
             open={open}
@@ -33,23 +34,31 @@ export default function AlertDialog({ open, onClose }) {
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
         >
-            <DialogTitle style={{color: 'white', fontWeight: '900'}} id="alert-dialog-title">
-                {"At Derak Cloud"} <br/>
-                <span style={{fontSize: '14px', fontWeight: '100'}}>August 2022 - March 2025 </span>
+
+            <DialogTitle style={{display: 'flex', flexDirection: 'column'}} id="alert-dialog-title">
+                <span style={{color: 'white', fontWeight: '900',fontSize: '32px'}}>{stepDialog.title}</span>
+                <span style={{color: 'white',fontSize: '12px', fontWeight: '100'}}>{stepDialog.date} </span>
             </DialogTitle>
 
             <DialogContent>
                 <DialogContentText style={{color: 'white'}} id="alert-dialog-description">
-                    .Led the responsive design and implementation of user and admin panels, optimizing dashboards, purchase and renewal flows, and mobile access to support users and administrators across all device types.
+                   {stepDialog.description}
                 </DialogContentText>
+            </DialogContent>
+            <DialogTitle style={{display: 'flex', flexDirection: 'column'}} id="alert-dialog-title">
+                <span style={{color: 'white', fontWeight: '900',fontSize: '32px'}}>{stepDialog?.secondTitle}</span>
+                <span style={{color: 'white',fontSize: '12px', fontWeight: '100'}}>{stepDialog?.secondDate}</span>
+            </DialogTitle>
 
-
+            <DialogContent>
+                <DialogContentText style={{color: 'white'}} id="alert-dialog-description">
+                    {stepDialog?.secondDescription}
+                </DialogContentText>
             </DialogContent>
 
             <DialogActions>
-
                 <Button onClick={onClose} autoFocus>
-                    read
+                    close
                 </Button>
             </DialogActions>
         </Dialog>
