@@ -11,6 +11,7 @@ import img7 from "../../assets/2x/Asset 9@2x.png";
 import img8 from "../../assets/2x/Asset 9@2x.png";
 import bgImg from "../../assets/bgnew.jpg";
 import videoCode from "../../assets/videoCode.mp4";
+import skater from '../../assets/2skater.png'
 
 import Lottie from "lottie-react";
 import animationData from "../../lottie/circle.json";
@@ -312,7 +313,6 @@ export const HomePage = () => {
                                         <div className={'side-1'}>
                                             <motion.div
                                                 className="side-1-text"
-                                                style={{height: '30vh'}}
                                                 transition={{duration: 1.2}}
                                                 initial={{ y: -100,opacity: 0 }}
                                                 animate={{ y: '0', opacity: 1 }}
@@ -335,16 +335,16 @@ export const HomePage = () => {
                                                   exit={{ y: 500, opacity: 1 }}
                                               />
                                           </div>
-                                        <div className={'detail-img'}>
-                                            <motion.div
+                                        {/*<div className={'detail-img'}>*/}
+                                            <motion.img
                                                 className="phone-img"
+                                                src={`${skater}`}
                                                 transition={{duration: 1, delay: 0.3 }}
-                                                initial={{ y: 800 ,x: '20vw', opacity: 1 }}
-                                                animate={{ x: '20vw', opacity: 1, y: 0 }}
-                                                exit={{ y: 800,x: '20vw', opacity: 1 }}>
-                                            </motion.div>
-
-                                        </div>
+                                                initial={{ y: 800 ,x: '0vw', opacity: 1 }}
+                                                animate={{ x: '0vw', opacity: 1, y: 0 }}
+                                                exit={{ y: 800,x: '0vw', opacity: 1 }}>
+                                            </motion.img>
+                                        {/*</div>*/}
                                       </motion.section>
                                   )}
                                   {activeIndex === 1 && (
@@ -370,7 +370,6 @@ export const HomePage = () => {
                                           <div className={'side-4'}>
                                               <motion.div
                                                   className="side-1-text"
-                                                  style={{height: '30vh'}}
                                                   transition={{duration: 1.2}}
                                                   initial={{ y: -100,opacity: 0 }}
                                                   animate={{ y: '0', opacity: 1 }}
