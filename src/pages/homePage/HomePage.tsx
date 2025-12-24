@@ -6,6 +6,7 @@ import img2 from "../../assets/img2.png";
 import img3 from "../../assets/img3.png";
 import img4 from "../../assets/img4.png";
 import skater from '../../assets/2skater.png'
+import worker from '../../assets/grafiti-artist.png'
 import Lottie from "lottie-react";
 import animationData from "../../lottie/circle.json";
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -331,16 +332,17 @@ export const HomePage = () => {
                                                   </div>
                                               </motion.div>
                                           </div>
-                                          <div className={'detail-img'}>
-                                              <motion.div
+                                          {/*<div className={'detail-img'}>*/}
+                                              <motion.img
                                                   className="worker"
+                                                  src={`${worker}`}
                                                   transition={{duration: 1, delay: 0.3 }}
-                                                  initial={{ y: 0 ,x: '100vw', opacity: 1 }}
-                                                  animate={{y: '0vw' , x: '20vw', opacity: 1,}}
-                                                  exit={{ y: 700,x: '20vw', opacity: 1 }}>
-                                              </motion.div>
+                                                  initial={{ y: 0 ,x: '50vw', opacity: 1 }}
+                                                  animate={{y: '0vw' , x: '0', opacity: 1,}}
+                                                  exit={{ y: 0,x: '50vw', opacity: 1 }}>
+                                              </motion.img>
 
-                                          </div>
+                                          {/*</div>*/}
 
                                       </motion.section>
                                   )}
