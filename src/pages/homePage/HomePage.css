@@ -1,3 +1,8 @@
+
+*{
+    /*outline: 2px solid white;*/
+}
+
 .cont-1{
     background-position: center;
     background-repeat: no-repeat;
@@ -237,6 +242,7 @@ a:hover{
     background: #080914;
     margin-top: -15rem;
     z-index: -1 !important;
+
 }
 .scroll-box{
     position: sticky;
@@ -255,14 +261,18 @@ a:hover{
     font-size: clamp(50px, 7vw, 7rem);
 }
 .container-animation{
-    height: 80vh;
+    height: 75vh;
     position: relative;
+    border: 2px solid #ffffff;
 }
 
 
 .side-1, .side-2, .side-3, .side-4{
-    /*height: 45vh;*/
-    height: 50%;
+    height: 37vh;
+    /*position: absolute;*/
+    border: 2px solid red;
+    /*height: 60%;*/
+
     overflow: hidden;
 
 }
@@ -312,17 +322,18 @@ a:hover{
     position: absolute;
     inset: 0;
     overflow: hidden;
+    /*height: 90%;*/
     border: 2px solid blue;
 
 }
 
 .phone-img{
     background-image: url("../../assets/2skater.png");
-    background-size: contain;
+    /*background-size: contain;*/
     background-repeat: no-repeat;
-    background-position: center;
-    width: 50%;
-    height: 80%;
+    /*background-position: center;*/
+    width: 100%;
+    height: 100%;
     position: absolute;
 
     /*filter: drop-shadow(-20px 0px 50px #232222);*/

@@ -304,7 +304,7 @@ export const HomePage = () => {
                                   {activeIndex === 0 && (
                                       <motion.section
                                           key="one"
-                                          className="container-animation"
+                                          className=""
                                           initial={{ opacity: 0 }}
                                           animate={{ opacity: 1 }}
                                           exit={{ opacity: 1 }}
@@ -345,13 +345,12 @@ export const HomePage = () => {
                                             </motion.div>
 
                                         </div>
-
                                       </motion.section>
                                   )}
                                   {activeIndex === 1 && (
                                       <motion.section
                                           key="two"
-                                          className="container-animation"
+                                          className=""
                                           initial={{ opacity: 0 }}
                                           animate={{ opacity: 1 }}
                                           exit={{ opacity: 1 }}
