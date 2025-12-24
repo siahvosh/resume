@@ -1,9 +1,12 @@
 button{
     background: transparent !important;
+    color: #FFFFFF !important;
+    width: 100px ;
+    border-bottom: 1px solid #626060 !important;
 }
 
 button:hover{
-    color: #d10707 !important;
+    border-bottom: 1px solid white !important;
 }
 
 button:focus{

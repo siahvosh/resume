@@ -29,13 +29,13 @@ export const HomePage = () => {
         {
             title: 'At Derak Cloud',
             date: 'August 2022 - March 2025',
-            description: 'Designed and implemented a fully responsive user and admin panel at Abr Dorak, ensuring optimal usability across all devices and screen sizes. This included making the user dashboard, purchase and renewal workflows fully responsive, as well as adapting key admin panel features for mobile access, enabling administrators to manage user needs efficiently in any situation.',
+            description: 'Designed and implemented a fully responsive user and admin panel at Derak Cloud, ensuring optimal usability across all devices and screen sizes. This included making the user dashboard, purchase and renewal workflows fully responsive, as well as adapting key admin panel features for mobile access, enabling administrators to manage user needs efficiently in any situation.',
             secondTitle: 'At Mehr Pars',
             secondDate: 'May 2025 – October 2025',
             secondDescription: 'Developed a fully responsive company website with parallax scrolling, delivering a smooth and engaging experience across all devices and screen sizes.'
         },
         {
-            title: 'At Derak Cloud',
+            title: 'At Derak Cloud 2',
             date: 'August 2022 - March 2025',
             description: 'Designed and implemented a fully responsive user and admin panel at Abr Dorak, ensuring optimal usability across all devices and screen sizes. This included making the user dashboard, purchase and renewal workflows fully responsive, as well as adapting key admin panel features for mobile access, enabling administrators to manage user needs efficiently in any situation.',
 
@@ -230,7 +230,7 @@ export const HomePage = () => {
               />
 
               <div className={'card'}>
-                  <span className={'front-end'}>FRONT-END <span className={'dev'} style={{color: '#EEB491'}}>DEVELOPER</span></span>
+                  <span className={'front-end'}>FRONT-END <span className={'dev'} >DEVELOPER</span></span>
                   <span className={'name'}>SIAVASH MIRALIKHANI</span>
                   <div className={'contact'}>
                       <CallIcon style={{fontSize: "clamp(12px, 2vw, 1.8vw)"}}/>

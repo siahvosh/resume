@@ -36,28 +36,28 @@ export default function AlertDialog({ open, onClose, stepDialog }) {
         >
 
             <DialogTitle style={{display: 'flex', flexDirection: 'column'}} id="alert-dialog-title">
-                <span style={{color: 'white', fontWeight: '900',fontSize: '32px'}}>{stepDialog.title}</span>
+                <span style={{color: '#E52020', fontWeight: '900',fontSize: '32px'}}>{stepDialog.title}</span>
                 <span style={{color: 'white',fontSize: '12px', fontWeight: '100'}}>{stepDialog.date} </span>
             </DialogTitle>
 
             <DialogContent>
-                <DialogContentText style={{color: 'white'}} id="alert-dialog-description">
+                <DialogContentText style={{fontWeight: '900',color: 'white'}} id="alert-dialog-description">
                    {stepDialog.description}
                 </DialogContentText>
             </DialogContent>
             <DialogTitle style={{display: 'flex', flexDirection: 'column'}} id="alert-dialog-title">
-                <span style={{color: 'white', fontWeight: '900',fontSize: '32px'}}>{stepDialog?.secondTitle}</span>
+                <span style={{color: '#E52020', fontWeight: '900',fontSize: '32px'}}>{stepDialog?.secondTitle}</span>
                 <span style={{color: 'white',fontSize: '12px', fontWeight: '100'}}>{stepDialog?.secondDate}</span>
             </DialogTitle>
 
             <DialogContent>
-                <DialogContentText style={{color: 'white'}} id="alert-dialog-description">
+                <DialogContentText style={{fontWeight: '900', color: 'white'}} id="alert-dialog-description">
                     {stepDialog?.secondDescription}
                 </DialogContentText>
             </DialogContent>
 
             <DialogActions>
-                <Button onClick={onClose} autoFocus>
+                <Button onClick={onClose}  autoFocus>
                     close
                 </Button>
             </DialogActions>

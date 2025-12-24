@@ -56,8 +56,8 @@
     font-weight: 900;
     font-size: clamp(18px, 2vw, 4vw);
     animation: flicker-out-1 5s linear reverse infinite forwards;
-    text-shadow: 1px 1px 2px #7f3306 !important;
-    color: #EEB491;
+    text-shadow: 1px 1px 2px #E52020 !important;
+    color: #E52020;
 }
 .contact{
     display: inline-flex;
@@ -72,7 +72,7 @@ a:hover{
 .social{
     display: flex;
     margin-top: 1rem;
-    color: #ac7553;
+    color: #E52020;
     width: 20vw;
     justify-content: space-around;
 }
@@ -292,6 +292,7 @@ a:hover{
     margin-left: 6vw;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .detail-text span:nth-child(1) {
@@ -307,9 +308,8 @@ a:hover{
     text-align: center;
 }
 
-.detail-text span:nth-child(3) {
-    font-size: clamp(15px, 1vw, 1vw);
-    text-align: center;
+.detail-text Button:nth-child(3) {
+    /*font-size: clamp(15px, 1vw, 1vw);*/
     text-transform: uppercase;
 }
 
