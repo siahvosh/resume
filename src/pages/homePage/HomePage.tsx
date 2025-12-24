@@ -6,17 +6,14 @@ import img2 from "../../assets/img2.png";
 import img3 from "../../assets/img3.png";
 import img4 from "../../assets/img4.png";
 import skater from '../../assets/2skater.png'
-
 import Lottie from "lottie-react";
 import animationData from "../../lottie/circle.json";
-
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-
 import './HomePage.css'
 import './../../App.css'
 
@@ -24,7 +21,6 @@ import './../../App.css'
 
 
 export const HomePage = () => {
-
     const [activeIndex, setActiveIndex] = useState(0);
     const cont2Ref = useRef(null);
     const stepsVisuals = [
@@ -191,8 +187,6 @@ export const HomePage = () => {
        window.addEventListener('scroll', handleScroll);
        return () => window.removeEventListener('scroll', handleScroll);
    }, []);
-
-
 
     return (
         <>
