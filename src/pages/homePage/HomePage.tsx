@@ -17,6 +17,9 @@ import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import './HomePage.css'
 import './../../App.css'
+import * as React from "react";
+
+import AlertDialog from '../../component/dialog/experience'
 
 
 
@@ -171,7 +174,7 @@ export const HomePage = () => {
             ],
         },
     ];
-
+    const [open, setOpen] = React.useState(false);
 
     useEffect(() => {
     const handleScroll = () => {
@@ -270,7 +273,9 @@ export const HomePage = () => {
                                                     <div className={'detail-text'}>
                                                         <span>RESPONSIVE PAGE</span>
                                                         <span>How do you make a website responsive</span>
-                                                        <span>learn more</span>
+                                                        <Button color={'white'} variant={'text'} size={"small"} onClick={() => setOpen(true)}>
+                                                            LEARN MORE
+                                                        </Button>
 
                                                     </div>
                                             </motion.div>
@@ -351,6 +356,10 @@ export const HomePage = () => {
                       </Grid2>
                   </Grid2>
               </div>
+              <AlertDialog
+                  open={open}
+                  onClose={() => setOpen(false)}
+              />
           </div>
           <div className={'second-middle'} style={{background: 'black'}}>
               {/*<div style={{display: 'flex', justifyContent:'center', fontSize: '7vw', fontWeight:'900'}}>SKILL</div>*/}

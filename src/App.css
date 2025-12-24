@@ -1,50 +1,11 @@
-#root {
-  /*width: 100vw;*/
-  /*height: 100vh;*/
-  /*transform-style: preserve-3d;*/
-  /*font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;*/
+button{
+    background: transparent !important;
 }
 
-body{
-  /*transform-style: preserve-3d !important;*/
-  /*background: white;*/
-  /*animation: load 1s ease 0.51s ;*/
-  /*position: relative;*/
+button:hover{
+    color: #d10707 !important;
 }
 
-/*span{*/
-/*  font-weight: 600;*/
-/*  color: #ffffff;*/
-/*  font-size: clamp(12px, 0.5vw, 1vw);*/
-/*}*/
-
-/*.template{*/
-/*  position: relative;*/
-/*}*/
-
-/*.card {*/
-/*  padding: 2em;*/
-/*}*/
-
-/*.read-the-docs {*/
-/*  color: #000000;*/
-/*}*/
-
-/*::-webkit-scrollbar {*/
-/*  width: 10px;*/
-/*}*/
-
-/*::-webkit-scrollbar-track {*/
-/*  background: #000000;*/
-/*}*/
-
-/*::-webkit-scrollbar-thumb {*/
-/*  background: #bdbaba;*/
-/*}*/
-
-
-/*::-webkit-scrollbar-thumb:hover {*/
-/*  background: #faf4f4;*/
-/*}*/
-
-
+button:focus{
+    outline: none !important;
+}
