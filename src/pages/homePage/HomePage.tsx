@@ -6,7 +6,8 @@ import img2 from "../../assets/img2.png";
 import img3 from "../../assets/img3.png";
 import img4 from "../../assets/img4.png";
 import skater from '../../assets/2skater.png'
-import worker from '../../assets/grafiti-artist.png'
+import worker from '../../assets/grafiti-artist.png';
+import phone from '../../assets/iphone.png'
 import Lottie from "lottie-react";
 import animationData from "../../lottie/circle.json";
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -319,7 +320,7 @@ export const HomePage = () => {
                                         {/*<div className={'detail-img'}>*/}
                                             <motion.img
                                                 className="phone-img"
-                                                src={`${skater}`}
+                                                src={`${phone}`}
                                                 transition={{duration: 1, delay: 0.3 }}
                                                 initial={{ y: 800 ,x: '0vw', opacity: 1 }}
                                                 animate={{ x: '0vw', opacity: 1, y: 0 }}
@@ -357,7 +358,7 @@ export const HomePage = () => {
                                                   exit={{ y: -100, opacity: 0 }}
                                               >
                                                   <div className={'detail-text'}>
-                                                      <span>Project Refactor</span>
+                                                      <span>Design and implementation</span>
                                                       <span>How do you make a Refactor Project</span>
                                                       <Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>
                                                           LEARN MORE

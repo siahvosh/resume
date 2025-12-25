@@ -314,16 +314,18 @@ a:hover{
 }
 
 
-.phone-img{
+.phone-img {
     position: absolute;
-    top: 10%;
-    right: 0;
-    margin-right: 5vw;
-    height: 60vh;
+    top: 0%;
+    right: -100px;
+
+    margin-right: 2vw;
+    /*border: 1px solid red;*/
+    height: 65vh;
     width: auto;
 }
 
-.worker{
+.worker {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -333,7 +335,7 @@ a:hover{
 }
 
 .img-1 {
-    background-image: url("../../assets/skatepark.jpg");
+    background-image: url("../../assets/rocks1.png");
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -364,9 +366,9 @@ a:hover{
 }
 @media screen and (min-width: 1500px) {
     .phone-img {
-        height: 60vh;
+        height: 80vh;
         width: auto;
-        top: 10%;
+        top: -10%;
         margin-right:15vw;
     }
 }
