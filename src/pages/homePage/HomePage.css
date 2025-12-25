@@ -316,12 +316,47 @@ a:hover{
 
 .phone-img {
     position: absolute;
-    top: 0%;
+    top: 0;
     right: -100px;
-
     margin-right: 2vw;
-    /*border: 1px solid red;*/
     height: 65vh;
+    width: auto;
+}
+
+
+.rock-1 {
+    animation: floatSoft 4s ease-in-out infinite;
+    will-change: transform;
+    position: absolute;
+    top: 5%;
+    right: 15%;
+    z-index: -1;
+    margin-right: 2vw;
+
+}
+@keyframes floatSoft {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+}
+
+
+.rock-2 {
+    position: absolute;
+    animation: floatSoft 4s ease-in-out infinite;
+    will-change: transform;
+    top: 30vh;
+    right: 35vw;
+    margin-right: 2vw;
+    z-index: -1;
+}
+
+.rock-3 {
+    position: absolute;
+    top: 50vh;
+    right: 15vw;
+    margin-right: 2vw;
+    height: 10vh;
     width: auto;
 }
 

@@ -1,6 +1,10 @@
 import {Box, Button, Grid2, ListItem} from "@mui/material";
 import {AnimatePresence, motion} from "framer-motion";
 import {useEffect, useRef, useState} from "react";
+import AlertDialog from '../../component/dialog/experience'
+import Lottie from "lottie-react";
+
+
 import img from "../../assets/phone1.png";
 import img2 from "../../assets/img2.png";
 import img3 from "../../assets/img3.png";
@@ -8,7 +12,11 @@ import img4 from "../../assets/img4.png";
 import skater from '../../assets/2skater.png'
 import worker from '../../assets/grafiti-artist.png';
 import phone from '../../assets/iphone.png'
-import Lottie from "lottie-react";
+import rock1 from '../../assets/r1.png'
+import rock2 from '../../assets/r2.png'
+import rock3 from '../../assets/r3.png'
+
+
 import animationData from "../../lottie/circle.json";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -16,13 +24,11 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+
+
 import './HomePage.css'
 import './../../App.css'
 import * as React from "react";
-
-import AlertDialog from '../../component/dialog/experience'
-
-
 
 
 export const HomePage = () => {
@@ -298,10 +304,10 @@ export const HomePage = () => {
                                                 animate={{ y: '0', opacity: 1 }}
                                                 exit={{ y: -100, opacity: 0 }}
                                             >
-                                                    <div className={'detail-text'}>
+                                                <div className={'detail-text'}>
                                                         <span>RESPONSIVE PAGE</span>
                                                         <span>How do you make a website responsive</span>
-                                                        <Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(0, true)}>
+                                                        <Button color='white' variant={'text'} size={"small"} onClick={() => handleDialog(0, true)}>
                                                             LEARN MORE
                                                         </Button>
 
@@ -318,14 +324,40 @@ export const HomePage = () => {
                                               />
                                           </div>
                                         {/*<div className={'detail-img'}>*/}
-                                            <motion.img
-                                                className="phone-img"
-                                                src={`${phone}`}
-                                                transition={{duration: 1, delay: 0.3 }}
-                                                initial={{ y: 800 ,x: '0vw', opacity: 1 }}
-                                                animate={{ x: '0vw', opacity: 1, y: 0 }}
-                                                exit={{ y: 800,x: '0vw', opacity: 1 }}>
-                                            </motion.img>
+                                          <motion.img
+                                              className="phone-img floating"
+                                              src={`${phone}`}
+                                              transition={{duration: 1, delay: 0.3 }}
+                                              initial={{ y: 800 ,x: '0vw', opacity: 1 }}
+                                              animate={{ x: '0vw', opacity: 1, y: 0 }}
+                                              exit={{ y: 800,x: '0vw', opacity: 1 }}>
+                                          </motion.img>
+                                          <div className="rock-1">
+                                              <motion.img
+                                                  src={rock1}
+                                                  initial={{ y: 800, x: '0vw', opacity: 1 }}
+                                                  animate={{ y: 0, opacity: 1 }}
+                                                  exit={{ y: 800, x: '0vw', opacity: 1 }}
+                                                  transition={{ duration: 1, delay: 0.4 }}
+                                              />
+                                          </div>
+                                          <div className="rock-2">
+                                              <motion.img
+                                                  src={`${rock2}`}
+                                                  transition={{duration: 1.1, delay: 0.4 }}
+                                                  initial={{ y: '50vh', opacity: 1 }}
+                                                  animate={{ y: '0vw', opacity: 1 }}
+                                                  exit={{ y: '50vh', opacity: 1 }}>
+                                              </motion.img>
+                                          </div>
+                                          <motion.img
+                                              className="rock-3 floating"
+                                              src={`${rock3}`}
+                                              transition={{duration: 1.1, delay: 0.4 }}
+                                              initial={{ y: '50vh', opacity: 1 }}
+                                              animate={{ y: '0vw', opacity: 1,}}
+                                              exit={{ y: '50vh', opacity: 1 }}>
+                                          </motion.img>
                                         {/*</div>*/}
                                       </motion.section>
                                   )}
