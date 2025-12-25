@@ -282,7 +282,7 @@ a:hover{
 
 .side-1-text{
     /*border: 2px solid #ff0707;*/
-    align-items: center;
+    align-items: end;
     height: 36vh;
     display: flex;
 }
@@ -293,6 +293,7 @@ a:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 1111111111;
 }
 
 .detail-text span:nth-child(1) {
@@ -313,16 +314,16 @@ a:hover{
     text-transform: uppercase;
 }
 
-
 .phone-img {
+    /*animation: floatSoft 4s ease-in-out infinite;*/
+    /*will-change: transform;*/
     position: absolute;
     top: 0;
     right: -100px;
-    margin-right: 2vw;
+    margin-right: 4vw;
     height: 65vh;
     width: auto;
 }
-
 
 .rock-1 {
     animation: floatSoft 4s ease-in-out infinite;
@@ -332,32 +333,37 @@ a:hover{
     right: 15%;
     z-index: -1;
     margin-right: 2vw;
-
 }
+
 @keyframes floatSoft {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-30px); }
-    100% { transform: translateY(0); }
+    0%   { transform: translateY(0) }
+    50%  { transform: translateY(-12px) }
+    100% { transform: translateY(0) }
 }
-
 
 .rock-2 {
     position: absolute;
-    animation: floatSoft 4s ease-in-out infinite;
+    animation: floatRock2 3s ease-in-out infinite;
     will-change: transform;
     top: 30vh;
-    right: 35vw;
+    right: 33vw;
     margin-right: 2vw;
     z-index: -1;
 }
 
+@keyframes floatRock2 {
+    0%   { transform: translateY(0) }
+    50%  { transform: translateY(10px) }
+    100% { transform: translateY(0) }
+}
+
 .rock-3 {
     position: absolute;
-    top: 50vh;
-    right: 15vw;
+    animation: floatRock2 3s ease-in-out infinite;
+    will-change: transform;
+    top: 45vh;
+    right: 10vw;
     margin-right: 2vw;
-    height: 10vh;
-    width: auto;
 }
 
 .worker {
@@ -375,7 +381,6 @@ a:hover{
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
-    z-index: -11111;
     background-position: center;
 }
 
