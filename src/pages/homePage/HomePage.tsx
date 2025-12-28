@@ -323,15 +323,124 @@ export const HomePage = () => {
                                           <InstagramIcon />
                                       </Typography>
                                   </CardContent>
-                                  <CardActions style={{border :'2px solid red'}}>
-                                      <span >fsdfdsfd</span>
-                                      <span>Learn More</span>
+                                  <CardActions className={'card-action'}>
+                                      <span>DOWNLOAD</span>
+                                      <Divider
+                                          sx={{
+                                          backgroundColor: '#53535b',
+                                          opacity: 0.5,
+                                      }}
+                                          orientation="vertical" flexItem />
+                                      <span>CONTACT ME</span>
                                   </CardActions>
                               </Card>
 
                       </Grid2>
                       <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}}>
-                          <div className={'detail-card'}></div>
+                          <Card className={'detail-card'}>
+                              <CardContent>
+                                  <Typography gutterBottom sx={{  fontSize: 22, fontWeight: 800, marginLeft: '1rem', color: '#EDFF20' }}>
+                                      About Me
+                                  </Typography>
+                                  <Divider sx={{
+                                      backgroundColor: '#53535b',
+                                      opacity: 0.5,
+                                  }}/>
+                                  <Grid2 container>
+                                    <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem', borderRight: '1px solid #2f2f33'}}>
+                                        <span style={{color: 'white'}}>I am Ryan Adlard, web designer from USA, California. I have rich experience in web site design and building and customization, also I am good at wordpress. I love to talk with you about our unique.</span>
+                                    </Grid2>
+                                    <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-around', color: 'white'}}>
+                                        <div style={{justifyContent: 'space-between', display: 'flex'}}>
+                                            <span style={{color: '#EDFF20'}}> Age :</span>
+                                            <span> 30</span>
+                                        </div>
+                                        <Divider sx={{
+                                            backgroundColor: '#53535b',
+                                            opacity: 0.5,
+                                        }}/>
+                                        <div style={{justifyContent: 'space-between', display: 'flex'}}>
+                                            <div style={{color: '#EDFF20'}}>Residence :</div>
+                                            <div >Iran</div>
+                                        </div>
+                                        <Divider sx={{
+                                            backgroundColor: '#53535b',
+                                            opacity: 0.5,
+                                        }}/>
+                                        <div style={{justifyContent: 'space-between', display: 'flex'}}>
+                                            <div style={{color: '#EDFF20'}}>Freelance :</div>
+                                            <div>Available</div>
+                                        </div>
+                                        <Divider sx={{
+                                            backgroundColor: '#53535b',
+                                            opacity: 0.5,
+                                        }}/>
+                                        <div style={{justifyContent: 'space-between', display: 'flex'}}>
+                                            <div style={{color: '#EDFF20'}}>Address :</div>
+                                            <div>Shiraz</div>
+                                        </div>
+                                    </Grid2>
+                                  </Grid2>
+
+                                  <Typography gutterBottom sx={{ marginTop: '3rem',  fontSize: 22, fontWeight: 800, marginLeft: '1rem', color: '#EDFF20' }}>
+                                      Summary
+                                  </Typography>
+                                  <Divider sx={{
+                                      backgroundColor: '#53535b',
+                                      opacity: 0.5,
+                                  }}/>
+                                  <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}} style={{padding: '1rem'}}>
+                                      <span style={{color: 'white'}}>
+                                          Front-End Developer with 3+ years of experience building responsive, user-friendly web applications using JavaScript, React (MUI), Vue2 (Vuetify), HTML, Bootstrap ,CSS. Skilled in translating UI/UX designs into highperformance interfaces. I am also highly responsible, detail-oriented, and skilled in project management, ensuring timely delivery of high-quality work.
+                                      </span>
+                                  </Grid2>
+
+                                  <Typography gutterBottom sx={{ marginTop: '3rem',  fontSize: 22, fontWeight: 800, marginLeft: '1rem', color: '#EDFF20' }}>
+                                      Experience
+                                  </Typography>
+                                  <Divider sx={{
+                                      backgroundColor: '#53535b',
+                                      opacity: 0.5,
+                                  }}/>
+                                  <Grid2 container>
+                                      <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem', borderRight: '1px solid #2f2f33'}}>
+                                          <span style={{color: 'white'}}>I am Ryan Adlard, web designer from USA, California. I have rich experience in web site design and building and customization, also I am good at wordpress. I love to talk with you about our unique.</span>
+                                      </Grid2>
+                                      <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-around', color: 'white'}}>
+                                          <div style={{justifyContent: 'space-between', display: 'flex'}}>
+                                              <span style={{color: '#EDFF20'}}> Age :</span>
+                                              <span> 30</span>
+                                          </div>
+                                          <Divider sx={{
+                                              backgroundColor: '#53535b',
+                                              opacity: 0.5,
+                                          }}/>
+                                          <div style={{justifyContent: 'space-between', display: 'flex'}}>
+                                              <div style={{color: '#EDFF20'}}>Residence :</div>
+                                              <div >Iran</div>
+                                          </div>
+                                          <Divider sx={{
+                                              backgroundColor: '#53535b',
+                                              opacity: 0.5,
+                                          }}/>
+                                          <div style={{justifyContent: 'space-between', display: 'flex'}}>
+                                              <div style={{color: '#EDFF20'}}>Freelance :</div>
+                                              <div>Available</div>
+                                          </div>
+                                          <Divider sx={{
+                                              backgroundColor: '#53535b',
+                                              opacity: 0.5,
+                                          }}/>
+                                          <div style={{justifyContent: 'space-between', display: 'flex'}}>
+                                              <div style={{color: '#EDFF20'}}>Address :</div>
+                                              <div>Shiraz</div>
+                                          </div>
+                                      </Grid2>
+                                  </Grid2>
+
+
+                              </CardContent>
+                          </Card>
                       </Grid2>
                   </Grid2>
               </div>
