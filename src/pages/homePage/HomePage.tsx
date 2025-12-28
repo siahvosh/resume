@@ -7,7 +7,7 @@ import {
     ListItemIcon,
     ListItemText,
     MenuList,
-    Paper, Tooltip,
+    Paper, Stack, Tooltip,
     Typography
 } from "@mui/material";
 import {AnimatePresence, motion} from "framer-motion";
@@ -49,6 +49,7 @@ import './../../App.css'
 import * as React from "react";
 import {Cloud, ContentCopy, ContentCut, ContentPaste} from "@mui/icons-material";
 import MenuItem from "@mui/material/MenuItem";
+import {Gauge, gaugeClasses} from "@mui/x-charts";
 
 
 export const HomePage = () => {
@@ -531,6 +532,46 @@ export const HomePage = () => {
 
                                           </div>
                                       </Grid2>
+
+                                  </Grid2>
+
+                                  <Typography gutterBottom sx={{ marginTop: '3rem',  fontSize: 26, fontWeight: 800, marginLeft: '1rem', color: '#ffff' }}>
+                                      <span style={{color: '#EDFF20FF'}}> M</span>y Skills
+                                  </Typography>
+                                  <Divider sx={{
+                                      backgroundColor: '#53535b',
+                                      opacity: 0.5,
+                                  }}/>
+                                  <Grid2>
+                                      <Box position="relative" width={100} height={150}>
+                                          <Gauge
+                                              width={100}
+                                              height={150}
+                                              value={80}
+                                              sx={{
+                                                  '& text': {
+                                                      display: 'none',
+                                                  },
+                                                  [`& .${gaugeClasses.valueArc}`]: {
+                                                      fill: '#EDFF20FF',
+                                                  },
+                                              }}
+                                          />
+
+                                          <Box
+                                              position="absolute"
+                                              top="50%"
+                                              left="50%"
+                                              sx={{
+                                                  transform: 'translate(-50%, -50%)',
+                                                  color: '#fff',
+                                                  fontSize: '14px',
+                                                  fontWeight: 600,
+                                              }}
+                                          >
+                                              80%
+                                          </Box>
+                                      </Box>
 
                                   </Grid2>
                               </CardContent>
