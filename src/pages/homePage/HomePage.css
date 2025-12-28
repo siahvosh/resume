@@ -17,8 +17,8 @@
 
 
 .resume-container{
-    border: 2px solid red;
-    width: 80vw;
+    /*border: 2px solid red;*/
+    width: 95vw;
     height: 80vh;
 }
 
@@ -27,11 +27,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    border: 2px solid red;
-    /*width: 100px;*/
+    /*border: 2px solid red;*/
 }
-
 
 .paper-style{
     background: #171616 !important;
@@ -39,9 +36,12 @@
 }
 .base-card{
     border: 2px solid blue;
+    height: 80vh;
 }
 .detail-card{
     border: 2px solid green;
+    height: 75vh;
+
 }
 
 

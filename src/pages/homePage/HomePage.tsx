@@ -1,6 +1,6 @@
 import {
     Box,
-    Button,
+    Button, Card, CardActions, CardContent, CardMedia,
     Divider,
     Grid2,
     ListItem,
@@ -29,13 +29,12 @@ import phone from '../../assets/iphone.png'
 import rock1 from '../../assets/r1.png'
 import rock2 from '../../assets/r2.png'
 import rock3 from '../../assets/r3.png'
-import rock4 from '../../assets/rock2.png'
+import avatar from '../../assets/background.jpg'
 
 
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import FeedIcon from '@mui/icons-material/Feed';
-import SourceIcon from '@mui/icons-material/Source';
-import animationData from "../../lottie/circle.json";
+import CodeIcon from '@mui/icons-material/Code';import animationData from "../../lottie/circle.json";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -265,8 +264,8 @@ export const HomePage = () => {
         <>
           <div className={'cont-1'}>
               <div className={'resume-container'}>
-                  <Grid2 container>
-                      <Grid2 size={{xs: 12, sm: 12, md: 2, lg: 2}}>
+                  <Grid2 container style={{display: 'flex', alignItems: 'center'}}>
+                      <Grid2 size={{xs: 12, sm: 12, md: 1, lg: 1}}>
                           <div className={'bar'}>
                               <Paper className={'paper-style'} sx={{border: '1px solid gray', width: 65 }}>
                                   <MenuList>
@@ -276,7 +275,6 @@ export const HomePage = () => {
                                                   <PermIdentityIcon style={{color: 'white'}} fontSize="large" />
                                               </CustomTooltip>
                                           </ListItemIcon>
-                                          {/*<ListItemText>Cut</ListItemText>*/}
                                       </MenuItem>
                                       <MenuItem>
                                           <ListItemIcon>
@@ -284,15 +282,13 @@ export const HomePage = () => {
                                                   <FeedIcon style={{color: 'white'}} fontSize="large" />
                                               </CustomTooltip>
                                           </ListItemIcon>
-                                          {/*<ListItemText>Copy</ListItemText>*/}
                                       </MenuItem>
                                       <MenuItem>
                                           <ListItemIcon>
                                               <CustomTooltip title="WORKS" placement="right">
-                                                  <SourceIcon style={{color: 'white'}} fontSize="large" />
+                                                  <CodeIcon style={{color: 'white'}} fontSize="large" />
                                               </CustomTooltip>
                                           </ListItemIcon>
-                                          {/*<ListItemText>Paste</ListItemText>*/}
                                       </MenuItem>
                                       {/*<Divider />*/}
 
@@ -301,9 +297,30 @@ export const HomePage = () => {
                           </div>
                       </Grid2>
                       <Grid2 size={{xs: 12, sm: 12, md: 5, lg: 5}}>
-                          <div className={'base-card'}></div>
+                              <Card className={'base-card'} sx={{ maxWidth: '100%', height: '80vh '}}>
+                                  <CardMedia
+                                      component="img"
+                                      alt="green iguana"
+                                      height="50%"
+                                      image={avatar}
+                                  />
+                                  <CardContent>
+                                      <Typography gutterBottom variant="h5" component="div">
+                                          Lizard
+                                      </Typography>
+                                      <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                                          Lizards are a widespread group of squamate reptiles, with over 6,000
+                                          species, ranging across all continents except Antarctica
+                                      </Typography>
+                                  </CardContent>
+                                  <CardActions>
+                                      <Button size="small">Share</Button>
+                                      <Button size="small">Learn More</Button>
+                                  </CardActions>
+                              </Card>
+
                       </Grid2>
-                      <Grid2 size={{xs: 12, sm: 12, md: 5, lg: 5}}>
+                      <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}}>
                           <div className={'detail-card'}></div>
                       </Grid2>
                   </Grid2>
