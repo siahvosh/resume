@@ -404,36 +404,31 @@ export const HomePage = () => {
                                   }}/>
                                   <Grid2 container>
                                       <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem', borderRight: '1px solid #2f2f33'}}>
-                                          <span style={{color: 'white'}}>I am Ryan Adlard, web designer from USA, California. I have rich experience in web site design and building and customization, also I am good at wordpress. I love to talk with you about our unique.</span>
+                                          <div style={{display: 'flex', flexDirection: 'column', gap: 10}}>
+                                              <span style={{color: 'white',fontWeight: 800}}> At Derak Cloud</span>
+                                              <span style={{color: '#EDFF20FF', fontSize: '12px', border: '2px solid #EDFF20FF', padding: '0.2rem', borderRadius: '5px', width: '145px'}}> August 2022 - March 2025</span>
+                                              <span style={{color: 'white', fontWeight: 100}}>Designed and implemented a fully responsive user and admin panel at Derak Cloud, ensuring optimal usability across all devices and screen sizes. This included making the user dashboard, purchase and renewal workflows fully responsive, as well as adapting key admin panel features for mobile access, enabling administrators to manage user needs efficiently in any situation.</span>
+                                          </div>
                                       </Grid2>
-                                      <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-around', color: 'white'}}>
-                                          <div style={{justifyContent: 'space-between', display: 'flex'}}>
-                                              <span style={{color: '#EDFF20'}}> Age :</span>
-                                              <span> 30</span>
+                                      <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem',}}>
+                                          <div style={{display: 'flex', flexDirection: 'column', gap: 10}}>
+                                              <span style={{color: 'white',fontWeight: 800}}> At Rayan Pars</span>
+                                              <span style={{color: '#EDFF20FF', fontSize: '12px', border: '2px solid #EDFF20FF', padding: '0.2rem', borderRadius: '5px', width: '145px'}}> May 2025 – October 2025</span>
+                                              <span style={{color: 'white', fontWeight: 100}}>
+                                                  Developed a fully responsive company website with parallax scrolling, delivering a smooth and engaging experience across all devices and screen sizes.
+                                              </span>
                                           </div>
-                                          <Divider sx={{
-                                              backgroundColor: '#53535b',
-                                              opacity: 0.5,
-                                          }}/>
-                                          <div style={{justifyContent: 'space-between', display: 'flex'}}>
-                                              <div style={{color: '#EDFF20'}}>Residence :</div>
-                                              <div >Iran</div>
+                                      </Grid2>
+                                      <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem', borderRight: '1px solid #2f2f33'}}>
+                                          <div style={{display: 'flex', flexDirection: 'column', gap: 10}}>
+                                              <span style={{color: 'white', fontWeight: 100}}>Designed and implemented a fully responsive user and admin panel at Derak Cloud, ensuring optimal usability across all devices and screen sizes. This included making the user dashboard, purchase and renewal workflows fully responsive, as well as adapting key admin panel features for mobile access, enabling administrators to manage user needs efficiently in any situation.</span>
                                           </div>
-                                          <Divider sx={{
-                                              backgroundColor: '#53535b',
-                                              opacity: 0.5,
-                                          }}/>
-                                          <div style={{justifyContent: 'space-between', display: 'flex'}}>
-                                              <div style={{color: '#EDFF20'}}>Freelance :</div>
-                                              <div>Available</div>
-                                          </div>
-                                          <Divider sx={{
-                                              backgroundColor: '#53535b',
-                                              opacity: 0.5,
-                                          }}/>
-                                          <div style={{justifyContent: 'space-between', display: 'flex'}}>
-                                              <div style={{color: '#EDFF20'}}>Address :</div>
-                                              <div>Shiraz</div>
+                                      </Grid2>
+                                      <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem',}}>
+                                          <div style={{display: 'flex', flexDirection: 'column', gap: 10}}>
+                                              <span style={{color: 'white', fontWeight: 100}}>
+                                                  Developed a fully responsive company website with parallax scrolling, delivering a smooth and engaging experience across all devices and screen sizes.
+                                              </span>
                                           </div>
                                       </Grid2>
                                   </Grid2>
