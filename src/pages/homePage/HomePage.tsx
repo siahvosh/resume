@@ -7,12 +7,14 @@ import {
     ListItemIcon,
     ListItemText,
     MenuList,
-    Paper,
+    Paper, Tooltip,
     Typography
 } from "@mui/material";
 import {AnimatePresence, motion} from "framer-motion";
 import {useEffect, useRef, useState} from "react";
 import AlertDialog from '../../component/dialog/experience'
+import { styled } from '@mui/material/styles';
+import { tooltipClasses } from '@mui/material/Tooltip';
 import Lottie from "lottie-react";
 
 
@@ -29,6 +31,10 @@ import rock2 from '../../assets/r2.png'
 import rock3 from '../../assets/r3.png'
 import rock4 from '../../assets/rock2.png'
 
+
+import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import FeedIcon from '@mui/icons-material/Feed';
+import SourceIcon from '@mui/icons-material/Source';
 import animationData from "../../lottie/circle.json";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -46,6 +52,21 @@ import MenuItem from "@mui/material/MenuItem";
 
 
 export const HomePage = () => {
+    const CustomTooltip = styled(({ className, ...props }) => (
+        <Tooltip {...props} arrow classes={{ popper: className }} />
+    ))(() => ({
+        [`& .${tooltipClasses.tooltip}`]: {
+            backgroundColor: '#fa0b0b',
+            color: '#fff',
+            fontSize: '12px',
+            borderRadius: '14px',
+        },
+        [`& .${tooltipClasses.arrow}`]: {
+            color: '#f10404',
+        },
+    }));
+
+
     const dialogText = [
         {
             title: 'At Derak Cloud',
@@ -247,25 +268,31 @@ export const HomePage = () => {
                   <Grid2 container>
                       <Grid2 size={{xs: 12, sm: 12, md: 2, lg: 2}}>
                           <div className={'bar'}>
-                              <Paper sx={{  maxWidth: '100%', background: 'transparent', color: 'white' }}>
+                              <Paper className={'paper-style'} sx={{border: '1px solid gray', width: 65 }}>
                                   <MenuList>
                                       <MenuItem>
                                           <ListItemIcon>
-                                              <ContentCut style={{color: 'white'}} fontSize="small" />
+                                              <CustomTooltip title="ABOUT" placement="right">
+                                                  <PermIdentityIcon style={{color: 'white'}} fontSize="large" />
+                                              </CustomTooltip>
                                           </ListItemIcon>
-                                          <ListItemText>Cut</ListItemText>
+                                          {/*<ListItemText>Cut</ListItemText>*/}
                                       </MenuItem>
                                       <MenuItem>
                                           <ListItemIcon>
-                                              <ContentCopy style={{color: 'white'}} fontSize="small" />
+                                              <CustomTooltip title="RESUME" placement="right">
+                                                  <FeedIcon style={{color: 'white'}} fontSize="large" />
+                                              </CustomTooltip>
                                           </ListItemIcon>
-                                          <ListItemText>Copy</ListItemText>
+                                          {/*<ListItemText>Copy</ListItemText>*/}
                                       </MenuItem>
                                       <MenuItem>
                                           <ListItemIcon>
-                                              <ContentPaste style={{color: 'white'}} fontSize="small" />
+                                              <CustomTooltip title="WORKS" placement="right">
+                                                  <SourceIcon style={{color: 'white'}} fontSize="large" />
+                                              </CustomTooltip>
                                           </ListItemIcon>
-                                          <ListItemText>Paste</ListItemText>
+                                          {/*<ListItemText>Paste</ListItemText>*/}
                                       </MenuItem>
                                       {/*<Divider />*/}
 

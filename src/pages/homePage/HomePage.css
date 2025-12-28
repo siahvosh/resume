@@ -31,6 +31,12 @@
     border: 2px solid red;
     /*width: 100px;*/
 }
+
+
+.paper-style{
+    background: #171616 !important;
+    border-radius: 20px !important;
+}
 .base-card{
     border: 2px solid blue;
 }
