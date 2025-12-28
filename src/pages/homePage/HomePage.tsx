@@ -304,18 +304,22 @@ export const HomePage = () => {
                                       height="50%"
                                       image={avatar}
                                   />
-                                  <CardContent>
-                                      <Typography gutterBottom variant="h5" component="div">
-                                          Lizard
+                                  <CardContent style={{height: '40%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+                                      <Typography className={'title-card'}  >
+                                          Siavash Miralikhani
                                       </Typography>
-                                      <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                                          Lizards are a widespread group of squamate reptiles, with over 6,000
-                                          species, ranging across all continents except Antarctica
+                                      <Typography className={'body-card'} sx={{ color: 'text.secondary' }}>
+                                           FRONT END DEVELOPER
+                                      </Typography>
+                                      <Typography sx={{ color: 'text.primary' }}>
+                                          <GitHubIcon />
+                                          <LinkedInIcon />
+                                          <InstagramIcon />
                                       </Typography>
                                   </CardContent>
-                                  <CardActions>
-                                      <Button size="small">Share</Button>
-                                      <Button size="small">Learn More</Button>
+                                  <CardActions style={{border :'2px solid red'}}>
+                                      <span >fsdfdsfd</span>
+                                      <span>Learn More</span>
                                   </CardActions>
                               </Card>
 

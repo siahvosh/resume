@@ -35,15 +35,27 @@
     border-radius: 20px !important;
 }
 .base-card{
-    border: 2px solid blue;
+    /*border: 2px solid blue;*/
     height: 80vh;
 }
+
+
+
 .detail-card{
-    border: 2px solid green;
+    /*border: 2px solid green;*/
     height: 75vh;
 
 }
 
+
+.title-card{
+    font-weight: 800 !important;
+    font-size: clamp(35px, 3vw, 4vw) !important;
+}
+.body-card{
+    font-weight: 500 !important;
+    font-size: clamp(15px, 0.5rem, 0.5vw) !important;
+}
 
 .lottie{
     width: 80vw;
