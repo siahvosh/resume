@@ -20,6 +20,7 @@
     /*border: 2px solid red;*/
     width: 95vw;
     height: 80vh;
+
 }
 
 .bar{
@@ -78,9 +79,10 @@
 }
 
 .lottie{
-    width: 45vw;
-    height: 45vh;
+    width: 30vw;
+    height: 25vh;
     position: absolute;
+    opacity: 0.5;
 }
 .card{
     /*border: 2px solid gray;*/
@@ -476,6 +478,9 @@ a:hover{
         width: auto;
         top: -10%;
         margin-right:15vw;
+    }
+    .resume-container{
+        width: 70vw;
     }
 }
 

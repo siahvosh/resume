@@ -485,26 +485,24 @@ export const HomePage = () => {
                                               >
                                                 {derakExperience.period}
                                               </span>
-                                              <Divider
-                                                  sx={{
-                                                      backgroundColor: '#53535b',
-                                                      opacity: 0.5,
-                                                  }}
-                                              />
-                                              <Grid2 container spacing={5}>
+                                              {/*<Divider*/}
+                                              {/*    sx={{*/}
+                                              {/*        backgroundColor: '#53535b',*/}
+                                              {/*        opacity: 0.5,*/}
+                                              {/*    }}*/}
+                                              {/*/>*/}
+                                              <Grid2 container spacing={5} marginTop={3}>
                                               {derakExperience.data.map((text, index) => (
                                                   <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} key={index}>
                                                       <span style={{ color: 'white', fontWeight: 100, display: 'inline-flex' }}>
                                                            <CircleIcon sx={{width: '10px', color: '#EDFF20FF'}}/>
                                                         <span> {text.description}</span>
                                                       </span>
-                                                      <Divider
-                                                          sx={{
+                                                      <Divider sx={{
                                                               backgroundColor: '#53535b',
                                                               opacity: 0.5,
                                                               margin: '1rem',
-                                                          }}
-                                                      />
+                                                          }}/>
                                                   </Grid2>
 
                                               ))}
