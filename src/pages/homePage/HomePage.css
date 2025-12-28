@@ -14,6 +14,31 @@
     align-items: center;
     display: flex;
 }
+
+
+.resume-container{
+    border: 2px solid red;
+    width: 80vw;
+    height: 80vh;
+}
+
+.bar{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid red;
+    /*width: 100px;*/
+}
+.base-card{
+    border: 2px solid blue;
+}
+.detail-card{
+    border: 2px solid green;
+}
+
+
 .lottie{
     width: 80vw;
     height: 100vh;
@@ -315,11 +340,13 @@ a:hover{
 }
 
 .phone-img {
+    /*animation: floatSoft 4s ease-in-out infinite;*/
+    /*will-change: transform;*/
     position: absolute;
-    top: 0;
+    top: 5vh;
     right: -100px;
-    margin-right: 4vw;
-    height: 65vh;
+    margin-right: 8vw;
+    height: 55vh;
     width: auto;
 }
 
@@ -327,8 +354,9 @@ a:hover{
     animation: floatSoft 4s ease-in-out infinite;
     will-change: transform;
     position: absolute;
-    top: 5%;
-    right: 15%;
+    filter: drop-shadow(1px 1px 2rem #1c1c1c);
+    top: 10vh;
+    right: 16vw;
     z-index: -1;
     margin-right: 2vw;
 }
@@ -343,15 +371,16 @@ a:hover{
     position: absolute;
     animation: floatRock2 3s ease-in-out infinite;
     will-change: transform;
-    top: 30vh;
-    right: 33vw;
+    top: 35vh;
+    right: 35vw;
     margin-right: 2vw;
     z-index: -1;
+    filter: drop-shadow(5px 5px 1rem #151515)
 }
 
 @keyframes floatRock2 {
     0%   { transform: translateY(0) }
-    50%  { transform: translateY(10px) }
+    50%  { transform: translateY(30px) }
     100% { transform: translateY(0) }
 }
 
@@ -359,9 +388,10 @@ a:hover{
     position: absolute;
     animation: floatRock2 3s ease-in-out infinite;
     will-change: transform;
-    top: 45vh;
-    right: 10vw;
+    top: 50vh;
+    right: 18vw;
     margin-right: 2vw;
+    filter: drop-shadow(1px 1px 2rem #1c1c1c)
 }
 
 .worker {

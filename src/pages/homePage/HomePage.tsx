@@ -1,4 +1,15 @@
-import {Box, Button, Grid2, ListItem} from "@mui/material";
+import {
+    Box,
+    Button,
+    Divider,
+    Grid2,
+    ListItem,
+    ListItemIcon,
+    ListItemText,
+    MenuList,
+    Paper,
+    Typography
+} from "@mui/material";
 import {AnimatePresence, motion} from "framer-motion";
 import {useEffect, useRef, useState} from "react";
 import AlertDialog from '../../component/dialog/experience'
@@ -30,6 +41,8 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import './HomePage.css'
 import './../../App.css'
 import * as React from "react";
+import {Cloud, ContentCopy, ContentCut, ContentPaste} from "@mui/icons-material";
+import MenuItem from "@mui/material/MenuItem";
 
 
 export const HomePage = () => {
@@ -230,39 +243,77 @@ export const HomePage = () => {
     return (
         <>
           <div className={'cont-1'}>
-              <Lottie
-                  animationData={animationData}
-                  loop
-                  autoplay
-                  className={'lottie'}
-              />
+              <div className={'resume-container'}>
+                  <Grid2 container>
+                      <Grid2 size={{xs: 12, sm: 12, md: 2, lg: 2}}>
+                          <div className={'bar'}>
+                              <Paper sx={{  maxWidth: '100%', background: 'transparent', color: 'white' }}>
+                                  <MenuList>
+                                      <MenuItem>
+                                          <ListItemIcon>
+                                              <ContentCut style={{color: 'white'}} fontSize="small" />
+                                          </ListItemIcon>
+                                          <ListItemText>Cut</ListItemText>
+                                      </MenuItem>
+                                      <MenuItem>
+                                          <ListItemIcon>
+                                              <ContentCopy style={{color: 'white'}} fontSize="small" />
+                                          </ListItemIcon>
+                                          <ListItemText>Copy</ListItemText>
+                                      </MenuItem>
+                                      <MenuItem>
+                                          <ListItemIcon>
+                                              <ContentPaste style={{color: 'white'}} fontSize="small" />
+                                          </ListItemIcon>
+                                          <ListItemText>Paste</ListItemText>
+                                      </MenuItem>
+                                      {/*<Divider />*/}
 
-              <div className={'card'}>
-                  <span className={'front-end'}>FRONT-END <span className={'dev'} >DEVELOPER</span></span>
-                  <span className={'name'}>SIAVASH MIRALIKHANI</span>
-                  <div className={'contact'}>
-                      <CallIcon style={{fontSize: "clamp(12px, 2vw, 1.8vw)"}}/>
-                         <a href="tel:+989124949401"> +98 912 49 49 401 | </a>
-                      <EmailIcon style={{fontSize: "clamp(12px, 2vw,  1.8vw)"}}/>
-                      <a
-                          href="https://mail.google.com/mail/?view=cm&fs=1&to=GTSIAVASH@gmail.com&su=Contact%20from%20website&body=Hi%20Siavash,%0A%0AI'm%20contacting%20you%20through%20your%20website."
-                          target="_blank"
-                          rel="noopener noreferrer"
-                      >
-                          GTSIAVASH@gmail.com
-                      </a>
-                      <LocationOnIcon style={{fontSize: "clamp(12px, 2vw, 1.8vw)"}}/>
-                          <a
-                              href="https://www.google.com/maps/search/?api=1&query=Shiraz"
-                               target="_blank"
-                               rel="noopener noreferrer">SHIRAZ</a>
-                  </div>
-                  <div className={'social'}>
-                      <GitHubIcon sx={{fontSize: '30px'}}/>
-                      <LinkedInIcon sx={{fontSize: '30px'}}/>
-                      <InstagramIcon sx={{fontSize: '30px'}}/>
-                  </div>
+                                  </MenuList>
+                              </Paper>
+                          </div>
+                      </Grid2>
+                      <Grid2 size={{xs: 12, sm: 12, md: 5, lg: 5}}>
+                          <div className={'base-card'}></div>
+                      </Grid2>
+                      <Grid2 size={{xs: 12, sm: 12, md: 5, lg: 5}}>
+                          <div className={'detail-card'}></div>
+                      </Grid2>
+                  </Grid2>
               </div>
+              {/*<Lottie*/}
+              {/*    animationData={animationData}*/}
+              {/*    loop*/}
+              {/*    autoplay*/}
+              {/*    className={'lottie'}*/}
+              {/*/>*/}
+              
+              {/*<div className={'card'}>*/}
+              {/*    <span className={'front-end'}>FRONT-END <span className={'dev'} >DEVELOPER</span></span>*/}
+              {/*    <span className={'name'}>SIAVASH MIRALIKHANI</span>*/}
+              {/*    <div className={'contact'}>*/}
+              {/*        <CallIcon style={{fontSize: "clamp(12px, 2vw, 1.8vw)"}}/>*/}
+              {/*           <a href="tel:+989124949401"> +98 912 49 49 401 | </a>*/}
+              {/*        <EmailIcon style={{fontSize: "clamp(12px, 2vw,  1.8vw)"}}/>*/}
+              {/*        <a*/}
+              {/*            href="https://mail.google.com/mail/?view=cm&fs=1&to=GTSIAVASH@gmail.com&su=Contact%20from%20website&body=Hi%20Siavash,%0A%0AI'm%20contacting%20you%20through%20your%20website."*/}
+              {/*            target="_blank"*/}
+              {/*            rel="noopener noreferrer"*/}
+              {/*        >*/}
+              {/*            GTSIAVASH@gmail.com*/}
+              {/*        </a>*/}
+              {/*        <LocationOnIcon style={{fontSize: "clamp(12px, 2vw, 1.8vw)"}}/>*/}
+              {/*            <a*/}
+              {/*                href="https://www.google.com/maps/search/?api=1&query=Shiraz"*/}
+              {/*                 target="_blank"*/}
+              {/*                 rel="noopener noreferrer">SHIRAZ</a>*/}
+              {/*    </div>*/}
+              {/*    <div className={'social'}>*/}
+              {/*        <GitHubIcon sx={{fontSize: '30px'}}/>*/}
+              {/*        <LinkedInIcon sx={{fontSize: '30px'}}/>*/}
+              {/*        <InstagramIcon sx={{fontSize: '30px'}}/>*/}
+              {/*    </div>*/}
+              {/*</div>*/}
           </div>
           <div className={'middle'}>
               <div className={'middle-text'}>
@@ -335,6 +386,7 @@ export const HomePage = () => {
                                         <div className="rock-1">
                                             <motion.img
                                                 src={rock1}
+                                                style={{width: '80px'}}
                                                 initial={{ y: 800, x: '0vw', opacity: 1 }}
                                                 animate={{ y: 0, opacity: 1 }}
                                                 exit={{ y: 800, x: '0vw', opacity: 1 }}
@@ -344,6 +396,7 @@ export const HomePage = () => {
                                         <div className="rock-2">
                                             <motion.img
                                                 src={`${rock2}`}
+                                                style={{width: '60px'}}
                                                 transition={{duration: 1.1, delay: 0.4 }}
                                                 initial={{ y: '50vh', opacity: 1 }}
                                                 animate={{ y: '0vw', opacity: 1 }}
@@ -352,8 +405,8 @@ export const HomePage = () => {
                                         </div>
                                         <div className="rock-3">
                                               <motion.img
-                                                  className=""
                                                   src={`${rock3}`}
+                                                  style={{width: '70px'}}
                                                   transition={{duration: 1.1, delay: 0.4 }}
                                                   initial={{ y: '50vh', opacity: 1 }}
                                                   animate={{ y: '0vw', opacity: 1,}}
