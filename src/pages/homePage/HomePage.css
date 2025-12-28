@@ -67,6 +67,13 @@
     scrollbar-width: thin;
 }
 
+.typography{
+    margin-top: 1rem !important;
+    font-size: 26px !important;
+    font-weight: 800 !important;
+    margin-left: 1rem !important;
+    color: #FFFFFF;
+}
 
 
 .title-card{
