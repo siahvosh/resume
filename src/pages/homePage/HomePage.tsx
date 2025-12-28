@@ -38,6 +38,7 @@ import CodeIcon from '@mui/icons-material/Code';import animationData from "../..
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import CircleIcon from '@mui/icons-material/Circle';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -51,6 +52,64 @@ import MenuItem from "@mui/material/MenuItem";
 
 
 export const HomePage = () => {
+    const derakExperience =
+        {
+            company: 'DERAK CLOUD',
+            period: 'August 2022 - March 2025',
+            data: [
+                {
+                    title: 'Responsive Web Development',
+                    description:
+                        'Design and development of a responsive version of the company website to deliver an improved user experience across mobile devices.',
+                },
+                {
+                    title: 'Mobile Feature Expansion',
+                    description:
+                        'Added key functional sections, including service purchasing and renewal, optimized specifically for mobile devices.',
+                },
+                {
+                    title: 'Billing Optimization',
+                    description:
+                        'Optimized the billing section to enhance performance and improve overall user experience on mobile platforms.',
+                },
+                {
+                    title: 'Advanced Filtering Systems',
+                    description:
+                        'Implemented advanced filtering mechanisms tailored to the custom requirements of enterprise-level clients.',
+                },
+                {
+                    title: 'Analytics & Data Visualization',
+                    description:
+                        'Designed and developed analytical charts and data visualizations for finance, human resources, and administrative support teams.',
+                },
+                {
+                    title: 'Financial & Technical R&D',
+                    description:
+                        'Conducted research and development on financial and technical data analysis to present insights effectively within the user interface.',
+                },
+                {
+                    title: 'Front-End Refactoring & Optimization',
+                    description:
+                        'Refactored and optimized critical sections of the front-end codebase, resolving bugs, removing redundant logic, and improving load times by up to 40%.',
+                },
+                {
+                    title: 'Onboarding System Design',
+                    description:
+                        'Designed and implemented the onboarding process for new team members in the front-end and UI/UX departments.',
+                },
+                {
+                    title: 'Team Mentorship & Knowledge Transfer',
+                    description:
+                        'Mentored and trained new employees by introducing project components, development workflows, and coding standards to accelerate onboarding and productivity.',
+                },
+                {
+                    title: 'Developer Training & Enablement',
+                    description:
+                        'Provided hands-on training and experience transfer to reduce time-to-productivity for newly onboarded team members.',
+                },
+            ],
+        }
+
     const CustomTooltip = styled(({ className, ...props }) => (
         <Tooltip {...props} arrow classes={{ popper: className }} />
     ))(() => ({
@@ -403,34 +462,72 @@ export const HomePage = () => {
                                       opacity: 0.5,
                                   }}/>
                                   <Grid2 container>
-                                      <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem', borderRight: '1px solid #2f2f33'}}>
+                                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}} style={{padding: '1rem'}}>
                                           <div style={{display: 'flex', flexDirection: 'column', gap: 10}}>
-                                              <span style={{color: 'white',fontWeight: 800}}> At Derak Cloud</span>
-                                              <span style={{color: '#EDFF20FF', fontSize: '12px', border: '2px solid #EDFF20FF', padding: '0.2rem', borderRadius: '5px', width: '145px'}}> August 2022 - March 2025</span>
-                                              <span style={{color: 'white', fontWeight: 100}}>Designed and implemented a fully responsive user and admin panel at Derak Cloud, ensuring optimal usability across all devices and screen sizes. This included making the user dashboard, purchase and renewal workflows fully responsive, as well as adapting key admin panel features for mobile access, enabling administrators to manage user needs efficiently in any situation.</span>
+                                              <span
+                                                  style={{
+                                                      color: '#ffffff',
+                                                      fontSize: '16px',
+                                                      fontWeight: 800
+                                                  }}
+                                              >
+                                                {derakExperience.company}
+                                              </span>
+                                              <span
+                                                  style={{
+                                                      color: '#EDFF20FF',
+                                                      fontSize: '8px',
+                                                      border: '2px solid #EDFF20FF',
+                                                      padding: '0.2rem',
+                                                      borderRadius: '5px',
+                                                      width: 'fit-content',
+                                                  }}
+                                              >
+                                                {derakExperience.period}
+                                              </span>
+                                              <Divider
+                                                  sx={{
+                                                      backgroundColor: '#53535b',
+                                                      opacity: 0.5,
+                                                  }}
+                                              />
+                                              <Grid2 container spacing={5}>
+                                              {derakExperience.data.map((text, index) => (
+                                                  <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} key={index}>
+                                                      <span style={{ color: 'white', fontWeight: 100, display: 'inline-flex' }}>
+                                                           <CircleIcon sx={{width: '10px', color: '#EDFF20FF'}}/>
+                                                        <span> {text.description}</span>
+                                                      </span>
+                                                      <Divider
+                                                          sx={{
+                                                              backgroundColor: '#53535b',
+                                                              opacity: 0.5,
+                                                              margin: '1rem',
+                                                          }}
+                                                      />
+                                                  </Grid2>
+
+                                              ))}
+                                              </Grid2>
                                           </div>
+
                                       </Grid2>
-                                      <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem',}}>
+                                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}} style={{padding: '1rem',}}>
                                           <div style={{display: 'flex', flexDirection: 'column', gap: 10}}>
-                                              <span style={{color: 'white',fontWeight: 800}}> At Rayan Pars</span>
-                                              <span style={{color: '#EDFF20FF', fontSize: '12px', border: '2px solid #EDFF20FF', padding: '0.2rem', borderRadius: '5px', width: '145px'}}> May 2025 – October 2025</span>
+                                              <span style={{color: 'white',fontWeight: 800}}>RAYAN PARS</span>
+                                              <span style={{color: '#EDFF20FF', fontSize: '8px', border: '2px solid #EDFF20FF', padding: '0.2rem', borderRadius: '5px', width: '100px'}}> May 2025 – October 2025</span>
+                                              <Divider sx={{
+                                                  backgroundColor: '#53535b',
+                                                  opacity: 0.5,
+                                              }}/>
                                               <span style={{color: 'white', fontWeight: 100}}>
                                                   Developed a fully responsive company website with parallax scrolling, delivering a smooth and engaging experience across all devices and screen sizes.
                                               </span>
+
+
                                           </div>
                                       </Grid2>
-                                      <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem', borderRight: '1px solid #2f2f33'}}>
-                                          <div style={{display: 'flex', flexDirection: 'column', gap: 10}}>
-                                              <span style={{color: 'white', fontWeight: 100}}>Designed and implemented a fully responsive user and admin panel at Derak Cloud, ensuring optimal usability across all devices and screen sizes. This included making the user dashboard, purchase and renewal workflows fully responsive, as well as adapting key admin panel features for mobile access, enabling administrators to manage user needs efficiently in any situation.</span>
-                                          </div>
-                                      </Grid2>
-                                      <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem',}}>
-                                          <div style={{display: 'flex', flexDirection: 'column', gap: 10}}>
-                                              <span style={{color: 'white', fontWeight: 100}}>
-                                                  Developed a fully responsive company website with parallax scrolling, delivering a smooth and engaging experience across all devices and screen sizes.
-                                              </span>
-                                          </div>
-                                      </Grid2>
+
                                   </Grid2>
 
 

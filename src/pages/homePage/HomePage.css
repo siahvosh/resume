@@ -59,7 +59,8 @@
 .detail-card{
     height: 75vh;
     background: #191919 !important;
-    /*border: 2px solid #53535b;*/
+    border: 1px solid #53535b;
+    border-radius: 12px !important;
     overflow-Y: auto !important;
     scrollbar-color: #000000 #2f2f2f;
     scrollbar-width: thin;
