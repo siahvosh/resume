@@ -110,6 +110,16 @@ export const HomePage = () => {
             ],
         }
 
+    const parsExperience = {
+        company: 'RAYAN PARS',
+        period: 'May 2025 – October 2025',
+        data : [
+            {title : 'fsdf', description: 'Design and development of CRM and BI Dashboard website with Parallax Scroll and interactive animations. '},
+            {title : 'sdfds', description: 'Development of the business intelligence analytics dashboard for sales, purchase, human resource and customer finance team'},
+            {title : 'dsfdsf', description: 'Implementation of live charts and dashboards. There are manual KPIs and AI-generated KPIs with real-world data of the different businesses '},
+        ]
+    }
+
     const CustomTooltip = styled(({ className, ...props }) => (
         <Tooltip {...props} arrow classes={{ popper: className }} />
     ))(() => ({
@@ -398,8 +408,8 @@ export const HomePage = () => {
                       <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}}>
                           <Card className={'detail-card'}>
                               <CardContent>
-                                  <Typography gutterBottom sx={{  fontSize: 22, fontWeight: 800, marginLeft: '1rem', color: '#EDFF20' }}>
-                                      About Me
+                                  <Typography gutterBottom sx={{  fontSize: 26, fontWeight: 800, marginLeft: '1rem', color: '#ffff' }}>
+                                      <span style={{color: '#EDFF20FF'}}> A</span>bout Me
                                   </Typography>
                                   <Divider sx={{
                                       backgroundColor: '#53535b',
@@ -441,8 +451,8 @@ export const HomePage = () => {
                                     </Grid2>
                                   </Grid2>
 
-                                  <Typography gutterBottom sx={{ marginTop: '3rem',  fontSize: 22, fontWeight: 800, marginLeft: '1rem', color: '#EDFF20' }}>
-                                      Summary
+                                  <Typography gutterBottom sx={{ marginTop: '3rem',  fontSize: 26, fontWeight: 800, marginLeft: '1rem', color: '#ffff' }}>
+                                      <span style={{color: '#EDFF20FF'}}> S</span>ummary
                                   </Typography>
                                   <Divider sx={{
                                       backgroundColor: '#53535b',
@@ -454,8 +464,8 @@ export const HomePage = () => {
                                       </span>
                                   </Grid2>
 
-                                  <Typography gutterBottom sx={{ marginTop: '3rem',  fontSize: 22, fontWeight: 800, marginLeft: '1rem', color: '#EDFF20' }}>
-                                      Experience
+                                  <Typography gutterBottom sx={{ marginTop: '3rem',  fontSize: 26, fontWeight: 800, marginLeft: '1rem', color: '#ffff' }}>
+                                      <span style={{color: '#EDFF20FF'}}> E</span>xperience
                                   </Typography>
                                   <Divider sx={{
                                       backgroundColor: '#53535b',
@@ -464,48 +474,34 @@ export const HomePage = () => {
                                   <Grid2 container>
                                       <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}} style={{padding: '1rem'}}>
                                           <div style={{display: 'flex', flexDirection: 'column', gap: 10}}>
-                                              <span
-                                                  style={{
-                                                      color: '#ffffff',
-                                                      fontSize: '16px',
-                                                      fontWeight: 800
-                                                  }}
-                                              >
+                                              <span style={{color: '#ffffff', fontSize: '16px', fontWeight: 800}}>
                                                 {derakExperience.company}
                                               </span>
-                                              <span
-                                                  style={{
+                                              <span style={{
                                                       color: '#EDFF20FF',
                                                       fontSize: '8px',
                                                       border: '2px solid #EDFF20FF',
                                                       padding: '0.2rem',
                                                       borderRadius: '5px',
                                                       width: 'fit-content',
-                                                  }}
-                                              >
+                                                  }}>
                                                 {derakExperience.period}
                                               </span>
-                                              {/*<Divider*/}
-                                              {/*    sx={{*/}
-                                              {/*        backgroundColor: '#53535b',*/}
-                                              {/*        opacity: 0.5,*/}
-                                              {/*    }}*/}
-                                              {/*/>*/}
                                               <Grid2 container spacing={5} marginTop={3}>
-                                              {derakExperience.data.map((text, index) => (
-                                                  <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} key={index}>
-                                                      <span style={{ color: 'white', fontWeight: 100, display: 'inline-flex' }}>
-                                                           <CircleIcon sx={{width: '10px', color: '#EDFF20FF'}}/>
-                                                        <span> {text.description}</span>
-                                                      </span>
-                                                      <Divider sx={{
-                                                              backgroundColor: '#53535b',
-                                                              opacity: 0.5,
-                                                              margin: '1rem',
-                                                          }}/>
-                                                  </Grid2>
+                                                  {derakExperience.data.map((text, index) => (
+                                                      <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} key={index}>
+                                                          <span style={{ color: 'white', fontWeight: 100, display: 'inline-flex' }}>
+                                                               <CircleIcon sx={{width: '10px', color: '#EDFF20FF'}}/>
+                                                            <span> {text.description}</span>
+                                                          </span>
+                                                          <Divider sx={{
+                                                                  backgroundColor: '#53535b',
+                                                                  opacity: 0.5,
+                                                                  margin: '1rem',
+                                                              }}/>
+                                                      </Grid2>
 
-                                              ))}
+                                                  ))}
                                               </Grid2>
                                           </div>
 
@@ -518,17 +514,25 @@ export const HomePage = () => {
                                                   backgroundColor: '#53535b',
                                                   opacity: 0.5,
                                               }}/>
-                                              <span style={{color: 'white', fontWeight: 100}}>
-                                                  Developed a fully responsive company website with parallax scrolling, delivering a smooth and engaging experience across all devices and screen sizes.
-                                              </span>
 
+                                              {parsExperience.data.map((text, index) => (
+                                                  <>
+                                                      <span style={{ color: 'white', fontWeight: 100, display: 'inline-flex' }}>
+                                                               <CircleIcon sx={{width: '10px', color: '#EDFF20FF'}}/>
+                                                            <span> {text.description}</span>
+                                                          </span>
+                                                      <Divider sx={{
+                                                          backgroundColor: '#53535b',
+                                                          opacity: 0.5,
+                                                          margin: '1rem',
+                                                      }}/>
+                                                  </>
+                                              ))}
 
                                           </div>
                                       </Grid2>
 
                                   </Grid2>
-
-
                               </CardContent>
                           </Card>
                       </Grid2>
