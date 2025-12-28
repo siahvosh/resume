@@ -304,14 +304,20 @@ export const HomePage = () => {
                                       height="50%"
                                       image={avatar}
                                   />
-                                  <CardContent style={{height: '40%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+                                  <CardContent className={'card-content'} style={{height: '40%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+                                      <Lottie
+                                          animationData={animationData}
+                                          loop
+                                          autoplay
+                                          className={'lottie'}
+                                      />
                                       <Typography className={'title-card'}  >
                                           Siavash Miralikhani
                                       </Typography>
-                                      <Typography className={'body-card'} sx={{ color: 'text.secondary' }}>
+                                      <Typography className={'body-card'} sx={{ color: 'text.light' }}>
                                            FRONT END DEVELOPER
                                       </Typography>
-                                      <Typography sx={{ color: 'text.primary' }}>
+                                      <Typography sx={{ color: 'text.light' }}>
                                           <GitHubIcon />
                                           <LinkedInIcon />
                                           <InstagramIcon />
