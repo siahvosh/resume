@@ -23,6 +23,9 @@ import img from "../../assets/phone1.png";
 import img2 from "../../assets/img2.png";
 import img3 from "../../assets/img3.png";
 import img4 from "../../assets/img4.png";
+import web1 from "../../assets/web1.jpg";
+import web2 from "../../assets/web2.jpg";
+import web3 from "../../assets/web3.jpg";
 import skater from '../../assets/2skater.png'
 import worker from '../../assets/grafiti-artist.png';
 import phone from '../../assets/iphone.png'
@@ -280,6 +283,7 @@ export const HomePage = () => {
                       <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}} style={{zIndex: '1'}}>
                           <BaseCard page={page} handlePage={handlePage}/>
                       </Grid2>
+
                       {/*//DetailCard*/}
                       <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}} style={{zIndex: '0'}}>
                           <AnimatePresence mode="popLayout">
@@ -299,11 +303,11 @@ export const HomePage = () => {
                                   <motion.div
                                       key="works"
                                       transition={{ duration: 0.8 }}
-                                      initial={{ x: '-30vw', opacity: 0 }}
+                                      initial={{ x: '-50vw', opacity: 0 }}
                                       animate={{ x: 0, opacity: 1 }}
-                                      exit={{ x: '-50vw', opacity: 0 }}
+                                      exit={{ x: '-30vw', opacity: 0 }}
                                   >
-                                      <DetailCard />
+                                      <WorksPage />
                                   </motion.div>
                               )}
                           </AnimatePresence>
@@ -924,4 +928,88 @@ const DetailCard = () => {
         </>
     )
 
+}
+
+
+const WorksPage = () =>{
+    return(
+        <Card className={'detail-card'}>
+            <CardContent>
+                <Typography gutterBottom  className={'typography'}>
+                    <span style={{color: '#EDFF20FF'}}>W</span>orks
+                </Typography>
+                <Divider sx={{
+                    backgroundColor: '#53535b',
+                    opacity: 0.5,
+                }}/>
+                <Grid2 container spacing={2}>
+                    <Grid2 size={{xs: 12, sm: 6, md: 6, lg: 6}} style={{color: 'white',display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <Card sx={{maxWidth: 345 , background: 'black', color: '#ffff'}}>
+                            <CardMedia
+                                component="img"
+                                alt="green iguana"
+                                height="140"
+                                image={web1}
+                            />
+                            <CardContent>
+                                <Typography variant="body2" sx={{ color: 'white' }}>
+                                    Lizards are a widespread group of squamate reptiles, with over 6,000
+                                    species, ranging across all continents except Antarctica
+                                </Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid2>
+                    <Grid2 size={{xs: 12, sm: 6, md: 6, lg: 6}} style={{color: 'white',display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <Card sx={{ maxWidth: 345 , background: 'transparent', color: 'white'}}>
+                            <CardMedia
+                                component="img"
+                                alt="green iguana"
+                                height="140"
+                                image={web2}
+                            />
+                            <CardContent>
+                                <Typography variant="body2" sx={{ color: 'white' }}>
+                                    Lizards are a widespread group of squamate reptiles, with over 6,000
+                                    species, ranging across all continents except Antarctica
+                                </Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid2>
+                    <Grid2 size={{xs: 12, sm: 6, md: 6, lg: 6}} style={{color: 'white',display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <Card sx={{ maxWidth: 345 , background: 'transparent', color: 'white'}}>
+                            <CardMedia
+                                component="img"
+                                alt="green iguana"
+                                height="140"
+                                image={web3}
+                            />
+                            <CardContent>
+                                <Typography variant="body2" sx={{ color: 'white' }}>
+                                    Lizards are a widespread group of squamate reptiles, with over 6,000
+                                    species, ranging across all continents except Antarctica
+                                </Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid2>
+                    <Grid2 size={{xs: 12, sm: 6, md: 6, lg: 6}} style={{color: 'white',display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <Card sx={{ maxWidth: 345 , background: 'transparent', color: 'white'}}>
+                            <CardMedia
+                                component="img"
+                                alt="green iguana"
+                                height="140"
+                                image={web2}
+                            />
+                            <CardContent>
+                                <Typography variant="body2" sx={{ color: 'white' }}>
+                                    Lizards are a widespread group of squamate reptiles, with over 6,000
+                                    species, ranging across all continents except Antarctica
+                                </Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid2>
+
+                </Grid2>
+            </CardContent>
+        </Card>
+    )
 }
