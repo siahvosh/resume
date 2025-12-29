@@ -404,8 +404,6 @@ export const HomePage = () => {
                                               </CustomTooltip>
                                           </ListItemIcon>
                                       </MenuItem>
-                                      {/*<Divider />*/}
-
                                   </MenuList>
                               </Paper>
                           </div>
@@ -690,195 +688,195 @@ export const HomePage = () => {
               {/*    </div>*/}
               {/*</div>*/}
           </div>
-          <div className={'middle'}>
-              <div className={'middle-text'}>
-                  <span className={'mid-text'}>
-                      SUMMARY
-                  </span>
-                  <h1 className={'mid-text-description'} >
-                        Front-End Developer with 3+ years of experience building responsive, user-friendly web applications using
-                        JavaScript, React (MUI), Vue2 (Vuetify), HTML, Bootstrap ,CSS. Skilled in translating UI/UX designs into highperformance interfaces. I am also highly responsible, detail-oriented, and skilled in project management,
-                        ensuring timely delivery of high-quality work.
-                  </h1>
-              </div>
-          </div>
-          <div className={'cont-2'}  ref={cont2Ref}>
-              <div className={'scroll-box'}>
-                  <Grid2 container spacing={1}>
-                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
-                          <div className={'experience-title-box'}>
-                             <span className={'experience-title'}>
-                                 EXPERIENCE
-                             </span>
-                          </div>
-                      </Grid2>
-                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
-                          <div className="container-animation">
-                              <AnimatePresence mode="wait">
-                                  {activeIndex === 0 && (
-                                      <motion.section
-                                          key="one"
-                                          className=""
-                                          initial={{ opacity: 0 }}
-                                          animate={{ opacity: 1 }}
-                                          exit={{ opacity: 1 }}
-                                      >
-                                        <div className={'side-1'}>
-                                            <motion.div
-                                                className="side-1-text"
-                                                transition={{duration: 1.2}}
-                                                initial={{ y: -100,opacity: 0 }}
-                                                animate={{ y: '0', opacity: 1 }}
-                                                exit={{ y: -100, opacity: 0 }}
-                                            >
-                                                <div className={'detail-text'}>
-                                                        <span>RESPONSIVE PAGE</span>
-                                                        <span>How do you make a website responsive</span>
-                                                        <Button color='white' variant={'text'} size={"small"} onClick={() => handleDialog(0, true)}>
-                                                            LEARN MORE
-                                                        </Button>
+          {/*<div className={'middle'}>*/}
+          {/*    <div className={'middle-text'}>*/}
+          {/*        <span className={'mid-text'}>*/}
+          {/*            SUMMARY*/}
+          {/*        </span>*/}
+          {/*        <h1 className={'mid-text-description'} >*/}
+          {/*              Front-End Developer with 3+ years of experience building responsive, user-friendly web applications using*/}
+          {/*              JavaScript, React (MUI), Vue2 (Vuetify), HTML, Bootstrap ,CSS. Skilled in translating UI/UX designs into highperformance interfaces. I am also highly responsible, detail-oriented, and skilled in project management,*/}
+          {/*              ensuring timely delivery of high-quality work.*/}
+          {/*        </h1>*/}
+          {/*    </div>*/}
+          {/*</div>*/}
+          {/*<div className={'cont-2'}  ref={cont2Ref}>*/}
+          {/*    <div className={'scroll-box'}>*/}
+          {/*        <Grid2 container spacing={1}>*/}
+          {/*            <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>*/}
+          {/*                <div className={'experience-title-box'}>*/}
+          {/*                   <span className={'experience-title'}>*/}
+          {/*                       EXPERIENCE*/}
+          {/*                   </span>*/}
+          {/*                </div>*/}
+          {/*            </Grid2>*/}
+          {/*            <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>*/}
+          {/*                <div className="container-animation">*/}
+          {/*                    <AnimatePresence mode="wait">*/}
+          {/*                        {activeIndex === 0 && (*/}
+          {/*                            <motion.section*/}
+          {/*                                key="one"*/}
+          {/*                                className=""*/}
+          {/*                                initial={{ opacity: 0 }}*/}
+          {/*                                animate={{ opacity: 1 }}*/}
+          {/*                                exit={{ opacity: 1 }}*/}
+          {/*                            >*/}
+          {/*                              <div className={'side-1'}>*/}
+          {/*                                  <motion.div*/}
+          {/*                                      className="side-1-text"*/}
+          {/*                                      transition={{duration: 1.2}}*/}
+          {/*                                      initial={{ y: -100,opacity: 0 }}*/}
+          {/*                                      animate={{ y: '0', opacity: 1 }}*/}
+          {/*                                      exit={{ y: -100, opacity: 0 }}*/}
+          {/*                                  >*/}
+          {/*                                      <div className={'detail-text'}>*/}
+          {/*                                              <span>RESPONSIVE PAGE</span>*/}
+          {/*                                              <span>How do you make a website responsive</span>*/}
+          {/*                                              <Button color='white' variant={'text'} size={"small"} onClick={() => handleDialog(0, true)}>*/}
+          {/*                                                  LEARN MORE*/}
+          {/*                                              </Button>*/}
 
-                                                    </div>
-                                            </motion.div>
-                                        </div>
-                                        <div className={'side-2'}>
-                                            <motion.div
-                                                className="img-1"
-                                                transition={{duration: 1.2 }}
-                                                initial={{ y: 700, opacity: 1 }}
-                                                animate={{ y: 0, opacity: 1 }}
-                                                exit={{ y: 500, opacity: 1 }}
-                                           />
-                                        </div>
-                                        <motion.img
-                                            className="phone-img"
-                                            src={`${phone}`}
-                                            transition={{duration: 1, delay: 0.3 }}
-                                            initial={{ y: 800 ,x: '0vw', opacity: 1 }}
-                                            animate={{ x: '0vw', opacity: 1, y: 0 }}
-                                            exit={{ y: 800,x: '0vw', opacity: 1 }}>
-                                        </motion.img>
-                                        <div className="rock-1">
-                                            <motion.img
-                                                src={rock1}
-                                                style={{width: '80px'}}
-                                                initial={{ y: 800, x: '0vw', opacity: 1 }}
-                                                animate={{ y: 0, opacity: 1 }}
-                                                exit={{ y: 800, x: '0vw', opacity: 1 }}
-                                                transition={{ duration: 1, delay: 0.4 }}
-                                            />
-                                        </div>
-                                        <div className="rock-2">
-                                            <motion.img
-                                                src={`${rock2}`}
-                                                style={{width: '60px'}}
-                                                transition={{duration: 1.1, delay: 0.4 }}
-                                                initial={{ y: '50vh', opacity: 1 }}
-                                                animate={{ y: '0vw', opacity: 1 }}
-                                                exit={{ y: '50vh', opacity: 1 }}>
-                                            </motion.img>
-                                        </div>
-                                        <div className="rock-3">
-                                              <motion.img
-                                                  src={`${rock3}`}
-                                                  style={{width: '70px'}}
-                                                  transition={{duration: 1.1, delay: 0.4 }}
-                                                  initial={{ y: '50vh', opacity: 1 }}
-                                                  animate={{ y: '0vw', opacity: 1,}}
-                                                  exit={{ y: '50vh', opacity: 1 }}>
-                                              </motion.img>
-                                          </div>
-                                        {/*</div>*/}
-                                      </motion.section>
-                                  )}
-                                  {activeIndex === 1 && (
-                                      <motion.section
-                                          key="two"
-                                          className=""
-                                          initial={{ opacity: 0 }}
-                                          animate={{ opacity: 1 }}
-                                          exit={{ opacity: 1 }}
-                                      >
-                                          <div className={'side-3'}>
-                                              <motion.div
-                                                  className="img-2"
-                                                  transition={{duration: 1.2 }}
-                                                  // initial={{ width: '0' , height: '100%'}}
-                                                  // animate={{ width: "100%", height: '100%'}}
-                                                  // exit={{ width: '0', height: '100%' }}
-                                                  initial={{ x: -1000, opacity: 1 }}
-                                                  animate={{ x: 0, opacity: 1 }}
-                                                  exit={{ y: -500, opacity: 1 }}
-                                              />
-                                          </div>
-                                          <div className={'side-4'}>
-                                              <motion.div
-                                                  className="side-1-text"
-                                                  transition={{duration: 1.2}}
-                                                  initial={{ y: -100,opacity: 0 }}
-                                                  animate={{ y: '0', opacity: 1 }}
-                                                  exit={{ y: -100, opacity: 0 }}
-                                              >
-                                                  <div className={'detail-text'}>
-                                                      <span>Design and implementation</span>
-                                                      <span>How do you make a Refactor Project</span>
-                                                      <Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>
-                                                          LEARN MORE
-                                                      </Button>
+          {/*                                          </div>*/}
+          {/*                                  </motion.div>*/}
+          {/*                              </div>*/}
+          {/*                              <div className={'side-2'}>*/}
+          {/*                                  <motion.div*/}
+          {/*                                      className="img-1"*/}
+          {/*                                      transition={{duration: 1.2 }}*/}
+          {/*                                      initial={{ y: 700, opacity: 1 }}*/}
+          {/*                                      animate={{ y: 0, opacity: 1 }}*/}
+          {/*                                      exit={{ y: 500, opacity: 1 }}*/}
+          {/*                                 />*/}
+          {/*                              </div>*/}
+          {/*                              <motion.img*/}
+          {/*                                  className="phone-img"*/}
+          {/*                                  src={`${phone}`}*/}
+          {/*                                  transition={{duration: 1, delay: 0.3 }}*/}
+          {/*                                  initial={{ y: 800 ,x: '0vw', opacity: 1 }}*/}
+          {/*                                  animate={{ x: '0vw', opacity: 1, y: 0 }}*/}
+          {/*                                  exit={{ y: 800,x: '0vw', opacity: 1 }}>*/}
+          {/*                              </motion.img>*/}
+          {/*                              <div className="rock-1">*/}
+          {/*                                  <motion.img*/}
+          {/*                                      src={rock1}*/}
+          {/*                                      style={{width: '80px'}}*/}
+          {/*                                      initial={{ y: 800, x: '0vw', opacity: 1 }}*/}
+          {/*                                      animate={{ y: 0, opacity: 1 }}*/}
+          {/*                                      exit={{ y: 800, x: '0vw', opacity: 1 }}*/}
+          {/*                                      transition={{ duration: 1, delay: 0.4 }}*/}
+          {/*                                  />*/}
+          {/*                              </div>*/}
+          {/*                              <div className="rock-2">*/}
+          {/*                                  <motion.img*/}
+          {/*                                      src={`${rock2}`}*/}
+          {/*                                      style={{width: '60px'}}*/}
+          {/*                                      transition={{duration: 1.1, delay: 0.4 }}*/}
+          {/*                                      initial={{ y: '50vh', opacity: 1 }}*/}
+          {/*                                      animate={{ y: '0vw', opacity: 1 }}*/}
+          {/*                                      exit={{ y: '50vh', opacity: 1 }}>*/}
+          {/*                                  </motion.img>*/}
+          {/*                              </div>*/}
+          {/*                              <div className="rock-3">*/}
+          {/*                                    <motion.img*/}
+          {/*                                        src={`${rock3}`}*/}
+          {/*                                        style={{width: '70px'}}*/}
+          {/*                                        transition={{duration: 1.1, delay: 0.4 }}*/}
+          {/*                                        initial={{ y: '50vh', opacity: 1 }}*/}
+          {/*                                        animate={{ y: '0vw', opacity: 1,}}*/}
+          {/*                                        exit={{ y: '50vh', opacity: 1 }}>*/}
+          {/*                                    </motion.img>*/}
+          {/*                                </div>*/}
+          {/*                              /!*</div>*!/*/}
+          {/*                            </motion.section>*/}
+          {/*                        )}*/}
+          {/*                        {activeIndex === 1 && (*/}
+          {/*                            <motion.section*/}
+          {/*                                key="two"*/}
+          {/*                                className=""*/}
+          {/*                                initial={{ opacity: 0 }}*/}
+          {/*                                animate={{ opacity: 1 }}*/}
+          {/*                                exit={{ opacity: 1 }}*/}
+          {/*                            >*/}
+          {/*                                <div className={'side-3'}>*/}
+          {/*                                    <motion.div*/}
+          {/*                                        className="img-2"*/}
+          {/*                                        transition={{duration: 1.2 }}*/}
+          {/*                                        // initial={{ width: '0' , height: '100%'}}*/}
+          {/*                                        // animate={{ width: "100%", height: '100%'}}*/}
+          {/*                                        // exit={{ width: '0', height: '100%' }}*/}
+          {/*                                        initial={{ x: -1000, opacity: 1 }}*/}
+          {/*                                        animate={{ x: 0, opacity: 1 }}*/}
+          {/*                                        exit={{ y: -500, opacity: 1 }}*/}
+          {/*                                    />*/}
+          {/*                                </div>*/}
+          {/*                                <div className={'side-4'}>*/}
+          {/*                                    <motion.div*/}
+          {/*                                        className="side-1-text"*/}
+          {/*                                        transition={{duration: 1.2}}*/}
+          {/*                                        initial={{ y: -100,opacity: 0 }}*/}
+          {/*                                        animate={{ y: '0', opacity: 1 }}*/}
+          {/*                                        exit={{ y: -100, opacity: 0 }}*/}
+          {/*                                    >*/}
+          {/*                                        <div className={'detail-text'}>*/}
+          {/*                                            <span>Design and implementation</span>*/}
+          {/*                                            <span>How do you make a Refactor Project</span>*/}
+          {/*                                            <Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>*/}
+          {/*                                                LEARN MORE*/}
+          {/*                                            </Button>*/}
 
-                                                  </div>
+          {/*                                        </div>*/}
 
-                                              </motion.div>
-                                          </div>
-                                          {/*<div className={'detail-img'}>*/}
-                                              <motion.img
-                                                  className="worker"
-                                                  src={`${worker}`}
-                                                  transition={{duration: 1, delay: 0.3 }}
-                                                  initial={{ y: 0 ,x: '50vw', opacity: 1 }}
-                                                  animate={{y: '0vw' , x: '0', opacity: 1,}}
-                                                  exit={{ y: 0,x: '50vw', opacity: 1 }}>
-                                              </motion.img>
+          {/*                                    </motion.div>*/}
+          {/*                                </div>*/}
+          {/*                                /!*<div className={'detail-img'}>*!/*/}
+          {/*                                    <motion.img*/}
+          {/*                                        className="worker"*/}
+          {/*                                        src={`${worker}`}*/}
+          {/*                                        transition={{duration: 1, delay: 0.3 }}*/}
+          {/*                                        initial={{ y: 0 ,x: '50vw', opacity: 1 }}*/}
+          {/*                                        animate={{y: '0vw' , x: '0', opacity: 1,}}*/}
+          {/*                                        exit={{ y: 0,x: '50vw', opacity: 1 }}>*/}
+          {/*                                    </motion.img>*/}
 
-                                          {/*</div>*/}
+          {/*                                /!*</div>*!/*/}
 
-                                      </motion.section>
-                                  )}
-                              </AnimatePresence>
-                          </div>
-                      </Grid2>
-                  </Grid2>
-              </div>
-              <AlertDialog
-                  open={open}
-                  onClose={() => setOpen(false)}
-                  stepDialog={dialogText[stepDialog]}
-              />
-          </div>
-          <div className={'second-middle'} style={{background: 'black'}}>
-              {/*<div style={{display: 'flex', justifyContent:'center', fontSize: '7vw', fontWeight:'900'}}>SKILL</div>*/}
-                    <div className="wrapper">
-                        <div className="item item1">React.js</div>
-                        <div className="item item2">Vue.js</div>
-                        <div className="item item3">JavaScript</div>
-                        <div className="item item4">Vuetify</div>
-                        <div className="item item5">Material UI</div>
-                        <div className="item item6">Node.js</div>
-                        <div className="item item7">HTML</div>
-                        <div className="item item8">CSS</div>
-                    </div>
-                    <div className="wrapper-1">
-                        <div className="item-1 item1">Git</div>
-                        <div className="item-1 item2">Postman</div>
-                        <div className="item-1 item3">Figma</div>
-                        <div className="item-1 item4">Python</div>
-                        <div className="item-1 item5">Sql</div>
-                        <div className="item-1 item6">UI/UX</div>
-                        <div className="item-1 item7">Motion</div>
-                        <div className="item-1 item8">Lottie</div>
-                    </div>
+          {/*                            </motion.section>*/}
+          {/*                        )}*/}
+          {/*                    </AnimatePresence>*/}
+          {/*                </div>*/}
+          {/*            </Grid2>*/}
+          {/*        </Grid2>*/}
+          {/*    </div>*/}
+          {/*    <AlertDialog*/}
+          {/*        open={open}*/}
+          {/*        onClose={() => setOpen(false)}*/}
+          {/*        stepDialog={dialogText[stepDialog]}*/}
+          {/*    />*/}
+          {/*</div>*/}
+          {/*<div className={'second-middle'} style={{background: 'black'}}>*/}
+          {/*    /!*<div style={{display: 'flex', justifyContent:'center', fontSize: '7vw', fontWeight:'900'}}>SKILL</div>*!/*/}
+          {/*          <div className="wrapper">*/}
+          {/*              <div className="item item1">React.js</div>*/}
+          {/*              <div className="item item2">Vue.js</div>*/}
+          {/*              <div className="item item3">JavaScript</div>*/}
+          {/*              <div className="item item4">Vuetify</div>*/}
+          {/*              <div className="item item5">Material UI</div>*/}
+          {/*              <div className="item item6">Node.js</div>*/}
+          {/*              <div className="item item7">HTML</div>*/}
+          {/*              <div className="item item8">CSS</div>*/}
+          {/*          </div>*/}
+          {/*          <div className="wrapper-1">*/}
+          {/*              <div className="item-1 item1">Git</div>*/}
+          {/*              <div className="item-1 item2">Postman</div>*/}
+          {/*              <div className="item-1 item3">Figma</div>*/}
+          {/*              <div className="item-1 item4">Python</div>*/}
+          {/*              <div className="item-1 item5">Sql</div>*/}
+          {/*              <div className="item-1 item6">UI/UX</div>*/}
+          {/*              <div className="item-1 item7">Motion</div>*/}
+          {/*              <div className="item-1 item8">Lottie</div>*/}
+          {/*          </div>*/}
 
-            </div>
+          {/*  </div>*/}
         </>
     )
 }

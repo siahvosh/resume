@@ -13,11 +13,11 @@ export const Root = () => {
 
     return (
         <div>
-            <Tollbar/>
+            {/*<Tollbar/>*/}
             <main>
                 <Outlet/>
             </main>
-          <Footer/>
+          {/*<Footer/>*/}
         </div>
     )
 }

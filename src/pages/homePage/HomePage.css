@@ -8,7 +8,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("../../assets/bgnew.jpg") ;
-    height: 95vh;
+    height: 100vh;
+    width: 100vw;
     overflow-x: hidden;
     justify-content: center;
     align-items: center;
@@ -20,8 +21,7 @@
     /*border: 2px solid red;*/
     width: 95vw;
     height: 80vh;
-
-}
+ }
 
 .bar{
     height: 80vh;
@@ -46,6 +46,7 @@
 
 .card-content{
     color: white ;
+    position: relative;
 }
 
 .card-action{
@@ -59,7 +60,7 @@
 
 .detail-card{
     height: 75vh;
-    background: #191919 !important;
+    background: transparent !important;
     border: 1px solid #53535b;
     border-radius: 12px !important;
     overflow-Y: auto !important;
