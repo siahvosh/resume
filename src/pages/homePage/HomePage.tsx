@@ -1,6 +1,6 @@
 import {
     Box,
-    Button, Card, CardActions, CardContent, CardMedia,
+    Button, Card, CardActions, CardContent, CardMedia, CircularProgress,
     Divider,
     Grid2,
     ListItem,
@@ -11,6 +11,7 @@ import {
     Typography
 } from "@mui/material";
 import {AnimatePresence, motion} from "framer-motion";
+import LinearProgress from '@mui/material/LinearProgress';
 import {useEffect, useRef, useState} from "react";
 import AlertDialog from '../../component/dialog/experience'
 import { styled } from '@mui/material/styles';
@@ -39,10 +40,11 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import CircleIcon from '@mui/icons-material/Circle';
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-
+import { linearProgressClasses } from '@mui/material/LinearProgress';
 
 import './HomePage.css'
 import './../../App.css'
@@ -52,9 +54,26 @@ import MenuItem from "@mui/material/MenuItem";
 import {Gauge, gaugeClasses} from "@mui/x-charts";
 
 
+const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+    height: 10,
+    borderRadius: 5,
+    [`&.${linearProgressClasses.colorPrimary}`]: {
+        backgroundColor: theme.palette.grey[200],
+        ...theme.applyStyles('light', {
+            backgroundColor: theme.palette.grey[800],
+        }),
+    },
+    [`& .${linearProgressClasses.bar}`]: {
+        borderRadius: 5,
+        backgroundColor: '#EDFF20FF',
+        ...theme.applyStyles('dark', {
+            backgroundColor: '#EDFF20FF',
+        }),
+    },
+}));
+
 export const HomePage = () => {
-    const derakExperience =
-        {
+    const derakExperience = {
             company: 'DERAK CLOUD',
             period: 'August 2022 - March 2025',
             data: [
@@ -120,6 +139,31 @@ export const HomePage = () => {
             {title : 'dsfdsf', description: 'Implementation of live charts and dashboards. There are manual KPIs and AI-generated KPIs with real-world data of the different businesses '},
         ]
     }
+
+    const skillsData = [
+        {
+            title: 'Programming Languages',
+            skills: [
+                {skillName: 'JavaScript', value: 70},
+                {skillName: 'HTML / CSS', value: 80},
+                {skillName: 'Node.js', value: 60},
+                {skillName: 'Python', value: 30},
+            ]
+        },
+        {
+            title: 'Frameworks / Libraries',
+            skills: [
+                {skillName: 'Vue.js', value: 70},
+                {skillName: 'React.js', value: 40},
+                {skillName: 'Next.js', value: 40},
+                {skillName: 'Vuetify', value: 70},
+                {skillName: 'Material UI', value: 80},
+                {skillName: 'Motion.dev', value: 60},
+                {skillName: 'Visx (Chart) ', value: 30},
+                {skillName: 'bootstrap ', value: 30},
+            ]
+        }
+    ]
 
     const CustomTooltip = styled(({ className, ...props }) => (
         <Tooltip {...props} arrow classes={{ popper: className }} />
@@ -335,7 +379,7 @@ export const HomePage = () => {
           <div className={'cont-1'}>
               <div className={'resume-container'}>
                   <Grid2 container style={{display: 'flex', alignItems: 'center'}}>
-                      <Grid2 size={{xs: 12, sm: 12, md: 1, lg: 1}}>
+                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 1}}>
                           <div className={'bar'}>
                               <Paper className={'paper-style'} sx={{border: '1px solid gray', width: 65 }}>
                                   <MenuList>
@@ -366,7 +410,7 @@ export const HomePage = () => {
                               </Paper>
                           </div>
                       </Grid2>
-                      <Grid2 size={{xs: 12, sm: 12, md: 5, lg: 5}}>
+                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 5}}>
                           <Card className={'base-card'} sx={{ maxWidth: '100%', height: '80vh '}}>
                                   <CardMedia
                                       component="img"
@@ -406,10 +450,10 @@ export const HomePage = () => {
                               </Card>
 
                       </Grid2>
-                      <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}}>
+                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}}>
                           <Card className={'detail-card'}>
                               <CardContent>
-                                  <Typography gutterBottom className={'typography'}>
+                                  <Typography gutterBottom  className={'typography'}>
                                       <span style={{color: '#EDFF20FF'}}> A</span>bout Me
                                   </Typography>
                                   <Divider sx={{
@@ -452,7 +496,7 @@ export const HomePage = () => {
                                     </Grid2>
                                   </Grid2>
 
-                                  <Typography gutterBottom className={'typography'}>
+                                  <Typography gutterBottom marginTop={'3rem'} className={'typography'}>
                                       <span style={{color: '#EDFF20FF'}}> S</span>ummary
                                   </Typography>
                                   <Divider sx={{
@@ -465,7 +509,7 @@ export const HomePage = () => {
                                       </span>
                                   </Grid2>
 
-                                  <Typography gutterBottom className={'typography'}>
+                                  <Typography gutterBottom marginTop={'3rem'} className={'typography'}>
                                       <span style={{color: '#EDFF20FF'}}> E</span>xperience
                                   </Typography>
                                   <Divider sx={{
@@ -534,214 +578,79 @@ export const HomePage = () => {
                                       </Grid2>
                                   </Grid2>
 
-                                  <Typography gutterBottom className={'typography'}>
+                                  <Typography gutterBottom marginTop={'3rem'} className={'typography'}>
                                       <span style={{color: '#EDFF20FF'}}> M</span>y Skills
                                   </Typography>
                                   <Divider sx={{
                                       backgroundColor: '#53535b',
                                       opacity: 0.5,
                                   }}/>
-                                  <Grid2 container  style={{display: 'flex', alignItems: 'center', justifyContent: 'space-around', padding: '1rem'}}>
-                                      <Grid2 size={{xs: 6, sm: 4, md: 4, lg: 4}} style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
-                                        <Box position="relative" width={100} height={100}>
-                                          <Gauge
-                                              width={100}
-                                              height={100}
-                                              value={80}
-                                              style={{display: 'flex', justifySelf: 'center'}}
-                                              sx={{
-                                                  '& text': {
-                                                      display: 'none',
-                                                  },
-                                                  [`& .${gaugeClasses.valueArc}`]: {
-                                                      fill: '#EDFF20FF',
-                                                  },
-                                              }}
-                                          />
-
-                                          <Box
-                                              position="absolute"
-                                              top="50%"
-                                              left="50%"
-                                              sx={{
-                                                  transform: 'translate(-50%, -50%)',
-                                                  color: '#fff',
-                                                  fontSize: '14px',
-                                                  fontWeight: 600,
-                                              }}
-                                          >
-                                              80%
-                                          </Box>
-                                      </Box>
-                                          <span style={{color: "white"}}>JavaScriot</span>
+                                  <Grid2 container spacing={3} style={{padding: '1rem'}}>
+                                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
+                                          <span style={{color: 'white',fontWeight: 500, display: 'inline-flex'}}>
+                                              <CodeIcon  sx={{color: '#EDFF20FF'}}/>
+                                              {skillsData[0].title}
+                                          </span>
                                       </Grid2>
-                                      <Grid2 size={{xs: 6, sm: 4, md: 4, lg: 4}} style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
-                                          <Box position="relative" width={100} height={100}>
-                                              <Gauge
-                                                  width={100}
-                                                  height={100}
-                                                  value={80}
-                                                  style={{display: 'flex', justifySelf: 'center'}}
-                                                  sx={{
-                                                      '& text': {
-                                                          display: 'none',
-                                                      },
-                                                      [`& .${gaugeClasses.valueArc}`]: {
-                                                          fill: '#EDFF20FF',
-                                                      },
-                                                  }}
-                                              />
+                                      {skillsData[0].skills.map((item, idx) => (
+                                          <Grid2 key={idx} size={{xs: 6, sm: 3, md: 3, lg: 3}} style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
+                                              <Box position="relative" width={100} height={100}>
+                                                  <Gauge
+                                                      width={100}
+                                                      height={100}
+                                                      value={item.value}
+                                                      style={{display: 'flex', justifySelf: 'center'}}
+                                                      sx={{
+                                                          '& text': {
+                                                              display: 'none',
+                                                          },
+                                                          [`& .${gaugeClasses.valueArc}`]: {
+                                                              fill: '#EDFF20FF',
+                                                          },
+                                                      }}
+                                                  />
 
-                                              <Box
-                                                  position="absolute"
-                                                  top="50%"
-                                                  left="50%"
-                                                  sx={{
-                                                      transform: 'translate(-50%, -50%)',
-                                                      color: '#fff',
-                                                      fontSize: '14px',
-                                                      fontWeight: 600,
-                                                  }}
-                                              >
-                                                  80%
+                                                  <Box
+                                                      position="absolute"
+                                                      top="50%"
+                                                      left="50%"
+                                                      sx={{
+                                                          transform: 'translate(-50%, -50%)',
+                                                          color: '#fff',
+                                                          fontSize: '14px',
+                                                          fontWeight: 600,
+                                                      }}
+                                                  >
+                                                      {item.value}%
+                                                  </Box>
                                               </Box>
-                                          </Box>
-                                          <span style={{color: "white"}}>HTML/CSS</span>
-
-                                      </Grid2>
-                                      <Grid2 size={{xs: 6, sm: 4, md: 4, lg: 4}} style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
-                                          <Box position="relative" width={100} height={100}>
-                                              <Gauge
-                                                  width={100}
-                                                  height={100}
-                                                  value={80}
-                                                  style={{display: 'flex', justifySelf: 'center'}}
-                                                  sx={{
-                                                      '& text': {
-                                                          display: 'none',
-                                                      },
-                                                      [`& .${gaugeClasses.valueArc}`]: {
-                                                          fill: '#EDFF20FF',
-                                                      },
-                                                  }}
-                                              />
-
-                                              <Box
-                                                  position="absolute"
-                                                  top="50%"
-                                                  left="50%"
-                                                  sx={{
-                                                      transform: 'translate(-50%, -50%)',
-                                                      color: '#fff',
-                                                      fontSize: '14px',
-                                                      fontWeight: 600,
-                                                  }}
-                                              >
-                                                  80%
-                                              </Box>
-                                          </Box>
-                                          <span style={{color: "white"}}>node.js</span>
-                                      </Grid2>
-                                      <Grid2 size={{xs: 6, sm: 4, md: 4, lg: 4}} style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
-                                          <Box position="relative" width={100} height={100}>
-                                              <Gauge
-                                                  width={100}
-                                                  height={100}
-                                                  value={80}
-                                                  style={{display: 'flex', justifySelf: 'center'}}
-                                                  sx={{
-                                                      '& text': {
-                                                          display: 'none',
-                                                      },
-                                                      [`& .${gaugeClasses.valueArc}`]: {
-                                                          fill: '#EDFF20FF',
-                                                      },
-                                                  }}
-                                              />
-
-                                              <Box
-                                                  position="absolute"
-                                                  top="50%"
-                                                  left="50%"
-                                                  sx={{
-                                                      transform: 'translate(-50%, -50%)',
-                                                      color: '#fff',
-                                                      fontSize: '14px',
-                                                      fontWeight: 600,
-                                                  }}
-                                              >
-                                                  80%
-                                              </Box>
-                                          </Box>
-                                          <span style={{color: "white"}}>node.js</span>
-                                      </Grid2>
-                                      <Grid2 size={{xs: 6, sm: 4, md: 4, lg: 4}} style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
-                                          <Box position="relative" width={100} height={100}>
-                                              <Gauge
-                                                  width={100}
-                                                  height={100}
-                                                  value={80}
-                                                  style={{display: 'flex', justifySelf: 'center'}}
-                                                  sx={{
-                                                      '& text': {
-                                                          display: 'none',
-                                                      },
-                                                      [`& .${gaugeClasses.valueArc}`]: {
-                                                          fill: '#EDFF20FF',
-                                                      },
-                                                  }}
-                                              />
-
-                                              <Box
-                                                  position="absolute"
-                                                  top="50%"
-                                                  left="50%"
-                                                  sx={{
-                                                      transform: 'translate(-50%, -50%)',
-                                                      color: '#fff',
-                                                      fontSize: '14px',
-                                                      fontWeight: 600,
-                                                  }}
-                                              >
-                                                  80%
-                                              </Box>
-                                          </Box>
-                                          <span style={{color: "white"}}>node.js</span>
-                                      </Grid2>
-                                      <Grid2 size={{xs: 6, sm: 4, md: 4, lg: 4}} style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
-                                          <Box position="relative" width={100} height={100}>
-                                              <Gauge
-                                                  width={100}
-                                                  height={100}
-                                                  value={80}
-                                                  style={{display: 'flex', justifySelf: 'center'}}
-                                                  sx={{
-                                                      '& text': {
-                                                          display: 'none',
-                                                      },
-                                                      [`& .${gaugeClasses.valueArc}`]: {
-                                                          fill: '#EDFF20FF',
-                                                      },
-                                                  }}
-                                              />
-
-                                              <Box
-                                                  position="absolute"
-                                                  top="50%"
-                                                  left="50%"
-                                                  sx={{
-                                                      transform: 'translate(-50%, -50%)',
-                                                      color: '#fff',
-                                                      fontSize: '14px',
-                                                      fontWeight: 600,
-                                                  }}
-                                              >
-                                                  80%
-                                              </Box>
-                                          </Box>
-                                          <span style={{color: "white"}}>node.js</span>
-                                      </Grid2>
+                                              <span style={{color: "white"}}>{item.skillName}</span>
+                                          </Grid2>
+                                      ))}
                                   </Grid2>
+
+                                  <Divider sx={{
+                                      backgroundColor: '#53535b',
+                                      opacity: 0.5,
+                                  }}/>
+                                  <Grid2 container spacing={3} style={{padding: '1rem'}}>
+                                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
+                                          <span style={{color: 'white',fontWeight: 500, display: 'inline-flex'}}>
+                                              <LibraryBooksIcon  sx={{color: '#EDFF20FF'}}/>
+                                              {skillsData[1].title}
+                                          </span>
+                                      </Grid2>
+                                      {skillsData[1].skills.map ((item, idx) => (
+                                          <Grid2 size={{xs: 12, sm: 6, md: 6, lg: 6}} key={idx} style={{ height: 20, }}>
+                                              <span style={{color: 'white'}}>{item.skillName}</span>
+                                              <BorderLinearProgress variant="determinate" value={item.value} />
+                                          </Grid2>
+
+                                      ))}
+
+
+                                  </Grid2>
+
                               </CardContent>
                           </Card>
                       </Grid2>
@@ -973,4 +882,5 @@ export const HomePage = () => {
         </>
     )
 }
+
 
