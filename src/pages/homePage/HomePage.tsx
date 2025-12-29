@@ -74,8 +74,10 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 
 export const HomePage = () => {
 
-
-
+    const [page, setPage] = useState('about')
+    const handlePage = (page) =>{
+        setPage(page)
+    }
 
     const dialogText = [
         {
@@ -93,8 +95,6 @@ export const HomePage = () => {
 
         }
     ]
-
-
 
     const [activeIndex, setActiveIndex] = useState(0);
     const cont2Ref = useRef(null);
@@ -277,12 +277,36 @@ export const HomePage = () => {
               <div className={'resume-container'}>
                   <Grid2 container style={{display: 'flex', alignItems: 'center'}}>
                       {/*//BaseCard*/}
-                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}}>
-                          <BaseCard/>
+                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}} style={{zIndex: '1'}}>
+                          <BaseCard page={page} handlePage={handlePage}/>
                       </Grid2>
                       {/*//DetailCard*/}
-                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}}>
-                        <DetailCard/>
+                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}} style={{zIndex: '0'}}>
+                          <AnimatePresence mode="wait">
+                              {page === 'about' && (
+                                  <motion.div
+                                      key="about"
+                                      transition={{ duration: 0.8 }}
+                                      initial={{ x: '-50vw', opacity: 0 }}
+                                      animate={{ x: 0, opacity: 1 }}
+                                      exit={{ x: '-50vw', opacity: 1 }}
+                                  >
+                                      <DetailCard />
+                                  </motion.div>
+                              )}
+
+                              {page === 'works' && (
+                                  <motion.div
+                                      key="works"
+                                      transition={{ duration: 1.2 }}
+                                      initial={{ x: -100, opacity: 0 }}
+                                      animate={{ x: 0, opacity: 1 }}
+                                      exit={{ x: 100, opacity: 0 }}
+                                  >
+                                      works
+                                  </motion.div>
+                              )}
+                          </AnimatePresence>
                       </Grid2>
                   </Grid2>
               </div>
@@ -516,7 +540,9 @@ export const HomePage = () => {
 
 
 
-const BaseCard = () => {
+const BaseCard = ({ page, handlePage }) => {
+
+
     const CustomTooltip = styled(({ className, ...props }) => (
         <Tooltip {...props} arrow classes={{ popper: className }} />
     ))(() => ({
@@ -539,21 +565,21 @@ const BaseCard = () => {
                             <MenuItem>
                                 <ListItemIcon>
                                     <CustomTooltip title="ABOUT" placement="bottom">
-                                        <PermIdentityIcon style={{color: '#EDFF20FF'}} fontSize="medium" />
+                                        <PermIdentityIcon onClick={() => handlePage('about')} style={{color: '#EDFF20FF'}} fontSize="medium" />
                                     </CustomTooltip>
                                 </ListItemIcon>
                             </MenuItem>
                             <MenuItem>
                                 <ListItemIcon>
                                     <CustomTooltip title="RESUME" placement="bottom">
-                                        <FeedIcon style={{color: 'white'}} fontSize="medium" />
+                                        <FeedIcon onClick={() => handlePage('works')} style={{color: 'white'}} fontSize="medium" />
                                     </CustomTooltip>
                                 </ListItemIcon>
                             </MenuItem>
                             <MenuItem>
                                 <ListItemIcon>
                                     <CustomTooltip title="WORKS" placement="bottom">
-                                        <CodeIcon style={{color: 'white'}} fontSize="medium" />
+                                        <CodeIcon onClick={() => handlePage('contact')} style={{color: 'white'}} fontSize="medium" />
                                     </CustomTooltip>
                                 </ListItemIcon>
                             </MenuItem>

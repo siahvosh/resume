@@ -19,6 +19,7 @@
 
 .resume-container{
     /*border: 2px solid red;*/
+    overflow: hidden;
     width: 95vw;
     height: 80vh;
  }
@@ -64,19 +65,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     color: white;
 }
 
 
 .detail-card{
     height: 75vh;
+
     background: transparent !important;
     border: 1px solid #53535b;
     border-radius: 12px !important;
     overflow: auto !important;
     scrollbar-color: #000000 #2f2f2f;
     scrollbar-width: thin;
+
 }
+
+
+
+
 
 .typography{
     font-size: 26px !important;
@@ -489,7 +497,7 @@ a:hover{
         margin-left: 0;
     }
     .detail-card{
-        height: 100vh;
+        height: auto;
         margin-top: 1rem;
         padding: 1rem;
     }
