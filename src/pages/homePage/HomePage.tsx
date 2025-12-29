@@ -80,9 +80,14 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 export const HomePage = () => {
 
     const [page, setPage] = useState('about')
+    const [loading, setLoading] = useState(false)
     const handlePage = (page) =>{
         setPage(page)
     }
+
+    setTimeout(() => {
+        setLoading(true)
+    }, 5000);
 
     const dialogText = [
         {
@@ -278,9 +283,12 @@ export const HomePage = () => {
 
     return (
         <>
-
+            { loading === false && (
+                <Loading/>
+            )}
+            {/*<Loading/>*/}
           <div className={'cont-1'}>
-              <Loading/>
+
               {/*<Loading/>*/}
               <div className={'resume-container'}>
                   <Grid2 container style={{display: 'flex', alignItems: 'center'}}>
