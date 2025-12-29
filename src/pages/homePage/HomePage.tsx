@@ -26,6 +26,7 @@ import img4 from "../../assets/img4.png";
 import web1 from "../../assets/web1.jpg";
 import web2 from "../../assets/web2.jpg";
 import web3 from "../../assets/web3.jpg";
+import web4 from "../../assets/background.jpg";
 import skater from '../../assets/2skater.png'
 import worker from '../../assets/grafiti-artist.png';
 import phone from '../../assets/iphone.png'
@@ -545,8 +546,6 @@ export const HomePage = () => {
 
 
 const BaseCard = ({ page, handlePage }) => {
-
-
     const CustomTooltip = styled(({ className, ...props }) => (
         <Tooltip {...props} arrow classes={{ popper: className }} />
     ))(() => ({
@@ -629,7 +628,6 @@ const BaseCard = ({ page, handlePage }) => {
         </>
     )
 }
-
 const DetailCard = () => {
     const derakExperience = {
         company: 'DERAK CLOUD',
@@ -919,22 +917,45 @@ const DetailCard = () => {
                             </Grid2>
 
                         ))}
-
-
                     </Grid2>
 
                 </CardContent>
             </Card>
         </>
     )
-
 }
-
-
 const WorksPage = () =>{
     return(
-        <Card className={'detail-card'}>
-            <CardContent>
+        <Card sx={{pointerEvents: "none", overflowY: 'hidden'}} className={'detail-card'}>
+            <CardContent style={{position: 'relative'}}>
+                <Box
+                    sx={{
+                        position: "absolute",
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        backdropFilter: "blur(4px)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        zIndex: 2,
+                    }}
+                >
+                    <Typography
+                        variant="h6"
+                        sx={{ color: "#EDFF20FF", letterSpacing: 2, fontWeight: 800, fontSize: '24px'}}
+                    >
+                        Coming Soon ...
+                    </Typography>
+                </Box>
+
+                {/* Card Content */}
+                <Box
+                    sx={{
+                        filter: "blur(2px)",
+                        opacity: 0.6,
+                    }}
+                >
                 <Typography gutterBottom  className={'typography'}>
                     <span style={{color: '#EDFF20FF'}}>W</span>orks
                 </Typography>
@@ -942,7 +963,7 @@ const WorksPage = () =>{
                     backgroundColor: '#53535b',
                     opacity: 0.5,
                 }}/>
-                <Grid2 container spacing={2}>
+                <Grid2 container spacing={2} style={{marginTop: '3rem'}}>
                     <Grid2 size={{xs: 12, sm: 6, md: 6, lg: 6}} style={{color: 'white',display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                         <Card sx={{maxWidth: 345 , background: 'black', color: '#ffff'}}>
                             <CardMedia
@@ -997,7 +1018,7 @@ const WorksPage = () =>{
                                 component="img"
                                 alt="green iguana"
                                 height="140"
-                                image={web2}
+                                image={web4}
                             />
                             <CardContent>
                                 <Typography variant="body2" sx={{ color: 'white' }}>
@@ -1007,8 +1028,8 @@ const WorksPage = () =>{
                             </CardContent>
                         </Card>
                     </Grid2>
-
                 </Grid2>
+                </Box>
             </CardContent>
         </Card>
     )
