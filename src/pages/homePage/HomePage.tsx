@@ -73,111 +73,8 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 }));
 
 export const HomePage = () => {
-    const derakExperience = {
-            company: 'DERAK CLOUD',
-            period: 'August 2022 - March 2025',
-            data: [
-                {
-                    title: 'Responsive Web Development',
-                    description:
-                        'Design and development of a responsive version of the company website to deliver an improved user experience across mobile devices.',
-                },
-                {
-                    title: 'Mobile Feature Expansion',
-                    description:
-                        'Added key functional sections, including service purchasing and renewal, optimized specifically for mobile devices.',
-                },
-                {
-                    title: 'Billing Optimization',
-                    description:
-                        'Optimized the billing section to enhance performance and improve overall user experience on mobile platforms.',
-                },
-                {
-                    title: 'Advanced Filtering Systems',
-                    description:
-                        'Implemented advanced filtering mechanisms tailored to the custom requirements of enterprise-level clients.',
-                },
-                {
-                    title: 'Analytics & Data Visualization',
-                    description:
-                        'Designed and developed analytical charts and data visualizations for finance, human resources, and administrative support teams.',
-                },
-                {
-                    title: 'Financial & Technical R&D',
-                    description:
-                        'Conducted research and development on financial and technical data analysis to present insights effectively within the user interface.',
-                },
-                {
-                    title: 'Front-End Refactoring & Optimization',
-                    description:
-                        'Refactored and optimized critical sections of the front-end codebase, resolving bugs, removing redundant logic, and improving load times by up to 40%.',
-                },
-                {
-                    title: 'Onboarding System Design',
-                    description:
-                        'Designed and implemented the onboarding process for new team members in the front-end and UI/UX departments.',
-                },
-                {
-                    title: 'Team Mentorship & Knowledge Transfer',
-                    description:
-                        'Mentored and trained new employees by introducing project components, development workflows, and coding standards to accelerate onboarding and productivity.',
-                },
-                {
-                    title: 'Developer Training & Enablement',
-                    description:
-                        'Provided hands-on training and experience transfer to reduce time-to-productivity for newly onboarded team members.',
-                },
-            ],
-        }
 
-    const parsExperience = {
-        company: 'RAYAN PARS',
-        period: 'May 2025 – October 2025',
-        data : [
-            {title : 'fsdf', description: 'Design and development of CRM and BI Dashboard website with Parallax Scroll and interactive animations. '},
-            {title : 'sdfds', description: 'Development of the business intelligence analytics dashboard for sales, purchase, human resource and customer finance team'},
-            {title : 'dsfdsf', description: 'Implementation of live charts and dashboards. There are manual KPIs and AI-generated KPIs with real-world data of the different businesses '},
-        ]
-    }
 
-    const skillsData = [
-        {
-            title: 'Programming Languages',
-            skills: [
-                {skillName: 'JavaScript', value: 70},
-                {skillName: 'HTML / CSS', value: 80},
-                {skillName: 'Node.js', value: 60},
-                {skillName: 'Python', value: 30},
-            ]
-        },
-        {
-            title: 'Frameworks / Libraries',
-            skills: [
-                {skillName: 'Vue.js', value: 70},
-                {skillName: 'React.js', value: 40},
-                {skillName: 'Next.js', value: 40},
-                {skillName: 'Vuetify', value: 70},
-                {skillName: 'Material UI', value: 80},
-                {skillName: 'Motion.dev', value: 60},
-                {skillName: 'Visx (Chart) ', value: 30},
-                {skillName: 'bootstrap ', value: 30},
-            ]
-        }
-    ]
-
-    const CustomTooltip = styled(({ className, ...props }) => (
-        <Tooltip {...props} arrow classes={{ popper: className }} />
-    ))(() => ({
-        [`& .${tooltipClasses.tooltip}`]: {
-            backgroundColor: '#EDFF20FF',
-            color: '#000000',
-            fontSize: '12px',
-            borderRadius: '14px',
-        },
-        // [`& .${tooltipClasses.arrow}`]: {
-        //     color: '#EDFF20FF',
-        // },
-    }));
 
 
     const dialogText = [
@@ -379,279 +276,13 @@ export const HomePage = () => {
           <div className={'cont-1'}>
               <div className={'resume-container'}>
                   <Grid2 container style={{display: 'flex', alignItems: 'center'}}>
-                      {/*<Grid2 size={{xs: 12, sm: 12, md: 12, lg: 1}}>*/}
-
-                      {/*</Grid2>*/}
+                      {/*//BaseCard*/}
                       <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}}>
-                          <Card className={'base-card'} sx={{ maxWidth: '100%', height: '80vh '}}>
-                                  <div className={'bar'}>
-                                    <Paper className={'paper-style'}>
-                                      <MenuList style={{display: 'flex'}}>
-                                          <MenuItem>
-                                              <ListItemIcon>
-                                                  <CustomTooltip title="ABOUT" placement="bottom">
-                                                      <PermIdentityIcon style={{color: '#EDFF20FF'}} fontSize="medium" />
-                                                  </CustomTooltip>
-                                              </ListItemIcon>
-                                          </MenuItem>
-                                          <MenuItem>
-                                              <ListItemIcon>
-                                                  <CustomTooltip title="RESUME" placement="bottom">
-                                                      <FeedIcon style={{color: 'white'}} fontSize="medium" />
-                                                  </CustomTooltip>
-                                              </ListItemIcon>
-                                          </MenuItem>
-                                          <MenuItem>
-                                              <ListItemIcon>
-                                                  <CustomTooltip title="WORKS" placement="bottom">
-                                                      <CodeIcon style={{color: 'white'}} fontSize="medium" />
-                                                  </CustomTooltip>
-                                              </ListItemIcon>
-                                          </MenuItem>
-                                      </MenuList>
-                                  </Paper>
-                                  </div>
-                                  <CardMedia
-                                      component="img"
-                                      alt="green iguana"
-                                      height="50%"
-                                      image={avatar}
-                                  />
-                                  <CardContent className={'card-content'} style={{height: '40%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
-                                      <Lottie
-                                          animationData={animationData}
-                                          loop
-                                          autoplay
-                                          className={'lottie'}
-                                      />
-                                      <Typography className={'title-card'}  >
-                                          Siavash Miralikhani
-                                      </Typography>
-                                      <Typography className={'body-card'} sx={{ color: 'text.light' }}>
-                                           FRONT END DEVELOPER
-                                      </Typography>
-                                      <Typography sx={{ color: 'text.light' }}>
-                                          <GitHubIcon />
-                                          <LinkedInIcon />
-                                          <InstagramIcon />
-                                      </Typography>
-                                  </CardContent>
-                                  <CardActions className={'card-action'}>
-                                      <span>DOWNLOAD</span>
-                                      <Divider
-                                          sx={{
-                                          backgroundColor: '#53535b',
-                                          opacity: 0.5,
-                                      }}
-                                          orientation="vertical" flexItem />
-                                      <span>CONTACT ME</span>
-                                  </CardActions>
-                              </Card>
-
+                          <BaseCard/>
                       </Grid2>
+                      {/*//DetailCard*/}
                       <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}}>
-                          <Card className={'detail-card'}>
-                              <CardContent>
-                                  <Typography gutterBottom  className={'typography'}>
-                                      <span style={{color: '#EDFF20FF'}}> A</span>bout Me
-                                  </Typography>
-                                  <Divider sx={{
-                                      backgroundColor: '#53535b',
-                                      opacity: 0.5,
-                                  }}/>
-                                  <Grid2 container>
-                                    <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem', borderRight: '1px solid #2f2f33'}}>
-                                        <span style={{color: 'white'}}>I am Ryan Adlard, web designer from USA, California. I have rich experience in web site design and building and customization, also I am good at wordpress. I love to talk with you about our unique.</span>
-                                    </Grid2>
-                                    <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-around', color: 'white'}}>
-                                        <div style={{justifyContent: 'space-between', display: 'flex'}}>
-                                            <span style={{color: '#EDFF20'}}> Age :</span>
-                                            <span> 30</span>
-                                        </div>
-                                        <Divider sx={{
-                                            backgroundColor: '#53535b',
-                                            opacity: 0.5,
-                                        }}/>
-                                        <div style={{justifyContent: 'space-between', display: 'flex'}}>
-                                            <div style={{color: '#EDFF20'}}>Residence :</div>
-                                            <div >Iran</div>
-                                        </div>
-                                        <Divider sx={{
-                                            backgroundColor: '#53535b',
-                                            opacity: 0.5,
-                                        }}/>
-                                        <div style={{justifyContent: 'space-between', display: 'flex'}}>
-                                            <div style={{color: '#EDFF20'}}>Freelance :</div>
-                                            <div>Available</div>
-                                        </div>
-                                        <Divider sx={{
-                                            backgroundColor: '#53535b',
-                                            opacity: 0.5,
-                                        }}/>
-                                        <div style={{justifyContent: 'space-between', display: 'flex'}}>
-                                            <div style={{color: '#EDFF20'}}>Address :</div>
-                                            <div>Shiraz</div>
-                                        </div>
-                                    </Grid2>
-                                  </Grid2>
-
-                                  <Typography gutterBottom marginTop={'3rem'} className={'typography'}>
-                                      <span style={{color: '#EDFF20FF'}}> S</span>ummary
-                                  </Typography>
-                                  <Divider sx={{
-                                      backgroundColor: '#53535b',
-                                      opacity: 0.5,
-                                  }}/>
-                                  <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}} style={{padding: '1rem'}}>
-                                      <span style={{color: 'white'}}>
-                                          Front-End Developer with 3+ years of experience building responsive, user-friendly web applications using JavaScript, React (MUI), Vue2 (Vuetify), HTML, Bootstrap ,CSS. Skilled in translating UI/UX designs into highperformance interfaces. I am also highly responsible, detail-oriented, and skilled in project management, ensuring timely delivery of high-quality work.
-                                      </span>
-                                  </Grid2>
-
-                                  <Typography gutterBottom marginTop={'3rem'} className={'typography'}>
-                                      <span style={{color: '#EDFF20FF'}}> E</span>xperience
-                                  </Typography>
-                                  <Divider sx={{
-                                      backgroundColor: '#53535b',
-                                      opacity: 0.5,
-                                  }}/>
-                                  <Grid2 container>
-                                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}} style={{padding: '1rem'}}>
-                                          <div style={{display: 'flex', flexDirection: 'column', gap: 10}}>
-                                              <span style={{color: '#ffffff', fontSize: '16px', fontWeight: 800}}>
-                                                {derakExperience.company}
-                                              </span>
-                                              <span style={{
-                                                      color: '#EDFF20FF',
-                                                      fontSize: '8px',
-                                                      border: '2px solid #EDFF20FF',
-                                                      padding: '0.2rem',
-                                                      borderRadius: '5px',
-                                                      width: 'fit-content',
-                                                  }}>
-                                                {derakExperience.period}
-                                              </span>
-                                              <Grid2 container spacing={5} marginTop={3}>
-                                                  {derakExperience.data.map((text, index) => (
-                                                      <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} key={index}>
-                                                          <span style={{ color: 'white', fontWeight: 100, display: 'inline-flex' }}>
-                                                               <CircleIcon sx={{width: '10px', color: '#EDFF20FF'}}/>
-                                                            <span> {text.description}</span>
-                                                          </span>
-                                                          <Divider sx={{
-                                                                  backgroundColor: '#53535b',
-                                                                  opacity: 0.5,
-                                                                  margin: '1rem',
-                                                              }}/>
-                                                      </Grid2>
-
-                                                  ))}
-                                              </Grid2>
-                                          </div>
-
-                                      </Grid2>
-                                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}} style={{padding: '1rem',}}>
-                                          <div style={{display: 'flex', flexDirection: 'column', gap: 10}}>
-                                              <span style={{color: 'white',fontWeight: 800}}>RAYAN PARS</span>
-                                              <span style={{color: '#EDFF20FF', fontSize: '8px', border: '2px solid #EDFF20FF', padding: '0.2rem', borderRadius: '5px', width: '100px'}}> May 2025 – October 2025</span>
-                                              <Divider sx={{
-                                                  backgroundColor: '#53535b',
-                                                  opacity: 0.5,
-                                              }}/>
-
-                                              {parsExperience.data.map((text, index) => (
-                                                  <>
-                                                      <span style={{ color: 'white', fontWeight: 100, display: 'inline-flex' }}>
-                                                               <CircleIcon sx={{width: '10px', color: '#EDFF20FF'}}/>
-                                                            <span> {text.description}</span>
-                                                          </span>
-                                                      <Divider sx={{
-                                                          backgroundColor: '#53535b',
-                                                          opacity: 0.5,
-                                                          margin: '1rem',
-                                                      }}/>
-                                                  </>
-                                              ))}
-
-                                          </div>
-                                      </Grid2>
-                                  </Grid2>
-
-                                  <Typography gutterBottom marginTop={'3rem'} className={'typography'}>
-                                      <span style={{color: '#EDFF20FF'}}> M</span>y Skills
-                                  </Typography>
-                                  <Divider sx={{
-                                      backgroundColor: '#53535b',
-                                      opacity: 0.5,
-                                  }}/>
-                                  <Grid2 container spacing={3} style={{padding: '1rem'}}>
-                                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
-                                          <span style={{color: 'white',fontWeight: 500, display: 'inline-flex'}}>
-                                              <CodeIcon  sx={{color: '#EDFF20FF'}}/>
-                                              {skillsData[0].title}
-                                          </span>
-                                      </Grid2>
-                                      {skillsData[0].skills.map((item, idx) => (
-                                          <Grid2 key={idx} size={{xs: 6, sm: 3, md: 3, lg: 3}} style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
-                                              <Box position="relative" width={100} height={100}>
-                                                  <Gauge
-                                                      width={100}
-                                                      height={100}
-                                                      value={item.value}
-                                                      style={{display: 'flex', justifySelf: 'center'}}
-                                                      sx={{
-                                                          '& text': {
-                                                              display: 'none',
-                                                          },
-                                                          [`& .${gaugeClasses.valueArc}`]: {
-                                                              fill: '#EDFF20FF',
-                                                          },
-                                                      }}
-                                                  />
-
-                                                  <Box
-                                                      position="absolute"
-                                                      top="50%"
-                                                      left="50%"
-                                                      sx={{
-                                                          transform: 'translate(-50%, -50%)',
-                                                          color: '#fff',
-                                                          fontSize: '14px',
-                                                          fontWeight: 600,
-                                                      }}
-                                                  >
-                                                      {item.value}%
-                                                  </Box>
-                                              </Box>
-                                              <span style={{color: "white"}}>{item.skillName}</span>
-                                          </Grid2>
-                                      ))}
-                                  </Grid2>
-
-                                  <Divider sx={{
-                                      backgroundColor: '#53535b',
-                                      opacity: 0.5,
-                                  }}/>
-                                  <Grid2 container spacing={3} style={{padding: '1rem'}}>
-                                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
-                                          <span style={{color: 'white',fontWeight: 500, display: 'inline-flex'}}>
-                                              <LibraryBooksIcon  sx={{color: '#EDFF20FF'}}/>
-                                              {skillsData[1].title}
-                                          </span>
-                                      </Grid2>
-                                      {skillsData[1].skills.map ((item, idx) => (
-                                          <Grid2 size={{xs: 12, sm: 6, md: 6, lg: 6}} key={idx} style={{ height: 20, }}>
-                                              <span style={{color: 'white'}}>{item.skillName}</span>
-                                              <BorderLinearProgress variant="determinate" value={item.value} />
-                                          </Grid2>
-
-                                      ))}
-
-
-                                  </Grid2>
-
-                              </CardContent>
-                          </Card>
+                        <DetailCard/>
                       </Grid2>
                   </Grid2>
               </div>
@@ -883,3 +514,388 @@ export const HomePage = () => {
 }
 
 
+
+
+const BaseCard = () => {
+    const CustomTooltip = styled(({ className, ...props }) => (
+        <Tooltip {...props} arrow classes={{ popper: className }} />
+    ))(() => ({
+        [`& .${tooltipClasses.tooltip}`]: {
+            backgroundColor: '#EDFF20FF',
+            color: '#000000',
+            fontSize: '12px',
+            borderRadius: '14px',
+        },
+        // [`& .${tooltipClasses.arrow}`]: {
+        //     color: '#EDFF20FF',
+        // },
+    }));
+    return(
+        <>
+            <Card className={'base-card'} sx={{ maxWidth: '100%', height: '80vh '}}>
+                <div className={'bar'}>
+                    <Paper className={'paper-style'}>
+                        <MenuList style={{display: 'flex'}}>
+                            <MenuItem>
+                                <ListItemIcon>
+                                    <CustomTooltip title="ABOUT" placement="bottom">
+                                        <PermIdentityIcon style={{color: '#EDFF20FF'}} fontSize="medium" />
+                                    </CustomTooltip>
+                                </ListItemIcon>
+                            </MenuItem>
+                            <MenuItem>
+                                <ListItemIcon>
+                                    <CustomTooltip title="RESUME" placement="bottom">
+                                        <FeedIcon style={{color: 'white'}} fontSize="medium" />
+                                    </CustomTooltip>
+                                </ListItemIcon>
+                            </MenuItem>
+                            <MenuItem>
+                                <ListItemIcon>
+                                    <CustomTooltip title="WORKS" placement="bottom">
+                                        <CodeIcon style={{color: 'white'}} fontSize="medium" />
+                                    </CustomTooltip>
+                                </ListItemIcon>
+                            </MenuItem>
+                        </MenuList>
+                    </Paper>
+                </div>
+                <CardMedia
+                    component="img"
+                    alt="green iguana"
+                    height="50%"
+                    image={avatar}
+                />
+                <CardContent className={'card-content'} style={{height: '40%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+                    <Lottie
+                        animationData={animationData}
+                        loop
+                        autoplay
+                        className={'lottie'}
+                    />
+                    <Typography className={'title-card'}  >
+                        Siavash Miralikhani
+                    </Typography>
+                    <Typography className={'body-card'} sx={{ color: 'text.light' }}>
+                        FRONT END DEVELOPER
+                    </Typography>
+                    <Typography sx={{ color: 'text.light' }}>
+                        <GitHubIcon />
+                        <LinkedInIcon />
+                        <InstagramIcon />
+                    </Typography>
+                </CardContent>
+                <CardActions className={'card-action'}>
+                    <span>DOWNLOAD</span>
+                    <Divider
+                        sx={{
+                            backgroundColor: '#53535b',
+                            opacity: 0.5,
+                        }}
+                        orientation="vertical" flexItem />
+                    <span>CONTACT ME</span>
+                </CardActions>
+            </Card>
+        </>
+    )
+}
+
+const DetailCard = () => {
+    const derakExperience = {
+        company: 'DERAK CLOUD',
+        period: 'August 2022 - March 2025',
+        data: [
+            {
+                title: 'Responsive Web Development',
+                description:
+                    'Design and development of a responsive version of the company website to deliver an improved user experience across mobile devices.',
+            },
+            {
+                title: 'Mobile Feature Expansion',
+                description:
+                    'Added key functional sections, including service purchasing and renewal, optimized specifically for mobile devices.',
+            },
+            {
+                title: 'Billing Optimization',
+                description:
+                    'Optimized the billing section to enhance performance and improve overall user experience on mobile platforms.',
+            },
+            {
+                title: 'Advanced Filtering Systems',
+                description:
+                    'Implemented advanced filtering mechanisms tailored to the custom requirements of enterprise-level clients.',
+            },
+            {
+                title: 'Analytics & Data Visualization',
+                description:
+                    'Designed and developed analytical charts and data visualizations for finance, human resources, and administrative support teams.',
+            },
+            {
+                title: 'Financial & Technical R&D',
+                description:
+                    'Conducted research and development on financial and technical data analysis to present insights effectively within the user interface.',
+            },
+            {
+                title: 'Front-End Refactoring & Optimization',
+                description:
+                    'Refactored and optimized critical sections of the front-end codebase, resolving bugs, removing redundant logic, and improving load times by up to 40%.',
+            },
+            {
+                title: 'Onboarding System Design',
+                description:
+                    'Designed and implemented the onboarding process for new team members in the front-end and UI/UX departments.',
+            },
+            {
+                title: 'Team Mentorship & Knowledge Transfer',
+                description:
+                    'Mentored and trained new employees by introducing project components, development workflows, and coding standards to accelerate onboarding and productivity.',
+            },
+            {
+                title: 'Developer Training & Enablement',
+                description:
+                    'Provided hands-on training and experience transfer to reduce time-to-productivity for newly onboarded team members.',
+            },
+        ],
+    }
+    const parsExperience = {
+        company: 'RAYAN PARS',
+        period: 'May 2025 – October 2025',
+        data : [
+            {title : 'fsdf', description: 'Design and development of CRM and BI Dashboard website with Parallax Scroll and interactive animations. '},
+            {title : 'sdfds', description: 'Development of the business intelligence analytics dashboard for sales, purchase, human resource and customer finance team'},
+            {title : 'dsfdsf', description: 'Implementation of live charts and dashboards. There are manual KPIs and AI-generated KPIs with real-world data of the different businesses '},
+        ]
+    }
+    const skillsData = [
+        {
+            title: 'Programming Languages',
+            skills: [
+                {skillName: 'JavaScript', value: 70},
+                {skillName: 'HTML / CSS', value: 80},
+                {skillName: 'Node.js', value: 60},
+                {skillName: 'Python', value: 30},
+            ]
+        },
+        {
+            title: 'Frameworks / Libraries',
+            skills: [
+                {skillName: 'Vue.js', value: 70},
+                {skillName: 'React.js', value: 40},
+                {skillName: 'Next.js', value: 40},
+                {skillName: 'Vuetify', value: 70},
+                {skillName: 'Material UI', value: 80},
+                {skillName: 'Motion.dev', value: 60},
+                {skillName: 'Visx (Chart) ', value: 30},
+                {skillName: 'bootstrap ', value: 30},
+            ]
+        }
+    ]
+
+    return(
+        <>
+            <Card className={'detail-card'}>
+                <CardContent>
+                    <Typography gutterBottom  className={'typography'}>
+                        <span style={{color: '#EDFF20FF'}}> A</span>bout Me
+                    </Typography>
+                    <Divider sx={{
+                        backgroundColor: '#53535b',
+                        opacity: 0.5,
+                    }}/>
+                    <Grid2 container>
+                        <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem', borderRight: '1px solid #2f2f33'}}>
+                            <span style={{color: 'white'}}>I am Ryan Adlard, web designer from USA, California. I have rich experience in web site design and building and customization, also I am good at wordpress. I love to talk with you about our unique.</span>
+                        </Grid2>
+                        <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-around', color: 'white'}}>
+                            <div style={{justifyContent: 'space-between', display: 'flex'}}>
+                                <span style={{color: '#EDFF20'}}> Age :</span>
+                                <span> 30</span>
+                            </div>
+                            <Divider sx={{
+                                backgroundColor: '#53535b',
+                                opacity: 0.5,
+                            }}/>
+                            <div style={{justifyContent: 'space-between', display: 'flex'}}>
+                                <div style={{color: '#EDFF20'}}>Residence :</div>
+                                <div >Iran</div>
+                            </div>
+                            <Divider sx={{
+                                backgroundColor: '#53535b',
+                                opacity: 0.5,
+                            }}/>
+                            <div style={{justifyContent: 'space-between', display: 'flex'}}>
+                                <div style={{color: '#EDFF20'}}>Freelance :</div>
+                                <div>Available</div>
+                            </div>
+                            <Divider sx={{
+                                backgroundColor: '#53535b',
+                                opacity: 0.5,
+                            }}/>
+                            <div style={{justifyContent: 'space-between', display: 'flex'}}>
+                                <div style={{color: '#EDFF20'}}>Address :</div>
+                                <div>Shiraz</div>
+                            </div>
+                        </Grid2>
+                    </Grid2>
+
+                    <Typography gutterBottom marginTop={'3rem'} className={'typography'}>
+                        <span style={{color: '#EDFF20FF'}}> S</span>ummary
+                    </Typography>
+                    <Divider sx={{
+                        backgroundColor: '#53535b',
+                        opacity: 0.5,
+                    }}/>
+                    <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}} style={{padding: '1rem'}}>
+                                      <span style={{color: 'white'}}>
+                                          Front-End Developer with 3+ years of experience building responsive, user-friendly web applications using JavaScript, React (MUI), Vue2 (Vuetify), HTML, Bootstrap ,CSS. Skilled in translating UI/UX designs into highperformance interfaces. I am also highly responsible, detail-oriented, and skilled in project management, ensuring timely delivery of high-quality work.
+                                      </span>
+                    </Grid2>
+
+                    <Typography gutterBottom marginTop={'3rem'} className={'typography'}>
+                        <span style={{color: '#EDFF20FF'}}> E</span>xperience
+                    </Typography>
+                    <Divider sx={{
+                        backgroundColor: '#53535b',
+                        opacity: 0.5,
+                    }}/>
+                    <Grid2 container>
+                        <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}} style={{padding: '1rem'}}>
+                            <div style={{display: 'flex', flexDirection: 'column', gap: 10}}>
+                                              <span style={{color: '#ffffff', fontSize: '16px', fontWeight: 800}}>
+                                                {derakExperience.company}
+                                              </span>
+                                <span style={{
+                                    color: '#EDFF20FF',
+                                    fontSize: '8px',
+                                    border: '2px solid #EDFF20FF',
+                                    padding: '0.2rem',
+                                    borderRadius: '5px',
+                                    width: 'fit-content',
+                                }}>
+                                                {derakExperience.period}
+                                              </span>
+                                <Grid2 container spacing={5} marginTop={3}>
+                                    {derakExperience.data.map((text, index) => (
+                                        <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} key={index}>
+                                                          <span style={{ color: 'white', fontWeight: 100, display: 'inline-flex' }}>
+                                                               <CircleIcon sx={{width: '10px', color: '#EDFF20FF'}}/>
+                                                            <span> {text.description}</span>
+                                                          </span>
+                                            <Divider sx={{
+                                                backgroundColor: '#53535b',
+                                                opacity: 0.5,
+                                                margin: '1rem',
+                                            }}/>
+                                        </Grid2>
+
+                                    ))}
+                                </Grid2>
+                            </div>
+
+                        </Grid2>
+                        <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}} style={{padding: '1rem',}}>
+                            <div style={{display: 'flex', flexDirection: 'column', gap: 10}}>
+                                <span style={{color: 'white',fontWeight: 800}}>RAYAN PARS</span>
+                                <span style={{color: '#EDFF20FF', fontSize: '8px', border: '2px solid #EDFF20FF', padding: '0.2rem', borderRadius: '5px', width: '100px'}}> May 2025 – October 2025</span>
+                                <Divider sx={{
+                                    backgroundColor: '#53535b',
+                                    opacity: 0.5,
+                                }}/>
+
+                                {parsExperience.data.map((text, index) => (
+                                    <>
+                                                      <span style={{ color: 'white', fontWeight: 100, display: 'inline-flex' }}>
+                                                               <CircleIcon sx={{width: '10px', color: '#EDFF20FF'}}/>
+                                                            <span> {text.description}</span>
+                                                          </span>
+                                        <Divider sx={{
+                                            backgroundColor: '#53535b',
+                                            opacity: 0.5,
+                                            margin: '1rem',
+                                        }}/>
+                                    </>
+                                ))}
+
+                            </div>
+                        </Grid2>
+                    </Grid2>
+
+                    <Typography gutterBottom marginTop={'3rem'} className={'typography'}>
+                        <span style={{color: '#EDFF20FF'}}> M</span>y Skills
+                    </Typography>
+                    <Divider sx={{
+                        backgroundColor: '#53535b',
+                        opacity: 0.5,
+                    }}/>
+                    <Grid2 container spacing={3} style={{padding: '1rem'}}>
+                        <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
+                                          <span style={{color: 'white',fontWeight: 500, display: 'inline-flex'}}>
+                                              <CodeIcon  sx={{color: '#EDFF20FF'}}/>
+                                              {skillsData[0].title}
+                                          </span>
+                        </Grid2>
+                        {skillsData[0].skills.map((item, idx) => (
+                            <Grid2 key={idx} size={{xs: 6, sm: 3, md: 3, lg: 3}} style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
+                                <Box position="relative" width={100} height={100}>
+                                    <Gauge
+                                        width={100}
+                                        height={100}
+                                        value={item.value}
+                                        style={{display: 'flex', justifySelf: 'center'}}
+                                        sx={{
+                                            '& text': {
+                                                display: 'none',
+                                            },
+                                            [`& .${gaugeClasses.valueArc}`]: {
+                                                fill: '#EDFF20FF',
+                                            },
+                                        }}
+                                    />
+
+                                    <Box
+                                        position="absolute"
+                                        top="50%"
+                                        left="50%"
+                                        sx={{
+                                            transform: 'translate(-50%, -50%)',
+                                            color: '#fff',
+                                            fontSize: '14px',
+                                            fontWeight: 600,
+                                        }}
+                                    >
+                                        {item.value}%
+                                    </Box>
+                                </Box>
+                                <span style={{color: "white"}}>{item.skillName}</span>
+                            </Grid2>
+                        ))}
+                    </Grid2>
+
+                    <Divider sx={{
+                        backgroundColor: '#53535b',
+                        opacity: 0.5,
+                    }}/>
+                    <Grid2 container spacing={3} style={{padding: '1rem'}}>
+                        <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
+                                          <span style={{color: 'white',fontWeight: 500, display: 'inline-flex'}}>
+                                              <LibraryBooksIcon  sx={{color: '#EDFF20FF'}}/>
+                                              {skillsData[1].title}
+                                          </span>
+                        </Grid2>
+                        {skillsData[1].skills.map ((item, idx) => (
+                            <Grid2 size={{xs: 12, sm: 6, md: 6, lg: 6}} key={idx} style={{ height: 20, }}>
+                                <span style={{color: 'white'}}>{item.skillName}</span>
+                                <BorderLinearProgress variant="determinate" value={item.value} />
+                            </Grid2>
+
+                        ))}
+
+
+                    </Grid2>
+
+                </CardContent>
+            </Card>
+        </>
+    )
+
+}

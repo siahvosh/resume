@@ -30,7 +30,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     /*border: 2px solid red;*/
 }
@@ -38,10 +38,12 @@
 .paper-style{
     background: #1c1c1c !important;
     border-radius: 20px !important;
-    border: 2px solid #ffffff;
-    width: 40%;
+    border: 2px solid #5f5e5e;
+    width: 20vw;
+    height: 4vh;
     display: flex;
     justify-content: center;
+    align-items: center;
 
 }
 .base-card{
@@ -60,7 +62,7 @@
 .card-action{
     border-top: 1px solid #2e2d2d;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     color: white;
 }
@@ -498,6 +500,15 @@ a:hover{
         width: 100vw;
         height: 100vh
     }
+    .paper-style{
+        width: 60vw;
+        height: 5vh;
+    }
+    /*.bar{*/
+    /*    position: absolute !important;*/
+    /*    display: block;*/
+    /*  */
+    /*}*/
 }
 @media screen and (min-width: 1500px) {
     .phone-img {
