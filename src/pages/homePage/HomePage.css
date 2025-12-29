@@ -18,6 +18,7 @@
 
 
 .resume-container{
+    /*border: 2px solid red;*/
     overflow-X: hidden;
     width: 95vw;
     height: 80vh;

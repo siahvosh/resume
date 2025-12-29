@@ -56,6 +56,7 @@ import * as React from "react";
 import {Cloud, ContentCopy, ContentCut, ContentPaste} from "@mui/icons-material";
 import MenuItem from "@mui/material/MenuItem";
 import {Gauge, gaugeClasses} from "@mui/x-charts";
+import {Loading} from "../../component/loading/Loading";
 
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
@@ -277,7 +278,10 @@ export const HomePage = () => {
 
     return (
         <>
+
           <div className={'cont-1'}>
+              <Loading/>
+              {/*<Loading/>*/}
               <div className={'resume-container'}>
                   <Grid2 container style={{display: 'flex', alignItems: 'center'}}>
                       {/*//BaseCard*/}
@@ -287,6 +291,7 @@ export const HomePage = () => {
 
                       {/*//DetailCard*/}
                       <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}} style={{zIndex: '0'}}>
+
                           <AnimatePresence mode="popLayout">
                               {page === 'about' && (
                                   <motion.div
