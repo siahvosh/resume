@@ -311,6 +311,17 @@ export const HomePage = () => {
                                       <WorksPage />
                                   </motion.div>
                               )}
+                              {page === 'contact' && (
+                                  <motion.div
+                                      key="contact"
+                                      transition={{ duration: 0.8 }}
+                                      initial={{ x: '-50vw', opacity: 0 }}
+                                      animate={{ x: 0, opacity: 1 }}
+                                      exit={{ x: '-30vw', opacity: 0 }}
+                                  >
+                                      <ContactPage />
+                                  </motion.div>
+                              )}
                           </AnimatePresence>
                       </Grid2>
                   </Grid2>
@@ -926,7 +937,7 @@ const DetailCard = () => {
 }
 const WorksPage = () =>{
     return(
-        <Card sx={{pointerEvents: "none", overflowY: 'hidden'}} className={'detail-card'}>
+        <Card sx={{pointerEvents: "none"}} className={'detail-card'}>
             <CardContent style={{position: 'relative'}}>
                 <Box
                     sx={{
@@ -1030,6 +1041,47 @@ const WorksPage = () =>{
                     </Grid2>
                 </Grid2>
                 </Box>
+            </CardContent>
+        </Card>
+    )
+}
+
+
+const ContactPage = () => {
+    return (
+        <Card sx={{pointerEvents: "none", overflowY: 'hidden'}} className={'detail-card'}>
+            <CardContent>
+                <Typography gutterBottom  className={'typography'}>
+                    <span style={{color: '#EDFF20FF'}}> C</span>ontact
+                    <Divider sx={{
+                        backgroundColor: '#53535b',
+                        opacity: 0.5,
+                    }}/>
+                </Typography>
+
+                <Grid2 container spacing={2}>
+                        <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
+                            <div style={{color: 'white', display: 'flex', justifyContent: 'space-between'}}>
+                                <span>Address  : </span>
+                                <span>California, USA</span>
+                            </div>
+
+                        </Grid2>
+
+                        <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
+                            <div style={{color: 'white',display: 'flex', justifyContent: 'space-between'}}>
+                                <span>Phone : </span>
+                                <span>+98 912 49 49 401 </span>
+                            </div>
+                        </Grid2>
+                        <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
+                            <div style={{color: 'white',display: 'flex', justifyContent: 'space-between'}}>
+                                <span>Phone : </span>
+                                <span>+98 912 49 49 401 </span>
+                            </div>
+                        </Grid2>
+                    </Grid2>
+
             </CardContent>
         </Card>
     )
