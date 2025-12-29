@@ -282,14 +282,14 @@ export const HomePage = () => {
                       </Grid2>
                       {/*//DetailCard*/}
                       <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}} style={{zIndex: '0'}}>
-                          <AnimatePresence mode="wait">
+                          <AnimatePresence mode="popLayout">
                               {page === 'about' && (
                                   <motion.div
                                       key="about"
                                       transition={{ duration: 0.8 }}
                                       initial={{ x: '-50vw', opacity: 0 }}
                                       animate={{ x: 0, opacity: 1 }}
-                                      exit={{ x: '-50vw', opacity: 1 }}
+                                      exit={{ x: '-30vw', opacity: 0 }}
                                   >
                                       <DetailCard />
                                   </motion.div>
@@ -298,12 +298,12 @@ export const HomePage = () => {
                               {page === 'works' && (
                                   <motion.div
                                       key="works"
-                                      transition={{ duration: 1.2 }}
-                                      initial={{ x: -100, opacity: 0 }}
+                                      transition={{ duration: 0.8 }}
+                                      initial={{ x: '-30vw', opacity: 0 }}
                                       animate={{ x: 0, opacity: 1 }}
-                                      exit={{ x: 100, opacity: 0 }}
+                                      exit={{ x: '-50vw', opacity: 0 }}
                                   >
-                                      works
+                                      <DetailCard />
                                   </motion.div>
                               )}
                           </AnimatePresence>
