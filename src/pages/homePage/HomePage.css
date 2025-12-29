@@ -24,20 +24,28 @@
  }
 
 .bar{
-    height: 80vh;
+    position: absolute;
     display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
     justify-content: center;
     align-items: center;
-
     /*border: 2px solid red;*/
 }
 
 .paper-style{
-    background: #171616 !important;
+    background: #1c1c1c !important;
     border-radius: 20px !important;
+    border: 2px solid #ffffff;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+
 }
 .base-card{
-    /*border: 2px solid #53535b;*/
+    position: relative;
     height: 80vh;
     background: #191919 !important;
     border-radius: 14px !important;
@@ -63,7 +71,7 @@
     background: transparent !important;
     border: 1px solid #53535b;
     border-radius: 12px !important;
-    overflow-Y: auto !important;
+    overflow: auto !important;
     scrollbar-color: #000000 #2f2f2f;
     scrollbar-width: thin;
 }
@@ -477,6 +485,18 @@ a:hover{
     }
     .detail-text{
         margin-left: 0;
+    }
+    .detail-card{
+        height: 100vh;
+        margin-top: 1rem;
+        padding: 1rem;
+    }
+    .base-card{
+        height: 100vh !important;
+    }
+    .resume-container{
+        width: 100vw;
+        height: 100vh
     }
 }
 @media screen and (min-width: 1500px) {

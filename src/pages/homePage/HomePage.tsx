@@ -169,14 +169,14 @@ export const HomePage = () => {
         <Tooltip {...props} arrow classes={{ popper: className }} />
     ))(() => ({
         [`& .${tooltipClasses.tooltip}`]: {
-            backgroundColor: '#fa0b0b',
-            color: '#fff',
+            backgroundColor: '#EDFF20FF',
+            color: '#000000',
             fontSize: '12px',
             borderRadius: '14px',
         },
-        [`& .${tooltipClasses.arrow}`]: {
-            color: '#f10404',
-        },
+        // [`& .${tooltipClasses.arrow}`]: {
+        //     color: '#EDFF20FF',
+        // },
     }));
 
 
@@ -379,37 +379,38 @@ export const HomePage = () => {
           <div className={'cont-1'}>
               <div className={'resume-container'}>
                   <Grid2 container style={{display: 'flex', alignItems: 'center'}}>
-                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 1}}>
-                          <div className={'bar'}>
-                              <Paper className={'paper-style'} sx={{border: '1px solid gray', width: 65 }}>
-                                  <MenuList>
-                                      <MenuItem>
-                                          <ListItemIcon>
-                                              <CustomTooltip title="ABOUT" placement="right">
-                                                  <PermIdentityIcon style={{color: 'white'}} fontSize="large" />
-                                              </CustomTooltip>
-                                          </ListItemIcon>
-                                      </MenuItem>
-                                      <MenuItem>
-                                          <ListItemIcon>
-                                              <CustomTooltip title="RESUME" placement="right">
-                                                  <FeedIcon style={{color: 'white'}} fontSize="large" />
-                                              </CustomTooltip>
-                                          </ListItemIcon>
-                                      </MenuItem>
-                                      <MenuItem>
-                                          <ListItemIcon>
-                                              <CustomTooltip title="WORKS" placement="right">
-                                                  <CodeIcon style={{color: 'white'}} fontSize="large" />
-                                              </CustomTooltip>
-                                          </ListItemIcon>
-                                      </MenuItem>
-                                  </MenuList>
-                              </Paper>
-                          </div>
-                      </Grid2>
-                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 5}}>
+                      {/*<Grid2 size={{xs: 12, sm: 12, md: 12, lg: 1}}>*/}
+
+                      {/*</Grid2>*/}
+                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}}>
                           <Card className={'base-card'} sx={{ maxWidth: '100%', height: '80vh '}}>
+                                  <div className={'bar'}>
+                                    <Paper className={'paper-style'}>
+                                      <MenuList style={{display: 'flex'}}>
+                                          <MenuItem>
+                                              <ListItemIcon>
+                                                  <CustomTooltip title="ABOUT" placement="bottom">
+                                                      <PermIdentityIcon style={{color: '#EDFF20FF'}} fontSize="medium" />
+                                                  </CustomTooltip>
+                                              </ListItemIcon>
+                                          </MenuItem>
+                                          <MenuItem>
+                                              <ListItemIcon>
+                                                  <CustomTooltip title="RESUME" placement="bottom">
+                                                      <FeedIcon style={{color: 'white'}} fontSize="medium" />
+                                                  </CustomTooltip>
+                                              </ListItemIcon>
+                                          </MenuItem>
+                                          <MenuItem>
+                                              <ListItemIcon>
+                                                  <CustomTooltip title="WORKS" placement="bottom">
+                                                      <CodeIcon style={{color: 'white'}} fontSize="medium" />
+                                                  </CustomTooltip>
+                                              </ListItemIcon>
+                                          </MenuItem>
+                                      </MenuList>
+                                  </Paper>
+                                  </div>
                                   <CardMedia
                                       component="img"
                                       alt="green iguana"
