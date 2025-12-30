@@ -750,10 +750,7 @@ const DetailCard = () => {
                     <Typography gutterBottom  className={'typography'}>
                         <span style={{color: '#EDFF20FF'}}> A</span>bout Me
                     </Typography>
-                    <Divider sx={{
-                        backgroundColor: '#53535b',
-                        opacity: 0.5,
-                    }}/>
+                    <Divider className='divider' />
                     <Grid2 container>
                         <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem', borderRight: '1px solid #2f2f33'}}>
                             <span style={{color: 'white'}}>I am Ryan Adlard, web designer from USA, California. I have rich experience in web site design and building and customization, also I am good at wordpress. I love to talk with you about our unique.</span>
@@ -793,39 +790,26 @@ const DetailCard = () => {
                     <Typography gutterBottom marginTop={'3rem'} className={'typography'}>
                         <span style={{color: '#EDFF20FF'}}> S</span>ummary
                     </Typography>
-                    <Divider sx={{
-                        backgroundColor: '#53535b',
-                        opacity: 0.5,
-                    }}/>
+                    <Divider className='divider' />
                     <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}} style={{padding: '1rem'}}>
-                                      <span style={{color: 'white'}}>
-                                          Front-End Developer with 3+ years of experience building responsive, user-friendly web applications using JavaScript, React (MUI), Vue2 (Vuetify), HTML, Bootstrap ,CSS. Skilled in translating UI/UX designs into highperformance interfaces. I am also highly responsible, detail-oriented, and skilled in project management, ensuring timely delivery of high-quality work.
-                                      </span>
+                        <span style={{color: 'white'}}>
+                            Front-End Developer with 3+ years of experience building responsive, user-friendly web applications using JavaScript, React (MUI), Vue2 (Vuetify), HTML, Bootstrap ,CSS. Skilled in translating UI/UX designs into highperformance interfaces. I am also highly responsible, detail-oriented, and skilled in project management, ensuring timely delivery of high-quality work.
+                        </span>
                     </Grid2>
 
                     <Typography gutterBottom marginTop={'3rem'} className={'typography'}>
                         <span style={{color: '#EDFF20FF'}}> E</span>xperience
                     </Typography>
-                    <Divider sx={{
-                        backgroundColor: '#53535b',
-                        opacity: 0.5,
-                    }}/>
+                    <Divider className='divider' />
                     <Grid2 container>
                         <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}} style={{padding: '1rem'}}>
                             <div style={{display: 'flex', flexDirection: 'column', gap: 10}}>
-                                              <span style={{color: '#ffffff', fontSize: '16px', fontWeight: 800}}>
-                                                {derakExperience.company}
-                                              </span>
-                                <span style={{
-                                    color: '#EDFF20FF',
-                                    fontSize: '8px',
-                                    border: '2px solid #EDFF20FF',
-                                    padding: '0.2rem',
-                                    borderRadius: '5px',
-                                    width: 'fit-content',
-                                }}>
-                                                {derakExperience.period}
-                                              </span>
+                                <span style={{color: '#ffffff', fontSize: '16px', fontWeight: 800}}>
+                                  {derakExperience.company}
+                                </span>
+                                <span className='date-box'>
+                                    {derakExperience.period}
+                                </span>
                                 <Grid2 container spacing={5} marginTop={3}>
                                     {derakExperience.data.map((text, index) => (
                                         <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} key={index}>
@@ -833,11 +817,7 @@ const DetailCard = () => {
                                                                <CircleIcon sx={{width: '10px', color: '#EDFF20FF'}}/>
                                                             <span> {text.description}</span>
                                                           </span>
-                                            <Divider sx={{
-                                                backgroundColor: '#53535b',
-                                                opacity: 0.5,
-                                                margin: '1rem',
-                                            }}/>
+
                                         </Grid2>
 
                                     ))}
@@ -848,23 +828,16 @@ const DetailCard = () => {
                         <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}} style={{padding: '1rem',}}>
                             <div style={{display: 'flex', flexDirection: 'column', gap: 10}}>
                                 <span style={{color: 'white',fontWeight: 800}}>RAYAN PARS</span>
-                                <span style={{color: '#EDFF20FF', fontSize: '8px', border: '2px solid #EDFF20FF', padding: '0.2rem', borderRadius: '5px', width: '100px'}}> May 2025 – October 2025</span>
-                                <Divider sx={{
-                                    backgroundColor: '#53535b',
-                                    opacity: 0.5,
-                                }}/>
+                                <span className='date-box'> May 2025 – October 2025</span>
+                                <Divider className='divider' />
 
                                 {parsExperience.data.map((text, index) => (
                                     <>
-                                                      <span style={{ color: 'white', fontWeight: 100, display: 'inline-flex' }}>
-                                                               <CircleIcon sx={{width: '10px', color: '#EDFF20FF'}}/>
-                                                            <span> {text.description}</span>
-                                                          </span>
-                                        <Divider sx={{
-                                            backgroundColor: '#53535b',
-                                            opacity: 0.5,
-                                            margin: '1rem',
-                                        }}/>
+                                         <span style={{ color: 'white', fontWeight: 100, display: 'inline-flex' }}>
+                                              <CircleIcon sx={{width: '10px', color: '#EDFF20FF'}}/>
+                                           <span> {text.description}</span>
+                                         </span>
+                                        <Divider className='divider' style={{margin: '1rem'}} />
                                     </>
                                 ))}
 
@@ -875,10 +848,7 @@ const DetailCard = () => {
                     <Typography gutterBottom marginTop={'3rem'} className={'typography'}>
                         <span style={{color: '#EDFF20FF'}}> M</span>y Skills
                     </Typography>
-                    <Divider sx={{
-                        backgroundColor: '#53535b',
-                        opacity: 0.5,
-                    }}/>
+                    <Divider className='divider' />
                     <Grid2 container spacing={3} style={{padding: '1rem'}}>
                         <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
                                           <span style={{color: 'white',fontWeight: 500, display: 'inline-flex'}}>
@@ -923,10 +893,7 @@ const DetailCard = () => {
                         ))}
                     </Grid2>
 
-                    <Divider sx={{
-                        backgroundColor: '#53535b',
-                        opacity: 0.5,
-                    }}/>
+                    <Divider className='divider' />
                     <Grid2 container spacing={3} style={{padding: '1rem'}}>
                         <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
                                           <span style={{color: 'white',fontWeight: 500, display: 'inline-flex'}}>
@@ -984,10 +951,7 @@ const WorksPage = () =>{
                 <Typography gutterBottom  className={'typography'}>
                     <span style={{color: '#EDFF20FF'}}>W</span>orks
                 </Typography>
-                <Divider sx={{
-                    backgroundColor: '#53535b',
-                    opacity: 0.5,
-                }}/>
+                    <Divider className='divider' />
                 <Grid2 container spacing={2} style={{marginTop: '3rem'}}>
                     <Grid2 size={{xs: 12, sm: 6, md: 6, lg: 6}} style={{color: 'white',display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                         <Card sx={{maxWidth: 345 , background: 'black', color: '#ffff'}}>
@@ -1065,10 +1029,7 @@ const ContactPage = () => {
             <CardContent>
                 <Typography gutterBottom  className={'typography'}>
                     <span style={{color: '#EDFF20FF'}}> C</span>ontact
-                    <Divider sx={{
-                        backgroundColor: '#53535b',
-                        opacity: 0.5,
-                    }}/>
+                    <Divider className='divider' />
                 </Typography>
 
                 <Grid2 container spacing={2}>

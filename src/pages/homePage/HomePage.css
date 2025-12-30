@@ -79,15 +79,7 @@
     overflow: auto !important;
     scrollbar-color: #000000 transparent;
     scrollbar-width: thin;
-    /*mask-image: linear-gradient(*/
-    /*        to bottom,*/
-    /*        transparent 0%,*/
-    /*        black 10%,*/
-    /*        black 90%,*/
-    /*        transparent 100%*/
-    /*);*/
 }
-
 .detail-card::before {
     content: "";
     position: absolute;
@@ -97,16 +89,29 @@
     backdrop-filter: blur(8px);
 }
 
-
-
-
-
 .typography{
     font-size: 26px !important;
     font-weight: 800 !important;
     margin-left: 1rem !important;
     color: #FFFFFF;
 }
+
+.date-box{
+    color: #EDFF20FF;
+    font-size: 8px;
+    border: 2px solid #EDFF20FF;
+    padding: 0.2rem;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.divider{
+    background-color: #53535b;
+    opacity: 0.5 !important;
+    /*margin: 1rem !important;*/
+}
+
+
 
 
 .title-card{
