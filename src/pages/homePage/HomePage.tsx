@@ -815,11 +815,10 @@ const DetailCard = () => {
                             <div className='experience-box'>
                                 <span style={{color: 'white',fontWeight: 800}}>RAYAN PARS</span>
                                 <span className='date-box'> May 2025 – October 2025</span>
-                                <Divider className='divider' />
 
                                 {parsExperience.data.map((text, index) => (
                                     <>
-                                         <span style={{ color: 'white', fontWeight: 100, display: 'inline-flex' }}>
+                                         <span style={{ color: 'white', fontWeight: 100, display: 'inline-flex', marginTop: '1rem' }}>
                                               <CircleIcon sx={{width: '10px', color: '#EDFF20FF'}}/>
                                            <span> {text.description}</span>
                                          </span>
@@ -843,7 +842,7 @@ const DetailCard = () => {
                            </span>
                         </Grid2>
                         {skillsData[0].skills.map((item, idx) => (
-                            <Grid2 key={idx} size={{xs: 6, sm: 3, md: 3, lg: 3}} style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
+                            <Grid2 key={idx} size={{xs: 6, sm: 3, md: 3, lg: 3}} className='skill-grid'>
                                 <Box position="relative" width={100} height={100}>
                                     <Gauge
                                         width={100}
