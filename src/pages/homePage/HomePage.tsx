@@ -768,8 +768,6 @@ const DetailCard = () => {
                                     <Divider className='divider' />
                                 </>
                             ))}
-
-
                         </Grid2>
                     </Grid2>
 
@@ -789,7 +787,7 @@ const DetailCard = () => {
                     <Divider className='divider' />
                     <Grid2 container>
                         <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}} style={{padding: '1rem'}}>
-                            <div style={{display: 'flex', flexDirection: 'column', gap: 10}}>
+                            <div className='experience-box'>
                                 <span style={{color: '#ffffff', fontSize: '16px', fontWeight: 800}}>
                                   {derakExperience.company}
                                 </span>
@@ -799,20 +797,22 @@ const DetailCard = () => {
                                 <Grid2 container spacing={5} marginTop={3}>
                                     {derakExperience.data.map((text, index) => (
                                         <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} key={index}>
-                                                          <span style={{ color: 'white', fontWeight: 100, display: 'inline-flex' }}>
-                                                               <CircleIcon sx={{width: '10px', color: '#EDFF20FF'}}/>
-                                                            <span> {text.description}</span>
-                                                          </span>
-
+                                           <span style={{ color: 'white', fontWeight: 100, display: 'inline-flex' }}>
+                                                <CircleIcon sx={{width: '10px', color: '#EDFF20FF'}}/>
+                                             <span> {text.description}</span>
+                                           </span>
+                                            <Divider className='divider' style={{margin: '1rem'}}/>
                                         </Grid2>
 
+
                                     ))}
+
                                 </Grid2>
                             </div>
 
                         </Grid2>
                         <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}} style={{padding: '1rem',}}>
-                            <div style={{display: 'flex', flexDirection: 'column', gap: 10}}>
+                            <div className='experience-box'>
                                 <span style={{color: 'white',fontWeight: 800}}>RAYAN PARS</span>
                                 <span className='date-box'> May 2025 – October 2025</span>
                                 <Divider className='divider' />
@@ -837,10 +837,10 @@ const DetailCard = () => {
                     <Divider className='divider' />
                     <Grid2 container spacing={3} style={{padding: '1rem'}}>
                         <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
-                                          <span style={{color: 'white',fontWeight: 500, display: 'inline-flex'}}>
-                                              <CodeIcon  sx={{color: '#EDFF20FF'}}/>
-                                              {skillsData[0].title}
-                                          </span>
+                           <span style={{color: 'white',fontWeight: 500, display: 'inline-flex'}}>
+                               <CodeIcon  sx={{color: '#EDFF20FF'}}/>
+                               {skillsData[0].title}
+                           </span>
                         </Grid2>
                         {skillsData[0].skills.map((item, idx) => (
                             <Grid2 key={idx} size={{xs: 6, sm: 3, md: 3, lg: 3}} style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
@@ -882,17 +882,16 @@ const DetailCard = () => {
                     <Divider className='divider' />
                     <Grid2 container spacing={3} style={{padding: '1rem'}}>
                         <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
-                                          <span style={{color: 'white',fontWeight: 500, display: 'inline-flex'}}>
-                                              <LibraryBooksIcon  sx={{color: '#EDFF20FF'}}/>
-                                              {skillsData[1].title}
-                                          </span>
+                            <span style={{color: 'white',fontWeight: 500, display: 'inline-flex'}}>
+                                <LibraryBooksIcon  sx={{color: '#EDFF20FF'}}/>
+                                {skillsData[1].title}
+                            </span>
                         </Grid2>
                         {skillsData[1].skills.map ((item, idx) => (
                             <Grid2 size={{xs: 12, sm: 6, md: 6, lg: 6}} key={idx} style={{ height: 20, }}>
                                 <span style={{color: 'white'}}>{item.skillName}</span>
                                 <BorderLinearProgress variant="determinate" value={item.value} />
                             </Grid2>
-
                         ))}
                     </Grid2>
 

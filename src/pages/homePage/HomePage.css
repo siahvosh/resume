@@ -116,6 +116,12 @@
     display: flex;
 }
 
+.experience-box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 /*span{*/
 /*    color: white;*/
 /*}*/
