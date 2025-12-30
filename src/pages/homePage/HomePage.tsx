@@ -616,23 +616,23 @@ const BaseCard = ({ page, handlePage }) => {
                     height="50%"
                     image={avatar}
                 />
-                <CardContent className={'card-content'} style={{height: '40%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+                <CardContent className={'card-content'} style={{ gap: 5 ,height: '40%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
                     <Lottie
                         animationData={animationData}
                         loop
                         autoplay
                         className={'lottie'}
                     />
-                    <Typography className={'title-card'}>
+                    <Typography className={'base-card-title'}>
                         Siavash Miralikhani
                     </Typography>
-                    <Typography className={'body-card'}>
+                    <Typography className={'base-card-body'}>
                         FRONT END DEVELOPER
                     </Typography>
                     <Typography sx={{ color: 'text.light' }}>
-                        <GitHubIcon />
-                        <LinkedInIcon />
-                        <InstagramIcon />
+                        <GitHubIcon fontSize={'small'}/>
+                        <LinkedInIcon fontSize={'small'}/>
+                        <InstagramIcon fontSize={'small'}/>
                     </Typography>
                 </CardContent>
                 <CardActions className={'card-action'}>

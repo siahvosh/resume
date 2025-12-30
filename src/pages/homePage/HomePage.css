@@ -124,14 +124,11 @@
     align-items: center;
 }
 
-
-
-
-.title-card{
+.base-card-title{
     font-weight: 800 !important;
     font-size: clamp(35px, 3vw, 4vw) !important;
 }
-.body-card{
+.base-card-body{
     font-weight: 500 !important;
     color: #EDFF20FF;
     font-size: clamp(15px, 0.5rem, 0.5vw) !important;
