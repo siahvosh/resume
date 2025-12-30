@@ -641,10 +641,7 @@ const BaseCard = ({ page, handlePage }) => {
                 <CardActions className={'card-action'}>
                     <span>DOWNLOAD</span>
                     <Divider
-                        sx={{
-                            backgroundColor: '#53535b',
-                            opacity: 0.5,
-                        }}
+                        className='divider'
                         orientation="vertical" flexItem />
                     <span>CONTACT ME</span>
                 </CardActions>
@@ -742,6 +739,12 @@ const DetailCard = () => {
             ]
         }
     ]
+    const myData = [
+        {title: 'Age :', value: '30'},
+        {title: 'Residence :', value: 'Iran'},
+        {title: 'Freelance :', value: 'Available'},
+        {title: 'Address :', value: 'Shiraz'},
+    ]
 
     return(
         <>
@@ -756,34 +759,17 @@ const DetailCard = () => {
                             <span style={{color: 'white'}}>I am Ryan Adlard, web designer from USA, California. I have rich experience in web site design and building and customization, also I am good at wordpress. I love to talk with you about our unique.</span>
                         </Grid2>
                         <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-around', color: 'white'}}>
-                            <div style={{justifyContent: 'space-between', display: 'flex'}}>
-                                <span style={{color: '#EDFF20'}}> Age :</span>
-                                <span> 30</span>
-                            </div>
-                            <Divider sx={{
-                                backgroundColor: '#53535b',
-                                opacity: 0.5,
-                            }}/>
-                            <div style={{justifyContent: 'space-between', display: 'flex'}}>
-                                <div style={{color: '#EDFF20'}}>Residence :</div>
-                                <div >Iran</div>
-                            </div>
-                            <Divider sx={{
-                                backgroundColor: '#53535b',
-                                opacity: 0.5,
-                            }}/>
-                            <div style={{justifyContent: 'space-between', display: 'flex'}}>
-                                <div style={{color: '#EDFF20'}}>Freelance :</div>
-                                <div>Available</div>
-                            </div>
-                            <Divider sx={{
-                                backgroundColor: '#53535b',
-                                opacity: 0.5,
-                            }}/>
-                            <div style={{justifyContent: 'space-between', display: 'flex'}}>
-                                <div style={{color: '#EDFF20'}}>Address :</div>
-                                <div>Shiraz</div>
-                            </div>
+                            {myData.map((item, idx) => (
+                                <>
+                                    <div key={idx} className='address-box'>
+                                        <span style={{color: '#EDFF20'}}> {item.title}</span>
+                                        <span> {item.value}</span>
+                                    </div>
+                                    <Divider className='divider' />
+                                </>
+                            ))}
+
+
                         </Grid2>
                     </Grid2>
 

@@ -111,6 +111,15 @@
     /*margin: 1rem !important;*/
 }
 
+.address-box{
+    justify-content: space-between;
+    display: flex;
+}
+
+/*span{*/
+/*    color: white;*/
+/*}*/
+
 
 
 
