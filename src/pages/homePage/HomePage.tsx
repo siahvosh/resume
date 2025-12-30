@@ -598,9 +598,9 @@ const BaseCard = ({ page, handlePage }) => {
                         <MenuList style={{display: 'flex'}}>
                             {menuBtn.map((item, idx) => (
                                 <MenuItem key={idx} >
-                                    <ListItemIcon onClick={() => handlePage(item.title.toLocaleLowerCase())}>
+                                    <ListItemIcon  onClick={() => handlePage(item.title.toLocaleLowerCase())}>
                                         <CustomTooltip title={item.title} placement="bottom">
-                                            <div  style={{color: '#EDFF20FF'}} fontSize="medium" >
+                                            <div  style={{color: '#EDFF20FF'}}>
                                                 {item.icon}
                                             </div>
                                         </CustomTooltip>
@@ -636,11 +636,11 @@ const BaseCard = ({ page, handlePage }) => {
                     </Typography>
                 </CardContent>
                 <CardActions className={'card-action'}>
-                    <span>DOWNLOAD</span>
+                    <span className='action-btn'>DOWNLOAD</span>
                     <Divider
                         className='divider'
                         orientation="vertical" flexItem />
-                    <span>CONTACT ME</span>
+                    <span className='action-btn'>CONTACT ME</span>
                 </CardActions>
             </Card>
         </>

@@ -59,10 +59,16 @@
 .card-action{
     border-top: 1px solid #2e2d2d;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-
     color: white;
+}
+.action-btn{
+    cursor: pointer;
+}
+
+.action-btn:hover{
+ color: #EDFF20FF ;
 }
 
 
