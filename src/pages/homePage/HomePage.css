@@ -15,8 +15,6 @@
     align-items: center;
     display: flex;
 }
-
-
 .resume-container{
     /*border: 2px solid red;*/
     overflow-X: hidden;
@@ -24,6 +22,14 @@
     height: 80vh;
  }
 
+
+.base-card{
+    position: relative;
+    height: 80vh;
+    background: #191919 !important;
+    border-radius: 14px !important;
+    /*background: transparent !important;*/
+}
 .bar{
     position: absolute;
     display: flex;
@@ -35,7 +41,6 @@
     align-items: center;
     /*border: 2px solid red;*/
 }
-
 .paper-style{
     background: #1c1c1c !important;
     border-radius: 20px !important;
@@ -47,19 +52,10 @@
     align-items: center;
 
 }
-.base-card{
-    position: relative;
-    height: 80vh;
-    background: #191919 !important;
-    border-radius: 14px !important;
-    /*background: transparent !important;*/
-}
-
 .card-content{
     color: white ;
     position: relative;
 }
-
 .card-action{
     border-top: 1px solid #2e2d2d;
     display: flex;
@@ -72,7 +68,6 @@
 
 .detail-card{
     height: 75vh;
-
     background: transparent !important;
     border: 1px solid #53535b;
     border-radius: 12px !important;
@@ -88,14 +83,12 @@
     background: transparent;
     backdrop-filter: blur(8px);
 }
-
 .typography{
     font-size: 26px !important;
     font-weight: 800 !important;
     margin-left: 1rem !important;
     color: #FFFFFF;
 }
-
 .date-box{
     color: #EDFF20FF;
     font-size: 8px;
@@ -104,34 +97,26 @@
     border-radius: 5px;
     width: fit-content;
 }
-
 .divider{
     background-color: #53535b;
     opacity: 0.5 !important;
     /*margin: 1rem !important;*/
 }
-
 .address-box{
     justify-content: space-between;
     display: flex;
 }
-
 .experience-box{
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-
 .skill-grid{
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
-
-/*span{*/
-/*    color: white;*/
-/*}*/
 
 
 

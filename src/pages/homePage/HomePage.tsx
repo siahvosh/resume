@@ -327,6 +327,7 @@ export const HomePage = () => {
                               {page === 'contact' && (
                                   <motion.div
                                       key="contact"
+                                      style={{position: 'relative'}}
                                       transition={{ duration: 0.8 }}
                                       initial={{ x: '-50vw', opacity: 0 }}
                                       animate={{ x: 0, opacity: 1 }}
@@ -583,33 +584,29 @@ const BaseCard = ({ page, handlePage }) => {
         //     color: '#EDFF20FF',
         // },
     }));
+
+    const menuBtn = [
+        {title: 'ABOUT',icon: <PermIdentityIcon />},
+        {title: 'WORKS', icon: <FeedIcon />},
+        {title: 'contact', icon: <CodeIcon />},
+    ]
     return(
         <>
-            <Card className={'base-card'} sx={{ maxWidth: '100%', height: '80vh '}}>
+            <Card className={'base-card'}>
                 <div className={'bar'}>
                     <Paper className={'paper-style'}>
                         <MenuList style={{display: 'flex'}}>
-                            <MenuItem>
-                                <ListItemIcon>
-                                    <CustomTooltip title="ABOUT" placement="bottom">
-                                        <PermIdentityIcon onClick={() => handlePage('about')} style={{color: '#EDFF20FF'}} fontSize="medium" />
-                                    </CustomTooltip>
-                                </ListItemIcon>
-                            </MenuItem>
-                            <MenuItem>
-                                <ListItemIcon>
-                                    <CustomTooltip title="RESUME" placement="bottom">
-                                        <FeedIcon onClick={() => handlePage('works')} style={{color: 'white'}} fontSize="medium" />
-                                    </CustomTooltip>
-                                </ListItemIcon>
-                            </MenuItem>
-                            <MenuItem>
-                                <ListItemIcon>
-                                    <CustomTooltip title="WORKS" placement="bottom">
-                                        <CodeIcon onClick={() => handlePage('contact')} style={{color: 'white'}} fontSize="medium" />
-                                    </CustomTooltip>
-                                </ListItemIcon>
-                            </MenuItem>
+                            {menuBtn.map((item, idx) => (
+                                <MenuItem key={idx} >
+                                    <ListItemIcon onClick={() => handlePage(item.title.toLocaleLowerCase())}>
+                                        <CustomTooltip title={item.title} placement="bottom">
+                                            <div  style={{color: '#EDFF20FF'}} fontSize="medium" >
+                                                {item.icon}
+                                            </div>
+                                        </CustomTooltip>
+                                    </ListItemIcon>
+                                </MenuItem>
+                            ))}
                         </MenuList>
                     </Paper>
                 </div>
