@@ -77,8 +77,23 @@
     border: 1px solid #53535b;
     border-radius: 12px !important;
     overflow: auto !important;
-    scrollbar-color: #000000 #2f2f2f;
+    scrollbar-color: #000000 transparent;
     scrollbar-width: thin;
+    /*mask-image: linear-gradient(*/
+    /*        to bottom,*/
+    /*        transparent 0%,*/
+    /*        black 10%,*/
+    /*        black 90%,*/
+    /*        transparent 100%*/
+    /*);*/
+}
+
+.detail-card::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background: black;
 
 }
 
@@ -100,6 +115,7 @@
 }
 .body-card{
     font-weight: 500 !important;
+    color: #EDFF20FF;
     font-size: clamp(15px, 0.5rem, 0.5vw) !important;
 }
 

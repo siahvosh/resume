@@ -30,7 +30,6 @@ import web4 from "../../assets/background.jpg";
 import skater from '../../assets/2skater.png'
 import worker from '../../assets/grafiti-artist.png';
 import phone from '../../assets/iphone.png'
-
 import rock1 from '../../assets/r1.png'
 import rock2 from '../../assets/r2.png'
 import rock3 from '../../assets/r3.png'
@@ -304,6 +303,7 @@ export const HomePage = () => {
                               {page === 'about' && (
                                   <motion.div
                                       key="about"
+                                      style={{position: 'relative'}}
                                       transition={{ duration: 0.8 }}
                                       initial={{ x: '-50vw', opacity: 0 }}
                                       animate={{ x: 0, opacity: 1 }}
@@ -626,10 +626,10 @@ const BaseCard = ({ page, handlePage }) => {
                         autoplay
                         className={'lottie'}
                     />
-                    <Typography className={'title-card'}  >
+                    <Typography className={'title-card'}>
                         Siavash Miralikhani
                     </Typography>
-                    <Typography className={'body-card'} sx={{ color: 'text.light' }}>
+                    <Typography className={'body-card'}>
                         FRONT END DEVELOPER
                     </Typography>
                     <Typography sx={{ color: 'text.light' }}>
@@ -746,7 +746,7 @@ const DetailCard = () => {
     return(
         <>
             <Card className={'detail-card'}>
-                <CardContent>
+                <CardContent style={{marginTop: '1rem'}}>
                     <Typography gutterBottom  className={'typography'}>
                         <span style={{color: '#EDFF20FF'}}> A</span>bout Me
                     </Typography>
@@ -950,11 +950,12 @@ const DetailCard = () => {
 }
 const WorksPage = () =>{
     return(
-        <Card sx={{pointerEvents: "none"}} className={'detail-card'}>
-            <CardContent style={{position: 'relative'}}>
+        <Card sx={{pointerEvents: "none", overflow: 'hidden',height: '75vh', background: 'transparent', borderRadius: '12px',border: '1px solid #53535b'}} className={''}>
+            <CardContent style={{position: 'relative', height: '99%'}}>
                 <Box
                     sx={{
                         position: "absolute",
+                        // border: '2px solid red',
                         top: '50%',
                         left: '50%',
                         transform: 'translate(-50%, -50%)',
@@ -1058,8 +1059,6 @@ const WorksPage = () =>{
         </Card>
     )
 }
-
-
 const ContactPage = () => {
     return (
         <Card sx={{pointerEvents: "none", overflowY: 'hidden'}} className={'detail-card'}>
