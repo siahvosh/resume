@@ -91,10 +91,10 @@
 .detail-card::before {
     content: "";
     position: absolute;
-    width: 100%;
-    height: 20px;
-    background: black;
-
+    width: 98%;
+    height: 10px;
+    background: transparent;
+    backdrop-filter: blur(8px);
 }
 
 

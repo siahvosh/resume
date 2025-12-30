@@ -746,7 +746,7 @@ const DetailCard = () => {
     return(
         <>
             <Card className={'detail-card'}>
-                <CardContent style={{marginTop: '1rem'}}>
+                <CardContent style={{marginTop: '1rem', overflow: 'hidden'}}>
                     <Typography gutterBottom  className={'typography'}>
                         <span style={{color: '#EDFF20FF'}}> A</span>bout Me
                     </Typography>
