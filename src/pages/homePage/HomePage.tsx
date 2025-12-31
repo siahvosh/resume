@@ -1011,18 +1011,21 @@ const ContactPage = () => {
         {title: 'Freelance :', value: 'Available'},
     ]
     return (
-        <Card sx={{pointerEvents: "none", overflowY: 'hidden'}} className={'detail-card'}>
+        <Card sx={{}} className={'detail-card'}>
             <CardContent style={{marginTop: '1rem', overflow: 'hidden'}}>
                 <Typography gutterBottom  className={'typography'}>
                     <span style={{color: '#EDFF20FF'}}> C</span>ontact
                     <Divider className='divider' />
                 </Typography>
-                <CardMedia
-                    style={{marginTop: '2rem'}}
-                    component="img"
-                    alt="green iguana"
-                    height="200"
-                    image={shirazMap}
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d221932.55854063891!2d52.5317723!3d29.641564849999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1767216329883!5m2!1sen!2sus"
+                    width="100%"
+                    height="400"
+                    style={{ border: 0 }}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
+                    title="Google Map"
                 />
                 <Grid2 container spacing={2} style={{padding: '1rem', marginTop: '1.5rem'}}>
                     {
