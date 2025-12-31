@@ -27,6 +27,7 @@ import web1 from "../../assets/web1.jpg";
 import web2 from "../../assets/web2.jpg";
 import web3 from "../../assets/web3.jpg";
 import web4 from "../../assets/background.jpg";
+import shirazMap from "../../assets/shiraz.png";
 import skater from '../../assets/2skater.png'
 import worker from '../../assets/grafiti-artist.png';
 import phone from '../../assets/iphone.png'
@@ -1007,6 +1008,7 @@ const ContactPage = () => {
         {title: 'Address :', value: 'Shiraz, Iran'},
         {title: 'Phone :', value: '+98 912 49 49 401'},
         {title: 'Email :', value: 'gtsiavash@gmail.com'},
+        {title: 'Freelance :', value: 'Available'},
     ]
     return (
         <Card sx={{pointerEvents: "none", overflowY: 'hidden'}} className={'detail-card'}>
@@ -1015,15 +1017,26 @@ const ContactPage = () => {
                     <span style={{color: '#EDFF20FF'}}> C</span>ontact
                     <Divider className='divider' />
                 </Typography>
-                <Grid2 container spacing={2} style={{padding: '1rem',}}>
+                <CardMedia
+                    style={{marginTop: '2rem'}}
+                    component="img"
+                    alt="green iguana"
+                    height="200"
+                    image={shirazMap}
+                />
+                <Grid2 container spacing={2} style={{padding: '1rem', marginTop: '1.5rem'}}>
                     {
                         contactData.map((item, isx) => (
-                            <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
+
+                            <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}}>
                                 <div style={{color: 'white', display: 'flex', justifyContent: 'space-between'}}>
-                                    <span>{item.title}</span>
+                                    <span style={{color: '#EDFF20FF'}}>{item.title}</span>
                                     <span>{item.value}</span>
                                 </div>
+                                <Divider className='divider' style={{margin: '0.5rem'}}/>
                             </Grid2>
+
+
                         ))
                     }
                     </Grid2>
