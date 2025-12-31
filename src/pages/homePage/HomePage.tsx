@@ -1010,12 +1010,12 @@ const ContactPage = () => {
     ]
     return (
         <Card sx={{pointerEvents: "none", overflowY: 'hidden'}} className={'detail-card'}>
-            <CardContent>
+            <CardContent style={{marginTop: '1rem', overflow: 'hidden'}}>
                 <Typography gutterBottom  className={'typography'}>
                     <span style={{color: '#EDFF20FF'}}> C</span>ontact
                     <Divider className='divider' />
                 </Typography>
-                <Grid2 container spacing={2}>
+                <Grid2 container spacing={2} style={{padding: '1rem',}}>
                     {
                         contactData.map((item, isx) => (
                             <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
@@ -1027,7 +1027,6 @@ const ContactPage = () => {
                         ))
                     }
                     </Grid2>
-
             </CardContent>
         </Card>
     )
