@@ -591,8 +591,7 @@ const BaseCard = ({ page, handlePage }) => {
         {title: 'contact', icon: <CodeIcon />},
     ]
     return(
-        <>
-            <Card className={'base-card'}>
+      <Card className={'base-card'}>
                 <div className={'bar'}>
                     <Paper className={'paper-style'}>
                         <MenuList style={{display: 'flex'}}>
@@ -600,7 +599,7 @@ const BaseCard = ({ page, handlePage }) => {
                                 <MenuItem key={idx} >
                                     <ListItemIcon  onClick={() => handlePage(item.title.toLocaleLowerCase())}>
                                         <CustomTooltip title={item.title} placement="bottom">
-                                            <div  style={{color: '#EDFF20FF'}}>
+                                            <div style={{color: '#EDFF20FF'}}>
                                                 {item.icon}
                                             </div>
                                         </CustomTooltip>
@@ -643,7 +642,6 @@ const BaseCard = ({ page, handlePage }) => {
                     <span className='action-btn'>CONTACT ME</span>
                 </CardActions>
             </Card>
-        </>
     )
 }
 const DetailCard = () => {
@@ -1005,6 +1003,11 @@ const WorksPage = () =>{
     )
 }
 const ContactPage = () => {
+    const contactData = [
+        {title: 'Address :', value: 'Shiraz, Iran'},
+        {title: 'Phone :', value: '+98 912 49 49 401'},
+        {title: 'Email :', value: 'gtsiavash@gmail.com'},
+    ]
     return (
         <Card sx={{pointerEvents: "none", overflowY: 'hidden'}} className={'detail-card'}>
             <CardContent>
@@ -1012,28 +1015,17 @@ const ContactPage = () => {
                     <span style={{color: '#EDFF20FF'}}> C</span>ontact
                     <Divider className='divider' />
                 </Typography>
-
                 <Grid2 container spacing={2}>
-                        <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
-                            <div style={{color: 'white', display: 'flex', justifyContent: 'space-between'}}>
-                                <span>Address  : </span>
-                                <span>California, USA</span>
-                            </div>
-
-                        </Grid2>
-
-                        <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
-                            <div style={{color: 'white',display: 'flex', justifyContent: 'space-between'}}>
-                                <span>Phone : </span>
-                                <span>+98 912 49 49 401 </span>
-                            </div>
-                        </Grid2>
-                        <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
-                            <div style={{color: 'white',display: 'flex', justifyContent: 'space-between'}}>
-                                <span>Phone : </span>
-                                <span>+98 912 49 49 401 </span>
-                            </div>
-                        </Grid2>
+                    {
+                        contactData.map((item, isx) => (
+                            <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
+                                <div style={{color: 'white', display: 'flex', justifyContent: 'space-between'}}>
+                                    <span>{item.title}</span>
+                                    <span>{item.value}</span>
+                                </div>
+                            </Grid2>
+                        ))
+                    }
                     </Grid2>
 
             </CardContent>
