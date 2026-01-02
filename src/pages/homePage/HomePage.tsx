@@ -179,7 +179,6 @@ export const HomePage = () => {
 
 
 const BaseCard = ({ page, handlePage }) => {
-
     return(
       <Card className={'base-card'}>
            <CardMedia
@@ -204,9 +203,30 @@ const BaseCard = ({ page, handlePage }) => {
                </Typography>
 
                <Typography className={'social-icon'}>
-                   <GitHubIcon className='git-icon'/>
+                   <a
+                       className='git-icon'
+                       href="https://github.com/siahvosh"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                   >
+                   <GitHubIcon />
+                   </a>
+                   <a
+                      className='linkedin-icon'
+                      href="https://linkedin.com/in/siavash-miralikhani-a4940b243/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                   >
                    <LinkedInIcon className='linkedin-icon'/>
+                   </a>
+                   <a
+                       className='linkedin-icon'
+                       href="https://instagram.com/siavash-miralikhani"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                   >
                    <InstagramIcon className='instagram-icon'/>
+                   </a>
                </Typography>
            </CardContent>
            <CardActions className={'card-action'}>
