@@ -31,12 +31,16 @@ import avatar from '../../assets/background.jpg'
 
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import FeedIcon from '@mui/icons-material/Feed';
+import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
+import ContactPageOutlinedIcon from '@mui/icons-material/ContactPageOutlined';
 import CodeIcon from '@mui/icons-material/Code';import animationData from "../../lottie/circle.json";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import CircleIcon from '@mui/icons-material/Circle';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
+import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
+import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import SmsIcon from '@mui/icons-material/Sms';
@@ -78,8 +82,8 @@ export const HomePage = () => {
     const [page, setPage] = useState('about')
     const menuBtn = [
         {title: 'ABOUT',icon: <PermIdentityIcon />, badgeContent: 0},
-        {title: 'WORKS', icon: <FeedIcon />, badgeContent: 4},
-        {title: 'CONTACT', icon: <CodeIcon />, badgeContent: 0},
+        {title: 'WORKS', icon: <LanguageOutlinedIcon />, badgeContent: 4},
+        {title: 'CONTACT', icon: <ContactPageOutlinedIcon />, badgeContent: 0},
     ]
 
     const handlePage = (page) =>{
@@ -219,7 +223,7 @@ const BaseCard = ({ page, handlePage }) => {
                        target="_blank"
                        rel="noopener noreferrer"
                    >
-                   <GitHubIcon />
+                        <GitHubIcon />
                    </a>
                    <a
                       className='linkedin-icon'
@@ -227,7 +231,7 @@ const BaseCard = ({ page, handlePage }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                    >
-                   <LinkedInIcon className='linkedin-icon'/>
+                        <LinkedInIcon className='linkedin-icon'/>
                    </a>
                    <a
                        className='linkedin-icon'
@@ -235,7 +239,7 @@ const BaseCard = ({ page, handlePage }) => {
                        target="_blank"
                        rel="noopener noreferrer"
                    >
-                   <InstagramIcon className='instagram-icon'/>
+                        <InstagramIcon className='instagram-icon'/>
                    </a>
                </Typography>
            </CardContent>
@@ -339,6 +343,23 @@ const DetailCard = () => {
                 {skillName: 'Motion.dev', value: 60},
                 {skillName: 'Visx (Chart) ', value: 30},
                 {skillName: 'bootstrap ', value: 30},
+            ]
+        },
+        {
+            title: 'Knowledge',
+            skills: [
+                'Git',
+                'Postman',
+                'NPM / Yarn',
+                'Webpack / Vite',
+                'Jira',
+                'MongoDB',
+                'Figma',
+                'Jest',
+                'Illustrator',
+                'Restful API',
+                'React Chart',
+                'Redux'
             ]
         }
     ]
@@ -496,6 +517,24 @@ const DetailCard = () => {
                   ))}
               </Grid2>
 
+              <Divider className='divider'  style={{marginTop: '1rem'}}/>
+              <Grid2 container spacing={3} style={{padding: '1rem'}}>
+                  <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
+                      <span style={{color: 'white',fontWeight: 500, display: 'inline-flex'}}>
+                          <SchoolOutlinedIcon  sx={{color: '#EDFF20FF'}}/>
+                          {skillsData[2].title}
+                      </span>
+                  </Grid2>
+                  {skillsData[2].skills.map ((item, idx) => (
+                      <Grid2 size={{xs: 6, sm: 3, md: 3, lg: 3}} key={idx} style={{ height: 20, }}>
+                          <span style={{color: 'white', display: 'inline-flex'}}>
+                              <CheckOutlinedIcon style={{color: '#EDFF20FF', fontWeight: 'bold'}}/>
+                              {item}
+                          </span>
+                          {/*<BorderLinearProgress variant="determinate" value={item.value} />*/}
+                      </Grid2>
+                  ))}
+              </Grid2>
           </CardContent>
       </Card>
     )
@@ -701,10 +740,9 @@ const AlertDialogSlide = () => {
                         backgroundColor: 'transparent',
                     },
                     '& .MuiDialog-paper': {
-                        height: '50vh',
-
-                        maxHeight: '50vh',
-                        overflow: 'hidden'
+                        // height: '50vh',
+                        // maxHeight: '50vh',
+                        // overflow: 'hidden'
                     },
 
                 }}
@@ -719,7 +757,7 @@ const AlertDialogSlide = () => {
                 <Divider className={'divider'}/>
                 <DialogContent style={{width:' 100%', }}>
                     <DialogContentText id="alert-dialog-slide-description">
-                        <List sx={{ pt: 0, color: 'white', fontSize: '20px'}}>
+                        <List sx={{ pt: 0, color: 'white'}}>
                             {contactDetail.map((item, idx) => (
                                 <ListItem disablePadding key={idx}>
                                     <a href={`${item.ref}`}>
@@ -729,7 +767,7 @@ const AlertDialogSlide = () => {
                                                 {item.icon}
                                             </Avatar>
                                         </ListItemAvatar>
-                                        <span>
+                                        <span style={{ fontSize: '40px'}}>
                                             {item.title}
                                         </span>
                                     </ListItemButton>

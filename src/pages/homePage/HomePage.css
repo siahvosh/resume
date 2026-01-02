@@ -161,10 +161,10 @@
 }
 .social-icon{
     /*border: 2px solid red;*/
-    width: 8vw;
+    width: auto;
+    gap: 20px !important;
     display: flex;
     color: white;
-    justify-content: space-evenly;
 }
 
 .git-icon, .linkedin-icon, .instagram-icon{
