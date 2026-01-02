@@ -1,5 +1,4 @@
 import AlertDialog from "../../component/dialog/experience";
-import {LottiePlayer} from "lottie-react";
 import {useEffect, useRef, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 
@@ -7,7 +6,6 @@ import img from "../../assets/phone1.png";
 import img4 from "../../assets/img4.png";
 import img2 from "../../assets/img2.png";
 import img3 from "../../assets/img3.png";
-import animationData from "../../lottie/circle.json";
 import * as React from "react";
 import {Button, Grid2} from "@mui/material";
 import skater from '../../assets/2skater.png'
@@ -209,9 +207,7 @@ export const ScrollSite = () => {
     };
 
     return(
-        <>
-
-            <div className={'cont-2'}  ref={cont2Ref}>
+       <div className={'cont-2'}  ref={cont2Ref}>
                 <div className={'scroll-box'}>
                     <Grid2 container spacing={1}>
                         <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
@@ -364,30 +360,5 @@ export const ScrollSite = () => {
                     stepDialog={dialogText[stepDialog]}
                 />
             </div>
-            <div className={'second-middle'} style={{background: 'black'}}>
-                {/*<div style={{display: 'flex', justifyContent:'center', fontSize: '7vw', fontWeight:'900'}}>SKILL</div>*/}
-                      <div className="wrapper">
-                          <div className="item item1">React.js</div>
-                          <div className="item item2">Vue.js</div>
-                          <div className="item item3">JavaScript</div>
-                          <div className="item item4">Vuetify</div>
-                          <div className="item item5">Material UI</div>
-                          <div className="item item6">Node.js</div>
-                          <div className="item item7">HTML</div>
-                          <div className="item item8">CSS</div>
-                      </div>
-                      <div className="wrapper-1">
-                          <div className="item-1 item1">Git</div>
-                          <div className="item-1 item2">Postman</div>
-                          <div className="item-1 item3">Figma</div>
-                          <div className="item-1 item4">Python</div>
-                          <div className="item-1 item5">Sql</div>
-                          <div className="item-1 item6">UI/UX</div>
-                          <div className="item-1 item7">Motion</div>
-                          <div className="item-1 item8">Lottie</div>
-                      </div>
-
-              </div>
-        </>
     )
 }

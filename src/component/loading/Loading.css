@@ -1,12 +1,14 @@
 /* From Uiverse.io by kennyotsu */
-.card {
+.loading-card {
     /* color used to softly clip top and bottom of the .words container */
     --bg-color: #000000;
     z-index: 111111111;
-    background: black !important;
+    background: black ;
     padding: 1rem 2rem;
     position: absolute;
-    display: inline-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     inset: 0;
     border-radius: 1.25rem;
 }

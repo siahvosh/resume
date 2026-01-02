@@ -4,7 +4,7 @@ import './Loading.css'
 
 export const Loading = () => {
     return(
-        <div className="card">
+        <div className="loading-card">
             <div className="loader">
                 <p style={{marginTop: '0px'}}>loading</p>
                 <div className="words">
