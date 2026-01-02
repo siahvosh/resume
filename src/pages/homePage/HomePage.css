@@ -55,6 +55,12 @@
 .card-content{
     color: white ;
     position: relative;
+    gap: 5;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .card-action{
     border-top: 1px solid #2e2d2d;
@@ -549,6 +555,17 @@ a:hover{
     /*    display: block;*/
     /*  */
     /*}*/
+}@media screen and (min-width: 350px) and (max-width: 1200px) {
+    .resume-container{
+        width: 100vw;
+        height: 100vh
+    }
+    .detail-card{
+        height: auto;
+        margin-top: 1rem;
+        padding: 1rem;
+    }
+
 }
 @media screen and (min-width: 1500px) {
     .phone-img {

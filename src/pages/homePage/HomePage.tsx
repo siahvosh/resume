@@ -613,10 +613,10 @@ const BaseCard = ({ page, handlePage }) => {
                 <CardMedia
                     component="img"
                     alt="green iguana"
-                    height="50%"
+                    style={{height: '40vh'}}
                     image={avatar}
                 />
-                <CardContent className={'card-content'} style={{ gap: 5 ,height: '40%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+                <CardContent className={'card-content'}>
                     <Lottie
                         animationData={animationData}
                         loop
