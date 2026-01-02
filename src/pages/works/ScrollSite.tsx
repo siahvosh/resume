@@ -17,6 +17,8 @@ import rock1 from '../../assets/r1.png'
 import rock2 from '../../assets/r2.png'
 import rock3 from '../../assets/r3.png'
 
+import './ScrollSite.css'
+
 export const ScrollSite = () => {
 
     const dialogText = [
