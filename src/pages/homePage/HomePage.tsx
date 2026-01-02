@@ -1,4 +1,5 @@
 import {
+    Badge,
     Box,
     Button, Card, CardActions, CardContent, CardMedia, CircularProgress,
     Divider,
@@ -63,14 +64,23 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 
 export const HomePage = () => {
     const isTabletOrMobile = useMediaQuery('(max-width: 1200px)');
+    const [activeIndex, setActiveIndex] = useState('ABOUT');
     const [page, setPage] = useState('about')
-    const [loading, setLoading] = useState(false)
+    const menuBtn = [
+        {title: 'ABOUT',icon: <PermIdentityIcon />, badgeContent: 0},
+        {title: 'WORKS', icon: <FeedIcon />, badgeContent: 4},
+        {title: 'contact', icon: <CodeIcon />, badgeContent: 0},
+    ]
+
     const handlePage = (page) =>{
         setPage(page)
     }
-    setTimeout(() => {
-        setLoading(true)
-    }, 5000);
+    const handleClick = (title: string) => {
+        console.log({})
+        setActiveIndex(title);
+        handlePage(title.toLowerCase());
+    };
+
     const CustomTooltip = styled(({ className, ...props }) => (
         <Tooltip {...props} arrow classes={{ popper: className }} />
     ))(() => ({
@@ -82,25 +92,17 @@ export const HomePage = () => {
         },
     }));
 
-    const menuBtn = [
-        {title: 'ABOUT',icon: <PermIdentityIcon />},
-        {title: 'WORKS', icon: <FeedIcon />},
-        {title: 'contact', icon: <CodeIcon />},
-    ]
 
-    const [activeIndex, setActiveIndex] = useState('ABOUT');
 
-    const handleClick = (title: string) => {
-        console.log({})
-        setActiveIndex(title);
-        handlePage(title.toLowerCase());
-    };
+
+
 
     return (
       <div className={'container'}>
           <div className={'resume-container'}>
               <Grid2 container style={{display: 'flex', alignItems: 'center'}}>
-                  <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 1}} style={{height: '50vh', position: 'relative'}}>
+                  {/*menu*/}
+                  <div style={{position: 'relative'}}>
                       <div className={'bar'}>
                           {menuBtn.map((item, idx) => (
                               <div
@@ -108,20 +110,21 @@ export const HomePage = () => {
                                   onClick={() => handleClick(item.title)}
                                   style={{color: activeIndex === item.title ? '#EDFF20FF' : '#ffffff', cursor: "pointer"}}
                               >
-                                  <CustomTooltip title={item.title} placement="right">
+                                  <Badge badgeContent={item.badgeContent} color="info">
+                                    <CustomTooltip title={item.title} placement="right">
                                       {item.icon}
-                                  </CustomTooltip>
+                                    </CustomTooltip>
+                                  </Badge>
                               </div>
                           ))}
                       </div>
-                  </Grid2>
+                  </div>
                   {/*//BaseCard*/}
                   <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}} style={{zIndex: '1'}}>
                       <BaseCard page={page} handlePage={handlePage}/>
                   </Grid2>
-
                   {/*//DetailCard*/}
-                  <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 5}} style={{zIndex: '0'}}>
+                  <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}} style={{zIndex: '0'}}>
                       {/*mobile version*/}
                       {isTabletOrMobile ? (
                           <>
@@ -175,9 +178,7 @@ export const HomePage = () => {
               </Grid2>
           </div>
       </div>
-
     )
-
 }
 
 
@@ -187,7 +188,6 @@ const BaseCard = ({ page, handlePage }) => {
 
     return(
       <Card className={'base-card'}>
-
            <CardMedia
                component="img"
                alt="green iguana"
@@ -598,7 +598,6 @@ const ContactPage = () => {
                     width="95%"
                     height="300"
                     style={{ border: 0,  padding: '1rem'}}
-                    loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     allowFullScreen
                     title="Google Map"
@@ -606,7 +605,6 @@ const ContactPage = () => {
                 <Grid2 container spacing={2} style={{padding: '1rem', marginTop: '1.5rem'}}>
                     {
                         contactData.map((item, isx) => (
-
                             <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}}>
                                 <div style={{color: 'white', display: 'flex', justifyContent: 'space-between'}}>
                                     <span style={{color: '#EDFF20FF'}}>{item.title}</span>
@@ -614,8 +612,6 @@ const ContactPage = () => {
                                 </div>
                                 <Divider className='divider' style={{margin: '0.5rem'}}/>
                             </Grid2>
-
-
                         ))
                     }
                     </Grid2>

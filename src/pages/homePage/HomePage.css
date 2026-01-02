@@ -14,7 +14,7 @@
 
 .resume-container{
     /*border: 2px solid red;*/
-    overflow-X: hidden;
+    /*overflow-X: hidden;*/
     width: 95vw;
     height: 81vh;
     align-items: center;
@@ -83,21 +83,22 @@
     height: 75vh;
     position: relative;
     background: transparent !important;
-    border: 1px solid #53535b;
+    border:  1px solid #53535b ;
     border-radius: 12px !important;
     overflow: auto !important;
     scrollbar-color: #000000 transparent;
     scrollbar-width: thin;
 }
-.detail-card::before {
-    /*border: 2px solid red;*/
-    content: "";
-    position: absolute;
-    inset: 0;
-    height: 10px;
-    background: transparent;
-    backdrop-filter: blur(8px);
-}
+/*.detail-card::before {*/
+/*    border: 2px solid red;*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    inset: 0;*/
+/*    height: 10px;*/
+/*    background: transparent;*/
+/*    backdrop-filter: blur(8px);*/
+/*}*/
+
 .typography{
     font-size: 26px !important;
     font-weight: 800 !important;
