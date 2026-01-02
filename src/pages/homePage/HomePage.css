@@ -26,6 +26,9 @@
 .base-card{
     position: relative;
     height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background: #191919 !important;
     border-radius: 14px !important;
     /*background: transparent !important;*/
@@ -54,9 +57,8 @@
 }
 .card-content{
     color: white ;
-    position: relative;
-    gap: 5;
-    height: 40%;
+    gap: 5px;
+    /*height: 40%;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,8 +67,9 @@
 .card-action{
     border-top: 1px solid #2e2d2d;
     display: flex;
+    /*border: 2px solid red;*/
     justify-content: space-evenly;
-    align-items: center;
+    align-items: start;
     color: white;
 }
 .action-btn{
@@ -87,14 +90,15 @@
     scrollbar-color: #000000 transparent;
     scrollbar-width: thin;
 }
-.detail-card::before {
-    content: "";
-    position: absolute;
-    width: 98%;
-    height: 10px;
-    background: transparent;
-    backdrop-filter: blur(8px);
-}
+/*.detail-card::before {*/
+/*    border: 2px solid red;*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    width: 98%;*/
+/*    height: 10px;*/
+/*    background: transparent;*/
+/*    backdrop-filter: blur(8px);*/
+/*}*/
 .typography{
     font-size: 26px !important;
     font-weight: 800 !important;
@@ -543,7 +547,7 @@ a:hover{
         height: 100vh !important;
     }
     .resume-container{
-        width: 100vw;
+        width: 99vw;
         height: 100vh
     }
     .paper-style{
@@ -557,13 +561,14 @@ a:hover{
     /*}*/
 }@media screen and (min-width: 350px) and (max-width: 1200px) {
     .resume-container{
-        width: 100vw;
-        height: 100vh
+        width: 99vw;
+        height: 100vh;
     }
     .detail-card{
         height: auto;
         margin-top: 1rem;
         padding: 1rem;
+        overflow: hidden;
     }
 
 }

@@ -8,7 +8,7 @@ import {
     ListItemText,
     MenuList,
     Paper, Stack, Tooltip,
-    Typography
+    Typography, useMediaQuery
 } from "@mui/material";
 import {AnimatePresence, motion} from "framer-motion";
 import LinearProgress from '@mui/material/LinearProgress';
@@ -78,7 +78,7 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 }));
 
 export const HomePage = () => {
-
+    const isTabletOrMobile = useMediaQuery('(max-width: 1024px)');
     const [page, setPage] = useState('about')
     const [loading, setLoading] = useState(false)
     const handlePage = (page) =>{
@@ -299,8 +299,15 @@ export const HomePage = () => {
 
                       {/*//DetailCard*/}
                       <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}} style={{zIndex: '0'}}>
-
-                          <AnimatePresence mode="popLayout">
+                          {isTabletOrMobile ? (
+                              <>
+                                <DetailCard />
+                                <WorksPage />
+                                <ContactPage />
+                              </>
+                          ) :
+                          (
+                            <AnimatePresence mode="popLayout">
                               {page === 'about' && (
                                   <motion.div
                                       key="about"
@@ -313,7 +320,7 @@ export const HomePage = () => {
                                       <DetailCard />
                                   </motion.div>
                               )}
-
+                          
                               {page === 'works' && (
                                   <motion.div
                                       key="works"
@@ -338,6 +345,7 @@ export const HomePage = () => {
                                   </motion.div>
                               )}
                           </AnimatePresence>
+                          )}
                       </Grid2>
                   </Grid2>
               </div>
@@ -593,56 +601,56 @@ const BaseCard = ({ page, handlePage }) => {
     ]
     return(
       <Card className={'base-card'}>
-                <div className={'bar'}>
-                    <Paper className={'paper-style'}>
-                        <MenuList style={{display: 'flex'}}>
-                            {menuBtn.map((item, idx) => (
-                                <MenuItem key={idx} >
-                                    <ListItemIcon  onClick={() => handlePage(item.title.toLocaleLowerCase())}>
-                                        <CustomTooltip title={item.title} placement="bottom">
-                                            <div style={{color: '#EDFF20FF'}}>
-                                                {item.icon}
-                                            </div>
-                                        </CustomTooltip>
-                                    </ListItemIcon>
-                                </MenuItem>
-                            ))}
-                        </MenuList>
-                    </Paper>
-                </div>
-                <CardMedia
-                    component="img"
-                    alt="green iguana"
-                    style={{height: '40vh'}}
-                    image={avatar}
-                />
-                <CardContent className={'card-content'}>
-                    <Lottie
-                        animationData={animationData}
-                        loop
-                        autoplay
-                        className={'lottie'}
-                    />
-                    <Typography className={'base-card-title'}>
-                        Siavash Miralikhani
-                    </Typography>
-                    <Typography className={'base-card-body'}>
-                        FRONT END DEVELOPER
-                    </Typography>
-                    <Typography sx={{ color: 'text.light' }}>
-                        <GitHubIcon fontSize={'small'}/>
-                        <LinkedInIcon fontSize={'small'}/>
-                        <InstagramIcon fontSize={'small'}/>
-                    </Typography>
-                </CardContent>
-                <CardActions className={'card-action'}>
-                    <span className='action-btn'>DOWNLOAD</span>
-                    <Divider
-                        className='divider'
-                        orientation="vertical" flexItem />
-                    <span className='action-btn'>CONTACT ME</span>
-                </CardActions>
-            </Card>
+           <div className={'bar'}>
+               <Paper className={'paper-style'}>
+                   <MenuList style={{display: 'flex'}}>
+                       {menuBtn.map((item, idx) => (
+                           <MenuItem key={idx} >
+                               <ListItemIcon  onClick={() => handlePage(item.title.toLocaleLowerCase())}>
+                                   <CustomTooltip title={item.title} placement="bottom">
+                                       <div style={{color: '#EDFF20FF'}}>
+                                           {item.icon}
+                                       </div>
+                                   </CustomTooltip>
+                               </ListItemIcon>
+                           </MenuItem>
+                       ))}
+                   </MenuList>
+               </Paper>
+           </div>
+           <CardMedia
+               component="img"
+               alt="green iguana"
+               sx={{ height: '50%' }}
+               image={avatar}
+           />
+           <CardContent className={'card-content'}>
+               <Lottie
+                   animationData={animationData}
+                   loop
+                   autoplay
+                   className={'lottie'}
+               />
+               <Typography className={'base-card-title'}>
+                   Siavash Miralikhani
+               </Typography>
+               <Typography className={'base-card-body'}>
+                   FRONT END DEVELOPER
+               </Typography>
+               <Typography sx={{ color: 'text.light' }}>
+                   <GitHubIcon fontSize={'small'}/>
+                   <LinkedInIcon fontSize={'small'}/>
+                   <InstagramIcon fontSize={'small'}/>
+               </Typography>
+           </CardContent>
+           <CardActions className={'card-action'}>
+               <span className='action-btn'>DOWNLOAD</span>
+               <Divider
+                   className='divider'
+                   orientation="vertical" flexItem />
+               <span className='action-btn'>CONTACT ME</span>
+           </CardActions>
+      </Card>
     )
 }
 const DetailCard = () => {
@@ -897,8 +905,8 @@ const DetailCard = () => {
 }
 const WorksPage = () =>{
     return(
-        <Card sx={{pointerEvents: "none", overflow: 'hidden',height: '75vh', background: 'transparent', borderRadius: '12px',border: '1px solid #53535b'}} className={''}>
-            <CardContent style={{position: 'relative', height: '99%'}}>
+        <Card sx={{pointerEvents: "none", overflow: 'hidden', position: 'relative'}} className={'detail-card'} >
+            <CardContent style={{position: 'relative',marginTop: '1rem',}}>
                 <Box
                     sx={{
                         position: "absolute",
@@ -1011,7 +1019,7 @@ const ContactPage = () => {
         {title: 'Freelance :', value: 'Available'},
     ]
     return (
-        <Card sx={{}} className={'detail-card'}>
+        <Card sx={{position: 'relative'}} className={'detail-card'}>
             <CardContent style={{marginTop: '1rem', overflow: 'hidden'}}>
                 <Typography gutterBottom  className={'typography'}>
                     <span style={{color: '#EDFF20FF'}}> C</span>ontact
