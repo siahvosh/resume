@@ -71,83 +71,6 @@ export const HomePage = () => {
     setTimeout(() => {
         setLoading(true)
     }, 5000);
-
-
-    return (
-
-
-              <div className={'container'}>
-                  <div className={'resume-container'}>
-                      <Grid2 container style={{display: 'flex', alignItems: 'center'}}>
-                          {/*//BaseCard*/}
-                          <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}} style={{zIndex: '1'}}>
-                              <BaseCard page={page} handlePage={handlePage}/>
-                          </Grid2>
-
-                          {/*//DetailCard*/}
-                          <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}} style={{zIndex: '0'}}>
-                              {/*mobile version*/}
-                              {isTabletOrMobile ? (
-                                  <>
-                                    <DetailCard />
-                                    <WorksPage />
-                                    <ContactPage />
-                                  </>
-                              ) :
-                               // monitor version
-                              (
-                                <AnimatePresence mode="popLayout">
-                                  {page === 'about' && (
-                                      <motion.div
-                                          key="about"
-                                          style={{position: 'relative'}}
-                                          transition={{ duration: 0.8 }}
-                                          initial={{ x: '-50vw', opacity: 0 }}
-                                          animate={{ x: 0, opacity: 1 }}
-                                          exit={{ x: '-30vw', opacity: 0 }}
-                                      >
-                                          <DetailCard />
-                                      </motion.div>
-                                  )}
-
-                                  {page === 'works' && (
-                                      <motion.div
-                                          key="works"
-                                          transition={{ duration: 0.8 }}
-                                          initial={{ x: '-50vw', opacity: 0 }}
-                                          animate={{ x: 0, opacity: 1 }}
-                                          exit={{ x: '-30vw', opacity: 0 }}
-                                      >
-                                          <WorksPage />
-                                      </motion.div>
-                                  )}
-                                  {page === 'contact' && (
-                                      <motion.div
-                                          key="contact"
-                                          style={{position: 'relative'}}
-                                          transition={{ duration: 0.8 }}
-                                          initial={{ x: '-50vw', opacity: 0 }}
-                                          animate={{ x: 0, opacity: 1 }}
-                                          exit={{ x: '-30vw', opacity: 0 }}
-                                      >
-                                          <ContactPage />
-                                      </motion.div>
-                                  )}
-                              </AnimatePresence>
-                              )}
-                          </Grid2>
-                      </Grid2>
-                  </div>
-              </div>
-
-    )
-
-}
-
-
-
-
-const BaseCard = ({ page, handlePage }) => {
     const CustomTooltip = styled(({ className, ...props }) => (
         <Tooltip {...props} arrow classes={{ popper: className }} />
     ))(() => ({
@@ -157,9 +80,6 @@ const BaseCard = ({ page, handlePage }) => {
             fontSize: '12px',
             borderRadius: '14px',
         },
-        // [`& .${tooltipClasses.arrow}`]: {
-        //     color: '#EDFF20FF',
-        // },
     }));
 
     const menuBtn = [
@@ -175,23 +95,103 @@ const BaseCard = ({ page, handlePage }) => {
         setActiveIndex(title);
         handlePage(title.toLowerCase());
     };
+
+    return (
+      <div className={'container'}>
+          <div className={'resume-container'}>
+              <Grid2 container style={{display: 'flex', alignItems: 'center'}}>
+                  <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 1}} style={{height: '50vh', position: 'relative'}}>
+                      <div className={'bar'}>
+                          {menuBtn.map((item, idx) => (
+                              <div
+                                  key={idx}
+                                  onClick={() => handleClick(item.title)}
+                                  style={{color: activeIndex === item.title ? '#EDFF20FF' : '#ffffff', cursor: "pointer"}}
+                              >
+                                  <CustomTooltip title={item.title} placement="right">
+                                      {item.icon}
+                                  </CustomTooltip>
+                              </div>
+                          ))}
+                      </div>
+                  </Grid2>
+                  {/*//BaseCard*/}
+                  <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}} style={{zIndex: '1'}}>
+                      <BaseCard page={page} handlePage={handlePage}/>
+                  </Grid2>
+
+                  {/*//DetailCard*/}
+                  <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 5}} style={{zIndex: '0'}}>
+                      {/*mobile version*/}
+                      {isTabletOrMobile ? (
+                          <>
+                            <DetailCard />
+                            <WorksPage />
+                            <ContactPage />
+                          </>
+                      ) :
+                       // monitor version
+                      (
+                        <AnimatePresence mode="popLayout">
+                          {page === 'about' && (
+                              <motion.div
+                                  key="about"
+                                  style={{position: 'relative'}}
+                                  transition={{ duration: 0.8 }}
+                                  initial={{ x: '-100%', opacity: 0 }}
+                                  animate={{ x: 0, opacity: 1 }}
+                                  exit={{ x: '-100%', opacity: 0 }}
+                              >
+                                  <DetailCard />
+                              </motion.div>
+                          )}
+
+                          {page === 'works' && (
+                              <motion.div
+                                  key="works"
+                                  transition={{ duration: 0.8 }}
+                                  initial={{ x: '-100%', opacity: 0 }}
+                                  animate={{ x: 0, opacity: 1 }}
+                                  exit={{ x: '-100%', opacity: 0 }}
+                              >
+                                  <WorksPage />
+                              </motion.div>
+                          )}
+                          {page === 'contact' && (
+                              <motion.div
+                                  key="contact"
+                                  style={{position: 'relative'}}
+                                  transition={{ duration: 0.8 }}
+                                  initial={{ x: '-100%', opacity: 0 }}
+                                  animate={{ x: 0, opacity: 1 }}
+                                  exit={{ x: '-100%', opacity: 0 }}
+                              >
+                                  <ContactPage />
+                              </motion.div>
+                          )}
+                      </AnimatePresence>
+                      )}
+                  </Grid2>
+              </Grid2>
+          </div>
+      </div>
+
+    )
+
+}
+
+
+
+
+const BaseCard = ({ page, handlePage }) => {
+
     return(
       <Card className={'base-card'}>
-           <div className={'bar'}>
-             {menuBtn.map((item, idx) => (
-                 <div
-                     key={idx}
-                     onClick={() => handleClick(item.title)}
-                     style={{color: activeIndex === item.title ? '#EDFF20FF' : '#ffffff', cursor: "pointer"}}
-                 >
-                     {item.icon}
-                 </div>
-             ))}
-           </div>
+
            <CardMedia
                component="img"
                alt="green iguana"
-               sx={{ height: '50%' }}
+               sx={{ height: '40vh' }}
                image={avatar}
            />
            <CardContent className={'card-content'}>
