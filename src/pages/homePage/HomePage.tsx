@@ -69,7 +69,7 @@ export const HomePage = () => {
     const menuBtn = [
         {title: 'ABOUT',icon: <PermIdentityIcon />, badgeContent: 0},
         {title: 'WORKS', icon: <FeedIcon />, badgeContent: 4},
-        {title: 'contact', icon: <CodeIcon />, badgeContent: 0},
+        {title: 'CONTACT', icon: <CodeIcon />, badgeContent: 0},
     ]
 
     const handlePage = (page) =>{
@@ -82,7 +82,7 @@ export const HomePage = () => {
     };
 
     const CustomTooltip = styled(({ className, ...props }) => (
-        <Tooltip {...props} arrow classes={{ popper: className }} />
+        <Tooltip {...props}  classes={{ popper: className }} />
     ))(() => ({
         [`& .${tooltipClasses.tooltip}`]: {
             backgroundColor: '#EDFF20FF',
@@ -91,13 +91,7 @@ export const HomePage = () => {
             borderRadius: '14px',
         },
     }));
-
-
-
-
-
-
-    return (
+     return (
       <div className={'container'}>
           <div className={'resume-container'}>
               <Grid2 container style={{display: 'flex', alignItems: 'center'}}>
@@ -108,9 +102,9 @@ export const HomePage = () => {
                               <div
                                   key={idx}
                                   onClick={() => handleClick(item.title)}
-                                  style={{color: activeIndex === item.title ? '#EDFF20FF' : '#ffffff', cursor: "pointer"}}
+                                  style={{color: activeIndex === item.title ? '#EDFF20FF' : '#ffffff', cursor: "pointer", fontSize: 'x-large'}}
                               >
-                                  <Badge badgeContent={item.badgeContent} color="info">
+                                  <Badge badgeContent={item.badgeContent} color="secondary">
                                     <CustomTooltip title={item.title} placement="right">
                                       {item.icon}
                                     </CustomTooltip>
@@ -201,16 +195,18 @@ const BaseCard = ({ page, handlePage }) => {
                    autoplay
                    className={'lottie'}
                />
+
                <Typography className={'base-card-title'}>
                    Siavash Miralikhani
                </Typography>
                <Typography className={'base-card-body'}>
                    FRONT END DEVELOPER
                </Typography>
-               <Typography sx={{ color: 'text.light' }}>
-                   <GitHubIcon fontSize={'small'}/>
-                   <LinkedInIcon fontSize={'small'}/>
-                   <InstagramIcon fontSize={'small'}/>
+
+               <Typography className={'social-icon'}>
+                   <GitHubIcon className='git-icon'/>
+                   <LinkedInIcon className='linkedin-icon'/>
+                   <InstagramIcon className='instagram-icon'/>
                </Typography>
            </CardContent>
            <CardActions className={'card-action'}>

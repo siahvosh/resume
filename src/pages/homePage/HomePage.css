@@ -44,7 +44,7 @@
     align-items: center;
     border: 2px solid #5f5e5e;
     border-radius: 20px;
-    background: #1e1e1e;
+    background: #151515;
     z-index: 2;
 }
 
@@ -134,15 +134,49 @@
     align-items: center;
 }
 .base-card-title{
-    font-weight: 800 !important;
+    animation: tracking-in-expand-fwd 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    font-weight: 700 !important;
     font-size: clamp(35px, 3vw, 4vw) !important;
 }
+@keyframes tracking-in-expand-fwd {
+    0% {
+        letter-spacing: -0.5em;
+        transform: translateZ(-700px);
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
 .base-card-body{
     font-weight: 500 !important;
     color: #EDFF20FF;
-    font-size: clamp(15px, 0.5rem, 0.5vw) !important;
+    font-size: clamp(15px, 1vw, 1.3vw) !important;
+    /*border: 2px solid red;*/
+}
+.social-icon{
+    /*border: 2px solid red;*/
+    width: 8vw;
+    display: flex;
+    color: white;
+    justify-content: space-evenly;
 }
 
+.git-icon, .linkedin-icon, .instagram-icon{
+    color: white;
+    z-index: 11111 !important;
+    cursor: pointer !important;
+}
+
+
+.git-icon:hover, .linkedin-icon:hover, .instagram-icon:hover{
+    color: #EDFF20FF !important;
+}
 
 @media screen and (min-width: 200px) and (max-width: 950px) {
     .detail-card{
