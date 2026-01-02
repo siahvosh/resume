@@ -40,6 +40,9 @@ import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import SmsIcon from '@mui/icons-material/Sms';
+import SendIcon from '@mui/icons-material/Send';
+import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { linearProgressClasses } from '@mui/material/LinearProgress';
 
 import './HomePage.css'
@@ -669,11 +672,11 @@ const AlertDialogSlide = () => {
         setOpen(false);
     };
 
-    const emails = ['MAIL', 'SMS', 'CALL'];
     const contactDetail = [
-        {title: 'MAIL', value: 'gtsiavash@gmail.com', icon: <EmailIcon/>},
-        {title: 'MESSAGE', value: '09124949401', icon: <SmsIcon/>},
-        {title: 'CALL', value: '09124949401', icon: <CallIcon/>},
+        {title: 'MAIL', value: 'gtsiavash@gmail.com', icon: <EmailIcon/>, ref: 'https://mail.google.com/mail/?view=cm&fs=1&to=GTSIAVASH@gmail.com&su=Contact%20from%20website&body=Hi%20Siavash,%0A%0AI\'m%20contacting%20you%20through%20your%20website.'},
+        {title: 'MESSAGE', value: '09124949401', icon: <SendOutlinedIcon/>, ref: 'sms:09124949401'},
+        {title: 'CALL', value: '09124949401', icon: <CallIcon/>, ref: 'tel:09124949401'},
+        {title: 'WHATS APP', value: '09124949401', icon: <WhatsAppIcon/>,ref: 'whatsApp:09124949401'},
     ]
 
     return (
@@ -687,14 +690,21 @@ const AlertDialogSlide = () => {
                     transition: Transition,
                 }}
                 keepMounted
-                style={{ opacity: 0.9}}
+                style={{ opacity: 0.9,}}
                 sx={{
                     background: '#000000',
                     '& .MuiPaper-root': {
                         background: '#000000',
+
                     },
                     '& .MuiBackdrop-root': {
                         backgroundColor: 'transparent',
+                    },
+                    '& .MuiDialog-paper': {
+                        height: '50vh',
+
+                        maxHeight: '50vh',
+                        overflow: 'hidden'
                     },
 
                 }}
@@ -702,25 +712,28 @@ const AlertDialogSlide = () => {
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
+
                 <DialogTitle style={{color: 'white',  fontSize: '40px'}}>
                     <span style={{color: '#EDFF20FF',}}> C</span>ontact
                 </DialogTitle>
                 <Divider className={'divider'}/>
-                <DialogContent >
+                <DialogContent style={{width:' 100%', }}>
                     <DialogContentText id="alert-dialog-slide-description">
-                        <List sx={{ pt: 0, color: 'white',display: 'flex', fontSize: '20px'}}>
+                        <List sx={{ pt: 0, color: 'white', fontSize: '20px'}}>
                             {contactDetail.map((item, idx) => (
                                 <ListItem disablePadding key={idx}>
-                                    <ListItemButton>
+                                    <a href={`${item.ref}`}>
+                                        <ListItemButton>
                                         <ListItemAvatar>
                                             <Avatar sx={{ background: 'black', color: '#EDFF20FF' }}>
                                                 {item.icon}
                                             </Avatar>
                                         </ListItemAvatar>
-                                        <span style={{}}  >
+                                        <span>
                                             {item.title}
                                         </span>
                                     </ListItemButton>
+                                    </a>
                                 </ListItem>
                             ))}
                         </List>
