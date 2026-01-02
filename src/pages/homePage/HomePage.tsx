@@ -12,8 +12,8 @@ import {
 } from "@mui/material";
 import {AnimatePresence, motion} from "framer-motion";
 import LinearProgress from '@mui/material/LinearProgress';
-import {useEffect, useRef, useState} from "react";
-import AlertDialog from '../../component/dialog/experience'
+import {useState} from "react";
+
 import { styled } from '@mui/material/styles';
 import { tooltipClasses } from '@mui/material/Tooltip';
 import Lottie from "lottie-react";
@@ -37,19 +37,13 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import CircleIcon from '@mui/icons-material/Circle';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
-import CallIcon from '@mui/icons-material/Call';
-import EmailIcon from '@mui/icons-material/Email';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { linearProgressClasses } from '@mui/material/LinearProgress';
 
 import './HomePage.css'
 import './../../App.css'
 import * as React from "react";
-import {Cloud, ContentCopy, ContentCut, ContentPaste} from "@mui/icons-material";
 import MenuItem from "@mui/material/MenuItem";
 import {Gauge, gaugeClasses} from "@mui/x-charts";
-import {Loading} from "../../component/loading/Loading";
-
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 10,
@@ -82,12 +76,8 @@ export const HomePage = () => {
 
 
     return (
-        <>
-            { !loading ? (
-                <Loading/>
 
-            ) :
-            (
+
               <div className={'container'}>
                   <div className={'resume-container'}>
                       <Grid2 container style={{display: 'flex', alignItems: 'center'}}>
@@ -151,11 +141,9 @@ export const HomePage = () => {
                       </Grid2>
                   </div>
               </div>
-            )}
 
-
-        </>
     )
+
 }
 
 

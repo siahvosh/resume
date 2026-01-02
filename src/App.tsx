@@ -2,17 +2,19 @@ import './App.css';
 import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 import {HomePage} from "./pages/homePage/HomePage.tsx";
 import {Root} from "./pages/Routers/Root.tsx";
-import {About} from "./pages/about/About.tsx";
-import {Services} from "./pages/Services/Services.tsx";
-import {Section1} from "./pages/Services/Section1.tsx";
-import {Section2} from "./pages/Services/Section2.tsx";
-import {Section3} from "./pages/Services/Section3.tsx";
-import {Section4} from "./pages/Services/Section4.tsx";
-import {Section5} from "./pages/Services/Section5.tsx";
 import {Error404} from "./pages/errors/404.tsx";
 import {ScrollSite} from "./pages/works/ScrollSite";
+import {Loading} from "./component/loading/Loading";
+import * as React from "react";
 
 function App() {
+    const [loading, setLoading] = React.useState(true);
+
+    React.useEffect(() => {
+        const timer = setTimeout(() => setLoading(false), 2000);
+        return () => clearTimeout(timer);
+    }, []);
+
     const router = createBrowserRouter([
         {
             path: '/',
@@ -26,6 +28,8 @@ function App() {
             ]
         },
     ])
+
+    if (loading) return <Loading />;
 
     return <RouterProvider router={router}/>
 
