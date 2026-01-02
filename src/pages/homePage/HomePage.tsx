@@ -1,14 +1,15 @@
 import {
+    Avatar,
     Badge,
     Box,
-    Button, Card, CardActions, CardContent, CardMedia, CircularProgress,
+    Button, Card, CardActions, CardContent, CardMedia, CircularProgress, Dialog, DialogActions, DialogContent,
     Divider,
-    Grid2,
-    ListItem,
+    Grid2, List,
+    ListItem, ListItemAvatar, ListItemButton,
     ListItemIcon,
     ListItemText,
     MenuList,
-    Paper, Stack, Tooltip,
+    Paper, Slide, Stack, Tooltip,
     Typography, useMediaQuery
 } from "@mui/material";
 import {AnimatePresence, motion} from "framer-motion";
@@ -36,6 +37,9 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import CircleIcon from '@mui/icons-material/Circle';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
+import CallIcon from '@mui/icons-material/Call';
+import EmailIcon from '@mui/icons-material/Email';
+import SmsIcon from '@mui/icons-material/Sms';
 import { linearProgressClasses } from '@mui/material/LinearProgress';
 
 import './HomePage.css'
@@ -43,6 +47,9 @@ import './../../App.css'
 import * as React from "react";
 import MenuItem from "@mui/material/MenuItem";
 import {Gauge, gaugeClasses} from "@mui/x-charts";
+import {TransitionProps} from "@mui/material/transitions";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContentText from "@mui/material/DialogContentText";
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 10,
@@ -104,7 +111,7 @@ export const HomePage = () => {
                                   onClick={() => handleClick(item.title)}
                                   style={{color: activeIndex === item.title ? '#EDFF20FF' : '#ffffff', cursor: "pointer", fontSize: 'x-large'}}
                               >
-                                  <Badge badgeContent={item.badgeContent} color="secondary">
+                                  <Badge badgeContent={item.badgeContent} >
                                     <CustomTooltip title={item.title} placement="right">
                                       {item.icon}
                                     </CustomTooltip>
@@ -234,7 +241,10 @@ const BaseCard = ({ page, handlePage }) => {
                <Divider
                    className='divider'
                    orientation="vertical" flexItem />
-               <span className='action-btn'>CONTACT ME</span>
+               <span className='action-btn'>
+
+               <AlertDialogSlide/>
+               </span>
            </CardActions>
       </Card>
     )
@@ -634,4 +644,92 @@ const ContactPage = () => {
             </CardContent>
         </Card>
     )
+}
+
+
+
+
+const Transition = React.forwardRef(function Transition(
+    props: TransitionProps & {
+        children: React.ReactElement<any, any>;
+    },
+    ref: React.Ref<unknown>,
+) {
+    return <Slide direction="up" ref={ref} {...props} />;
+});
+
+const AlertDialogSlide = () => {
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const emails = ['MAIL', 'SMS', 'CALL'];
+    const contactDetail = [
+        {title: 'MAIL', value: 'gtsiavash@gmail.com', icon: <EmailIcon/>},
+        {title: 'MESSAGE', value: '09124949401', icon: <SmsIcon/>},
+        {title: 'CALL', value: '09124949401', icon: <CallIcon/>},
+    ]
+
+    return (
+        <div>
+            <span onClick={handleClickOpen}>
+                CONTACT ME
+            </span>
+            <Dialog
+                open={open}
+                slots={{
+                    transition: Transition,
+                }}
+                keepMounted
+                style={{ opacity: 0.9}}
+                sx={{
+                    background: '#000000',
+                    '& .MuiPaper-root': {
+                        background: '#000000',
+                    },
+                    '& .MuiBackdrop-root': {
+                        backgroundColor: 'transparent',
+                    },
+
+                }}
+                onClose={handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle style={{color: 'white',  fontSize: '40px'}}>
+                    <span style={{color: '#EDFF20FF',}}> C</span>ontact
+                </DialogTitle>
+                <Divider className={'divider'}/>
+                <DialogContent >
+                    <DialogContentText id="alert-dialog-slide-description">
+                        <List sx={{ pt: 0, color: 'white',display: 'flex', fontSize: '20px'}}>
+                            {contactDetail.map((item, idx) => (
+                                <ListItem disablePadding key={idx}>
+                                    <ListItemButton>
+                                        <ListItemAvatar>
+                                            <Avatar sx={{ background: 'black', color: '#EDFF20FF' }}>
+                                                {item.icon}
+                                            </Avatar>
+                                        </ListItemAvatar>
+                                        <span style={{}}  >
+                                            {item.title}
+                                        </span>
+                                    </ListItemButton>
+                                </ListItem>
+                            ))}
+                        </List>
+                    </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                    <span style={{color: 'white'}} onClick={handleClose}>CLOSE</span>
+                </DialogActions>
+            </Dialog>
+        </div>
+    );
 }
