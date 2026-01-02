@@ -24,8 +24,6 @@ import web1 from "../../assets/web1.jpg";
 import web2 from "../../assets/web2.jpg";
 import web3 from "../../assets/web3.jpg";
 import web4 from "../../assets/background.jpg";
-import shirazMap from "../../assets/shiraz.png";
-
 import avatar from '../../assets/background.jpg'
 
 
@@ -169,24 +167,26 @@ const BaseCard = ({ page, handlePage }) => {
         {title: 'WORKS', icon: <FeedIcon />},
         {title: 'contact', icon: <CodeIcon />},
     ]
+
+    const [activeIndex, setActiveIndex] = useState('ABOUT');
+
+    const handleClick = (title: string) => {
+        console.log({})
+        setActiveIndex(title);
+        handlePage(title.toLowerCase());
+    };
     return(
       <Card className={'base-card'}>
            <div className={'bar'}>
-               <Paper className={'paper-style'}>
-                   <MenuList style={{display: 'flex'}}>
-                       {menuBtn.map((item, idx) => (
-                           <MenuItem key={idx} >
-                               <ListItemIcon  onClick={() => handlePage(item.title.toLocaleLowerCase())}>
-                                   <CustomTooltip title={item.title} placement="bottom">
-                                       <div style={{color: '#EDFF20FF'}}>
-                                           {item.icon}
-                                       </div>
-                                   </CustomTooltip>
-                               </ListItemIcon>
-                           </MenuItem>
-                       ))}
-                   </MenuList>
-               </Paper>
+             {menuBtn.map((item, idx) => (
+                 <div
+                     key={idx}
+                     onClick={() => handleClick(item.title)}
+                     style={{color: activeIndex === item.title ? '#EDFF20FF' : '#ffffff', cursor: "pointer"}}
+                 >
+                     {item.icon}
+                 </div>
+             ))}
            </div>
            <CardMedia
                component="img"

@@ -34,10 +34,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
-    justify-content: space-around;
+    width: 30%;
+    height: 40px;
+    justify-content: space-evenly;
     align-items: center;
-    /*border: 2px solid red;*/
+    border: 2px solid #5f5e5e;
+    border-radius: 20px;
+    background: #1c1c1c;
 }
 .paper-style{
     background: #1c1c1c !important;
