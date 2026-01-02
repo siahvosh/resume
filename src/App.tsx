@@ -10,6 +10,7 @@ import {Section3} from "./pages/Services/Section3.tsx";
 import {Section4} from "./pages/Services/Section4.tsx";
 import {Section5} from "./pages/Services/Section5.tsx";
 import {Error404} from "./pages/errors/404.tsx";
+import {ScrollSite} from "./pages/works/ScrollSite";
 
 function App() {
     const router = createBrowserRouter([
@@ -19,14 +20,9 @@ function App() {
             errorElement: <Error404/>,
             children:[
                 {index: true, element: <HomePage /> },
-                {path: '/home', element: <HomePage /> },
-                {path: '/About', element: <About /> },
-                {path: '/Services', element: <Services />},
-                {path: 'section1', element: <Section1 />},
-                {path: 'section2', element: <Section2 />},
-                {path: 'section3', element: <Section3 />},
-                {path: 'section4', element: <Section4 />},
-                {path: 'section5', element: <Section5 />},
+                {path: '/', element: <HomePage /> },
+                {path: '/works', element: <ScrollSite /> },
+
             ]
         },
     ])

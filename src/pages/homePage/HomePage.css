@@ -1,9 +1,4 @@
-
-*{
-    /*outline: 2px solid white;*/
-}
-
-.cont-1{
+.container{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -21,7 +16,6 @@
     width: 95vw;
     height: 80vh;
  }
-
 
 .base-card{
     position: relative;
@@ -53,7 +47,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 .card-content{
     color: white ;
@@ -83,6 +76,7 @@
 
 .detail-card{
     height: 75vh;
+    position: relative;
     background: transparent !important;
     border: 1px solid #53535b;
     border-radius: 12px !important;
@@ -90,15 +84,15 @@
     scrollbar-color: #000000 transparent;
     scrollbar-width: thin;
 }
-/*.detail-card::before {*/
-/*    border: 2px solid red;*/
-/*    content: "";*/
-/*    position: absolute;*/
-/*    width: 98%;*/
-/*    height: 10px;*/
-/*    background: transparent;*/
-/*    backdrop-filter: blur(8px);*/
-/*}*/
+.detail-card::before {
+    /*border: 2px solid red;*/
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: 10px;
+    background: transparent;
+    backdrop-filter: blur(8px);
+}
 .typography{
     font-size: 26px !important;
     font-weight: 800 !important;
@@ -569,6 +563,9 @@ a:hover{
         margin-top: 1rem;
         padding: 1rem;
         overflow: hidden;
+    }
+    .base-card{
+        height: 100vh !important;
     }
 
 }
