@@ -278,111 +278,115 @@ export const HomePage = () => {
     const handleDialog = (step, show) => {
         setOpen(show)
         setStepDialog(step)
-        console.log({step})
     };
 
     return (
         <>
-            { loading === false && (
+            { loading === false ? (
                 <Loading/>
-            )}
-            {/*<Loading/>*/}
-          <div className={'cont-1'}>
 
-              {/*<Loading/>*/}
-              <div className={'resume-container'}>
-                  <Grid2 container style={{display: 'flex', alignItems: 'center'}}>
-                      {/*//BaseCard*/}
-                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}} style={{zIndex: '1'}}>
-                          <BaseCard page={page} handlePage={handlePage}/>
-                      </Grid2>
+            ) :
+            (
+              <div className={'cont-1'}>
+                  {/*<Loading/>*/}
+                  <div className={'resume-container'}>
+                      <Grid2 container style={{display: 'flex', alignItems: 'center'}}>
+                          {/*//BaseCard*/}
+                          <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}} style={{zIndex: '1'}}>
+                              <BaseCard page={page} handlePage={handlePage}/>
+                          </Grid2>
 
-                      {/*//DetailCard*/}
-                      <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}} style={{zIndex: '0'}}>
-                          {isTabletOrMobile ? (
-                              <>
-                                <DetailCard />
-                                <WorksPage />
-                                <ContactPage />
-                              </>
-                          ) :
-                          (
-                            <AnimatePresence mode="popLayout">
-                              {page === 'about' && (
-                                  <motion.div
-                                      key="about"
-                                      style={{position: 'relative'}}
-                                      transition={{ duration: 0.8 }}
-                                      initial={{ x: '-50vw', opacity: 0 }}
-                                      animate={{ x: 0, opacity: 1 }}
-                                      exit={{ x: '-30vw', opacity: 0 }}
-                                  >
-                                      <DetailCard />
-                                  </motion.div>
+                          {/*//DetailCard*/}
+                          <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 6}} style={{zIndex: '0'}}>
+                              {/*mobile version*/}
+                              {isTabletOrMobile ? (
+                                  <>
+                                    <DetailCard />
+                                    <WorksPage />
+                                    <ContactPage />
+                                  </>
+                              ) :
+                               // monitor version
+                              (
+                                <AnimatePresence mode="popLayout">
+                                  {page === 'about' && (
+                                      <motion.div
+                                          key="about"
+                                          style={{position: 'relative'}}
+                                          transition={{ duration: 0.8 }}
+                                          initial={{ x: '-50vw', opacity: 0 }}
+                                          animate={{ x: 0, opacity: 1 }}
+                                          exit={{ x: '-30vw', opacity: 0 }}
+                                      >
+                                          <DetailCard />
+                                      </motion.div>
+                                  )}
+
+                                  {page === 'works' && (
+                                      <motion.div
+                                          key="works"
+                                          transition={{ duration: 0.8 }}
+                                          initial={{ x: '-50vw', opacity: 0 }}
+                                          animate={{ x: 0, opacity: 1 }}
+                                          exit={{ x: '-30vw', opacity: 0 }}
+                                      >
+                                          <WorksPage />
+                                      </motion.div>
+                                  )}
+                                  {page === 'contact' && (
+                                      <motion.div
+                                          key="contact"
+                                          style={{position: 'relative'}}
+                                          transition={{ duration: 0.8 }}
+                                          initial={{ x: '-50vw', opacity: 0 }}
+                                          animate={{ x: 0, opacity: 1 }}
+                                          exit={{ x: '-30vw', opacity: 0 }}
+                                      >
+                                          <ContactPage />
+                                      </motion.div>
+                                  )}
+                              </AnimatePresence>
                               )}
-                          
-                              {page === 'works' && (
-                                  <motion.div
-                                      key="works"
-                                      transition={{ duration: 0.8 }}
-                                      initial={{ x: '-50vw', opacity: 0 }}
-                                      animate={{ x: 0, opacity: 1 }}
-                                      exit={{ x: '-30vw', opacity: 0 }}
-                                  >
-                                      <WorksPage />
-                                  </motion.div>
-                              )}
-                              {page === 'contact' && (
-                                  <motion.div
-                                      key="contact"
-                                      style={{position: 'relative'}}
-                                      transition={{ duration: 0.8 }}
-                                      initial={{ x: '-50vw', opacity: 0 }}
-                                      animate={{ x: 0, opacity: 1 }}
-                                      exit={{ x: '-30vw', opacity: 0 }}
-                                  >
-                                      <ContactPage />
-                                  </motion.div>
-                              )}
-                          </AnimatePresence>
-                          )}
+                          </Grid2>
                       </Grid2>
-                  </Grid2>
+                  </div>
+
               </div>
-              {/*<Lottie*/}
-              {/*    animationData={animationData}*/}
-              {/*    loop*/}
-              {/*    autoplay*/}
-              {/*    className={'lottie'}*/}
-              {/*/>*/}
-              
-              {/*<div className={'card'}>*/}
-              {/*    <span className={'front-end'}>FRONT-END <span className={'dev'} >DEVELOPER</span></span>*/}
-              {/*    <span className={'name'}>SIAVASH MIRALIKHANI</span>*/}
-              {/*    <div className={'contact'}>*/}
-              {/*        <CallIcon style={{fontSize: "clamp(12px, 2vw, 1.8vw)"}}/>*/}
-              {/*           <a href="tel:+989124949401"> +98 912 49 49 401 | </a>*/}
-              {/*        <EmailIcon style={{fontSize: "clamp(12px, 2vw,  1.8vw)"}}/>*/}
-              {/*        <a*/}
-              {/*            href="https://mail.google.com/mail/?view=cm&fs=1&to=GTSIAVASH@gmail.com&su=Contact%20from%20website&body=Hi%20Siavash,%0A%0AI'm%20contacting%20you%20through%20your%20website."*/}
-              {/*            target="_blank"*/}
-              {/*            rel="noopener noreferrer"*/}
-              {/*        >*/}
-              {/*            GTSIAVASH@gmail.com*/}
-              {/*        </a>*/}
-              {/*        <LocationOnIcon style={{fontSize: "clamp(12px, 2vw, 1.8vw)"}}/>*/}
-              {/*            <a*/}
-              {/*                href="https://www.google.com/maps/search/?api=1&query=Shiraz"*/}
-              {/*                 target="_blank"*/}
-              {/*                 rel="noopener noreferrer">SHIRAZ</a>*/}
-              {/*    </div>*/}
-              {/*    <div className={'social'}>*/}
-              {/*        <GitHubIcon sx={{fontSize: '30px'}}/>*/}
-              {/*        <LinkedInIcon sx={{fontSize: '30px'}}/>*/}
-              {/*        <InstagramIcon sx={{fontSize: '30px'}}/>*/}
-              {/*    </div>*/}
-              {/*</div>*/}
-          </div>
+            )}
+
+            {/*<Lottie*/}
+            {/*    animationData={animationData}*/}
+            {/*    loop*/}
+            {/*    autoplay*/}
+            {/*    className={'lottie'}*/}
+            {/*/>*/}
+
+            {/*<div className={'card'}>*/}
+            {/*    <span className={'front-end'}>FRONT-END <span className={'dev'} >DEVELOPER</span></span>*/}
+            {/*    <span className={'name'}>SIAVASH MIRALIKHANI</span>*/}
+            {/*    <div className={'contact'}>*/}
+            {/*        <CallIcon style={{fontSize: "clamp(12px, 2vw, 1.8vw)"}}/>*/}
+            {/*           <a href="tel:+989124949401"> +98 912 49 49 401 | </a>*/}
+            {/*        <EmailIcon style={{fontSize: "clamp(12px, 2vw,  1.8vw)"}}/>*/}
+            {/*        <a*/}
+            {/*            href="https://mail.google.com/mail/?view=cm&fs=1&to=GTSIAVASH@gmail.com&su=Contact%20from%20website&body=Hi%20Siavash,%0A%0AI'm%20contacting%20you%20through%20your%20website."*/}
+            {/*            target="_blank"*/}
+            {/*            rel="noopener noreferrer"*/}
+            {/*        >*/}
+            {/*            GTSIAVASH@gmail.com*/}
+            {/*        </a>*/}
+            {/*        <LocationOnIcon style={{fontSize: "clamp(12px, 2vw, 1.8vw)"}}/>*/}
+            {/*            <a*/}
+            {/*                href="https://www.google.com/maps/search/?api=1&query=Shiraz"*/}
+            {/*                 target="_blank"*/}
+            {/*                 rel="noopener noreferrer">SHIRAZ</a>*/}
+            {/*    </div>*/}
+            {/*    <div className={'social'}>*/}
+            {/*        <GitHubIcon sx={{fontSize: '30px'}}/>*/}
+            {/*        <LinkedInIcon sx={{fontSize: '30px'}}/>*/}
+            {/*        <InstagramIcon sx={{fontSize: '30px'}}/>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
           {/*<div className={'middle'}>*/}
           {/*    <div className={'middle-text'}>*/}
           {/*        <span className={'mid-text'}>*/}
