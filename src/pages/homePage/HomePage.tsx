@@ -33,11 +33,13 @@ import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import FeedIcon from '@mui/icons-material/Feed';
 import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
 import ContactPageOutlinedIcon from '@mui/icons-material/ContactPageOutlined';
-import CodeIcon from '@mui/icons-material/Code';import animationData from "../../lottie/circle.json";
+import CodeIcon from '@mui/icons-material/Code';
+import animationData from "../../lottie/circle.json";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import CircleIcon from '@mui/icons-material/Circle';
+import WindowIcon from '@mui/icons-material/Window';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
@@ -82,7 +84,7 @@ export const HomePage = () => {
     const [page, setPage] = useState('about')
     const menuBtn = [
         {title: 'ABOUT',icon: <PermIdentityIcon />, badgeContent: 0},
-        {title: 'WORKS', icon: <LanguageOutlinedIcon />, badgeContent: 4},
+        {title: 'WORKS', icon: <WindowIcon />, badgeContent: 4},
         {title: 'CONTACT', icon: <ContactPageOutlinedIcon />, badgeContent: 0},
     ]
 
@@ -249,8 +251,7 @@ const BaseCard = ({ page, handlePage }) => {
                    className='divider'
                    orientation="vertical" flexItem />
                <span className='action-btn'>
-
-               <AlertDialogSlide/>
+                    <AlertDialogSlide/>
                </span>
            </CardActions>
       </Card>
@@ -691,11 +692,8 @@ const ContactPage = () => {
 
 
 
-const Transition = React.forwardRef(function Transition(
-    props: TransitionProps & {
-        children: React.ReactElement<any, any>;
-    },
-    ref: React.Ref<unknown>,
+const Transition = React.forwardRef(function Transition(props: TransitionProps & {
+        children: React.ReactElement<any, any>; }, ref: React.Ref<unknown>,
 ) {
     return <Slide direction="up" ref={ref} {...props} />;
 });

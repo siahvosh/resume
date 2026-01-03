@@ -9,7 +9,6 @@
     justify-content: center;
     align-items: center;
     display: flex;
-
 }
 
 .resume-container{
@@ -67,12 +66,14 @@
 .card-action{
     border-top: 1px solid #2e2d2d;
     display: flex;
+    padding: 20px;
     /*border: 2px solid red;*/
     justify-content: space-evenly;
     color: white;
 }
 .action-btn{
     cursor: pointer;
+    padding: 0.3rem;
 }
 .action-btn:hover{
     color: #EDFF20FF ;

@@ -219,14 +219,14 @@ export const ScrollSite = () => {
                         </Grid2>
                         <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}}>
                             <div className="container-animation">
-                                <AnimatePresence mode="wait">
+                                <AnimatePresence mode="popLayout">
                                     {activeIndex === 0 && (
                                         <motion.section
                                             key="one"
                                             className=""
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
-                                            exit={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
                                         >
                                           <div className={'side-1'}>
                                               <motion.div
