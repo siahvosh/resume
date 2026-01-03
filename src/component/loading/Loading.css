@@ -28,8 +28,6 @@
 .words {
     overflow: hidden;
     position: relative;
-    /*border: 2px solid red;*/
-
 }
 .words::after {
     content: "";
