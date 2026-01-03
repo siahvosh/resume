@@ -12,8 +12,6 @@
 }
 
 .resume-container{
-    /*border: 2px solid red;*/
-    /*overflow-X: hidden;*/
     width: 95vw;
     height: 81vh;
     align-items: center;
@@ -28,7 +26,6 @@
     background: black !important;
     border-radius: 14px !important;
     border: 1px solid #5f5e5e;
-    /*background: transparent !important;*/
 }
 .bar{
     position: absolute;
@@ -57,7 +54,6 @@
 .card-content{
     color: white ;
     gap: 5px;
-    /*height: 40%;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,7 +63,6 @@
     border-top: 1px solid #2e2d2d;
     display: flex;
     padding: 20px;
-    /*border: 2px solid red;*/
     justify-content: space-evenly;
     color: white;
 }
@@ -78,7 +73,6 @@
 .action-btn:hover{
     color: #EDFF20FF ;
 }
-
 
 .detail-card{
     height: 75vh;
@@ -117,7 +111,6 @@
 .divider{
     background-color: #53535b;
     opacity: 0.5 !important;
-    /*margin: 1rem !important;*/
 }
 .address-box{
     justify-content: space-between;
@@ -158,10 +151,8 @@
     font-weight: 500 !important;
     color: #EDFF20FF;
     font-size: clamp(15px, 1vw, 1.3vw) !important;
-    /*border: 2px solid red;*/
 }
 .social-icon{
-    /*border: 2px solid red;*/
     width: auto;
     gap: 20px !important;
     display: flex;
