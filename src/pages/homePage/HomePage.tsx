@@ -320,12 +320,12 @@ const DetailCard = () => {
         ],
     }
     const parsExperience = {
-        company: 'RAYAN PARS',
-        period: 'May 2025 – October 2025',
+        company: `${t('detailCard.pars.company')}`,
+        period: `${t('detailCard.pars.period')}`,
         data : [
-            {title : '1', description: 'Design and development of CRM and BI Dashboard website with Parallax Scroll and interactive animations. '},
-            {title : '2', description: 'Development of the business intelligence analytics dashboard for sales, purchase, human resource and customer finance team'},
-            {title : '3', description: 'Implementation of live charts and dashboards. There are manual KPIs and AI-generated KPIs with real-world data of the different businesses '},
+            {title : '1', description: `${t('detailCard.pars.description1')}`},
+            {title : '2', description: `${t('detailCard.pars.description2')}`},
+            {title : '3', description: `${t('detailCard.pars.description3')}`},
         ]
     }
     const skillsData = [

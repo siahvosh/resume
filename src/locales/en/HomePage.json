@@ -39,6 +39,13 @@
       "TrainingDes": "Provided hands-on training and experience transfer to reduce time-to-productivity for newly onboarded team members."
 
 
+    },
+    "pars": {
+      "company": "DERAK CLOUD",
+      "period": "August 2022 - March 2025",
+      "description1": "Design and development of CRM and BI Dashboard website with Parallax Scroll and interactive animations. ",
+      "description2": "Development of the business intelligence analytics dashboard for sales, purchase, human resource and customer finance team",
+      "description3": "Implementation of live charts and dashboards. There are manual KPIs and AI-generated KPIs with real-world data of the different businesses "
     }
   }
 }
