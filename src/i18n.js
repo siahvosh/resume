@@ -2,6 +2,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
 import HomePageEn from "/src/locales/en/HomePage.json"
+import HomePageFa from "/src/locales/fa/HomePage.json"
 
 i18n
     .use(initReactI18next)
@@ -12,7 +13,7 @@ i18n
 
             },
             fa: {
-                homePage: HomePageEn,
+                homePage: HomePageFa,
 
             },
         },
