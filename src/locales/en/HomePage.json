@@ -41,14 +41,14 @@
 
     },
     "pars": {
-      "company": "DERAK CLOUD",
-      "period": "August 2022 - March 2025",
+      "company": "RAYAN PARS",
+      "period": "May 2025 – October 2025",
       "description1": "Design and development of CRM and BI Dashboard website with Parallax Scroll and interactive animations. ",
       "description2": "Development of the business intelligence analytics dashboard for sales, purchase, human resource and customer finance team",
       "description3": "Implementation of live charts and dashboards. There are manual KPIs and AI-generated KPIs with real-world data of the different businesses "
     },
     "about": {
-      "age": "Age",
+      "age": "Age :",
       "ageValue": "30",
 
       "Residence": "Residence :",
@@ -60,8 +60,23 @@
       "address": "address :",
       "addressValue": "Shiraz",
 
-      "aboutMe": "",
+      "aboutMe": "About Me",
       "aboutDes": "I am Siavash Mir, front-end developer from Iran, Shiraz. I have strong experience in front-end development, creating responsive websites with smooth animations and modern UI interactions. I specialize in building dynamic, user-friendly interfaces and optimizing websites for different devices and screen sizes."
+    },
+    "summary": {
+      "title": "Summary",
+      "description": "Front-End Developer with 3+ years of experience building responsive, user-friendly web applications using JavaScript, React (MUI), Vue2 (Vuetify), HTML, Bootstrap ,CSS. Skilled in translating UI/UX designs into highperformance interfaces. I am also highly responsible, detail-oriented, and skilled in project management, ensuring timely delivery of high-quality work."
+    },
+    "skill": {
+      "title": "My Skills",
+      "section1": {
+        "title": "Programming Languages",
+        "js": "JavaScript",
+        "htmlCss": "HTML / CSS",
+        "node": "Node.js",
+        "python": "Python"
+
+      }
     }
   }
 }

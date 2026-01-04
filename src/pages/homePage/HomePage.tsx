@@ -330,12 +330,12 @@ const DetailCard = () => {
     }
     const skillsData = [
         {
-            title: 'Programming Languages',
+            title: `${t('detailCard.skill.section1.title')}`,
             skills: [
-                {skillName: 'JavaScript', value: 70},
-                {skillName: 'HTML / CSS', value: 80},
-                {skillName: 'Node.js', value: 60},
-                {skillName: 'Python', value: 30},
+                {skillName: `${t('detailCard.skill.section1.js')}`, value: 70},
+                {skillName: `${t('detailCard.skill.section1.htmlCss')}`, value: 80},
+                {skillName: `${t('detailCard.skill.section1.node')}`, value: 60},
+                {skillName: `${t('detailCard.skill.section1.python')}`, value: 30},
             ]
         },
         {
@@ -406,7 +406,7 @@ const DetailCard = () => {
               <Divider className='divider' />
               <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}} style={{padding: '1rem'}}>
                   <span style={{color: 'white'}}>
-                      Front-End Developer with 3+ years of experience building responsive, user-friendly web applications using JavaScript, React (MUI), Vue2 (Vuetify), HTML, Bootstrap ,CSS. Skilled in translating UI/UX designs into highperformance interfaces. I am also highly responsible, detail-oriented, and skilled in project management, ensuring timely delivery of high-quality work.
+                    {t('detailCard.summary.description')}
                   </span>
               </Grid2>
 
@@ -442,8 +442,8 @@ const DetailCard = () => {
                   </Grid2>
                   <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}} style={{padding: '1rem',}}>
                       <div className='experience-box'>
-                          <span style={{color: 'white',fontWeight: 800}}>RAYAN PARS</span>
-                          <span className='date-box'> May 2025 – October 2025</span>
+                          <span style={{color: 'white',fontWeight: 800}}>{parsExperience.company}</span>
+                          <span className='date-box'> {parsExperience.period}</span>
 
                           {parsExperience.data.map((text, index) => (
                               <>
