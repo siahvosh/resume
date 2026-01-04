@@ -210,7 +210,20 @@
         height: 100vh !important;
     }
     .bar{
-        display: none;
+        display: flex;
+        position: fixed;
+        top: 0 !important;
+        flex-direction: row;
+        width: 99vw;
+        transform: translate(0%, 0);
+        height: 7vh;
+        justify-content: space-evenly;
+        align-items: center;
+        /*border: unset;*/
+        /*border: 1px solid gray;*/
+        border-radius: 12px;
+        background: #000000;
+        z-index: 2;
     }
 }
 @media screen and (min-width: 1500px) {
