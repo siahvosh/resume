@@ -56,6 +56,7 @@ import {
     Slide, Tooltip,
     Typography, useMediaQuery
 } from "@mui/material";
+import {useTranslation} from "react-i18next";
 
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
@@ -81,6 +82,7 @@ const Transition = React.forwardRef(function Transition(props: TransitionProps &
 });
 
 export const HomePage = () => {
+    const { t } = useTranslation();
     const isTabletOrMobile = useMediaQuery('(max-width: 1200px)');
     const [activeIndex, setActiveIndex] = useState('ABOUT');
     const [page, setPage] = useState('about')
