@@ -180,9 +180,9 @@ export const HomePage = () => {
                                   key="about"
                                   style={{position: 'relative'}}
                                   transition={{ duration: 0.8 }}
-                                  initial={{ x: '-100%', opacity: 0 }}
+                                  initial={{ x: `${i18n.language === 'fa' ? '100%' : '-100%'}`, opacity: 0 }}
                                   animate={{ x: 0, opacity: 1 }}
-                                  exit={{ x: '-100%', opacity: 0 }}
+                                  exit={{ x: `${i18n.language === 'fa' ? '100%' : '-100%'}`, opacity: 0 }}
                               >
                                   <DetailCard />
                               </motion.div>
@@ -192,9 +192,9 @@ export const HomePage = () => {
                               <motion.div
                                   key="works"
                                   transition={{ duration: 0.8 }}
-                                  initial={{ x: '-100%', opacity: 0 }}
+                                  initial={{ x: `${i18n.language === 'fa' ? '100%' : '-100%'}`, opacity: 0 }}
                                   animate={{ x: 0, opacity: 1 }}
-                                  exit={{ x: '-100%', opacity: 0 }}
+                                  exit={{x: `${i18n.language === 'fa' ? '100%' : '-100%'}`, opacity: 0 }}
                               >
                                   <WorksPage />
                               </motion.div>
@@ -204,9 +204,9 @@ export const HomePage = () => {
                                   key="contact"
                                   style={{position: 'relative'}}
                                   transition={{ duration: 0.8 }}
-                                  initial={{ x: '-100%', opacity: 0 }}
+                                  initial={{ x: `${i18n.language === 'fa' ? '100%' : '-100%'}`, opacity: 0 }}
                                   animate={{ x: 0, opacity: 1 }}
-                                  exit={{ x: '-100%', opacity: 0 }}
+                                  exit={{ x: `${i18n.language === 'fa' ? '100%' : '-100%'}`, opacity: 0 }}
                               >
                                   <ContactPage />
                               </motion.div>
