@@ -1,27 +1,12 @@
-import {
-    Avatar,
-    Badge,
-    Box,
-    Button, Card, CardActions, CardContent, CardMedia, CircularProgress, Dialog, DialogActions, DialogContent,
-    Divider,
-    Grid2, List,
-    ListItem, ListItemAvatar, ListItemButton,
-    ListItemIcon,
-    ListItemText,
-    MenuList,
-    Paper, Slide, Stack, Tooltip,
-    Typography, useMediaQuery
-} from "@mui/material";
-import {AnimatePresence, motion, transform} from "framer-motion";
-import LinearProgress from '@mui/material/LinearProgress';
+//REACT-----------------------------------------------
 import {useState} from "react";
+import * as React from "react";
 
-import { styled } from '@mui/material/styles';
-import { tooltipClasses } from '@mui/material/Tooltip';
+//ANIMATIONS-----------------------------------------------
+import {AnimatePresence, motion, transform} from "framer-motion";
 import Lottie from "lottie-react";
 
-
-
+//IMAGES-----------------------------------------------
 import web1 from "../../assets/web1.jpg";
 import web2 from "../../assets/web2.jpg";
 import web3 from "../../assets/web3.jpg";
@@ -29,35 +14,55 @@ import web4 from "../../assets/background.jpg";
 import avatar from '../../assets/background.jpg'
 
 
-import PermIdentityIcon from '@mui/icons-material/PermIdentity';
-import FeedIcon from '@mui/icons-material/Feed';
-import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
-import ContactPageOutlinedIcon from '@mui/icons-material/ContactPageOutlined';
+//ICONS-----------------------------------------------
 import CodeIcon from '@mui/icons-material/Code';
-import animationData from "../../lottie/circle.json";
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import CircleIcon from '@mui/icons-material/Circle';
-import WindowIcon from '@mui/icons-material/Window';
-import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
-import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
-import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
+import SendIcon from '@mui/icons-material/Send';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
-import SmsIcon from '@mui/icons-material/Sms';
-import SendIcon from '@mui/icons-material/Send';
-import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
-import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import CircleIcon from '@mui/icons-material/Circle';
+import WindowIcon from '@mui/icons-material/Window';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import { linearProgressClasses } from '@mui/material/LinearProgress';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
+import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
+import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
+import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
+import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
+import ContactPageOutlinedIcon from '@mui/icons-material/ContactPageOutlined';
 
+
+//FILE-----------------------------------------------
 import './HomePage.css'
 import './../../App.css'
-import * as React from "react";
+import animationData from "../../lottie/circle.json";
+
+
+//MATERIAL UI-----------------------------------------------
+import { styled } from '@mui/material/styles';
 import {Gauge, gaugeClasses} from "@mui/x-charts";
 import DialogTitle from "@mui/material/DialogTitle";
+import { tooltipClasses } from '@mui/material/Tooltip';
+import LinearProgress from '@mui/material/LinearProgress';
 import DialogContentText from "@mui/material/DialogContentText";
+import { linearProgressClasses } from '@mui/material/LinearProgress';
+import {
+    Avatar,
+    Badge,
+    Box,
+    Button, Card, CardActions, CardContent, CardMedia, Dialog, DialogActions, DialogContent,
+    Divider,
+    Grid2, List,
+    ListItem, ListItemAvatar, ListItemButton,
+    Slide, Tooltip,
+    Typography, useMediaQuery
+} from "@mui/material";
+
+
+
+
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 10,
@@ -208,12 +213,12 @@ const BaseCard = ({ page, handlePage }) => {
                image={avatar}
            />
            <CardContent className={'card-content'}>
-               {/*<Lottie*/}
-               {/*    animationData={animationData}*/}
-               {/*    loop*/}
-               {/*    autoplay*/}
-               {/*    className={'lottie'}*/}
-               {/*/>*/}
+               <Lottie
+                   animationData={animationData}
+                   loop
+                   autoplay
+                   className={'lottie'}
+               />
 
                <Typography className={'base-card-title'}>
                    Siavash Miralikhani
@@ -716,7 +721,7 @@ const AlertDialogSlide = () => {
     ]
 
     return (
-        <div>
+        <>
             <span style={{display: 'inline-flex'}} onClick={handleClickOpen}>
                 CONTACT ME
                 <SendIcon fontSize={"small"} style={{margin: '0px 0 0 5px', transform: 'rotate(-30deg)'}}/>
@@ -778,7 +783,7 @@ const AlertDialogSlide = () => {
                     <Button style={{color: 'white', border: "none"}} onClick={handleClose}>CLOSE</Button>
                 </DialogActions>
             </Dialog>
-        </div>
+        </>
     );
 }
 
