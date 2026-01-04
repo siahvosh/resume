@@ -53,7 +53,7 @@
 
 .card-content{
     color: white ;
-    gap: 5px;
+    gap: 3px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,9 +69,11 @@
 .action-btn{
     cursor: pointer;
     padding: 0.3rem;
+    display: inline-flex;
 }
 .action-btn:hover{
     color: #EDFF20FF ;
+
 }
 
 .detail-card{
@@ -163,6 +165,7 @@
     color: white;
     z-index: 11111 !important;
     cursor: pointer !important;
+
 }
 
 

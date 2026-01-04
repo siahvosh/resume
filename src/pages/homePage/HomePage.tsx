@@ -12,7 +12,7 @@ import {
     Paper, Slide, Stack, Tooltip,
     Typography, useMediaQuery
 } from "@mui/material";
-import {AnimatePresence, motion} from "framer-motion";
+import {AnimatePresence, motion, transform} from "framer-motion";
 import LinearProgress from '@mui/material/LinearProgress';
 import {useState} from "react";
 
@@ -47,6 +47,7 @@ import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import SmsIcon from '@mui/icons-material/Sms';
 import SendIcon from '@mui/icons-material/Send';
+import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { linearProgressClasses } from '@mui/material/LinearProgress';
@@ -54,9 +55,7 @@ import { linearProgressClasses } from '@mui/material/LinearProgress';
 import './HomePage.css'
 import './../../App.css'
 import * as React from "react";
-import MenuItem from "@mui/material/MenuItem";
 import {Gauge, gaugeClasses} from "@mui/x-charts";
-import {TransitionProps} from "@mui/material/transitions";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContentText from "@mui/material/DialogContentText";
 
@@ -77,6 +76,11 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
         }),
     },
 }));
+const Transition = React.forwardRef(function Transition(props: TransitionProps & {
+    children: React.ReactElement<any, any>; }, ref: React.Ref<unknown>,
+) {
+    return <Slide direction="up" ref={ref} {...props} />;
+});
 
 export const HomePage = () => {
     const isTabletOrMobile = useMediaQuery('(max-width: 1200px)');
@@ -204,12 +208,12 @@ const BaseCard = ({ page, handlePage }) => {
                image={avatar}
            />
            <CardContent className={'card-content'}>
-               <Lottie
-                   animationData={animationData}
-                   loop
-                   autoplay
-                   className={'lottie'}
-               />
+               {/*<Lottie*/}
+               {/*    animationData={animationData}*/}
+               {/*    loop*/}
+               {/*    autoplay*/}
+               {/*    className={'lottie'}*/}
+               {/*/>*/}
 
                <Typography className={'base-card-title'}>
                    Siavash Miralikhani
@@ -233,7 +237,7 @@ const BaseCard = ({ page, handlePage }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                    >
-                        <LinkedInIcon className='linkedin-icon'/>
+                        <LinkedInIcon/>
                    </a>
                    <a
                        className='linkedin-icon'
@@ -241,12 +245,15 @@ const BaseCard = ({ page, handlePage }) => {
                        target="_blank"
                        rel="noopener noreferrer"
                    >
-                        <InstagramIcon className='instagram-icon'/>
+                        <InstagramIcon />
                    </a>
                </Typography>
            </CardContent>
            <CardActions className={'card-action'}>
-               <span className='action-btn'>DOWNLOAD</span>
+               <span className='action-btn'>
+                   DOWNLOAD
+                   <CloudDownloadIcon fontSize={"small"} style={{margin: '1px 0 0 5px'}}/>
+               </span>
                <Divider
                    className='divider'
                    orientation="vertical" flexItem />
@@ -257,6 +264,8 @@ const BaseCard = ({ page, handlePage }) => {
       </Card>
     )
 }
+
+
 const DetailCard = () => {
     const derakExperience = {
         company: 'DERAK CLOUD',
@@ -688,16 +697,6 @@ const ContactPage = () => {
         </Card>
     )
 }
-
-
-
-
-const Transition = React.forwardRef(function Transition(props: TransitionProps & {
-        children: React.ReactElement<any, any>; }, ref: React.Ref<unknown>,
-) {
-    return <Slide direction="up" ref={ref} {...props} />;
-});
-
 const AlertDialogSlide = () => {
     const [open, setOpen] = React.useState(false);
 
@@ -710,16 +709,17 @@ const AlertDialogSlide = () => {
     };
 
     const contactDetail = [
-        {title: 'MAIL', value: 'gtsiavash@gmail.com', icon: <EmailIcon/>, ref: 'https://mail.google.com/mail/?view=cm&fs=1&to=GTSIAVASH@gmail.com&su=Contact%20from%20website&body=Hi%20Siavash,%0A%0AI\'m%20contacting%20you%20through%20your%20website.'},
-        {title: 'MESSAGE', value: '09124949401', icon: <SendOutlinedIcon/>, ref: 'sms:09124949401'},
         {title: 'CALL', value: '09124949401', icon: <CallIcon/>, ref: 'tel:09124949401'},
+        {title: 'MESSAGE', value: '09124949401', icon: <SendOutlinedIcon/>, ref: 'sms:09124949401'},
+        {title: 'MAIL', value: 'gtsiavash@gmail.com', icon: <EmailIcon/>, ref: 'https://mail.google.com/mail/?view=cm&fs=1&to=GTSIAVASH@gmail.com&su=Contact%20from%20website&body=Hi%20Siavash,%0A%0AI\'m%20contacting%20you%20through%20your%20website.'},
         {title: 'WHATS APP', value: '09124949401', icon: <WhatsAppIcon/>,ref: 'whatsApp:09124949401'},
     ]
 
     return (
         <div>
-            <span onClick={handleClickOpen}>
+            <span style={{display: 'inline-flex'}} onClick={handleClickOpen}>
                 CONTACT ME
+                <SendIcon fontSize={"small"} style={{margin: '0px 0 0 5px', transform: 'rotate(-30deg)'}}/>
             </span>
             <Dialog
                 open={open}
@@ -727,7 +727,7 @@ const AlertDialogSlide = () => {
                     transition: Transition,
                 }}
                 keepMounted
-                style={{ opacity: 0.9,}}
+                style={{ opacity: 0.9}}
                 sx={{
                     background: '#000000',
                     '& .MuiPaper-root': {
@@ -748,27 +748,26 @@ const AlertDialogSlide = () => {
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
-
                 <DialogTitle style={{color: 'white',  fontSize: '40px'}}>
                     <span style={{color: '#EDFF20FF',}}> C</span>ontact
                 </DialogTitle>
                 <Divider className={'divider'}/>
-                <DialogContent style={{width:' 100%', }}>
+                <DialogContent >
                     <DialogContentText id="alert-dialog-slide-description">
                         <List sx={{ pt: 0, color: 'white'}}>
                             {contactDetail.map((item, idx) => (
                                 <ListItem disablePadding key={idx}>
                                     <a href={`${item.ref}`}>
                                         <ListItemButton>
-                                        <ListItemAvatar>
-                                            <Avatar sx={{ background: 'black', color: '#EDFF20FF' }}>
-                                                {item.icon}
-                                            </Avatar>
-                                        </ListItemAvatar>
-                                        <span style={{ fontSize: '40px'}}>
+                                            <ListItemAvatar>
+                                                <Avatar sx={{ background: 'black', color: '#EDFF20FF' }}>
+                                                    {item.icon}
+                                                </Avatar>
+                                            </ListItemAvatar>
+                                            <span style={{ fontSize: '30px'}}>
                                             {item.title}
                                         </span>
-                                    </ListItemButton>
+                                        </ListItemButton>
                                     </a>
                                 </ListItem>
                             ))}
@@ -776,9 +775,14 @@ const AlertDialogSlide = () => {
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <span style={{color: 'white'}} onClick={handleClose}>CLOSE</span>
+                    <Button style={{color: 'white', border: "none"}} onClick={handleClose}>CLOSE</Button>
                 </DialogActions>
             </Dialog>
         </div>
     );
 }
+
+
+
+
+
