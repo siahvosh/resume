@@ -396,7 +396,7 @@ const DetailCard = () => {
        <Card className={'detail-card'}>
           <CardContent style={{marginTop: '1rem', overflow: 'hidden'}}>
               <Typography gutterBottom  className={'typography'}>
-                  <span style={{color: '#EDFF20FF'}}> A</span>bout Me
+                  <span>About Me</span>
               </Typography>
               <Divider className='divider' />
               <Grid2 container>
@@ -417,7 +417,7 @@ const DetailCard = () => {
               </Grid2>
 
               <Typography gutterBottom marginTop={'3rem'} className={'typography'}>
-                  <span style={{color: '#EDFF20FF'}}> S</span>ummary
+                  <span >Summary</span>
               </Typography>
               <Divider className='divider' />
               <Grid2 size={{xs: 12, sm: 12, md: 12, lg: 12}} style={{padding: '1rem'}}>
@@ -427,7 +427,7 @@ const DetailCard = () => {
               </Grid2>
 
               <Typography gutterBottom marginTop={'3rem'} className={'typography'}>
-                  <span style={{color: '#EDFF20FF'}}> E</span>xperience
+                  <span>Experience</span>
               </Typography>
               <Divider className='divider' />
               <Grid2 container>
@@ -476,7 +476,7 @@ const DetailCard = () => {
               </Grid2>
 
               <Typography gutterBottom marginTop={'3rem'} className={'typography'}>
-                  <span style={{color: '#EDFF20FF'}}> M</span>y Skills
+                  <span>My Skills</span>
               </Typography>
               <Divider className='divider' />
               <Grid2 container spacing={3} style={{padding: '1rem'}}>
