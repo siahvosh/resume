@@ -13,7 +13,6 @@ import web3 from "../../assets/web3.jpg";
 import web4 from "../../assets/background.jpg";
 import avatar from '../../assets/background.jpg'
 
-
 //ICONS-----------------------------------------------
 import CodeIcon from '@mui/icons-material/Code';
 import SendIcon from '@mui/icons-material/Send';
@@ -33,12 +32,10 @@ import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import ContactPageOutlinedIcon from '@mui/icons-material/ContactPageOutlined';
 
-
 //FILE-----------------------------------------------
 import './HomePage.css'
 import './../../App.css'
 import animationData from "../../lottie/circle.json";
-
 
 //MATERIAL UI-----------------------------------------------
 import { styled } from '@mui/material/styles';
@@ -61,9 +58,6 @@ import {
 } from "@mui/material";
 
 
-
-
-
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 10,
     borderRadius: 5,
@@ -82,8 +76,7 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     },
 }));
 const Transition = React.forwardRef(function Transition(props: TransitionProps & {
-    children: React.ReactElement<any, any>; }, ref: React.Ref<unknown>,
-) {
+    children: React.ReactElement<any, any>; }, ref: React.Ref<unknown>,) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
@@ -199,10 +192,6 @@ export const HomePage = () => {
       </div>
     )
 }
-
-
-
-
 const BaseCard = ({ page, handlePage }) => {
     return(
       <Card className={'base-card'}>
@@ -269,8 +258,6 @@ const BaseCard = ({ page, handlePage }) => {
       </Card>
     )
 }
-
-
 const DetailCard = () => {
     const derakExperience = {
         company: 'DERAK CLOUD',
@@ -332,9 +319,9 @@ const DetailCard = () => {
         company: 'RAYAN PARS',
         period: 'May 2025 – October 2025',
         data : [
-            {title : 'fsdf', description: 'Design and development of CRM and BI Dashboard website with Parallax Scroll and interactive animations. '},
-            {title : 'sdfds', description: 'Development of the business intelligence analytics dashboard for sales, purchase, human resource and customer finance team'},
-            {title : 'dsfdsf', description: 'Implementation of live charts and dashboards. There are manual KPIs and AI-generated KPIs with real-world data of the different businesses '},
+            {title : '1', description: 'Design and development of CRM and BI Dashboard website with Parallax Scroll and interactive animations. '},
+            {title : '2', description: 'Development of the business intelligence analytics dashboard for sales, purchase, human resource and customer finance team'},
+            {title : '3', description: 'Implementation of live charts and dashboards. There are manual KPIs and AI-generated KPIs with real-world data of the different businesses '},
         ]
     }
     const skillsData = [
@@ -394,7 +381,7 @@ const DetailCard = () => {
               <Divider className='divider' />
               <Grid2 container>
                   <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem', borderRight: '1px solid #2f2f33'}}>
-                      <span style={{color: 'white'}}>I am Ryan Adlard, web designer from USA, California. I have rich experience in web site design and building and customization, also I am good at wordpress. I love to talk with you about our unique.</span>
+                      <span style={{color: 'white'}}>I am Siavash Mir, front-end developer from Iran, Shiraz. I have strong experience in front-end development, creating responsive websites with smooth animations and modern UI interactions. I specialize in building dynamic, user-friendly interfaces and optimizing websites for different devices and screen sizes.</span>
                   </Grid2>
                   <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-around', color: 'white'}}>
                       {myData.map((item, idx) => (
