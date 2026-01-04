@@ -76,6 +76,12 @@
         "node": "Node.js",
         "python": "Python"
 
+      },
+      "section2": {
+        "title": "Frameworks / Libraries"
+      },
+      "section3": {
+        "title": "Knowledge"
       }
     }
   }

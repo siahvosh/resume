@@ -1,5 +1,5 @@
 //REACT-----------------------------------------------
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import * as React from "react";
 
 //ANIMATIONS-----------------------------------------------
@@ -23,6 +23,7 @@ import CircleIcon from '@mui/icons-material/Circle';
 import WindowIcon from '@mui/icons-material/Window';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import LanguageIcon from '@mui/icons-material/Language';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
@@ -87,24 +88,39 @@ const Transition = React.forwardRef(function Transition(props: TransitionProps &
 
 
 
-
-
-
 export const HomePage = () => {
-
     const isTabletOrMobile = useMediaQuery('(max-width: 1200px)');
+
+    const [lang, setLang] = useState('en');
     const [activeIndex, setActiveIndex] = useState('ABOUT');
     const [page, setPage] = useState('about')
     const menuBtn = [
         {title: 'ABOUT',icon: <PermIdentityIcon />, badgeContent: 0},
         {title: 'WORKS', icon: <WindowIcon />, badgeContent: 4},
         {title: 'CONTACT', icon: <ContactPageOutlinedIcon />, badgeContent: 0},
+        {title: 'LANGUAGE', icon: <LanguageIcon />, badgeContent: `${lang}`},
     ]
+    const { i18n } = useTranslation();
 
     const handlePage = (page) =>{
         setPage(page)
     }
+    useEffect(() => {
+        document.body.dir = i18n.language === "fa" ? "rtl" : "ltr";
+    }, [i18n.language]);
+
+
     const handleClick = (title: string) => {
+        if (title === 'LANGUAGE'){
+            if (lang === 'fa')
+                setLang('en')
+            else
+                setLang('fa')
+
+            i18n.changeLanguage(lang)
+            return
+        }
+
         console.log({})
         setActiveIndex(title);
         handlePage(title.toLowerCase());
@@ -271,7 +287,7 @@ const BaseCard = ({ page, handlePage }) => {
     )
 }
 const DetailCard = () => {
-    const { t } = useTranslation<any>('homePage');
+    const { t } = useTranslation('homePage');
 
     const derakExperience = {
         company: `${t('detailCard.derak.company')}`,
