@@ -370,10 +370,10 @@ const DetailCard = () => {
         }
     ]
     const myData = [
-        {title: 'Age :', value: '30'},
-        {title: 'Residence :', value: 'Iran'},
-        {title: 'Freelance :', value: 'Available'},
-        {title: 'Address :', value: 'Shiraz'},
+        {title: `${t('detailCard.about.age')}`, value: `${t('detailCard.about.ageValue')}`},
+        {title: `${t('detailCard.about.Residence')}`, value: `${t('detailCard.about.ResidenceValue')}`},
+        {title: `${t('detailCard.about.Freelance')}`, value: `${t('detailCard.about.FreelanceValue')}`},
+        {title: `${t('detailCard.about.address')}`, value: `${t('detailCard.about.addressValue')}`},
     ]
 
     return(
@@ -385,7 +385,7 @@ const DetailCard = () => {
               <Divider className='divider' />
               <Grid2 container>
                   <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem', borderRight: '1px solid #2f2f33'}}>
-                      <span style={{color: 'white'}}>I am Siavash Mir, front-end developer from Iran, Shiraz. I have strong experience in front-end development, creating responsive websites with smooth animations and modern UI interactions. I specialize in building dynamic, user-friendly interfaces and optimizing websites for different devices and screen sizes.</span>
+                      <span style={{color: 'white'}}>{t('detailCard.about.aboutDes')}</span>
                   </Grid2>
                   <Grid2 size={{xs: 12, sm: 12, md: 6, lg: 6}} style={{padding: '1rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-around', color: 'white'}}>
                       {myData.map((item, idx) => (

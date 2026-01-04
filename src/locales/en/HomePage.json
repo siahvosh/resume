@@ -46,6 +46,22 @@
       "description1": "Design and development of CRM and BI Dashboard website with Parallax Scroll and interactive animations. ",
       "description2": "Development of the business intelligence analytics dashboard for sales, purchase, human resource and customer finance team",
       "description3": "Implementation of live charts and dashboards. There are manual KPIs and AI-generated KPIs with real-world data of the different businesses "
+    },
+    "about": {
+      "age": "Age",
+      "ageValue": "30",
+
+      "Residence": "Residence :",
+      "ResidenceValue": "Iran",
+
+      "Freelance": "Freelance :",
+      "FreelanceValue": "Available",
+
+      "address": "address :",
+      "addressValue": "Shiraz",
+
+      "aboutMe": "",
+      "aboutDes": "I am Siavash Mir, front-end developer from Iran, Shiraz. I have strong experience in front-end development, creating responsive websites with smooth animations and modern UI interactions. I specialize in building dynamic, user-friendly interfaces and optimizing websites for different devices and screen sizes."
     }
   }
 }
