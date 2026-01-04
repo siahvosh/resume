@@ -56,7 +56,11 @@ import {
     Slide, Tooltip,
     Typography, useMediaQuery
 } from "@mui/material";
+
+
+//LOCALES------------------------------
 import {useTranslation} from "react-i18next";
+
 
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
@@ -81,8 +85,13 @@ const Transition = React.forwardRef(function Transition(props: TransitionProps &
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
+
+
+
+
+
 export const HomePage = () => {
-    const { t } = useTranslation();
+
     const isTabletOrMobile = useMediaQuery('(max-width: 1200px)');
     const [activeIndex, setActiveIndex] = useState('ABOUT');
     const [page, setPage] = useState('about')
@@ -195,6 +204,7 @@ export const HomePage = () => {
     )
 }
 const BaseCard = ({ page, handlePage }) => {
+    const { t } = useTranslation('homePage');
     return(
       <Card className={'base-card'}>
            <CardMedia
@@ -212,10 +222,10 @@ const BaseCard = ({ page, handlePage }) => {
                />
 
                <Typography className={'base-card-title'}>
-                   Siavash Miralikhani
+                  {t('baseCard.name')}
                </Typography>
                <Typography className={'base-card-body'}>
-                   FRONT END DEVELOPER
+                   {t('baseCard.developer')}
                </Typography>
 
                <Typography className={'social-icon'}>
@@ -247,7 +257,7 @@ const BaseCard = ({ page, handlePage }) => {
            </CardContent>
            <CardActions className={'card-action'}>
                <span className='action-btn'>
-                   DOWNLOAD
+                   {t('baseCard.downloadBtn')}
                    <CloudDownloadIcon fontSize={"small"} style={{margin: '1px 0 0 5px'}}/>
                </span>
                <Divider
@@ -692,6 +702,7 @@ const ContactPage = () => {
     )
 }
 const AlertDialogSlide = () => {
+    const { t } = useTranslation('homePage');
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -712,7 +723,7 @@ const AlertDialogSlide = () => {
     return (
         <>
             <span style={{display: 'inline-flex'}} onClick={handleClickOpen}>
-                CONTACT ME
+                {t('baseCard.contactBtn')}
                 <SendIcon fontSize={"small"} style={{margin: '0px 0 0 5px', transform: 'rotate(-30deg)'}}/>
             </span>
             <Dialog
