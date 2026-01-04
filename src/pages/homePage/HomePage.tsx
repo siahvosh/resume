@@ -271,59 +271,51 @@ const BaseCard = ({ page, handlePage }) => {
     )
 }
 const DetailCard = () => {
+    const { t } = useTranslation<any>('homePage');
+
     const derakExperience = {
-        company: 'DERAK CLOUD',
-        period: 'August 2022 - March 2025',
+        company: `${t('detailCard.derak.company')}`,
+        period: `${t('detailCard.derak.period')}`,
         data: [
             {
-                title: 'Responsive Web Development',
-                description:
-                    'Design and development of a responsive version of the company website to deliver an improved user experience across mobile devices.',
+                title: `${t('detailCard.derak.responsiveTitle')}`,
+                description: `${t('detailCard.derak.responsiveDes')}`,
             },
             {
-                title: 'Mobile Feature Expansion',
-                description:
-                    'Added key functional sections, including service purchasing and renewal, optimized specifically for mobile devices.',
+                title: `${t('detailCard.derak.mobileFeature')}`,
+                description: `${t('detailCard.derak.mobileDes')}`,
             },
             {
-                title: 'Billing Optimization',
-                description:
-                    'Optimized the billing section to enhance performance and improve overall user experience on mobile platforms.',
+                title: `${t('detailCard.derak.Billing')}`,
+                description:`${t('detailCard.derak.BillingDes')}`,
             },
             {
-                title: 'Advanced Filtering Systems',
-                description:
-                    'Implemented advanced filtering mechanisms tailored to the custom requirements of enterprise-level clients.',
+                title: `${t('detailCard.derak.Advanced')}`,
+                description: `${t('detailCard.derak.AdvancedDes')}`,
             },
             {
-                title: 'Analytics & Data Visualization',
-                description:
-                    'Designed and developed analytical charts and data visualizations for finance, human resources, and administrative support teams.',
+                title: `${t('detailCard.derak.Analytics')}`,
+                description: `${t('detailCard.derak.AnalyticsDes')}`,
             },
             {
-                title: 'Financial & Technical R&D',
-                description:
-                    'Conducted research and development on financial and technical data analysis to present insights effectively within the user interface.',
+                title: `${t('detailCard.derak.Financial')}`,
+                description: `${t('detailCard.derak.FinancialDes')}`,
             },
             {
-                title: 'Front-End Refactoring & Optimization',
-                description:
-                    'Refactored and optimized critical sections of the front-end codebase, resolving bugs, removing redundant logic, and improving load times by up to 40%.',
+                title: `${t('detailCard.derak.Refactoring')}`,
+                description: `${t('detailCard.derak.RefactoringDes')}`,
             },
             {
-                title: 'Onboarding System Design',
-                description:
-                    'Designed and implemented the onboarding process for new team members in the front-end and UI/UX departments.',
+                title: `${t('detailCard.derak.onboarding')}`,
+                description: `${t('detailCard.derak.onboardingDes')}`,
             },
             {
-                title: 'Team Mentorship & Knowledge Transfer',
-                description:
-                    'Mentored and trained new employees by introducing project components, development workflows, and coding standards to accelerate onboarding and productivity.',
+                title: `${t('detailCard.derak.Mentorship')}`,
+                description: `${t('detailCard.derak.MentorshipDes')}`,
             },
             {
-                title: 'Developer Training & Enablement',
-                description:
-                    'Provided hands-on training and experience transfer to reduce time-to-productivity for newly onboarded team members.',
+                title: `${t('detailCard.derak.Training')}`,
+                description: `${t('detailCard.derak.TrainingDes')}`
             },
         ],
     }

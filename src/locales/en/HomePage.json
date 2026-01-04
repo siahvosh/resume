@@ -6,6 +6,39 @@
     "contactBtn": "CONTACT ME"
   },
   "detailCard": {
+    "derak": {
+      "company": "DERAK CLOUD",
+      "period": "August 2022 - March 2025",
+      "responsiveTitle": "Responsive Web Development",
+      "responsiveDes": "Design and development of a responsive version of the company website to deliver an improved user experience across mobile devices.",
+      "mobileFeature": "Mobile Feature Expansion",
+      "mobileDes": "Added key functional sections, including service purchasing and renewal, optimized specifically for mobile devices.",
 
+      "Billing": "Billing Optimization",
+      "BillingDes": "Optimized the billing section to enhance performance and improve overall user experience on mobile platforms.",
+
+      "Advanced": "Advanced Filtering Systems",
+      "AdvancedDes": "Implemented advanced filtering mechanisms tailored to the custom requirements of enterprise-level clients.",
+
+      "Analytics": "Analytics & Data Visualization",
+      "AnalyticsDes": "Designed and developed analytical charts and data visualizations for finance, human resources, and administrative support teams.",
+
+      "Financial" : "Financial & Technical R&D",
+      "FinancialDes" : "Conducted research and development on financial and technical data analysis to present insights effectively within the user interface.",
+
+      "Refactoring": "Front-End Refactoring & Optimization",
+      "RefactoringDes": "Refactored and optimized critical sections of the front-end codebase, resolving bugs, removing redundant logic, and improving load times by up to 40%.",
+
+      "onboarding": "Onboarding System Design",
+      "onboardingDes": "Designed and implemented the onboarding process for new team members in the front-end and UI/UX departments.",
+
+      "Mentorship": "Team Mentorship & Knowledge Transfer",
+      "MentorshipDes": "Mentored and trained new employees by introducing project components, development workflows, and coding standards to accelerate onboarding and productivity.",
+
+      "Training": "Developer Training & Enablement",
+      "TrainingDes": "Provided hands-on training and experience transfer to reduce time-to-productivity for newly onboarded team members."
+
+
+    }
   }
 }
