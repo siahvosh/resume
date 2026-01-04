@@ -32,7 +32,7 @@
     display: flex;
     top: 50%;
     flex-direction: column;
-    right: 0%;
+    right: 0;
     transform: translate(50%, -50%);
     width: 40px;
     height: 200px;
