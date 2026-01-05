@@ -15,4 +15,9 @@ button:focus{
 
 *{
     font-family: "Playfair Display", serif !important;
+
+}
+
+body{
+    height: 100vh;
 }

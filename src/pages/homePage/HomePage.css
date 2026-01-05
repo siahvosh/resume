@@ -28,6 +28,7 @@
     border-radius: 14px !important;
     border: 1px solid #5f5e5e;
 }
+
 .bar{
     position: absolute;
     display: flex;
@@ -46,6 +47,7 @@
 }
 
 .lottie{
+    min-width: 40vw;
     width: 30vw;
     height: 25vh;
     position: absolute;
@@ -54,11 +56,14 @@
 
 .card-content{
     color: white ;
-    gap: 3px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    top: 50%;
+    height: 80%;
+    border: 2px solid blue;
+
 }
 .card-action{
     border-top: 1px solid #2e2d2d;
@@ -133,7 +138,7 @@
 .base-card-title{
     animation: tracking-in-expand-fwd 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     font-weight: 700 !important;
-    font-size: clamp(35px, 3vw, 4vw) !important;
+    font-size: clamp(30px, 3vw, 4vw) !important;
 }
 @keyframes tracking-in-expand-fwd {
     0% {
@@ -192,10 +197,23 @@
         height: 5vh;
     }
     .bar{
-        display: none;
+        display: flex;
+        position: fixed;
+        top: 0 !important;
+        flex-direction: row;
+        width: 99vw;
+        transform: translate(0%, 0);
+        height: 7vh;
+        justify-content: space-evenly;
+        align-items: center;
+        /*border: unset;*/
+        /*border: 1px solid gray;*/
+        border-radius: 12px;
+        background: #000000;
+        z-index: 2;
     }
 }
-@media screen and (min-width: 350px) and (max-width: 1200px) {
+@media screen and (min-width: 950px) and (max-width: 1200px) {
     .resume-container{
         width: 99vw;
         height: 100vh;
@@ -208,6 +226,7 @@
     }
     .base-card{
         height: 100vh !important;
+
     }
     .bar{
         display: flex;
