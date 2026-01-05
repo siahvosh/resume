@@ -6,6 +6,7 @@
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
+
     justify-content: center;
     align-items: center;
     display: flex;
@@ -198,20 +199,20 @@
         height: 5vh;
     }
     .bar{
-        display: flex;
-        position: fixed;
-        top: 0 !important;
-        flex-direction: row;
-        width: 99vw;
-        transform: translate(0%, 0);
-        height: 7vh;
-        justify-content: space-evenly;
-        align-items: center;
-        /*border: unset;*/
-        /*border: 1px solid gray;*/
-        border-radius: 12px;
-        background: #000000;
-        z-index: 2;
+        display: none;
+    /*    position: fixed;*/
+    /*    top: 0 !important;*/
+    /*    flex-direction: row;*/
+    /*    width: 99vw;*/
+    /*    transform: translate(0%, 0);*/
+    /*    height: 7vh;*/
+    /*    justify-content: space-evenly;*/
+    /*    align-items: center;*/
+    /*    !*border: unset;*!*/
+    /*    !*border: 1px solid gray;*!*/
+    /*    border-radius: 12px;*/
+    /*    background: #000000;*/
+    /*    z-index: 2;*/
     }
 }
 @media screen and (min-width: 950px) and (max-width: 1200px) {
@@ -229,20 +230,20 @@
         height: 100dvh !important;
     }
     .bar{
-        display: flex;
-        position: fixed;
-        top: 0 !important;
-        flex-direction: row;
-        width: 99vw;
-        transform: translate(0%, 0);
-        height: 7vh;
-        justify-content: space-evenly;
-        align-items: center;
-        /*border: unset;*/
-        /*border: 1px solid gray;*/
-        border-radius: 12px;
-        background: #000000;
-        z-index: 2;
+        display: none;
+        /*position: fixed;*/
+        /*top: 0 !important;*/
+        /*flex-direction: row;*/
+        /*width: 99vw;*/
+        /*transform: translate(0%, 0);*/
+        /*height: 7vh;*/
+        /*justify-content: space-evenly;*/
+        /*align-items: center;*/
+        /*!*border: unset;*!*/
+        /*!*border: 1px solid gray;*!*/
+        /*border-radius: 12px;*/
+        /*background: #000000;*/
+        /*z-index: 2;*/
     }
 }
 @media screen and (min-width: 1500px) {
