@@ -4,7 +4,7 @@
     --bg-color: #000000;
     overflow: hidden;
     z-index: 111111111;
-    background: black ;
+    background: #fdfdfd;
     padding: 1rem 2rem;
     position: absolute;
     display: flex;
