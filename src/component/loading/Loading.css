@@ -1,15 +1,15 @@
-/* From Uiverse.io by kennyotsu */
 .loading-card {
-    /* color used to softly clip top and bottom of the .words container */
-    --bg-color: #000000;
-    overflow: hidden !important;
+    /*--bg-color: #000000;*/
+    /*overflow: hidden !important;*/
     background: black ;
-    padding: 1rem 2rem;
-    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    /*padding: 1rem 2rem;*/
+    /*position: absolute;*/
     display: flex;
     align-items: center;
     justify-content: center;
-    inset: 0;
+    /*inset: 0;*/
 }
 .loader {
     display: inline-flex !important;

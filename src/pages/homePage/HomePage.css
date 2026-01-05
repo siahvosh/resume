@@ -40,7 +40,7 @@
     height: 200px;
     justify-content: space-evenly;
     align-items: center;
-    border: 2px solid #5f5e5e;
+    border: 1px solid #5f5e5e;
     border-radius: 20px;
     background: #151515;
     z-index: 2;
@@ -61,18 +61,17 @@
     align-items: center;
     flex-direction: column;
     top: 50%;
-    height: 80%;
+    height: 75%;
     /*border: 2px solid blue;*/
 }
 .card-action{
     border-top: 1px solid #2e2d2d;
     display: flex;
-    align-items: center;
     justify-content: space-evenly;
     /*align-items: e;*/
     color: white;
     height: 10%;
-    /*border: 2px solid green*/
+    /*border: 1px solid green*/
 }
 .action-btn{
     cursor: pointer;
@@ -192,7 +191,7 @@
     }
     .resume-container{
         width: 99vw;
-        height: 100vh
+        height: 100dvh
     }
     .paper-style{
         width: 60vw;
@@ -218,7 +217,7 @@
 @media screen and (min-width: 950px) and (max-width: 1200px) {
     .resume-container{
         width: 99vw;
-        height: 100vh;
+        height: 100dvh;
     }
     .detail-card{
         height: auto;
@@ -228,7 +227,6 @@
     }
     .base-card{
         height: 100dvh !important;
-
     }
     .bar{
         display: flex;
