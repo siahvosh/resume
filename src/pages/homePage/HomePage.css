@@ -188,11 +188,11 @@
         padding: 1rem;
     }
     .base-card{
-        height: 100vh !important;
+        height: 100dvh !important;
     }
     .resume-container{
         width: 99vw;
-        height: 100dvh
+        height: 100vh
     }
     .paper-style{
         width: 60vw;
@@ -227,7 +227,7 @@
         overflow: hidden;
     }
     .base-card{
-        height: 100vh !important;
+        height: 100dvh !important;
     }
     .bar{
         display: flex;
