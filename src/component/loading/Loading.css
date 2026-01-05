@@ -2,6 +2,7 @@
 .loading-card {
     /* color used to softly clip top and bottom of the .words container */
     --bg-color: #000000;
+    overflow: hidden;
     z-index: 111111111;
     background: black ;
     padding: 1rem 2rem;
