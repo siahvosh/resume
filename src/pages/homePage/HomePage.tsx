@@ -223,14 +223,15 @@ const BaseCard = ({ page, handlePage }) => {
     const { t } = useTranslation('homePage');
     return(
       <Card className={'base-card'}>
-          <div style={{border: '2px solid red', height: '50%'}}>
+          <div style={{height: '50%'}}>
                <CardMedia
                    component="img"
                    alt="green iguana"
                    image={avatar}
+                   sx={{height: '100%'}}
                />
           </div>
-          <div style={{border: '2px solid red', height: '50%'}}>
+          <div style={{height: '50%'}}>
                 <CardContent className={'card-content'}>
                    <Lottie
                        animationData={animationData}

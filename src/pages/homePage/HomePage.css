@@ -62,15 +62,17 @@
     flex-direction: column;
     top: 50%;
     height: 80%;
-    border: 2px solid blue;
-
+    /*border: 2px solid blue;*/
 }
 .card-action{
     border-top: 1px solid #2e2d2d;
     display: flex;
-    padding: 20px;
+    align-items: center;
     justify-content: space-evenly;
+    /*align-items: e;*/
     color: white;
+    height: 10%;
+    /*border: 2px solid green*/
 }
 .action-btn{
     cursor: pointer;
@@ -186,7 +188,7 @@
         padding: 1rem;
     }
     .base-card{
-        height: 100vh !important;
+        height: 100dvh !important;
     }
     .resume-container{
         width: 99vw;
@@ -225,7 +227,7 @@
         overflow: hidden;
     }
     .base-card{
-        height: 100vh !important;
+        height: 100dvh !important;
 
     }
     .bar{
