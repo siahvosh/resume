@@ -15,6 +15,8 @@ function App() {
         return () => clearTimeout(timer);
     }, []);
 
+
+    if (loading) return <Loading />;
     const router = createBrowserRouter([
         {
             path: '/',
@@ -28,8 +30,6 @@ function App() {
             ]
         },
     ])
-
-    if (loading) return <Loading />;
 
     return <RouterProvider router={router}/>
 

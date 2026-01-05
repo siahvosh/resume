@@ -2,15 +2,13 @@
     --bg-color: #000000;
     overflow: hidden !important;
     background: black ;
-    width: 100vw;
-    height: 100% !important;
+    /*width: 100vw;*/
+    /*height: 100dvh !important;*/
     /*padding: 1rem 2rem;*/
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /*border: 2px solid red;*/
-    /*inset: 0;*/
+    position: fixed !important;
+    place-items: center;
+    display: grid;
+    inset: 0;
 }
 .loader {
     display: inline-flex !important;

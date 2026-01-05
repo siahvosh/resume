@@ -17,7 +17,11 @@ button:focus{
     font-family: "Playfair Display", serif !important;
 
 }
-#root {
-    height: 100dvh;
+/*#root {*/
+/*    height: 100%;*/
+/*}*/
+
+html, body {
+    width: 100%;
     overflow: hidden;
 }
