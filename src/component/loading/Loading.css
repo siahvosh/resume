@@ -1,6 +1,6 @@
 .loading-card {
     /*--bg-color: #000000;*/
-    /*overflow: hidden !important;*/
+    overflow: hidden !important;
     background: black ;
     width: 100vw;
     height: 100dvh;
