@@ -91,7 +91,7 @@ const Transition = React.forwardRef(function Transition(props: TransitionProps &
 export const HomePage = () => {
     const isTabletOrMobile = useMediaQuery('(max-width: 1200px)');
 
-    const [lang, setLang] = useState('en');
+    const [lang, setLang] = useState('fa');
     const [activeIndex, setActiveIndex] = useState('ABOUT');
     const [page, setPage] = useState('about')
     const menuBtn = [
