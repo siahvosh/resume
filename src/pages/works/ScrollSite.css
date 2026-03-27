@@ -147,24 +147,35 @@ a:hover{
     }
 }
 
+.container{
+    width: 100vw;
+    height: 99vh;
+    border: 2px solid red;
+}
+
 .cont-2{
     height: 500vh;
-    background: #080914;
-    margin-top: -15rem;
-    z-index: -1 !important;
-
+    width: 100%;
+    background: #080914 !important;
+    position: relative;
+    /*z-index: -1 !important;*/
+    border: 2px solid blue;
 }
+
 .scroll-box{
     position: sticky;
     top: 5vh;
-    height: 80vh;
+    height: 90vh;
+    width: 100vw;
     padding: 1rem;
+    border: 2px solid green !important;
 }
 .experience-title-box{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 15vh;
+    height: 10vh;
+
 }
 .experience-title{
     font-weight: 900;
