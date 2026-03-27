@@ -147,39 +147,6 @@ a:hover{
     }
 }
 
-
-.middle{
-    background: white !important;
-    border-radius: 14px;
-    height: 45vh;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1 !important;
-}
-.middle-text{
-    padding: 2rem;
-    display: flex;
-    width: 70%;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-
-}
-.mid-text{
-    font-size: clamp(50px, 7vw, 8rem);
-    color: black;
-    font-weight: 900;
-}
-.mid-text-description{
-    text-align: center;
-    color: black;
-    font-size: clamp(1rem, 2vw, 2rem);
-    font-weight: 300;
-}
-
-
 .cont-2{
     height: 500vh;
     background: #080914;

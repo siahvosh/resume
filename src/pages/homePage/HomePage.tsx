@@ -58,10 +58,8 @@ import {
     Typography, useMediaQuery
 } from "@mui/material";
 
-
 //LOCALES------------------------------
 import {useTranslation} from "react-i18next";
-
 
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
@@ -106,6 +104,12 @@ export const HomePage = () => {
         setPage(page)
     }
     useEffect(() => {
+
+        const isFa = i18n.language === "fa";
+
+        document.body.classList.remove("lang-fa", "lang-en");
+        document.body.classList.add(isFa ? "lang-fa" : "lang-en");
+
         document.body.dir = i18n.language === "fa" ? "rtl" : "ltr";
     }, [i18n.language]);
 

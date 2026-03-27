@@ -197,7 +197,7 @@ export const ScrollSite = () => {
                 console.log({index: index})
             }
         };
-
+        console.log(activeIndex);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
