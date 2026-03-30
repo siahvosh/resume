@@ -7,16 +7,18 @@ import img4 from "../../assets/img4.png";
 import img2 from "../../assets/img2.png";
 import img3 from "../../assets/img3.png";
 import * as React from "react";
-import {Button, Grid2} from "@mui/material";
+import {Button, Grid2, keyframes} from "@mui/material";
 import worker from '../../assets/grafiti-artist.png';
 import girl from '../../assets/gum3.png';
 import skater from '../../assets/2skater.png'
+import bust from '../../assets/bust.png'
 import rock1 from '../../assets/r1.png'
 import rock2 from '../../assets/r2.png'
 import rock3 from '../../assets/r3.png'
 
 import './ScrollSite.css'
 import styles from './ScrollSite.css'
+import {transform} from "framer-motion/dom";
 export const ScrollSite = () => {
 
     const dialogText = [
@@ -253,14 +255,14 @@ export const ScrollSite = () => {
                           <motion.img
                               className="phone-img"
                               src={`${skater}`}
-                              transition={{duration: 1 }}
-                              initial={{ y: 800 ,x: 0, opacity: 0 }}
+                              transition={{duration: 1}}
+                              initial={{ y: 800 , x: 0, opacity: 0 }}
                               animate={{ y: 0,  x: 0, opacity: 1}}
-                              exit={{ y: 800,x: 0, opacity: 0 }}>
+                              exit={{ y: 800, x: 0, opacity: 0 }}>
                           </motion.img>
 
                           {/*</div>*/}
-                                    </motion.section>
+                        </motion.section>
                     )}
                     {activeIndex === 1 && (
                         <motion.section
@@ -419,8 +421,8 @@ export const ScrollSite = () => {
                             </div>
                             {/*<div className={'detail-img'}>*/}
                             <motion.img
-                                className="worker"
-                                src={`${worker}`}
+                                className="bust"
+                                src={`${bust}`}
                                 transition={{duration: 1}}
                                 initial={{ y: 0 ,x: 500, opacity: 0 }}
                                 animate={{y: 0 , x: 0, opacity: 1,}}

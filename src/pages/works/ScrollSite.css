@@ -187,9 +187,8 @@
 .side-1, .side-2, .side-3, .side-4{
     height: 50vh;
     overflow: hidden;
+
 }
-
-
 
 
 .side-1-text{
@@ -197,7 +196,7 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: 70%;
     align-items: center;
 }
 
@@ -216,7 +215,7 @@
     display: flex;
     flex-direction: column;
     line-height: 100%;
-    font-size: clamp(20px, 4.5vw, 4.5vw);
+    font-size: clamp(50px, 4.5vw, 4.5vw);
     font-family: "Grape Nuts", cursive;
     /*align-self: center;*/
     font-weight: 900;
@@ -247,8 +246,8 @@
     /*animation: floatSoft 4s ease-in-out infinite;*/
     /*will-change: transform;*/
     position: absolute;
-    top: 10vh;
-    right: 0px;
+    top: 15vh;
+    right: 50px;
     margin-right: 8vw;
     height: 50vh;
     width: 50vh;
@@ -271,9 +270,9 @@
 }
 
 @keyframes floatSoft {
-    0%   { transform: translateY(0) }
-    50%  { transform: translateY(-12px) }
-    100% { transform: translateY(0) }
+    0%   { transform: translateY(0px) }
+    50%  { transform: translateY(-10px) }
+    100% { transform: translateY(0px) }
 }
 
 .rock-2 {
@@ -316,6 +315,16 @@
     right: 0;
     animation: floatRock2 3s ease-in-out infinite;
     will-change: transform;
+    margin-right: 15vw;
+    height: 80vh;
+    width: auto;
+}
+
+.bust{
+    position: absolute;
+    top: 10%;
+    right: 0;
+
     margin-right: 15vw;
     height: 80vh;
     width: auto;
@@ -464,22 +473,22 @@ footer {
 
 @media screen and (min-width: 200px) and (max-width: 950px) {
     .phone-img {
-        height: 30vh;
+        height: 40vh;
         width: auto;
-        top: 35%;
-        right: 15vw;
+        position: absolute;
     }
 
-    .detail-text {
-        margin-left: 0;
+    .side-1-text{
+        width: 100%;
     }
+
+
 }
 
 @media screen and (min-width: 1500px) {
     .phone-img {
-        height: 80vh;
+        height: 65vh;
         width: auto;
-
         margin-right: 15vw;
     }
 }
