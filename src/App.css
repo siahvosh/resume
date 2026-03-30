@@ -15,16 +15,15 @@ button:focus{
 
 *{
     font-family: "Playfair Display", serif !important;
-
-
 }
 /*#root {*/
 /*    height: 100%;*/
 /*}*/
 
 html, body {
-    width: 100%;
+    /*width: 100%;*/
     /*overflow: hidden;*/
+    /*overflow-x: hidden;*/
     /*overflow-x: hidden;*/
 }
 

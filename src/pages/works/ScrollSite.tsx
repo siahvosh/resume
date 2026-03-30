@@ -9,6 +9,7 @@ import img3 from "../../assets/img3.png";
 import * as React from "react";
 import {Button, Grid2} from "@mui/material";
 import worker from '../../assets/grafiti-artist.png';
+import girl from '../../assets/gum3.png';
 import skater from '../../assets/2skater.png'
 import rock1 from '../../assets/r1.png'
 import rock2 from '../../assets/r2.png'
@@ -188,14 +189,12 @@ export const ScrollSite = () => {
     useEffect(() => {
         const handleScroll = () => {
             if (!cont2Ref.current) return
-
                 const { offsetTop, offsetHeight } = cont2Ref.current;
                 const scrollPosition = window.scrollY;
                 const sectionHeight = offsetHeight / stepsVisuals.length;
                 const index = Math.floor((scrollPosition - offsetTop) / sectionHeight);
                 setActiveIndex(index);
                 console.log({index: index})
-
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
@@ -208,58 +207,56 @@ export const ScrollSite = () => {
     };
 
     return(
-            <>
-                {/*<div className={'container'} ref={cont2Ref}>*/}
-                {/*<div style={{width: '100vw', height: '100vh'}}>*/}
-                 <div className={'cont-2'}  ref={cont2Ref}>
-                          <div className={'scroll-box'}>
-                             <div className="container-animation">
-                                 <AnimatePresence mode="popLayout">
-                                     {activeIndex === 0 && (
-                        <motion.section
-                            key="one"
-                            style={{ height:'100vh'}}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                        >
-                          <div className={'side-1'}>
-                              <motion.div
-                                  className="side-1-text"
-                                  transition={{duration: 1.2}}
-                                  initial={{ y: -100,opacity: 0 }}
-                                  animate={{ y: '0', opacity: 1 }}
-                                  exit={{ y: -100, opacity: 0 }}
-                              >
-                                  <div className={'detail-text'}>
-                                          <span>RESPONSIVE PAGE</span>
-                                          <span>How do you make a website responsive</span>
-                                          <Button color='white' variant={'text'} size={"small"} onClick={() => handleDialog(0, true)}>
-                                              LEARN MORE
-                                          </Button>
 
-                                      </div>
-                              </motion.div>
-                          </div>
-                          <div className={'side-2'}>
-                              <motion.div
-                                  className="img-1"
-                                  transition={{duration: 1.2 }}
-                                  initial={{ y: 700, opacity: 1 }}
-                                  animate={{ y: 0, opacity: 1 }}
-                                  exit={{ y: 500, opacity: 1 }}
-                             />
-                          </div>
-                          <motion.img
-                              className="phone-img"
-                              src={`${skater}`}
-                              transition={{duration: 1 }}
-                              initial={{ y: 800 ,x: 0, opacity: 0 }}
-                              animate={{ y: 0,  x: 0, opacity: 1}}
-                              exit={{ y: 800,x: 0, opacity: 0 }}>
-                          </motion.img>
+      <div className={'cont-2'} ref={cont2Ref}>
+         <div className={'scroll-box'}>
+             <div className="container-animation">
+                <AnimatePresence mode="popLayout" >
+                         {activeIndex === 0 && (
+            <motion.section
+                key="one"
+                style={{ height:'100vh'}}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+            >
+              <div className={'side-1'}>
+                  <motion.div
+                      className="side-1-text"
+                      transition={{duration: 1.2}}
+                      initial={{ y: -100,opacity: 0 }}
+                      animate={{ y: '0', opacity: 1 }}
+                      exit={{ y: -100, opacity: 0 }}
+                  >
+                      <div className={'detail-text'}>
+                              <span>RESPONSIVE PAGE</span>
+                              <span>How do you make a website responsive</span>
+                              <Button color='white' variant={'text'} size={"small"} onClick={() => handleDialog(0, true)}>
+                                  LEARN MORE
+                              </Button>
 
-                          {/*</div>*/}
+                          </div>
+                  </motion.div>
+              </div>
+              <div className={'side-2'}>
+                  <motion.div
+                      className="img-1"
+                      transition={{duration: 1.2 }}
+                      initial={{ y: 700, opacity: 1 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: 500, opacity: 1 }}
+                 />
+              </div>
+              <motion.img
+                  className="phone-img"
+                  src={`${skater}`}
+                  transition={{duration: 1 }}
+                  initial={{ y: 800 ,x: 0, opacity: 0 }}
+                  animate={{ y: 0,  x: 0, opacity: 1}}
+                  exit={{ y: 800,x: 0, opacity: 0 }}>
+              </motion.img>
+
+              {/*</div>*/}
                         </motion.section>
                     )}
                     {activeIndex === 1 && (
@@ -315,6 +312,60 @@ export const ScrollSite = () => {
 
                         </motion.section>
                     )}
+                    {activeIndex === 2 && (
+                        <motion.section
+                            key="three"
+                            style={{ height:'100vh'}}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                        >
+                            <div className={'side-2'}>
+                                <motion.div
+                                    className="side-1-text"
+                                    transition={{duration: 1.2}}
+                                    initial={{ y: -100,opacity: 0 }}
+                                    animate={{ y: '0', opacity: 1 }}
+                                    exit={{ y: -100, opacity: 0 }}
+                                >
+                                    <div className={'detail-text'}>
+                                        <span>Design and implementation</span>
+                                        <span>How do you make a Refactor Project</span>
+                                        <Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>
+                                            LEARN MORE
+                                        </Button>
+
+                                    </div>
+
+                                </motion.div>
+                            </div>
+                            <div className={'side-1'}>
+                                <motion.div
+                                    className="img-3"
+                                    transition={{duration: 1.3 }}
+                                    // initial={{ width: '0' , height: '100%'}}
+                                    // animate={{ width: "100%", height: '100%'}}
+                                    // exit={{ width: '0', height: '100%' }}
+                                    initial={{ x: 0,y: 500, opacity: 0 }}
+                                    animate={{ x: 0,y: 0, opacity: 1 }}
+                                    exit={{ x:0 ,y: 500, opacity: 0 }}
+                                />
+                            </div>
+
+                            {/*<div className={'detail-img'}>*/}
+                            <motion.img
+                                className="worker"
+                                src={`${girl}`}
+                                transition={{duration: 1}}
+                                initial={{ y: 500 ,x: 0, opacity: 0 }}
+                                animate={{y: 0 , x: 0, opacity: 1,}}
+                                exit={{ y: 500,x: 0, opacity: 0 }}>
+                            </motion.img>
+
+                            {/*</div>*/}
+
+                        </motion.section>
+                    )}
                 </AnimatePresence>
             </div>
          </div>
@@ -324,8 +375,6 @@ export const ScrollSite = () => {
              stepDialog={dialogText[stepDialog]}
          />
      </div>
-                {/*</div>*/}
-           </>
 
     )
 }
