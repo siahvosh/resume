@@ -8,9 +8,8 @@ import img2 from "../../assets/img2.png";
 import img3 from "../../assets/img3.png";
 import * as React from "react";
 import {Button, Grid2} from "@mui/material";
-import skater from '../../assets/2skater.png'
 import worker from '../../assets/grafiti-artist.png';
-import phone from '../../assets/iphone.png'
+import skater from '../../assets/2skater.png'
 import rock1 from '../../assets/r1.png'
 import rock2 from '../../assets/r2.png'
 import rock3 from '../../assets/r3.png'
@@ -219,7 +218,7 @@ export const ScrollSite = () => {
                                      {activeIndex === 0 && (
                         <motion.section
                             key="one"
-                            className=""
+                            style={{ height:'100vh'}}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
@@ -253,66 +252,37 @@ export const ScrollSite = () => {
                           </div>
                           <motion.img
                               className="phone-img"
-                              src={`${phone}`}
-                              transition={{duration: 1, delay: 0.3 }}
-                              initial={{ y: 800 ,x: '0vw', opacity: 1 }}
-                              animate={{ x: '0vw', opacity: 1, y: 0 }}
-                              exit={{ y: 800,x: '0vw', opacity: 1 }}>
+                              src={`${skater}`}
+                              transition={{duration: 1 }}
+                              initial={{ y: 800 ,x: 0, opacity: 0 }}
+                              animate={{ y: 0,  x: 0, opacity: 1}}
+                              exit={{ y: 800,x: 0, opacity: 0 }}>
                           </motion.img>
-                          <div className="rock-1">
-                              <motion.img
-                                  src={rock1}
-                                  style={{width: '80px'}}
-                                  initial={{ y: 800, x: '0vw', opacity: 1 }}
-                                  animate={{ y: 0, opacity: 1 }}
-                                  exit={{ y: 800, x: '0vw', opacity: 1 }}
-                                  transition={{ duration: 1, delay: 0.4 }}
-                              />
-                          </div>
-                          <div className="rock-2">
-                              <motion.img
-                                  src={`${rock2}`}
-                                  style={{width: '60px'}}
-                                  transition={{duration: 1.1, delay: 0.4 }}
-                                  initial={{ y: '50vh', opacity: 1 }}
-                                  animate={{ y: '0vw', opacity: 1 }}
-                                  exit={{ y: '50vh', opacity: 1 }}>
-                              </motion.img>
-                          </div>
-                          <div className="rock-3">
-                                <motion.img
-                                    src={`${rock3}`}
-                                    style={{width: '70px'}}
-                                    transition={{duration: 1.1, delay: 0.4 }}
-                                    initial={{ y: '50vh', opacity: 1 }}
-                                    animate={{ y: '0vw', opacity: 1,}}
-                                    exit={{ y: '50vh', opacity: 1 }}>
-                                </motion.img>
-                            </div>
+
                           {/*</div>*/}
                         </motion.section>
                     )}
                     {activeIndex === 1 && (
                         <motion.section
                             key="two"
-                            className=""
+                            style={{ height:'100vh'}}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            exit={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
                         >
-                            <div className={'side-3'}>
+                            <div className={'side-1'}>
                                 <motion.div
                                     className="img-2"
                                     transition={{duration: 1.2 }}
                                     // initial={{ width: '0' , height: '100%'}}
                                     // animate={{ width: "100%", height: '100%'}}
                                     // exit={{ width: '0', height: '100%' }}
-                                    initial={{ x: -1000, opacity: 1 }}
+                                    initial={{ x: -1000, opacity: 0 }}
                                     animate={{ x: 0, opacity: 1 }}
-                                    exit={{ y: -500, opacity: 1 }}
+                                    exit={{ y: -1000, opacity: 0 }}
                                 />
                             </div>
-                            <div className={'side-4'}>
+                            <div className={'side-2'}>
                                 <motion.div
                                     className="side-1-text"
                                     transition={{duration: 1.2}}
@@ -335,10 +305,10 @@ export const ScrollSite = () => {
                                 <motion.img
                                     className="worker"
                                     src={`${worker}`}
-                                    transition={{duration: 1, delay: 0.3 }}
-                                    initial={{ y: 0 ,x: '50vw', opacity: 1 }}
-                                    animate={{y: '0vw' , x: '0', opacity: 1,}}
-                                    exit={{ y: 0,x: '50vw', opacity: 1 }}>
+                                    transition={{duration: 1}}
+                                    initial={{ y: 0 ,x: 500, opacity: 0 }}
+                                    animate={{y: 0 , x: 0, opacity: 1,}}
+                                    exit={{ y: 0,x: 500, opacity: 0 }}>
                                 </motion.img>
 
                             {/*</div>*/}
@@ -361,149 +331,34 @@ export const ScrollSite = () => {
 }
 
 
-
-//  <div className={'container'}>
-// <div className={'cont-2'}  ref={cont2Ref}>
-//          <div className={'scroll-box'}>
-//             <div className="container-animation">
-//                 <AnimatePresence mode="popLayout">
-//                     {activeIndex === 0 && (
-//                         <motion.section
-//                             key="one"
-//                             className=""
-//                             initial={{ opacity: 0 }}
-//                             animate={{ opacity: 1 }}
-//                             exit={{ opacity: 0 }}
-//                         >
-//                           <div className={'side-1'}>
-//                               <motion.div
-//                                   className="side-1-text"
-//                                   transition={{duration: 1.2}}
-//                                   initial={{ y: -100,opacity: 0 }}
-//                                   animate={{ y: '0', opacity: 1 }}
-//                                   exit={{ y: -100, opacity: 0 }}
-//                               >
-//                                   <div className={'detail-text'}>
-//                                           <span>RESPONSIVE PAGE</span>
-//                                           <span>How do you make a website responsive</span>
-//                                           <Button color='white' variant={'text'} size={"small"} onClick={() => handleDialog(0, true)}>
-//                                               LEARN MORE
-//                                           </Button>
 //
-//                                       </div>
-//                               </motion.div>
-//                           </div>
-//                           <div className={'side-2'}>
-//                               <motion.div
-//                                   className="img-1"
-//                                   transition={{duration: 1.2 }}
-//                                   initial={{ y: 700, opacity: 1 }}
-//                                   animate={{ y: 0, opacity: 1 }}
-//                                   exit={{ y: 500, opacity: 1 }}
-//                              />
-//                           </div>
-//                           <motion.img
-//                               className="phone-img"
-//                               src={`${phone}`}
-//                               transition={{duration: 1, delay: 0.3 }}
-//                               initial={{ y: 800 ,x: '0vw', opacity: 1 }}
-//                               animate={{ x: '0vw', opacity: 1, y: 0 }}
-//                               exit={{ y: 800,x: '0vw', opacity: 1 }}>
-//                           </motion.img>
-//                           <div className="rock-1">
-//                               <motion.img
-//                                   src={rock1}
-//                                   style={{width: '80px'}}
-//                                   initial={{ y: 800, x: '0vw', opacity: 1 }}
-//                                   animate={{ y: 0, opacity: 1 }}
-//                                   exit={{ y: 800, x: '0vw', opacity: 1 }}
-//                                   transition={{ duration: 1, delay: 0.4 }}
-//                               />
-//                           </div>
-//                           <div className="rock-2">
-//                               <motion.img
-//                                   src={`${rock2}`}
-//                                   style={{width: '60px'}}
-//                                   transition={{duration: 1.1, delay: 0.4 }}
-//                                   initial={{ y: '50vh', opacity: 1 }}
-//                                   animate={{ y: '0vw', opacity: 1 }}
-//                                   exit={{ y: '50vh', opacity: 1 }}>
-//                               </motion.img>
-//                           </div>
-//                           <div className="rock-3">
-//                                 <motion.img
-//                                     src={`${rock3}`}
-//                                     style={{width: '70px'}}
-//                                     transition={{duration: 1.1, delay: 0.4 }}
-//                                     initial={{ y: '50vh', opacity: 1 }}
-//                                     animate={{ y: '0vw', opacity: 1,}}
-//                                     exit={{ y: '50vh', opacity: 1 }}>
-//                                 </motion.img>
-//                             </div>
-//                           {/*</div>*/}
-//                         </motion.section>
-//                     )}
-//                     {activeIndex === 1 && (
-//                         <motion.section
-//                             key="two"
-//                             className=""
-//                             initial={{ opacity: 0 }}
-//                             animate={{ opacity: 1 }}
-//                             exit={{ opacity: 1 }}
-//                         >
-//                             <div className={'side-3'}>
-//                                 <motion.div
-//                                     className="img-2"
-//                                     transition={{duration: 1.2 }}
-//                                     // initial={{ width: '0' , height: '100%'}}
-//                                     // animate={{ width: "100%", height: '100%'}}
-//                                     // exit={{ width: '0', height: '100%' }}
-//                                     initial={{ x: -1000, opacity: 1 }}
-//                                     animate={{ x: 0, opacity: 1 }}
-//                                     exit={{ y: -500, opacity: 1 }}
-//                                 />
-//                             </div>
-//                             <div className={'side-4'}>
-//                                 <motion.div
-//                                     className="side-1-text"
-//                                     transition={{duration: 1.2}}
-//                                     initial={{ y: -100,opacity: 0 }}
-//                                     animate={{ y: '0', opacity: 1 }}
-//                                     exit={{ y: -100, opacity: 0 }}
-//                                 >
-//                                     <div className={'detail-text'}>
-//                                         <span>Design and implementation</span>
-//                                         <span>How do you make a Refactor Project</span>
-//                                         <Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>
-//                                             LEARN MORE
-//                                         </Button>
-//
-//                                     </div>
-//
-//                                 </motion.div>
-//                             </div>
-//                             {/*<div className={'detail-img'}>*/}
-//                                 <motion.img
-//                                     className="worker"
-//                                     src={`${worker}`}
-//                                     transition={{duration: 1, delay: 0.3 }}
-//                                     initial={{ y: 0 ,x: '50vw', opacity: 1 }}
-//                                     animate={{y: '0vw' , x: '0', opacity: 1,}}
-//                                     exit={{ y: 0,x: '50vw', opacity: 1 }}>
-//                                 </motion.img>
-//
-//                             {/*</div>*/}
-//
-//                         </motion.section>
-//                     )}
-//                 </AnimatePresence>
-//             </div>
-//          </div>
-//          <AlertDialog
-//              open={open}
-//              onClose={() => setOpen(false)}
-//              stepDialog={dialogText[stepDialog]}
-//          />
-//      </div>
-//
-//  </div>
+// <div className="rock-1">
+//     <motion.img
+//         src={rock1}
+//         style={{width: '80px'}}
+//         initial={{ y: 800, x: '0vw', opacity: 1 }}
+//         animate={{ y: 0, opacity: 1 }}
+//         exit={{ y: 800, x: '0vw', opacity: 1 }}
+//         transition={{ duration: 1, delay: 0.4 }}
+//     />
+// </div>
+// <div className="rock-2">
+//     <motion.img
+//         src={`${rock2}`}
+//         style={{width: '60px'}}
+//         transition={{duration: 1.1, delay: 0.4 }}
+//         initial={{ y: '50vh', opacity: 1 }}
+//         animate={{ y: '0vw', opacity: 1 }}
+//         exit={{ y: '50vh', opacity: 1 }}>
+//     </motion.img>
+// </div>
+// <div className="rock-3">
+//     <motion.img
+//         src={`${rock3}`}
+//         style={{width: '70px'}}
+//         transition={{duration: 1.1, delay: 0.4 }}
+//         initial={{ y: '50vh', opacity: 1 }}
+//         animate={{ y: '0vw', opacity: 1,}}
+//         exit={{ y: '50vh', opacity: 1 }}>
+//     </motion.img>
+// </div>
