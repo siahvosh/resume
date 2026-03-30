@@ -194,37 +194,52 @@
 
 .side-1-text{
     /*border: 2px solid #ff0707;*/
-    align-items: end;
-    height: 36vh;
+    height: 100%;
     display: flex;
-
+    justify-content: center;
+    width: 50%;
+    align-items: center;
 }
+
 .detail-text{
     /*border: 2px solid gray;*/
-    padding: 1rem;
-    margin-left: 6vw;
+    /*font-size: clamp(20px, 2vw, 3vw);*/
+    /*line-height: 5rem;*/
+    /*padding: 1rem;*/
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     z-index: 1111111111;
 }
 
-.detail-text span:nth-child(1) {
-    font-size: clamp(20px, 2vw, 3vw);
+.title{
+    display: flex;
+    flex-direction: column;
+    line-height: 100%;
+    font-size: clamp(20px, 4.5vw, 4.5vw);
     font-family: "Grape Nuts", cursive;
-    align-self: center;
-    color: #e30b16;
-}
-
-.detail-text span:nth-child(2) {
-    font-size: clamp(25px, 2.5vw, 3vw);
+    /*align-self: center;*/
     font-weight: 900;
-    text-align: center;
 }
 
-.detail-text Button:nth-child(3) {
-    /*font-size: clamp(15px, 1vw, 1vw);*/
+/*.detail-text span:nth-child(2) {*/
+/*    font-size: clamp(20px, 3.5vw, 4vw);*/
+/*    font-family: "Grape Nuts", cursive;*/
+/*    align-self: center;*/
+/*    font-weight: 900;*/
+/*    !*color: #e30b16;*!*/
+/*}*/
+
+/*.detail-text span:nth-child(3) {*/
+/*    font-size: clamp(25px, 3.5vw, 4vw);*/
+/*    font-weight: 900;*/
+/*    text-align: center;*/
+/*}*/
+
+.btn {
+    font-size: clamp(15px, 1vw, 1vw);
     text-transform: uppercase;
+    /*text-underline: #f10000;*/
 }
 
 
@@ -238,6 +253,11 @@
     height: 50vh;
     width: 50vh;
 }
+
+/*.detail-img{*/
+/*    width: 50%;*/
+/*    border: 2px solid red;*/
+/*}*/
 
 .rock-1 {
     animation: floatSoft 4s ease-in-out infinite;
@@ -290,6 +310,16 @@
     height: 75vh;
     width: auto;
 }
+.girl {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    animation: floatRock2 3s ease-in-out infinite;
+    will-change: transform;
+    margin-right: 15vw;
+    height: 80vh;
+    width: auto;
+}
 .img-1 {
     background-image: url("../../assets/skatepark.jpg");
     background-size: cover;
@@ -310,6 +340,14 @@
 
 .img-3{
     background-image: url("../../assets/sky12.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.img-4{
+    background-image: url("../../assets/bsky.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

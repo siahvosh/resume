@@ -212,52 +212,55 @@ export const ScrollSite = () => {
          <div className={'scroll-box'}>
              <div className="container-animation">
                 <AnimatePresence mode="popLayout" >
-                         {activeIndex === 0 && (
-            <motion.section
-                key="one"
-                style={{ height:'100vh'}}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-            >
-              <div className={'side-1'}>
-                  <motion.div
-                      className="side-1-text"
-                      transition={{duration: 1.2}}
-                      initial={{ y: -100,opacity: 0 }}
-                      animate={{ y: '0', opacity: 1 }}
-                      exit={{ y: -100, opacity: 0 }}
-                  >
-                      <div className={'detail-text'}>
-                              <span>RESPONSIVE PAGE</span>
-                              <span>How do you make a website responsive</span>
-                              <Button color='white' variant={'text'} size={"small"} onClick={() => handleDialog(0, true)}>
-                                  LEARN MORE
-                              </Button>
+                     {activeIndex === 0 && (
+                        <motion.section
+                            key="one"
+                            style={{ height:'100vh'}}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                        >
+                          <div className={'side-1'}>
+                              <motion.div
+                                  className="side-1-text"
+                                  transition={{duration: 1.2}}
+                                  initial={{ y: -100,opacity: 0 }}
+                                  animate={{ y: '0', opacity: 1 }}
+                                  exit={{ y: -100, opacity: 0 }}
+                              >
+                                  <div className={'detail-text'}>
+                                      <span>Daring to Dream</span>
+                                      <div className={'title'}>
+                                          <span>Where Passions</span>
+                                          <span>Ignite and Soar</span>
+                                      </div>
+                                      <Button className={'btn'} color='white' variant={'text'} size={"small"} onClick={() => handleDialog(0, true)}>
+                                          LEARN MORE
+                                      </Button>
 
+                                      </div>
+                              </motion.div>
                           </div>
-                  </motion.div>
-              </div>
-              <div className={'side-2'}>
-                  <motion.div
-                      className="img-1"
-                      transition={{duration: 1.2 }}
-                      initial={{ y: 700, opacity: 1 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: 500, opacity: 1 }}
-                 />
-              </div>
-              <motion.img
-                  className="phone-img"
-                  src={`${skater}`}
-                  transition={{duration: 1 }}
-                  initial={{ y: 800 ,x: 0, opacity: 0 }}
-                  animate={{ y: 0,  x: 0, opacity: 1}}
-                  exit={{ y: 800,x: 0, opacity: 0 }}>
-              </motion.img>
+                          <div className={'side-2'}>
+                              <motion.div
+                                  className="img-1"
+                                  transition={{duration: 1.2 }}
+                                  initial={{ y: 700, opacity: 1 }}
+                                  animate={{ y: 0, opacity: 1 }}
+                                  exit={{ y: 500, opacity: 1 }}
+                             />
+                          </div>
+                          <motion.img
+                              className="phone-img"
+                              src={`${skater}`}
+                              transition={{duration: 1 }}
+                              initial={{ y: 800 ,x: 0, opacity: 0 }}
+                              animate={{ y: 0,  x: 0, opacity: 1}}
+                              exit={{ y: 800,x: 0, opacity: 0 }}>
+                          </motion.img>
 
-              {/*</div>*/}
-                        </motion.section>
+                          {/*</div>*/}
+                                    </motion.section>
                     )}
                     {activeIndex === 1 && (
                         <motion.section
@@ -288,8 +291,11 @@ export const ScrollSite = () => {
                                     exit={{ y: -100, opacity: 0 }}
                                 >
                                     <div className={'detail-text'}>
-                                        <span>Design and implementation</span>
-                                        <span>How do you make a Refactor Project</span>
+                                        <span>Beyond the Canvas</span>
+                                        <div className={'title'}>
+                                        <span>Colors of Urban</span>
+                                        <span>Expression</span>
+                                        </div>
                                         <Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>
                                             LEARN MORE
                                         </Button>
@@ -329,8 +335,11 @@ export const ScrollSite = () => {
                                     exit={{ y: -100, opacity: 0 }}
                                 >
                                     <div className={'detail-text'}>
-                                        <span>Design and implementation</span>
-                                        <span>How do you make a Refactor Project</span>
+                                        <span>A Journey of Creative Wonder</span>
+                                        <div className={'title'}>
+                                            <span>Beyond Boundaries,</span>
+                                            <span>Skies Ablaze</span>
+                                        </div>
                                         <Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>
                                             LEARN MORE
                                         </Button>
@@ -354,12 +363,68 @@ export const ScrollSite = () => {
 
                             {/*<div className={'detail-img'}>*/}
                             <motion.img
-                                className="worker"
+                                className="girl"
                                 src={`${girl}`}
                                 transition={{duration: 1}}
                                 initial={{ y: 500 ,x: 0, opacity: 0 }}
                                 animate={{y: 0 , x: 0, opacity: 1,}}
                                 exit={{ y: 500,x: 0, opacity: 0 }}>
+                            </motion.img>
+
+                            {/*</div>*/}
+
+                        </motion.section>
+                    )}
+                    {activeIndex === 3 && (
+                        <motion.section
+                            key="two"
+                            style={{ height:'100vh'}}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                        >
+                            <div className={'side-1'}>
+                                <motion.div
+                                    className="img-4"
+                                    transition={{duration: 1.2 }}
+                                    // initial={{ width: '0' , height: '100%'}}
+                                    // animate={{ width: "100%", height: '100%'}}
+                                    // exit={{ width: '0', height: '100%' }}
+                                    initial={{ x: -1000, opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    exit={{ y: -1000, opacity: 0 }}
+                                />
+                            </div>
+                            <div className={'side-2'}>
+                                <motion.div
+                                    className="side-1-text"
+                                    transition={{duration: 1.2}}
+                                    initial={{ y: -100,opacity: 0 }}
+                                    animate={{ y: '0', opacity: 1 }}
+                                    exit={{ y: -100, opacity: 0 }}
+                                >
+                                    <div className={'detail-text'}>
+                                        <span>Beyond the Canvas</span>
+                                        <div className={'title'}>
+                                            <span>Colors of Urban</span>
+                                            <span>Expression</span>
+                                        </div>
+                                        <Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>
+                                            LEARN MORE
+                                        </Button>
+
+                                    </div>
+
+                                </motion.div>
+                            </div>
+                            {/*<div className={'detail-img'}>*/}
+                            <motion.img
+                                className="worker"
+                                src={`${worker}`}
+                                transition={{duration: 1}}
+                                initial={{ y: 0 ,x: 500, opacity: 0 }}
+                                animate={{y: 0 , x: 0, opacity: 1,}}
+                                exit={{ y: 0,x: 500, opacity: 0 }}>
                             </motion.img>
 
                             {/*</div>*/}
