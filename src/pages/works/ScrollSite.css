@@ -177,6 +177,60 @@ body{
     height: 50vh;
     overflow: hidden;
 }
+.text-card {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    align-items: center;
+}
+.text-box{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    line-height: 100%;
+    font-size: clamp(35px, 4.5vw, 4.5vw);
+    font-family: "Grape Nuts", cursive;
+    font-weight: 900;
+}
+
+
+/*Part one -------------------------------------*/
+.skate {
+    background-image: url("../../assets/skatepark.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+}
+.skater {
+    /*animation: floatSoft 4s ease-in-out infinite;*/
+    /*will-change: transform;*/
+    position: absolute;
+    /*border: 2px solid red !important;*/
+    top: 15vh;
+    right: 50px;
+    margin-right: 8vw;
+    height: 50vh;
+    width: 50vh;
+}
+
+
+/*Part tow -------------------------------------*/
+.mural{
+    background-image: url("../../assets/mural.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+
 
 
 .experience-title-box{
@@ -195,36 +249,11 @@ body{
 
 
 
-.side-1-text{
-    /*border: 2px solid #ff0707;*/
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    width: 70%;
-    align-items: center;
 
-}
 
-.detail-text{
-    /*border: 2px solid gray;*/
-    /*font-size: clamp(20px, 2vw, 3vw);*/
-    /*line-height: 5rem;*/
-    /*padding: 1rem;*/
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    z-index: 1;
-}
 
-.title{
-    display: flex;
-    flex-direction: column;
-    line-height: 100%;
-    font-size: clamp(35px, 4.5vw, 4.5vw);
-    font-family: "Grape Nuts", cursive;
-    /*align-self: center;*/
-    font-weight: 900;
-}
+
+
 
 /*.detail-text span:nth-child(2) {*/
 /*    font-size: clamp(20px, 3.5vw, 4vw);*/
@@ -253,17 +282,7 @@ body{
     /*position: relative;*/
 }
 
-.phone-img {
-    /*animation: floatSoft 4s ease-in-out infinite;*/
-    /*will-change: transform;*/
-    position: absolute;
-    /*border: 2px solid red !important;*/
-    top: 15vh;
-    right: 50px;
-    margin-right: 8vw;
-    height: 50vh;
-    width: 50vh;
-}
+
 
 /*.detail-img{*/
 /*    width: 50%;*/
@@ -341,23 +360,8 @@ body{
     height: 70vh;
     width: auto;
 }
-.img-1 {
-    background-image: url("../../assets/skatepark.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-    /*border: 2px solid red;*/
 
-    background-position: center;
-}
-.img-2{
-    background-image: url("../../assets/mural.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100%;
-}
+
 
 .img-3{
     background-image: url("../../assets/sky12.jpg");
@@ -501,7 +505,7 @@ footer {
 
 
 @media screen and (min-width: 200px) and (max-width: 950px) {
-    .phone-img {
+    .skater {
         height: 35vh;
         width: auto;
         position: absolute;
@@ -509,7 +513,7 @@ footer {
         right: 0;
     }
 
-    .side-1-text{
+    .text-card{
         width: 100%;
     }
     .bust{

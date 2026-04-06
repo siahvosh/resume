@@ -283,13 +283,13 @@ const PartOne = () => {
         >
             <div className={'top-card'}>
                 <motion.div
-                    className="side-1-text"
+                    className="text-card"
                     transition={{duration: 1.2}}
                     initial={{ y: -100,opacity: 0 }}
                     animate={{ y: '0', opacity: 1 }}
                     exit={{ y: -100, opacity: 0 }}
                 >
-                    <div className={'detail-text'}>
+                    <div className={'text-box'}>
                         <span>Daring to Dream</span>
                         <div className={'title'}>
                             <span>Where Passions</span>
@@ -303,7 +303,7 @@ const PartOne = () => {
             </div>
             <div className={'bottom-card'}>
                 <motion.div
-                    className="img-1"
+                    className="skate"
                     transition={{duration: 1.2}}
                     initial={{ y: 700, opacity: 1 }}
                     animate={{ y: 0, opacity: 1 }}
@@ -312,7 +312,7 @@ const PartOne = () => {
             </div>
             <div className={'img-container'}>
                 <motion.img
-                    className="phone-img"
+                    className="skater"
                     src={`${skater}`}
                     transition={{duration: 1}}
                     initial={{ y: 800 , x: 0, opacity: 0 }}
@@ -335,11 +335,8 @@ const PartTow = () => {
         >
             <div className={'top-card'}>
                 <motion.div
-                    className="img-2"
+                    className="mural"
                     transition={{duration: 1.2 }}
-                    // initial={{ width: '0' , height: '100%'}}
-                    // animate={{ width: "100%", height: '100%'}}
-                    // exit={{ width: '0', height: '100%' }}
                     initial={{ x: -1000, opacity: 0, zIndex: -1 }}
                     animate={{ x: 0, opacity: 1 , zIndex: -1 }}
                     exit={{ y: -1000, opacity: 0 , zIndex: -1 }}
@@ -347,13 +344,13 @@ const PartTow = () => {
             </div>
             <div style={{zIndex: 1111}} className={'bottom-card'}>
                 <motion.div
-                    className="side-1-text"
+                    className="text-card"
                     transition={{duration: 1.2}}
                     initial={{ y: -100,opacity: 0}}
                     animate={{ y: '0', opacity: 1}}
                     exit={{ y: -100, opacity: 0}}
                 >
-                    <div className={'detail-text'}>
+                    <div className={'text-box'}>
                         <span>Beyond the Canvas</span>
                         <div className={'title'}>
                             <span>Colors of Urban</span>
@@ -394,13 +391,13 @@ const PartThree = () => {
         >
             <div style={{zIndex: 1111}} className={'top-card'}>
                 <motion.div
-                    className="side-1-text"
+                    className="text-card"
                     transition={{duration: 1.2}}
                     initial={{ y: -100,opacity: 0 }}
                     animate={{ y: '0', opacity: 1 }}
                     exit={{ y: -100, opacity: 0 }}
                 >
-                    <div className={'detail-text'}>
+                    <div className={'text-box'}>
                         <span>A Journey of Creative Wonder</span>
                         <div className={'title'}>
                             <span>Beyond Boundaries,</span>
@@ -467,13 +464,13 @@ const PartFour = () => {
             </div>
             <div className={'bottom-card'}>
                 <motion.div
-                    className="side-1-text"
+                    className="text-card"
                     transition={{duration: 1.2}}
                     initial={{ y: -100,opacity: 0 }}
                     animate={{ y: '0', opacity: 1 }}
                     exit={{ y: -100, opacity: 0 }}
                 >
-                    <div className={'detail-text'}>
+                    <div className={'text-box'}>
                         <span>Beyond the Canvas</span>
                         <div className={'title'}>
                             <span>Colors of Urban</span>
