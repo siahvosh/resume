@@ -310,7 +310,6 @@ const PartOne = () => {
                     exit={{ y: 500, opacity: 1 }}
                 />
             </div>
-            <div className={'img-container'}>
                 <motion.img
                     className="skater"
                     src={`${skater}`}
@@ -319,7 +318,6 @@ const PartOne = () => {
                     animate={{ y: 0,  x: 0, opacity: 1}}
                     exit={{ y: 800, x: 0, opacity: 0 }}>
                 </motion.img>
-            </div>
         </motion.section>
     )
 }
@@ -409,9 +407,6 @@ const PartThree = () => {
                 <motion.div
                     className="sky"
                     transition={{duration: 1.3 }}
-                    // initial={{ width: '0' , height: '100%'}}
-                    // animate={{ width: "100%", height: '100%'}}
-                    // exit={{ width: '0', height: '100%' }}
                     initial={{ x: 0,y: 500, opacity: 0,zIndex: -1}}
                     animate={{ x: 0,y: 0, opacity: 1,zIndex: -1}}
                     exit={{ x:0 ,y: 500, opacity: 0,zIndex: -1}}
@@ -425,11 +420,6 @@ const PartThree = () => {
                 animate={{y: 0 , x: 0, opacity: 1,zIndex: 1}}
                 exit={{ y: 500,x: 0, opacity: 0,zIndex: 1}}>
             </motion.img>
-            {/*<div className={'detail-img'}>*/}
-
-
-            {/*</div>*/}
-
         </motion.section>
     )
 }
@@ -444,11 +434,8 @@ const PartFour = () => {
         >
             <div className={'top-card'}>
                 <motion.div
-                    className="img-4"
+                    className="b-sky"
                     transition={{duration: 1.2 }}
-                    // initial={{ width: '0' , height: '100%'}}
-                    // animate={{ width: "100%", height: '100%'}}
-                    // exit={{ width: '0', height: '100%' }}
                     initial={{ x: -1000, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ y: -1000, opacity: 0 }}
@@ -468,15 +455,12 @@ const PartFour = () => {
                             <span>Colors of Urban</span>
                             <span>Expression</span>
                         </div>
-                        <Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>
-                            LEARN MORE
-                        </Button>
-
+                        {/*<Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>*/}
+                        {/*    LEARN MORE*/}
+                        {/*</Button>*/}
                     </div>
-
                 </motion.div>
             </div>
-            {/*<div className={'detail-img'}>*/}
             <motion.img
                 className="bust"
                 src={`${bust}`}
@@ -485,9 +469,6 @@ const PartFour = () => {
                 animate={{y: 0 , x: 0, opacity: 1,}}
                 exit={{ y: 0,x: 500, opacity: 0 }}>
             </motion.img>
-
-            {/*</div>*/}
-
         </motion.section>
     )
 }

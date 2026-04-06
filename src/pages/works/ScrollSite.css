@@ -249,6 +249,23 @@ body{
     z-index: 0;
 }
 
+/*Part four -------------------------------------*/
+.bust{
+    position: absolute;
+    top: 10%;
+    right: 0;
+    margin-right: 15vw;
+    height: 70vh;
+    width: auto;
+}
+.b-sky{
+    background-image: url("../../assets/bsky.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
 
 .experience-title-box{
     display: flex;
@@ -263,48 +280,12 @@ body{
 }
 
 
-
-
-
-
-
-
-
-
-
-/*.detail-text span:nth-child(2) {*/
-/*    font-size: clamp(20px, 3.5vw, 4vw);*/
-/*    font-family: "Grape Nuts", cursive;*/
-/*    align-self: center;*/
-/*    font-weight: 900;*/
-/*    !*color: #e30b16;*!*/
-/*}*/
-
-/*.detail-text span:nth-child(3) {*/
-/*    font-size: clamp(25px, 3.5vw, 4vw);*/
-/*    font-weight: 900;*/
-/*    text-align: center;*/
-/*}*/
-
 .btn {
     font-size: clamp(15px, 1vw, 1vw);
     text-transform: uppercase;
     /*text-underline: #f10000;*/
 }
 
-.img-container{
-    width: 100vw;
-    height: 100vh;
-    /*border: 2px solid red !important;*/
-    /*position: relative;*/
-}
-
-
-
-/*.detail-img{*/
-/*    width: 50%;*/
-/*    border: 2px solid red;*/
-/*}*/
 
 .rock-1 {
     animation: floatSoft 4s ease-in-out infinite;
@@ -359,26 +340,7 @@ body{
 }
 
 
-.bust{
-    position: absolute;
-    top: 10%;
-    right: 0;
-    margin-right: 15vw;
-    height: 70vh;
-    width: auto;
-}
 
-
-
-
-
-.img-4{
-    background-image: url("../../assets/bsky.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100%;
-}
 
 
 .second-middle{
