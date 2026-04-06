@@ -27,3 +27,7 @@ html, body {
     /*overflow-x: hidden;*/
 }
 
+.works{
+    z-index: 11111111 !important;
+    cursor: auto !important;
+}

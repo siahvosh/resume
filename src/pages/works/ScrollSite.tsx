@@ -12,13 +12,9 @@ import worker from '../../assets/grafiti-artist.png';
 import girl from '../../assets/gum3.png';
 import skater from '../../assets/2skater.png'
 import bust from '../../assets/bust.png'
-import rock1 from '../../assets/r1.png'
-import rock2 from '../../assets/r2.png'
-import rock3 from '../../assets/r3.png'
 
 import './ScrollSite.css'
-import styles from './ScrollSite.css'
-import {transform} from "framer-motion/dom";
+
 export const ScrollSite = () => {
 
     const dialogText = [
@@ -202,35 +198,9 @@ export const ScrollSite = () => {
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-}, []);
+    }, []);
 
-    // useEffect(() => {
-    //     let lastScroll = window.scrollY;
-    //     let isThrottled = false;
-    //     const limit = 250; // هر 200ms یک بار اجازه تغییر index بده
-    //
-    //     const handleScroll = () => {
-    //         if (isThrottled) return;
-    //
-    //         const current = window.scrollY;
-    //
-    //         if (current > lastScroll) {
-    //             setActiveIndex(prev => Math.min(prev + 1, 3));
-    //         } else if (current < lastScroll) {
-    //             setActiveIndex(prev => Math.max(prev - 1, 0));
-    //         }
-    //
-    //         lastScroll = current;
-    //         isThrottled = true;
-    //
-    //         setTimeout(() => {
-    //             isThrottled = false;
-    //         }, limit);
-    //     };
-    //
-    //     window.addEventListener("scroll", handleScroll, { passive: true });
-    //     return () => window.removeEventListener("scroll", handleScroll);
-    // }, []);
+
 
 
     const handleDialog = (step, show) => {
@@ -243,18 +213,196 @@ export const ScrollSite = () => {
       <div className={'main-card'} ref={cont2Ref}>
          <div className={'scroll-box'}>
              <div className="animation-card">
-                <AnimatePresence mode="popLayout" >
+                <AnimatePresence mode="popLayout">
                      {activeIndex === 0 && (
-                         <PartOne/>
+                         <motion.section
+                             key="one"
+                             style={{ height:'100vh'}}
+                             initial={{ opacity: 0 }}
+                             animate={{ opacity: 1 }}
+                             exit={{ opacity: 0 }}
+                         >
+                             <div className={'top-card'}>
+                                 <motion.div
+                                     className="text-card"
+                                     transition={{duration: 1.2}}
+                                     initial={{ y: -100,opacity: 0 }}
+                                     animate={{ y: '0', opacity: 1 }}
+                                     exit={{ y: -100, opacity: 0 }}
+                                 >
+                                     <div className={'text-box'}>
+                                         <span>Daring to Dream</span>
+                                         <div className={'title'}>
+                                             <span>Where Passions</span>
+                                             <span>Ignite and Soar</span>
+                                         </div>
+                                         {/*<Button className={'btn'} color='white' variant={'text'} size={"small"} onClick={() => handleDialog(0, true)}>*/}
+                                         {/*    LEARN MORE*/}
+                                         {/*</Button>*/}
+                                     </div>
+                                 </motion.div>
+                             </div>
+                             <div className={'bottom-card'}>
+                                 <motion.div
+                                     className="skate"
+                                     transition={{duration: 1.2}}
+                                     initial={{ y: 700, opacity: 1 }}
+                                     animate={{ y: 0, opacity: 1 }}
+                                     exit={{ y: 700, opacity: 1 }}
+                                 />
+                             </div>
+                             <motion.img
+                                 className="skater"
+                                 src={`${skater}`}
+                                 transition={{duration: 1}}
+                                 initial={{ y: 800 ,  opacity: 0 }}
+                                 animate={{ y: 0,   opacity: 1}}
+                                 exit={{ y: 800,  opacity: 0 }}>
+                             </motion.img>
+                         </motion.section>
                     )}
                     {activeIndex === 1 && (
-                        <PartTow/>
+                        <motion.section
+                            key="two"
+                            style={{ height:'100vh'}}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                        >
+                            <div className={'top-card'}>
+                                <motion.div
+                                    className="mural"
+                                    transition={{duration: 1.2 }}
+                                    initial={{ x: -1000, opacity: 0, zIndex: -1 }}
+                                    animate={{ x: 0, opacity: 1 , zIndex: -1 }}
+                                    exit={{ y: -1000, opacity: 0 , zIndex: -1 }}
+                                />
+                            </div>
+                            <div style={{zIndex: 1111}} className={'bottom-card'}>
+                                <motion.div
+                                    className="text-card"
+                                    transition={{duration: 1.2}}
+                                    initial={{ y: -100,opacity: 0}}
+                                    animate={{ y: '0', opacity: 1}}
+                                    exit={{ y: -100, opacity: 0}}
+                                >
+                                    <div className={'text-box'}>
+                                        <span>Beyond the Canvas</span>
+                                        <div className={'title'}>
+                                            <span>Colors of Urban</span>
+                                            <span>Expression</span>
+                                        </div>
+                                        {/*<Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>*/}
+                                        {/*    LEARN MORE*/}
+                                        {/*</Button>*/}
+                                    </div>
+                                </motion.div>
+                                <motion.img
+                                    className="worker"
+                                    src={`${worker}`}
+                                    transition={{duration: 1}}
+                                    initial={{ y: 0 ,x: 500, opacity: 0,}}
+                                    animate={{y: 0 , x: 0, opacity: 1,}}
+                                    exit={{ y: 0,x: 500, opacity: 0 }}>
+                                </motion.img>
+                            </div>
+                        </motion.section>
                     )}
                     {activeIndex === 2 && (
-                        <PartThree/>
+                        <motion.section
+                            key="three"
+                            style={{ height:'100vh'}}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                        >
+                            <div className={'top-card'}>
+                                <motion.div
+                                    className="text-card"
+                                    transition={{duration: 1.2}}
+                                    initial={{ y: -100,opacity: 0 }}
+                                    animate={{ y: '0', opacity: 1 }}
+                                    exit={{ y: -100, opacity: 0 }}
+                                >
+                                    <div className={'text-box'}>
+                                        <span>A Journey of Creative Wonder</span>
+                                        <div className={'title'}>
+                                            <span>Beyond Boundaries,</span>
+                                            <span>Skies Ablaze</span>
+                                        </div>
+                                        {/*<Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>*/}
+                                        {/*    LEARN MORE*/}
+                                        {/*</Button>*/}
+
+                                    </div>
+
+                                </motion.div>
+                            </div>
+                            <div className={'bottom-card'}>
+                                <motion.div
+                                    className="sky"
+                                    transition={{duration: 1.3 }}
+                                    initial={{ x: 0,y: 500, opacity: 0}}
+                                    animate={{ x: 0,y: 0, opacity: 1}}
+                                    exit={{ x:0 ,y: 500, opacity: 0}}
+                                />
+                            </div>
+                            <motion.img
+                                className="girl"
+                                src={`${girl}`}
+                                transition={{duration: 1}}
+                                initial={{ y: 500 ,x: 0, opacity: 0}}
+                                animate={{y: 0 , x: 0, opacity: 1}}
+                                exit={{ y: 500,x: 0, opacity: 0}}>
+                            </motion.img>
+                        </motion.section>
                     )}
                     {activeIndex === 3 && (
-                        <PartFour/>
+                        <motion.section
+                            key="four"
+                            style={{ height:'100vh'}}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                        >
+                            <div className={'top-card'}>
+                                <motion.div
+                                    className="b-sky"
+                                    transition={{duration: 1.2 }}
+                                    initial={{ x: -1000, opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    exit={{ y: -1000, opacity: 0 }}
+                                />
+                            </div>
+                            <div className={'bottom-card'}>
+                                <motion.div
+                                    className="text-card"
+                                    transition={{duration: 1.2}}
+                                    initial={{ y: -100,opacity: 0 }}
+                                    animate={{ y: '0', opacity: 1 }}
+                                    exit={{ y: -100, opacity: 0 }}
+                                >
+                                    <div className={'text-box'}>
+                                        <span>Beyond the Canvas</span>
+                                        <div className={'title'}>
+                                            <span>Colors of Urban</span>
+                                            <span>Expression</span>
+                                        </div>
+                                        {/*<Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>*/}
+                                        {/*    LEARN MORE*/}
+                                        {/*</Button>*/}
+                                    </div>
+                                </motion.div>
+                            </div>
+                            <motion.img
+                                className="bust"
+                                src={`${bust}`}
+                                transition={{duration: 1}}
+                                initial={{ y: 0 ,x: 500, opacity: 0 }}
+                                animate={{y: 0 , x: 0, opacity: 1,}}
+                                exit={{ y: 0,x: 500, opacity: 0 }}>
+                            </motion.img>
+                        </motion.section>
                     )}
                 </AnimatePresence>
             </div>
@@ -316,7 +464,7 @@ const PartOne = () => {
                     transition={{duration: 1}}
                     initial={{ y: 800 , x: 0, opacity: 0 }}
                     animate={{ y: 0,  x: 0, opacity: 1}}
-                    exit={{ y: 800, x: 0, opacity: 0 }}>
+                    exit={{ y: 800, x: 0, opacity: 1 }}>
                 </motion.img>
         </motion.section>
     )
@@ -407,18 +555,18 @@ const PartThree = () => {
                 <motion.div
                     className="sky"
                     transition={{duration: 1.3 }}
-                    initial={{ x: 0,y: 500, opacity: 0,zIndex: -1}}
-                    animate={{ x: 0,y: 0, opacity: 1,zIndex: -1}}
-                    exit={{ x:0 ,y: 500, opacity: 0,zIndex: -1}}
+                    initial={{ x: 0,y: 500, opacity: 0}}
+                    animate={{ x: 0,y: 0, opacity: 1}}
+                    exit={{ x:0 ,y: 500, opacity: 0}}
                 />
             </div>
             <motion.img
                 className="girl"
                 src={`${girl}`}
                 transition={{duration: 1}}
-                initial={{ y: 500 ,x: 0, opacity: 0,zIndex: 1}}
-                animate={{y: 0 , x: 0, opacity: 1,zIndex: 1}}
-                exit={{ y: 500,x: 0, opacity: 0,zIndex: 1}}>
+                initial={{ y: 500 ,x: 0, opacity: 0}}
+                animate={{y: 0 , x: 0, opacity: 1}}
+                exit={{ y: 500,x: 0, opacity: 0}}>
             </motion.img>
         </motion.section>
     )

@@ -61,6 +61,8 @@ import {
 //LOCALES------------------------------
 import {useTranslation} from "react-i18next";
 
+import {useNavigate} from "react-router-dom";
+
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 10,
@@ -178,6 +180,7 @@ export const HomePage = () => {
                       ) :
                        // monitor version
                       (
+
                         <AnimatePresence mode="popLayout">
                           {page === 'about' && (
                               <motion.div
@@ -570,108 +573,84 @@ const DetailCard = () => {
     )
 }
 const WorksPage = () =>{
+    const navigate = useNavigate();
     return(
-        <Card sx={{pointerEvents: "none", overflow: 'hidden', position: 'relative'}} className={'detail-card'} >
+        <Card sx={{overflow: 'hidden', position: 'relative'}} className={'detail-card'} >
             <CardContent style={{position: 'relative',marginTop: '1rem',}}>
-                <Box
-                    sx={{
-                        position: "absolute",
-                        // border: '2px solid red',
-                        top: '50%',
-                        left: '50%',
-                        transform: 'translate(-50%, -50%)',
-                        backdropFilter: "blur(4px)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        zIndex: 2,
-                    }}
-                >
-                    <Typography
-                        variant="h6"
-                        sx={{ color: "#EDFF20FF", letterSpacing: 2, fontWeight: 800, fontSize: '24px'}}
-                    >
-                        Coming Soon ...
+                <Box>
+                    <Typography gutterBottom  className={'typography'}>
+                        <span style={{color: '#EDFF20FF'}}>W</span>orks
                     </Typography>
-                </Box>
+                        <Divider className='divider' />
+                    <Grid2 container spacing={2} style={{marginTop: '3rem',}}>
+                        <Grid2 size={{xs: 12, sm: 6, md: 6, lg: 6}} style={{color: 'white',display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                            <Card sx={{maxWidth: 345 , background: 'black', color: '#ffff'}} style={{cursor: 'pointer'}} onClick={() =>  navigate("/scroll-slide")}>
+                                <CardMedia
+                                    component="img"
+                                    alt="green iguana"
+                                    height="140"
+                                    image={web1}
 
-                {/* Card Content */}
-                <Box
-                    sx={{
-                        filter: "blur(2px)",
-                        opacity: 0.6,
-                    }}
-                >
-                <Typography gutterBottom  className={'typography'}>
-                    <span style={{color: '#EDFF20FF'}}>W</span>orks
-                </Typography>
-                    <Divider className='divider' />
-                <Grid2 container spacing={2} style={{marginTop: '3rem'}}>
-                    <Grid2 size={{xs: 12, sm: 6, md: 6, lg: 6}} style={{color: 'white',display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                        <Card sx={{maxWidth: 345 , background: 'black', color: '#ffff'}}>
-                            <CardMedia
-                                component="img"
-                                alt="green iguana"
-                                height="140"
-                                image={web1}
-                            />
-                            <CardContent>
-                                <Typography variant="body2" sx={{ color: 'white' }}>
-                                    Lizards are a widespread group of squamate reptiles, with over 6,000
-                                    species, ranging across all continents except Antarctica
-                                </Typography>
-                            </CardContent>
-                        </Card>
+
+                                />
+                                <CardContent>
+                                    <Typography variant="body2" sx={{ color: 'white'}}   style={{cursor: 'pointer'}}>
+                                        Lizards are a widespread group of squamate reptiles, with over 6,000
+                                        species, ranging across all continents except Antarctica
+                                    </Typography>
+
+                                </CardContent>
+                            </Card>
+                        </Grid2>
+                        <Grid2 size={{xs: 12, sm: 6, md: 6, lg: 6}} style={{color: 'white',display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                            <Card sx={{ maxWidth: 345 , background: 'transparent', color: 'white'}}>
+                                <CardMedia
+                                    component="img"
+                                    alt="green iguana"
+                                    height="140"
+                                    image={web2}
+                                />
+                                <CardContent>
+                                    <Typography variant="body2" sx={{ color: 'white' }}>
+                                        Lizards are a widespread group of squamate reptiles, with over 6,000
+                                        species, ranging across all continents except Antarctica
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid2>
+                        <Grid2 size={{xs: 12, sm: 6, md: 6, lg: 6}} style={{color: 'white',display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                            <Card sx={{ maxWidth: 345 , background: 'transparent', color: 'white'}}>
+                                <CardMedia
+                                    component="img"
+                                    alt="green iguana"
+                                    height="140"
+                                    image={web3}
+                                />
+                                <CardContent>
+                                    <Typography variant="body2" sx={{ color: 'white' }}>
+                                        Lizards are a widespread group of squamate reptiles, with over 6,000
+                                        species, ranging across all continents except Antarctica
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid2>
+                        <Grid2 size={{xs: 12, sm: 6, md: 6, lg: 6}} style={{color: 'white',display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                            <Card sx={{ maxWidth: 345 , background: 'transparent', color: 'white'}}>
+                                <CardMedia
+                                    component="img"
+                                    alt="green iguana"
+                                    height="140"
+                                    image={web4}
+                                />
+                                <CardContent>
+                                    <Typography variant="body2" sx={{ color: 'white' }}>
+                                        Lizards are a widespread group of squamate reptiles, with over 6,000
+                                        species, ranging across all continents except Antarctica
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid2>
                     </Grid2>
-                    <Grid2 size={{xs: 12, sm: 6, md: 6, lg: 6}} style={{color: 'white',display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                        <Card sx={{ maxWidth: 345 , background: 'transparent', color: 'white'}}>
-                            <CardMedia
-                                component="img"
-                                alt="green iguana"
-                                height="140"
-                                image={web2}
-                            />
-                            <CardContent>
-                                <Typography variant="body2" sx={{ color: 'white' }}>
-                                    Lizards are a widespread group of squamate reptiles, with over 6,000
-                                    species, ranging across all continents except Antarctica
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid2>
-                    <Grid2 size={{xs: 12, sm: 6, md: 6, lg: 6}} style={{color: 'white',display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                        <Card sx={{ maxWidth: 345 , background: 'transparent', color: 'white'}}>
-                            <CardMedia
-                                component="img"
-                                alt="green iguana"
-                                height="140"
-                                image={web3}
-                            />
-                            <CardContent>
-                                <Typography variant="body2" sx={{ color: 'white' }}>
-                                    Lizards are a widespread group of squamate reptiles, with over 6,000
-                                    species, ranging across all continents except Antarctica
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid2>
-                    <Grid2 size={{xs: 12, sm: 6, md: 6, lg: 6}} style={{color: 'white',display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                        <Card sx={{ maxWidth: 345 , background: 'transparent', color: 'white'}}>
-                            <CardMedia
-                                component="img"
-                                alt="green iguana"
-                                height="140"
-                                image={web4}
-                            />
-                            <CardContent>
-                                <Typography variant="body2" sx={{ color: 'white' }}>
-                                    Lizards are a widespread group of squamate reptiles, with over 6,000
-                                    species, ranging across all continents except Antarctica
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid2>
-                </Grid2>
                 </Box>
             </CardContent>
         </Card>

@@ -25,7 +25,7 @@ function App() {
             children:[
                 {index: true, element: <HomePage /> },
                 {path: '/', element: <HomePage /> },
-                {path: '/works', element: <ScrollSite /> },
+                {path: '/scroll-slide', element: <ScrollSite /> },
 
             ]
         },
