@@ -359,9 +359,7 @@ const PartTow = () => {
                         {/*<Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>*/}
                         {/*    LEARN MORE*/}
                         {/*</Button>*/}
-
                     </div>
-
                 </motion.div>
                 <motion.img
                     className="worker"
