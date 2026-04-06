@@ -188,19 +188,49 @@ export const ScrollSite = () => {
     ];
     const [open, setOpen] = React.useState(false);
     const [stepDialog, setStepDialog] = React.useState();
+
+
     useEffect(() => {
         const handleScroll = () => {
             if (!cont2Ref.current) return
-                const { offsetTop, offsetHeight } = cont2Ref.current;
-                const scrollPosition = window.scrollY;
-                const sectionHeight = offsetHeight / stepsVisuals.length;
-                const index = Math.floor((scrollPosition - offsetTop) / sectionHeight);
-                setActiveIndex(index);
-                console.log({index: index})
+            const { offsetTop, offsetHeight } = cont2Ref.current;
+            const scrollPosition = window.scrollY;
+            const sectionHeight = offsetHeight / stepsVisuals.length;
+            const index = Math.floor((scrollPosition - offsetTop) / sectionHeight);
+            setActiveIndex(index);
+            console.log({index: index})
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+}, []);
+
+    // useEffect(() => {
+    //     let lastScroll = window.scrollY;
+    //     let isThrottled = false;
+    //     const limit = 250; // هر 200ms یک بار اجازه تغییر index بده
+    //
+    //     const handleScroll = () => {
+    //         if (isThrottled) return;
+    //
+    //         const current = window.scrollY;
+    //
+    //         if (current > lastScroll) {
+    //             setActiveIndex(prev => Math.min(prev + 1, 3));
+    //         } else if (current < lastScroll) {
+    //             setActiveIndex(prev => Math.max(prev - 1, 0));
+    //         }
+    //
+    //         lastScroll = current;
+    //         isThrottled = true;
+    //
+    //         setTimeout(() => {
+    //             isThrottled = false;
+    //         }, limit);
+    //     };
+    //
+    //     window.addEventListener("scroll", handleScroll, { passive: true });
+    //     return () => window.removeEventListener("scroll", handleScroll);
+    // }, []);
 
 
     const handleDialog = (step, show) => {
@@ -215,223 +245,16 @@ export const ScrollSite = () => {
              <div className="container-animation">
                 <AnimatePresence mode="popLayout" >
                      {activeIndex === 0 && (
-                        <motion.section
-                            key="one"
-                            style={{ height:'100vh'}}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                        >
-                          <div className={'side-1'}>
-                              <motion.div
-                                  className="side-1-text"
-                                  transition={{duration: 1.2}}
-                                  initial={{ y: -100,opacity: 0 }}
-                                  animate={{ y: '0', opacity: 1 }}
-                                  exit={{ y: -100, opacity: 0 }}
-                              >
-                                  <div className={'detail-text'}>
-                                      <span>Daring to Dream</span>
-                                      <div className={'title'}>
-                                          <span>Where Passions</span>
-                                          <span>Ignite and Soar</span>
-                                      </div>
-                                      <Button className={'btn'} color='white' variant={'text'} size={"small"} onClick={() => handleDialog(0, true)}>
-                                          LEARN MORE
-                                      </Button>
-
-                                      </div>
-                              </motion.div>
-                          </div>
-                          <div className={'side-2'}>
-                              <motion.div
-                                  className="img-1"
-                                  transition={{duration: 1.2 }}
-                                  initial={{ y: 700, opacity: 1 }}
-                                  animate={{ y: 0, opacity: 1 }}
-                                  exit={{ y: 500, opacity: 1 }}
-                             />
-                          </div>
-                          <div className={'img-container'}>
-                              <motion.img
-                                  className="phone-img"
-                                  src={`${skater}`}
-                                  transition={{duration: 1}}
-                                  initial={{ y: 800 , x: 0, opacity: 0 }}
-                                  animate={{ y: 0,  x: 0, opacity: 1}}
-                                  exit={{ y: 800, x: 0, opacity: 0 }}>
-                              </motion.img>
-                          </div>
-                        </motion.section>
+                         <PartOne/>
                     )}
                     {activeIndex === 1 && (
-                        <motion.section
-                            key="two"
-                            style={{ height:'100vh'}}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                        >
-                            <div className={'side-1'}>
-                                <motion.div
-                                    className="img-2"
-                                    transition={{duration: 1.2 }}
-                                    // initial={{ width: '0' , height: '100%'}}
-                                    // animate={{ width: "100%", height: '100%'}}
-                                    // exit={{ width: '0', height: '100%' }}
-                                    initial={{ x: -1000, opacity: 0 }}
-                                    animate={{ x: 0, opacity: 1 }}
-                                    exit={{ y: -1000, opacity: 0 }}
-                                />
-                            </div>
-                            <div className={'side-2'}>
-                                <motion.div
-                                    className="side-1-text"
-                                    transition={{duration: 1.2}}
-                                    initial={{ y: -100,opacity: 0 }}
-                                    animate={{ y: '0', opacity: 1 }}
-                                    exit={{ y: -100, opacity: 0 }}
-                                >
-                                    <div className={'detail-text'}>
-                                        <span>Beyond the Canvas</span>
-                                        <div className={'title'}>
-                                        <span>Colors of Urban</span>
-                                        <span>Expression</span>
-                                        </div>
-                                        <Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>
-                                            LEARN MORE
-                                        </Button>
-
-                                    </div>
-
-                                </motion.div>
-                            </div>
-                            {/*<div className={'detail-img'}>*/}
-                                <motion.img
-                                    className="worker"
-                                    src={`${worker}`}
-                                    transition={{duration: 1}}
-                                    initial={{ y: 0 ,x: 500, opacity: 0 }}
-                                    animate={{y: 0 , x: 0, opacity: 1,}}
-                                    exit={{ y: 0,x: 500, opacity: 0 }}>
-                                </motion.img>
-
-                            {/*</div>*/}
-
-                        </motion.section>
+                        <PartTow/>
                     )}
                     {activeIndex === 2 && (
-                        <motion.section
-                            key="three"
-                            style={{ height:'100vh'}}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                        >
-                            <div className={'side-2'}>
-                                <motion.div
-                                    className="side-1-text"
-                                    transition={{duration: 1.2}}
-                                    initial={{ y: -100,opacity: 0 }}
-                                    animate={{ y: '0', opacity: 1 }}
-                                    exit={{ y: -100, opacity: 0 }}
-                                >
-                                    <div className={'detail-text'}>
-                                        <span>A Journey of Creative Wonder</span>
-                                        <div className={'title'}>
-                                            <span>Beyond Boundaries,</span>
-                                            <span>Skies Ablaze</span>
-                                        </div>
-                                        <Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>
-                                            LEARN MORE
-                                        </Button>
-
-                                    </div>
-
-                                </motion.div>
-                            </div>
-                            <div className={'side-1'}>
-                                <motion.div
-                                    className="img-3"
-                                    transition={{duration: 1.3 }}
-                                    // initial={{ width: '0' , height: '100%'}}
-                                    // animate={{ width: "100%", height: '100%'}}
-                                    // exit={{ width: '0', height: '100%' }}
-                                    initial={{ x: 0,y: 500, opacity: 0 }}
-                                    animate={{ x: 0,y: 0, opacity: 1 }}
-                                    exit={{ x:0 ,y: 500, opacity: 0 }}
-                                />
-                            </div>
-
-                            {/*<div className={'detail-img'}>*/}
-                            <motion.img
-                                className="girl"
-                                src={`${girl}`}
-                                transition={{duration: 1}}
-                                initial={{ y: 500 ,x: 0, opacity: 0 }}
-                                animate={{y: 0 , x: 0, opacity: 1,}}
-                                exit={{ y: 500,x: 0, opacity: 0 }}>
-                            </motion.img>
-
-                            {/*</div>*/}
-
-                        </motion.section>
+                        <PartThree/>
                     )}
                     {activeIndex === 3 && (
-                        <motion.section
-                            key="four"
-                            style={{ height:'100vh'}}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                        >
-                            <div className={'side-1'}>
-                                <motion.div
-                                    className="img-4"
-                                    transition={{duration: 1.2 }}
-                                    // initial={{ width: '0' , height: '100%'}}
-                                    // animate={{ width: "100%", height: '100%'}}
-                                    // exit={{ width: '0', height: '100%' }}
-                                    initial={{ x: -1000, opacity: 0 }}
-                                    animate={{ x: 0, opacity: 1 }}
-                                    exit={{ y: -1000, opacity: 0 }}
-                                />
-                            </div>
-                            <div className={'side-2'}>
-                                <motion.div
-                                    className="side-1-text"
-                                    transition={{duration: 1.2}}
-                                    initial={{ y: -100,opacity: 0 }}
-                                    animate={{ y: '0', opacity: 1 }}
-                                    exit={{ y: -100, opacity: 0 }}
-                                >
-                                    <div className={'detail-text'}>
-                                        <span>Beyond the Canvas</span>
-                                        <div className={'title'}>
-                                            <span>Colors of Urban</span>
-                                            <span>Expression</span>
-                                        </div>
-                                        <Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>
-                                            LEARN MORE
-                                        </Button>
-
-                                    </div>
-
-                                </motion.div>
-                            </div>
-                            {/*<div className={'detail-img'}>*/}
-                            <motion.img
-                                className="bust"
-                                src={`${bust}`}
-                                transition={{duration: 1}}
-                                initial={{ y: 0 ,x: 500, opacity: 0 }}
-                                animate={{y: 0 , x: 0, opacity: 1,}}
-                                exit={{ y: 0,x: 500, opacity: 0 }}>
-                            </motion.img>
-
-                            {/*</div>*/}
-
-                        </motion.section>
+                        <PartFour/>
                     )}
                 </AnimatePresence>
             </div>
@@ -448,34 +271,236 @@ export const ScrollSite = () => {
 }
 
 
-//
-// <div className="rock-1">
-//     <motion.img
-//         src={rock1}
-//         style={{width: '80px'}}
-//         initial={{ y: 800, x: '0vw', opacity: 1 }}
-//         animate={{ y: 0, opacity: 1 }}
-//         exit={{ y: 800, x: '0vw', opacity: 1 }}
-//         transition={{ duration: 1, delay: 0.4 }}
-//     />
-// </div>
-// <div className="rock-2">
-//     <motion.img
-//         src={`${rock2}`}
-//         style={{width: '60px'}}
-//         transition={{duration: 1.1, delay: 0.4 }}
-//         initial={{ y: '50vh', opacity: 1 }}
-//         animate={{ y: '0vw', opacity: 1 }}
-//         exit={{ y: '50vh', opacity: 1 }}>
-//     </motion.img>
-// </div>
-// <div className="rock-3">
-//     <motion.img
-//         src={`${rock3}`}
-//         style={{width: '70px'}}
-//         transition={{duration: 1.1, delay: 0.4 }}
-//         initial={{ y: '50vh', opacity: 1 }}
-//         animate={{ y: '0vw', opacity: 1,}}
-//         exit={{ y: '50vh', opacity: 1 }}>
-//     </motion.img>
-// </div>
+
+const PartOne = () => {
+    return(
+        <motion.section
+            key="one"
+            style={{ height:'100vh'}}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+        >
+            <div className={'side-1'}>
+                <motion.div
+                    className="side-1-text"
+                    transition={{duration: 1.2}}
+                    initial={{ y: -100,opacity: 0 }}
+                    animate={{ y: '0', opacity: 1 }}
+                    exit={{ y: -100, opacity: 0 }}
+                >
+                    <div className={'detail-text'}>
+                        <span>Daring to Dream</span>
+                        <div className={'title'}>
+                            <span>Where Passions</span>
+                            <span>Ignite and Soar</span>
+                        </div>
+                        {/*<Button className={'btn'} color='white' variant={'text'} size={"small"} onClick={() => handleDialog(0, true)}>*/}
+                        {/*    LEARN MORE*/}
+                        {/*</Button>*/}
+
+                    </div>
+                </motion.div>
+            </div>
+            <div className={'side-2'}>
+                <motion.div
+                    className="img-1"
+                    transition={{duration: 1.2}}
+                    initial={{ y: 700, opacity: 1 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: 500, opacity: 1 }}
+                />
+            </div>
+            <div className={'img-container'}>
+                <motion.img
+                    className="phone-img"
+                    src={`${skater}`}
+                    transition={{duration: 1}}
+                    initial={{ y: 800 , x: 0, opacity: 0 }}
+                    animate={{ y: 0,  x: 0, opacity: 1}}
+                    exit={{ y: 800, x: 0, opacity: 0 }}>
+                </motion.img>
+            </div>
+        </motion.section>
+
+    )
+}
+const PartTow = () => {
+    return(
+        <motion.section
+            key="two"
+            style={{ height:'100vh'}}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+        >
+            <div className={'side-1'}>
+                <motion.div
+                    className="img-2"
+                    transition={{duration: 1.2 }}
+                    // initial={{ width: '0' , height: '100%'}}
+                    // animate={{ width: "100%", height: '100%'}}
+                    // exit={{ width: '0', height: '100%' }}
+                    initial={{ x: -1000, opacity: 0, zIndex: -1 }}
+                    animate={{ x: 0, opacity: 1 , zIndex: -1 }}
+                    exit={{ y: -1000, opacity: 0 , zIndex: -1 }}
+                />
+            </div>
+            <div style={{zIndex: 1111}} className={'side-2'}>
+                <motion.div
+                    className="side-1-text"
+                    transition={{duration: 1.2}}
+                    initial={{ y: -100,opacity: 0}}
+                    animate={{ y: '0', opacity: 1}}
+                    exit={{ y: -100, opacity: 0}}
+                >
+                    <div className={'detail-text'}>
+                        <span>Beyond the Canvas</span>
+                        <div className={'title'}>
+                            <span>Colors of Urban</span>
+                            <span>Expression</span>
+                        </div>
+                        {/*<Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>*/}
+                        {/*    LEARN MORE*/}
+                        {/*</Button>*/}
+
+                    </div>
+
+                </motion.div>
+                <motion.img
+                    className="worker"
+                    src={`${worker}`}
+                    transition={{duration: 1}}
+                    initial={{ y: 0 ,x: 500, opacity: 0,}}
+                    animate={{y: 0 , x: 0, opacity: 1,}}
+                    exit={{ y: 0,x: 500, opacity: 0 }}>
+                </motion.img>
+            </div>
+            {/*<div className={'detail-img'}>*/}
+
+
+            {/*</div>*/}
+
+        </motion.section>
+    )
+}
+const PartThree = () => {
+    return(
+        <motion.section
+            key="three"
+            style={{ height:'100vh'}}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+        >
+            <div style={{zIndex: 1111}} className={'side-1'}>
+                <motion.div
+                    className="side-1-text"
+                    transition={{duration: 1.2}}
+                    initial={{ y: -100,opacity: 0 }}
+                    animate={{ y: '0', opacity: 1 }}
+                    exit={{ y: -100, opacity: 0 }}
+                >
+                    <div className={'detail-text'}>
+                        <span>A Journey of Creative Wonder</span>
+                        <div className={'title'}>
+                            <span>Beyond Boundaries,</span>
+                            <span>Skies Ablaze</span>
+                        </div>
+                        {/*<Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>*/}
+                        {/*    LEARN MORE*/}
+                        {/*</Button>*/}
+
+                    </div>
+
+                </motion.div>
+
+
+            </div>
+            <div className={'side-2'}>
+                <motion.div
+                    className="img-3"
+                    transition={{duration: 1.3 }}
+                    // initial={{ width: '0' , height: '100%'}}
+                    // animate={{ width: "100%", height: '100%'}}
+                    // exit={{ width: '0', height: '100%' }}
+                    initial={{ x: 0,y: 500, opacity: 0,zIndex: -1}}
+                    animate={{ x: 0,y: 0, opacity: 1,zIndex: -1}}
+                    exit={{ x:0 ,y: 500, opacity: 0,zIndex: -1}}
+                />
+            </div>
+            <motion.img
+                className="girl"
+                src={`${girl}`}
+                transition={{duration: 1}}
+                initial={{ y: 500 ,x: 0, opacity: 0,zIndex: 1}}
+                animate={{y: 0 , x: 0, opacity: 1,zIndex: 1}}
+                exit={{ y: 500,x: 0, opacity: 0,zIndex: 1}}>
+            </motion.img>
+            {/*<div className={'detail-img'}>*/}
+
+
+            {/*</div>*/}
+
+        </motion.section>
+    )
+}
+const PartFour = () => {
+    return(
+        <motion.section
+            key="four"
+            style={{ height:'100vh'}}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+        >
+            <div className={'side-1'}>
+                <motion.div
+                    className="img-4"
+                    transition={{duration: 1.2 }}
+                    // initial={{ width: '0' , height: '100%'}}
+                    // animate={{ width: "100%", height: '100%'}}
+                    // exit={{ width: '0', height: '100%' }}
+                    initial={{ x: -1000, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ y: -1000, opacity: 0 }}
+                />
+            </div>
+            <div className={'side-2'}>
+                <motion.div
+                    className="side-1-text"
+                    transition={{duration: 1.2}}
+                    initial={{ y: -100,opacity: 0 }}
+                    animate={{ y: '0', opacity: 1 }}
+                    exit={{ y: -100, opacity: 0 }}
+                >
+                    <div className={'detail-text'}>
+                        <span>Beyond the Canvas</span>
+                        <div className={'title'}>
+                            <span>Colors of Urban</span>
+                            <span>Expression</span>
+                        </div>
+                        <Button color={'white'} variant={'text'} size={"small"} onClick={() => handleDialog(1, true)}>
+                            LEARN MORE
+                        </Button>
+
+                    </div>
+
+                </motion.div>
+            </div>
+            {/*<div className={'detail-img'}>*/}
+            <motion.img
+                className="bust"
+                src={`${bust}`}
+                transition={{duration: 1}}
+                initial={{ y: 0 ,x: 500, opacity: 0 }}
+                animate={{y: 0 , x: 0, opacity: 1,}}
+                exit={{ y: 0,x: 500, opacity: 0 }}>
+            </motion.img>
+
+            {/*</div>*/}
+
+        </motion.section>
+    )
+}
+

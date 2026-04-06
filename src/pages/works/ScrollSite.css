@@ -156,7 +156,7 @@ body{
 }
 
 .cont-2{
-    height: 300vh;
+    height: 250vh;
     background: #080914 !important;
     position: relative;
 
@@ -187,12 +187,14 @@ body{
 .container-animation{
     height: 100%;
     position: relative;
-
+    /*border: 2px solid red;*/
+    z-index: 11111 !important;
 }
 
 .side-1, .side-2, .side-3, .side-4{
     height: 50vh;
     overflow: hidden;
+    /*position: relative;*/
 }
 
 .side-1-text{
@@ -202,6 +204,7 @@ body{
     justify-content: center;
     width: 70%;
     align-items: center;
+
 }
 
 .detail-text{
@@ -212,14 +215,14 @@ body{
     display: flex;
     flex-direction: column;
     align-items: start;
-    z-index: 1111111111;
+    z-index: 1;
 }
 
 .title{
     display: flex;
     flex-direction: column;
     line-height: 100%;
-    font-size: clamp(50px, 4.5vw, 4.5vw);
+    font-size: clamp(35px, 4.5vw, 4.5vw);
     font-family: "Grape Nuts", cursive;
     /*align-self: center;*/
     font-weight: 900;
@@ -248,14 +251,15 @@ body{
 .img-container{
     width: 100vw;
     height: 100vh;
-    border: 2px solid red !important;
-    /*position: absolute;*/
+    /*border: 2px solid red !important;*/
+    /*position: relative;*/
 }
 
 .phone-img {
     /*animation: floatSoft 4s ease-in-out infinite;*/
     /*will-change: transform;*/
     position: absolute;
+    /*border: 2px solid red !important;*/
     top: 15vh;
     right: 50px;
     margin-right: 8vw;
@@ -328,6 +332,7 @@ body{
     margin-right: 15vw;
     height: 80vh;
     width: auto;
+    z-index: 0;
 }
 
 .bust{
@@ -479,12 +484,31 @@ footer {
     animation: 2.5s cubic-bezier(.25, 1, .30, 1) square-in-hesitate both;
 }
 
+/*@media screen and (min-width: 320px) and (max-width: 768px) {*/
+/*    .phone-img {*/
+/*        height: auto;*/
+/*        width: 65vw;*/
+/*        position: absolute;*/
+/*        top: 35vh;*/
+/*    }*/
+/*    .side-1-text{*/
+/*        width: 100%;*/
+/*    }*/
+/*    .bust{*/
+/*        height: 60vh*/
+
+/*    }*/
+
+/*}*/
+
 
 @media screen and (min-width: 200px) and (max-width: 950px) {
     .phone-img {
-        height: 40vh;
+        height: 35vh;
         width: auto;
         position: absolute;
+        top: 35vh;
+        right: 0;
     }
 
     .side-1-text{
