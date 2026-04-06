@@ -154,48 +154,46 @@
 body{
     overflow-x: hidden;
 }
+/*base style -------------------------------------*/
 
-.cont-2{
+.main-card{
     height: 250vh;
     background: #080914 !important;
     position: relative;
 
 }
-
 .scroll-box{
     position: sticky;
-    top: 0vh;
+    top: 0;
     width: 100vw;
-    /*width: 99vw;*/
     height: 100vh;
-    /*padding: 1rem;*/
-    /*border: 2px solid green !important;*/
 }
+.animation-card{
+    height: 100%;
+    position: relative;
+    z-index: 11111 !important;
+}
+.top-card, .bottom-card{
+    height: 50vh;
+    overflow: hidden;
+}
+
 
 .experience-title-box{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 10vh;
-
 }
+
 .experience-title{
     font-weight: 900;
     font-size: clamp(50px, 7vw, 7rem);
 }
 
-.container-animation{
-    height: 100%;
-    position: relative;
-    /*border: 2px solid red;*/
-    z-index: 11111 !important;
-}
 
-.side-1, .side-2, .side-3, .side-4{
-    height: 50vh;
-    overflow: hidden;
-    /*position: relative;*/
-}
+
+
 
 .side-1-text{
     /*border: 2px solid #ff0707;*/

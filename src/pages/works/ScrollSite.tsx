@@ -240,9 +240,9 @@ export const ScrollSite = () => {
 
     return(
 
-      <div className={'cont-2'} ref={cont2Ref}>
+      <div className={'main-card'} ref={cont2Ref}>
          <div className={'scroll-box'}>
-             <div className="container-animation">
+             <div className="animation-card">
                 <AnimatePresence mode="popLayout" >
                      {activeIndex === 0 && (
                          <PartOne/>
@@ -281,7 +281,7 @@ const PartOne = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
         >
-            <div className={'side-1'}>
+            <div className={'top-card'}>
                 <motion.div
                     className="side-1-text"
                     transition={{duration: 1.2}}
@@ -298,11 +298,10 @@ const PartOne = () => {
                         {/*<Button className={'btn'} color='white' variant={'text'} size={"small"} onClick={() => handleDialog(0, true)}>*/}
                         {/*    LEARN MORE*/}
                         {/*</Button>*/}
-
                     </div>
                 </motion.div>
             </div>
-            <div className={'side-2'}>
+            <div className={'bottom-card'}>
                 <motion.div
                     className="img-1"
                     transition={{duration: 1.2}}
@@ -334,7 +333,7 @@ const PartTow = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
         >
-            <div className={'side-1'}>
+            <div className={'top-card'}>
                 <motion.div
                     className="img-2"
                     transition={{duration: 1.2 }}
@@ -346,7 +345,7 @@ const PartTow = () => {
                     exit={{ y: -1000, opacity: 0 , zIndex: -1 }}
                 />
             </div>
-            <div style={{zIndex: 1111}} className={'side-2'}>
+            <div style={{zIndex: 1111}} className={'bottom-card'}>
                 <motion.div
                     className="side-1-text"
                     transition={{duration: 1.2}}
@@ -393,7 +392,7 @@ const PartThree = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
         >
-            <div style={{zIndex: 1111}} className={'side-1'}>
+            <div style={{zIndex: 1111}} className={'top-card'}>
                 <motion.div
                     className="side-1-text"
                     transition={{duration: 1.2}}
@@ -417,7 +416,7 @@ const PartThree = () => {
 
 
             </div>
-            <div className={'side-2'}>
+            <div className={'bottom-card'}>
                 <motion.div
                     className="img-3"
                     transition={{duration: 1.3 }}
@@ -454,7 +453,7 @@ const PartFour = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
         >
-            <div className={'side-1'}>
+            <div className={'top-card'}>
                 <motion.div
                     className="img-4"
                     transition={{duration: 1.2 }}
@@ -466,7 +465,7 @@ const PartFour = () => {
                     exit={{ y: -1000, opacity: 0 }}
                 />
             </div>
-            <div className={'side-2'}>
+            <div className={'bottom-card'}>
                 <motion.div
                     className="side-1-text"
                     transition={{duration: 1.2}}
