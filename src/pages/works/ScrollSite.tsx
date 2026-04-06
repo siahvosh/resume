@@ -252,16 +252,16 @@ export const ScrollSite = () => {
                                   exit={{ y: 500, opacity: 1 }}
                              />
                           </div>
-                          <motion.img
-                              className="phone-img"
-                              src={`${skater}`}
-                              transition={{duration: 1}}
-                              initial={{ y: 800 , x: 0, opacity: 0 }}
-                              animate={{ y: 0,  x: 0, opacity: 1}}
-                              exit={{ y: 800, x: 0, opacity: 0 }}>
-                          </motion.img>
-
-                          {/*</div>*/}
+                          <div className={'img-container'}>
+                              <motion.img
+                                  className="phone-img"
+                                  src={`${skater}`}
+                                  transition={{duration: 1}}
+                                  initial={{ y: 800 , x: 0, opacity: 0 }}
+                                  animate={{ y: 0,  x: 0, opacity: 1}}
+                                  exit={{ y: 800, x: 0, opacity: 0 }}>
+                              </motion.img>
+                          </div>
                         </motion.section>
                     )}
                     {activeIndex === 1 && (
@@ -379,7 +379,7 @@ export const ScrollSite = () => {
                     )}
                     {activeIndex === 3 && (
                         <motion.section
-                            key="two"
+                            key="four"
                             style={{ height:'100vh'}}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -442,6 +442,7 @@ export const ScrollSite = () => {
              stepDialog={dialogText[stepDialog]}
          />
      </div>
+
 
     )
 }

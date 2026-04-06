@@ -151,10 +151,15 @@
 /*}*/
 
 
+body{
+    overflow-x: hidden;
+}
+
 .cont-2{
     height: 300vh;
     background: #080914 !important;
     position: relative;
+
 }
 
 .scroll-box{
@@ -178,6 +183,7 @@
     font-weight: 900;
     font-size: clamp(50px, 7vw, 7rem);
 }
+
 .container-animation{
     height: 100%;
     position: relative;
@@ -187,9 +193,7 @@
 .side-1, .side-2, .side-3, .side-4{
     height: 50vh;
     overflow: hidden;
-
 }
-
 
 .side-1-text{
     /*border: 2px solid #ff0707;*/
@@ -241,6 +245,12 @@
     /*text-underline: #f10000;*/
 }
 
+.img-container{
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid red !important;
+    /*position: absolute;*/
+}
 
 .phone-img {
     /*animation: floatSoft 4s ease-in-out infinite;*/
@@ -324,9 +334,8 @@
     position: absolute;
     top: 10%;
     right: 0;
-
     margin-right: 15vw;
-    height: 80vh;
+    height: 70vh;
     width: auto;
 }
 .img-1 {
@@ -481,7 +490,10 @@ footer {
     .side-1-text{
         width: 100%;
     }
+    .bust{
+        height: 60vh
 
+    }
 
 }
 
