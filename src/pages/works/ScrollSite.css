@@ -151,11 +151,12 @@
 /*}*/
 
 
+
+
+/*base style -------------------------------------*/
 body{
     overflow-x: hidden;
 }
-/*base style -------------------------------------*/
-
 .main-card{
     height: 250vh;
     background: #080914 !important;
@@ -198,7 +199,6 @@ body{
     font-weight: 900;
 }
 
-
 /*Part one -------------------------------------*/
 .skate {
     background-image: url("../../assets/skatepark.jpg");
@@ -220,7 +220,6 @@ body{
     width: 50vh;
 }
 
-
 /*Part tow -------------------------------------*/
 .mural{
     background-image: url("../../assets/mural.jpg");
@@ -230,7 +229,25 @@ body{
     height: 100%;
 }
 
-
+/*Part three -------------------------------------*/
+.sky{
+    background-image: url("../../assets/sky12.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+.girl {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    animation: floatRock2 3s ease-in-out infinite;
+    will-change: transform;
+    margin-right: 15vw;
+    height: 80vh;
+    width: auto;
+    z-index: 0;
+}
 
 
 .experience-title-box{
@@ -340,17 +357,7 @@ body{
     height: 75vh;
     width: auto;
 }
-.girl {
-    position: absolute;
-    top: 10%;
-    right: 0;
-    animation: floatRock2 3s ease-in-out infinite;
-    will-change: transform;
-    margin-right: 15vw;
-    height: 80vh;
-    width: auto;
-    z-index: 0;
-}
+
 
 .bust{
     position: absolute;
@@ -363,13 +370,7 @@ body{
 
 
 
-.img-3{
-    background-image: url("../../assets/sky12.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100%;
-}
+
 
 .img-4{
     background-image: url("../../assets/bsky.jpg");

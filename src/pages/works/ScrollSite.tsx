@@ -321,7 +321,6 @@ const PartOne = () => {
                 </motion.img>
             </div>
         </motion.section>
-
     )
 }
 const PartTow = () => {
@@ -370,11 +369,6 @@ const PartTow = () => {
                     exit={{ y: 0,x: 500, opacity: 0 }}>
                 </motion.img>
             </div>
-            {/*<div className={'detail-img'}>*/}
-
-
-            {/*</div>*/}
-
         </motion.section>
     )
 }
@@ -387,7 +381,7 @@ const PartThree = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
         >
-            <div style={{zIndex: 1111}} className={'top-card'}>
+            <div className={'top-card'}>
                 <motion.div
                     className="text-card"
                     transition={{duration: 1.2}}
@@ -413,7 +407,7 @@ const PartThree = () => {
             </div>
             <div className={'bottom-card'}>
                 <motion.div
-                    className="img-3"
+                    className="sky"
                     transition={{duration: 1.3 }}
                     // initial={{ width: '0' , height: '100%'}}
                     // animate={{ width: "100%", height: '100%'}}
