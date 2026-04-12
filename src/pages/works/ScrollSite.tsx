@@ -312,20 +312,19 @@ export const ScrollSite = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                         >
-                            <div className={'top-card'} style={{zIndex: '-1'}}>
+                            <div className={'top-card'}>
                                 <motion.div
                                     className="mural"
-                                    transition={{duration: 1.2 ,}}
+                                    transition={{duration: 1}}
                                     initial={{ x: -1000, opacity: 0, zIndex: -1 }}
                                     animate={{ x: 0, opacity: 1 , zIndex: -1 }}
                                     exit={{ y: -1000, opacity: 0 , zIndex: -1 }}
                                 />
                             </div>
-                            <div className={'bottom-card'} style={{zIndex: '11111111'}}>
+                            <div className={'bottom-card'}>
                                 <motion.div
                                     className="text-card"
-
-                                    transition={{duration: 1.2}}
+                                    transition={{duration: 1}}
                                     initial={{ y: -100,opacity: 1}}
                                     animate={{ y: '0', opacity: 1}}
                                     exit={{ y: -100, opacity: 1}}
@@ -342,11 +341,11 @@ export const ScrollSite = () => {
                                     </div>
                                 </motion.div>
                             </div>
-                            <div className={'worker-box'} style={{zIndex: '0'}}>
+                            <div className={'worker-box'} >
                                 <motion.img
                                     className="worker"
                                     src={`${worker}`}
-                                    transition={{duration: 1}}
+                                    transition={{duration: 1.8}}
                                     initial={{x: 500, opacity: 0,}}
                                     animate={{ x: 0, opacity: 1,}}
                                     exit={{ x: 500, opacity: 0 }}>
@@ -366,7 +365,7 @@ export const ScrollSite = () => {
                             <div className={'top-card'}>
                                 <motion.div
                                     className="text-card"
-                                    transition={{duration: 1.2}}
+                                    transition={{duration: 1}}
                                     initial={{ y: -100,opacity: 0 }}
                                     animate={{ y: '0', opacity: 1 }}
                                     exit={{ y: -100, opacity: 0 }}
@@ -388,7 +387,7 @@ export const ScrollSite = () => {
                             <div className={'bottom-card'}>
                                 <motion.div
                                     className="sky"
-                                    transition={{duration: 1.3 }}
+                                    transition={{duration: 1.5}}
                                     initial={{ x: 0,y: 500, opacity: 0}}
                                     animate={{ x: 0,y: 0, opacity: 1}}
                                     exit={{ x:0 ,y: 500, opacity: 0}}
@@ -398,10 +397,10 @@ export const ScrollSite = () => {
                                 <motion.img
                                     className="girl"
                                     src={`${girl}`}
-                                    transition={{duration: 1}}
-                                    initial={{ y: 500 ,x: 0, opacity: 0}}
+                                    transition={{duration: 1.8}}
+                                    initial={{ y: 500 ,x: 0, opacity: 1}}
                                     animate={{y: 0 , x: 0, opacity: 1}}
-                                    exit={{ y: 500,x: 0, opacity: 0}}>
+                                    exit={{ y: 500,x: 0, opacity: 1}}>
                                 </motion.img>
                             </div>
 
@@ -444,14 +443,17 @@ export const ScrollSite = () => {
                                     </div>
                                 </motion.div>
                             </div>
-                            <motion.img
-                                className="bust"
-                                src={`${bust}`}
-                                transition={{duration: 1}}
-                                initial={{ y: 0 ,x: 500, opacity: 0 }}
-                                animate={{y: 0 , x: 0, opacity: 1,}}
-                                exit={{ y: 0,x: 500, opacity: 0 }}>
-                            </motion.img>
+                            <div className={'bust-box'}>
+                                <motion.img
+                                    className="bust"
+                                    src={`${bust}`}
+                                    transition={{duration: 1}}
+                                    initial={{ y: 0 ,x: 500, opacity: 0 }}
+                                    animate={{y: 0 , x: 0, opacity: 1,}}
+                                    exit={{ y: 0,x: 500, opacity: 0 }}>
+                                </motion.img>
+                            </div>
+
                         </motion.section>
                     )}
                 </AnimatePresence>

@@ -270,11 +270,7 @@ body{
 }
 /*Part four -------------------------------------*/
 .bust{
-    position: absolute;
-    top: 10%;
-    right: 0;
-    margin-right: 15vw;
-    height: 70vh;
+    height: 75vh;
     width: auto;
 }
 .b-sky{
@@ -284,7 +280,12 @@ body{
     background-repeat: no-repeat;
     height: 100%;
 }
-
+.bust-box{
+    position: absolute;
+    top: 10%;
+    right: 15vw;
+    padding: 2rem;
+}
 
 @media screen and (max-width: 200px){
     .title{
@@ -296,6 +297,9 @@ body{
 }
 
 @media screen and (min-width: 200px) and (max-width: 1024px) {
+    .text-box{
+        z-index: 1;
+    }
     .skater {
         height: 35vh;
         width: auto;
@@ -320,9 +324,18 @@ body{
         margin-top: 5rem;
         /*z-index: 0;*/
     }
+    .bust-box{
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        inset: 0;
+        margin-top: 2rem;
+        /*z-index: 0;*/
+    }
     .girl {
         height: 70vh;
         width: auto;
+        z-index: 0;
     }
     .worker-box{
         display: flex;
@@ -333,15 +346,15 @@ body{
     }
     .title{
         font-size: 10vw;
-        /*z-index: 1;*/
+        z-index: 1;
     }
     .text-card{
         width: 100%;
     }
     .bust{
-        height: 60vh
+        height: 50vh;
+        width: auto;
     }
-
 }
 
 @media screen and (min-width: 1500px) {
