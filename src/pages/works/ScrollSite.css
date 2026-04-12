@@ -158,7 +158,7 @@ body{
     overflow-x: hidden;
 }
 .main-card{
-    height: 300vh;
+    height: 400vh;
     background: #080914 !important;
     position: relative;
 
@@ -177,6 +177,7 @@ body{
 .top-card, .bottom-card{
     height: 50vh;
     overflow: hidden;
+
 }
 .text-card {
     height: 100%;
@@ -219,8 +220,8 @@ body{
     position: absolute;
     border: 2px solid red !important;
     top: 15vh;
-    right: 0px;
-    margin-right: 8vw;
+    right: 8vw;
+    /*margin-right: 0vw;*/
     height: 50vh;
     width: 50vh;
 }
@@ -291,7 +292,7 @@ body{
 
 @media screen and (min-width: 200px) and (max-width: 950px) {
     .skater {
-        height: 35vh;
+        height: 40vh;
         width: auto;
         position: absolute;
         top: 35vh;

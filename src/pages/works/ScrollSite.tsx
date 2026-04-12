@@ -186,22 +186,64 @@ export const ScrollSite = () => {
     const [stepDialog, setStepDialog] = React.useState();
 
 
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         if (!cont2Ref.current) return
+    //         const { offsetTop, offsetHeight } = cont2Ref.current;
+    //         const scrollPosition = window.scrollY;
+    //         const sectionHeight = offsetHeight / stepsVisuals.length;
+    //         const index = Math.floor((scrollPosition - offsetTop) / sectionHeight);
+    //         setActiveIndex(index);
+    //         console.log({index: index})
+    //     };
+    //     window.addEventListener('scroll', handleScroll);
+    //     window.addEventListener("scroll", () => {
+    //         console.log(window.scrollY);
+    //     });
+    //     return () => window.removeEventListener('scroll', handleScroll);
+    // }, []);
+    const isScrolling = useRef(false); // جلوگیری از اسکرول‌های پشت سرهم
+    const handleWheel = (e) => {
+        e.preventDefault(); // جلوگیری از اسکرول عادی
+
+        if (isScrolling.current) return; // اگر وسط انیمیشن هستیم → نذار اسکرول بعدی بیاد
+        isScrolling.current = true;
+
+        const direction = e.deltaY > 0 ? 1 : -1; // پایین یا بالا؟
+
+        setActiveIndex((prev) => {
+            let next = prev + direction;
+            if (next < 0) next = 0;
+            if (next > 3) next = 3;
+            return next;
+        });
+
+        // اجازه اسکرول دوباره بعد از انیمیشن
+        setTimeout(() => {
+            isScrolling.current = false;
+        }, 900); // سرعت تغییر step
+    };
+
     useEffect(() => {
-        const handleScroll = () => {
-            if (!cont2Ref.current) return
-            const { offsetTop, offsetHeight } = cont2Ref.current;
-            const scrollPosition = window.scrollY;
-            const sectionHeight = offsetHeight / stepsVisuals.length;
-            const index = Math.floor((scrollPosition - offsetTop) / sectionHeight);
-            setActiveIndex(index);
-            console.log({index: index})
+        if (!cont2Ref.current) return;
+
+        const sectionHeight = cont2Ref.current.offsetHeight / 4; // 4 step
+        const targetScroll = cont2Ref.current.offsetTop + activeIndex * sectionHeight;
+
+        window.scrollTo({
+            top: targetScroll,
+            behavior: "smooth"
+        });
+
+    }, [activeIndex]);
+
+    useEffect(() => {
+        window.addEventListener("wheel", handleWheel, { passive: false });
+
+        return () => {
+            window.removeEventListener("wheel", handleWheel);
         };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
-
-
 
     const handleDialog = (step, show) => {
         setOpen(show)
@@ -209,7 +251,6 @@ export const ScrollSite = () => {
     };
 
     return(
-
       <div className={'main-card'} ref={cont2Ref}>
          <div className={'scroll-box'}>
              <div className="animation-card">
@@ -413,8 +454,6 @@ export const ScrollSite = () => {
              stepDialog={dialogText[stepDialog]}
          />
      </div>
-
-
     )
 }
 
