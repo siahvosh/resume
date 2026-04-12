@@ -221,7 +221,7 @@ export const ScrollSite = () => {
         // اجازه اسکرول دوباره بعد از انیمیشن
         setTimeout(() => {
             isScrolling.current = false;
-        }, 900); // سرعت تغییر step
+        }, 1000); // سرعت تغییر step
     };
 
     useEffect(() => {
@@ -258,7 +258,7 @@ export const ScrollSite = () => {
                      {activeIndex === 0 && (
                          <motion.section
                              key="one"
-                             style={{ height:'100vh'}}
+                             style={{ height:'100vh', position: 'relative'}}
                              initial={{ opacity: 0 }}
                              animate={{ opacity: 1 }}
                              exit={{ opacity: 0 }}
@@ -292,14 +292,16 @@ export const ScrollSite = () => {
                                      exit={{ y: 700, opacity: 1 }}
                                  />
                              </div>
-                             <motion.img
-                                 className="skater"
-                                 src={`${skater}`}
-                                 transition={{duration: 1}}
-                                 initial={{ y: 800 ,  opacity: 0 }}
-                                 animate={{ y: 0,   opacity: 1}}
-                                 exit={{ y: 800,  opacity: 0 }}>
-                             </motion.img>
+                             <div className={'image-box'}>
+                                 <motion.img
+                                     className="skater"
+                                     src={`${skater}`}
+                                     transition={{duration: 1}}
+                                     initial={{ y: 800 ,x: 0,  opacity: 0 }}
+                                     animate={{ y: 0,x: 0,   opacity: 1}}
+                                     exit={{ y: 800, x: 0, opacity: 0 }}>
+                                 </motion.img>
+                             </div>
                          </motion.section>
                     )}
                     {activeIndex === 1 && (
@@ -499,12 +501,14 @@ const PartOne = () => {
             </div>
                 <motion.img
                     className="skater"
-                    src={`${skater}`}
+                    // src={`${skater}`}
                     transition={{duration: 1}}
                     initial={{ y: 800 , x: 0, opacity: 0 }}
                     animate={{ y: 0,  x: 0, opacity: 1}}
                     exit={{ y: 800, x: 0, opacity: 1 }}>
                 </motion.img>
+
+
         </motion.section>
     )
 }

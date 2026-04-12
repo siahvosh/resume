@@ -158,6 +158,7 @@ body{
     overflow-x: hidden;
 }
 .main-card{
+    direction: ltr;
     height: 400vh;
     background: #080914 !important;
     position: relative;
@@ -177,7 +178,8 @@ body{
 .top-card, .bottom-card{
     height: 50vh;
     overflow: hidden;
-
+    /*position: relative;*/
+    /*border: 2px solid green;*/
 }
 .text-card {
     height: 100%;
@@ -206,6 +208,16 @@ body{
 
 
 /*Part one -------------------------------------*/
+.image-box{
+    /*border: 2px solid #1bd83a;*/
+    position: absolute;
+    color: red !important;
+    top: 20%;
+    right: 0;
+    padding: 2rem;
+    /*width: 100vw;*/
+    /*height: 100vh;*/
+}
 .skate {
     background-image: url("../../assets/skatepark.jpg");
     background-size: cover;
@@ -215,24 +227,14 @@ body{
     background-position: center;
 }
 .skater {
-    /*animation: floatSoft 4s ease-in-out infinite;*/
-    /*will-change: transform;*/
-    position: absolute;
-    border: 2px solid red !important;
-    top: 15vh;
-    right: 8vw;
-    /*margin-right: 0vw;*/
+    /*border: 2px solid #367acc;*/
+    /*top: 15vh;*/
+    /*right: 8vw;*/
     height: 50vh;
     width: 50vh;
 }
 
-.image-box{
-    border: 2px solid blue !important;
-    /*position: absolute;*/
-    width: 100vw;
-    height: 100vh;
-    z-index: 1111 !important;
-}
+
 
 /*Part tow -------------------------------------*/
 .mural{
@@ -290,13 +292,17 @@ body{
 
 
 
-@media screen and (min-width: 200px) and (max-width: 950px) {
+@media screen and (min-width: 200px) and (max-width: 440px) {
     .skater {
-        height: 40vh;
+        height: 35vh;
         width: auto;
-        position: absolute;
-        top: 35vh;
-        right: 0;
+    }
+    .image-box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        inset: 0;
+        margin-top: 2.5rem;
     }
 
     .text-card{
@@ -313,7 +319,7 @@ body{
     .skater {
         height: 65vh;
         width: auto;
-        margin-right: 15vw;
+
     }
 }
 
