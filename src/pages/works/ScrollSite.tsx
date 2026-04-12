@@ -292,7 +292,7 @@ export const ScrollSite = () => {
                                      exit={{ y: 700, opacity: 1 }}
                                  />
                              </div>
-                             <div className={'image-box'}>
+                             <div className={'skater-box'}>
                                  <motion.img
                                      className="skater"
                                      src={`${skater}`}
@@ -312,22 +312,23 @@ export const ScrollSite = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                         >
-                            <div className={'top-card'}>
+                            <div className={'top-card'} style={{zIndex: '-1'}}>
                                 <motion.div
                                     className="mural"
-                                    transition={{duration: 1.2 }}
+                                    transition={{duration: 1.2 ,}}
                                     initial={{ x: -1000, opacity: 0, zIndex: -1 }}
                                     animate={{ x: 0, opacity: 1 , zIndex: -1 }}
                                     exit={{ y: -1000, opacity: 0 , zIndex: -1 }}
                                 />
                             </div>
-                            <div style={{zIndex: 1111}} className={'bottom-card'}>
+                            <div className={'bottom-card'} style={{zIndex: '11111111'}}>
                                 <motion.div
                                     className="text-card"
+
                                     transition={{duration: 1.2}}
-                                    initial={{ y: -100,opacity: 0}}
+                                    initial={{ y: -100,opacity: 1}}
                                     animate={{ y: '0', opacity: 1}}
-                                    exit={{ y: -100, opacity: 0}}
+                                    exit={{ y: -100, opacity: 1}}
                                 >
                                     <div className={'text-box'}>
                                         <span>Beyond the Canvas</span>
@@ -340,15 +341,18 @@ export const ScrollSite = () => {
                                         {/*</Button>*/}
                                     </div>
                                 </motion.div>
+                            </div>
+                            <div className={'worker-box'} style={{zIndex: '0'}}>
                                 <motion.img
                                     className="worker"
                                     src={`${worker}`}
                                     transition={{duration: 1}}
-                                    initial={{ y: 0 ,x: 500, opacity: 0,}}
-                                    animate={{y: 0 , x: 0, opacity: 1,}}
-                                    exit={{ y: 0,x: 500, opacity: 0 }}>
+                                    initial={{x: 500, opacity: 0,}}
+                                    animate={{ x: 0, opacity: 1,}}
+                                    exit={{ x: 500, opacity: 0 }}>
                                 </motion.img>
                             </div>
+
                         </motion.section>
                     )}
                     {activeIndex === 2 && (
@@ -390,14 +394,17 @@ export const ScrollSite = () => {
                                     exit={{ x:0 ,y: 500, opacity: 0}}
                                 />
                             </div>
-                            <motion.img
-                                className="girl"
-                                src={`${girl}`}
-                                transition={{duration: 1}}
-                                initial={{ y: 500 ,x: 0, opacity: 0}}
-                                animate={{y: 0 , x: 0, opacity: 1}}
-                                exit={{ y: 500,x: 0, opacity: 0}}>
-                            </motion.img>
+                            <div className={'girl-box'}>
+                                <motion.img
+                                    className="girl"
+                                    src={`${girl}`}
+                                    transition={{duration: 1}}
+                                    initial={{ y: 500 ,x: 0, opacity: 0}}
+                                    animate={{y: 0 , x: 0, opacity: 1}}
+                                    exit={{ y: 500,x: 0, opacity: 0}}>
+                                </motion.img>
+                            </div>
+
                         </motion.section>
                     )}
                     {activeIndex === 3 && (

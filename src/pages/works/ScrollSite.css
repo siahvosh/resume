@@ -200,6 +200,7 @@ body{
     font-size: clamp(35px, 4.5vw, 4.5vw);
     font-family: "Grape Nuts", cursive;
     font-weight: 900;
+
 }
 .btn {
     font-size: clamp(15px, 1vw, 1vw);
@@ -208,9 +209,8 @@ body{
 
 
 /*Part one -------------------------------------*/
-.image-box{
+.skater-box{
     position: absolute;
-    color: red !important;
     top: 15%;
     right: 10vw;
     padding: 2rem;
@@ -237,14 +237,17 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     height: 100%;
+
 }
 .worker {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-right: 15vw;
     height: 75vh;
     width: auto;
+
+}
+.worker-box{
+    position: absolute;
+    bottom: 0;
+    right: 20vw;
 }
 
 /*Part three -------------------------------------*/
@@ -256,17 +259,15 @@ body{
     height: 100%;
 }
 .girl {
-    position: absolute;
-    top: 10%;
-    right: 0;
-    animation: floatRock2 3s ease-in-out infinite;
-    will-change: transform;
-    margin-right: 15vw;
     height: 80vh;
     width: auto;
-    z-index: 0;
 }
-
+.girl-box{
+    position: absolute;
+    top: 10%;
+    right: 15vw;
+    padding: 2rem;
+}
 /*Part four -------------------------------------*/
 .bust{
     position: absolute;
@@ -287,7 +288,7 @@ body{
 
 @media screen and (max-width: 200px){
     .title{
-        font-size: 5vw;
+        font-size: 4vw;
     }
     .text-card{
         width: 100%;
@@ -299,15 +300,40 @@ body{
         height: 35vh;
         width: auto;
     }
-    .image-box{
+    .worker {
+        height: 70vh;
+        width: auto;
+    }
+    .skater-box{
         display: flex;
         justify-content: center;
         align-items: center;
         inset: 0;
-        margin-top: 2.5rem;
+        margin-top: 5rem;
+        /*z-index: 0;*/
+    }
+    .girl-box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        inset: 0;
+        margin-top: 5rem;
+        /*z-index: 0;*/
+    }
+    .girl {
+        height: 70vh;
+        width: auto;
+    }
+    .worker-box{
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        inset: 0;
+
     }
     .title{
         font-size: 10vw;
+        /*z-index: 1;*/
     }
     .text-card{
         width: 100%;
