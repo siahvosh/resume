@@ -316,9 +316,9 @@ export const ScrollSite = () => {
                                 <motion.div
                                     className="mural"
                                     transition={{duration: 1}}
-                                    initial={{ x: -1000, opacity: 0, zIndex: -1 }}
-                                    animate={{ x: 0, opacity: 1 , zIndex: -1 }}
-                                    exit={{ y: -1000, opacity: 0 , zIndex: -1 }}
+                                    initial={{ x: -1000, opacity: 0}}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    exit={{ y: -1000, opacity: 0  }}
                                 />
                             </div>
                             <div className={'bottom-card'}>
