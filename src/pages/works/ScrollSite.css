@@ -209,14 +209,11 @@ body{
 
 /*Part one -------------------------------------*/
 .image-box{
-    /*border: 2px solid #1bd83a;*/
     position: absolute;
     color: red !important;
-    top: 20%;
-    right: 0;
+    top: 15%;
+    right: 10vw;
     padding: 2rem;
-    /*width: 100vw;*/
-    /*height: 100vh;*/
 }
 .skate {
     background-image: url("../../assets/skatepark.jpg");
@@ -227,9 +224,6 @@ body{
     background-position: center;
 }
 .skater {
-    /*border: 2px solid #367acc;*/
-    /*top: 15vh;*/
-    /*right: 8vw;*/
     height: 50vh;
     width: 50vh;
 }
@@ -291,8 +285,16 @@ body{
 }
 
 
+@media screen and (max-width: 200px){
+    .title{
+        font-size: 5vw;
+    }
+    .text-card{
+        width: 100%;
+    }
+}
 
-@media screen and (min-width: 200px) and (max-width: 440px) {
+@media screen and (min-width: 200px) and (max-width: 1024px) {
     .skater {
         height: 35vh;
         width: auto;
@@ -304,13 +306,14 @@ body{
         inset: 0;
         margin-top: 2.5rem;
     }
-
+    .title{
+        font-size: 10vw;
+    }
     .text-card{
         width: 100%;
     }
     .bust{
         height: 60vh
-
     }
 
 }
