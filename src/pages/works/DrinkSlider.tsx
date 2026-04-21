@@ -4,8 +4,17 @@ import beer from '../../assets/beer-video.mp4'
 import orangeBeer from '../../assets/orange-beer.png'
 
 import './DrinkSlider.css'
+import {useState} from "react";
 
 export const DrinkSlider = () => {
+
+    const [detail] = useState([
+        {firstTile: '', secondTitle: '', label: '' , description : '', color: '#F19F00'},
+        {firstTile: '', secondTitle: '', label: '' , description : '', color: '#00B4C1'},
+        {firstTile: '', secondTitle: '', label: '' , description : '', color: '#F91D00'},
+        {firstTile: '', secondTitle: '', label: '' , description : '', color: '#4CD964'}
+    ])
+
     return(
         <>
             <div className={'beer-container'}>
@@ -39,9 +48,9 @@ export const DrinkSlider = () => {
                     >
                         <div className="right-side">
                             <div className={'detail'}>
-                                Crafted
-                                For
-                                Moments
+                                <h1>Pure</h1>
+                                <h2>Beer</h2>
+                                <h1>Moments</h1>
                                 Elevate your experiences with our thoughtfully crafted brews, tailored to create unforgettable memories.
                             </div>
                         </div>
