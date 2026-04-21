@@ -6,6 +6,7 @@ import {Error404} from "./pages/errors/404.tsx";
 import {ScrollSite} from "./pages/works/ScrollSite";
 import {Loading} from "./component/loading/Loading";
 import * as React from "react";
+import {DrinkSlider} from "./pages/works/DrinkSlider";
 
 function App() {
     const [loading, setLoading] = React.useState(true);
@@ -26,7 +27,7 @@ function App() {
                 {index: true, element: <HomePage /> },
                 {path: '/', element: <HomePage /> },
                 {path: '/scroll-slide', element: <ScrollSite /> },
-
+                {path: '/drink-slider', element: <DrinkSlider /> },
             ]
         },
     ])

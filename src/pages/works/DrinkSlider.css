@@ -1,0 +1,75 @@
+
+
+.beer-container{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.label{
+    position: absolute;
+    /*border: 2px solid yellow;*/
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*align-items: center;*/
+}
+
+.logo-img{
+    width: 150px;
+}
+
+.left-side{
+    /*border: 2px solid red;*/
+    height: 100%;
+}
+
+.right-side{
+    /*border: 2px solid blue;*/
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #21181F;
+    padding: 0 3rem 0 3rem;
+}
+
+.right-side .detail{
+    padding: 3rem;
+    border: 1px solid darkgreen;
+}
+
+.video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+}
+
+.bottle-box{
+    /*border: 2px solid red;*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.bottle{
+    width: 15vw;
+}
+
+.btn-box{
+    position: absolute;
+    display: flex;
+    bottom: 2rem;
+    right: 2rem;
+
+}
