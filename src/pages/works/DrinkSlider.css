@@ -4,6 +4,7 @@
     width: 100vw;
     height: 100vh;
     position: relative;
+    overflow: hidden;
 }
 
 .label{
@@ -39,8 +40,17 @@
 .right-side .detail{
     padding: 3rem;
     z-index: 111;
-    /*border: 1px solid darkgreen;*/
 }
+
+.detail h1 , h2{
+    line-height: 0;
+}
+
+.detail h2 {
+    margin-left: 5rem;
+    color: #F19F00;
+}
+
 
 .video{
     position: absolute;

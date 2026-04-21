@@ -1,10 +1,13 @@
-import {Grid2} from "@mui/material";
+import {Button, Grid2} from "@mui/material";
 import logo from '../../assets/beer-logo.png'
 import beer from '../../assets/beer-video.mp4'
 import orangeBeer from '../../assets/orange-beer.png'
+import blueBeer from '../../assets/blue-beer.png'
 
 import './DrinkSlider.css'
 import {useState} from "react";
+import {AnimatePresence,motion} from "framer-motion";
+import * as React from "react";
 
 export const DrinkSlider = () => {
 
@@ -14,6 +17,17 @@ export const DrinkSlider = () => {
         {firstTile: '', secondTitle: '', label: '' , description : '', color: '#F91D00'},
         {firstTile: '', secondTitle: '', label: '' , description : '', color: '#4CD964'}
     ])
+
+    const bottleImg = [
+        orangeBeer,
+        blueBeer,
+    ]
+
+    const [step, setStep] = useState(0)
+
+    const handleChange = () =>{
+        setStep(prev => (prev + 1) % bottleImg.length)
+    }
 
     return(
         <>
@@ -51,16 +65,30 @@ export const DrinkSlider = () => {
                                 <h1>Pure</h1>
                                 <h2>Beer</h2>
                                 <h1>Moments</h1>
-                                Elevate your experiences with our thoughtfully crafted brews, tailored to create unforgettable memories.
+                                <span>
+                                   Elevate your experiences with our thoughtfully crafted brews, tailored to create unforgettable memories.
+                                </span>
                             </div>
                         </div>
                     </Grid2>
                 </Grid2>
                 <div className={'bottle-box'}>
-                    <img className={'bottle'} src={`${orangeBeer}`} alt={'stfu'}/>
+                    <AnimatePresence mode="wait">
+                        <motion.img
+                            key={step}
+                            className="bottle"
+                            src={bottleImg[step]}
+                            transition={{duration: 0.3}}
+                            initial={{ y: -800 ,x: 0,  opacity: 0 }}
+                            animate={{ y: 0,x: 0,   opacity: 1}}
+                            exit={{ y: 800, x: 0, opacity: 0 }}>
+                        </motion.img>
+                    </AnimatePresence>
                 </div>
-                <div className={'btn-box'}>
-                    UP DOWN
+                <div className={'btn-box'} onClick={() => handleChange()}>
+                    <Button>UP</Button>
+                    <Button>DOWN</Button>
+
                 </div>
             </div>
 
