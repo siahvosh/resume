@@ -33,12 +33,14 @@
     align-items: center;
     background: #21181F;
     padding: 0 3rem 0 3rem;
+    overflow: hidden;
 }
 .right-side .detail{
     padding: 3rem;
     z-index: 111;
     display: flex;
     flex-direction: column ;
+
 }
 
 
@@ -79,7 +81,7 @@
     z-index: 0;
 }
 .bottle{
-    width: 15vw;
+    /*width: 15vw;*/
 }
 
 .btn-box{
@@ -93,7 +95,6 @@
 @media screen and (min-width: 320px) and (max-width: 1024px) {
     .bottle{
         width: 25vw;
-        /*height: auto;*/
     }
 }
 

@@ -23,10 +23,34 @@ import redBeer from '../../assets/red-beer.png'
 export const DrinkSlider = () => {
 
     const [detail] = useState([
-        {firstTile: '', secondTitle: '', label: '' , description : '', color: '#F19F00'},
-        {firstTile: '', secondTitle: '', label: '' , description : '', color: '#00B4C1'},
-        {firstTile: '', secondTitle: '', label: '' , description : '', color: '#F91D00'},
-        {firstTile: '', secondTitle: '', label: '' , description : '', color: '#4CD964'}
+        {
+            firstTile: 'Pure',
+            secondTitle: 'Pleasure',
+            label: 'Beer' ,
+            description : 'desc: "Where every sip becomes a moment to savor, indulging in a symphony of flavors that will leave a lasting impression.",\n',
+            color: '#F19F00'
+        },
+        {
+            firstTile: 'Crafted',
+            secondTitle: 'Moments',
+            label: 'For',
+            description : 'desc: "Elevate your experiences with our thoughtfully crafted brews, tailored to create unforgettable memories.",\n',
+            color: '#00B4C1'
+        },
+        {
+            firstTile: 'Indulge',
+            secondTitle: 'Repeat',
+            label: 'Enjoy',
+            description: 'desc: "Let Sunshine Craft Beer Transport You to a Realm of Taste and Pleasure",\n',
+            color: '#4CD964'
+        },
+        {
+            firstTile: 'Tradition',
+            secondTitle: 'Innovation',
+            label: 'And' ,
+            description : 'desc: "Embrace the perfect blend of heritage and forward-thinking to savor unrivaled taste and craftsmanship.",\n',
+            color: '#F91D00'
+        }
     ])
 
     const bottleImg = [
@@ -58,8 +82,8 @@ export const DrinkSlider = () => {
                 </div>
                 <Grid2 container sx={{ height: '100vh' }}>
                     <Grid2
-                        size={{ xs: 12, sm: 12, md: 12, lg: 6 }}
-                        sx={{height: { xs: '50vh', sm: '50vh', md: '50vh', lg: '100vh' }}}
+                        size={{ xs: 12, sm: 12, md: 6, lg: 6 }}
+                        sx={{height: { xs: '50vh', sm: '50vh', md: '100vh', lg: '100vh' }}}
                     >
                         <div className="left-side">
                             <video
@@ -73,18 +97,28 @@ export const DrinkSlider = () => {
                     </Grid2>
 
                     <Grid2
-                        size={{ xs: 12, sm: 12, md: 12, lg: 6 }}
-                        sx={{height: { xs: '50vh', sm: '50vh', md: '50vh', lg: '100vh' }}}
+                        size={{ xs: 12, sm: 12, md: 6, lg: 6 }}
+                        sx={{height: { xs: '50vh', sm: '50vh', md: '100vh', lg: '100vh' }}}
                     >
                         <div className="right-side">
-                            <div className={'detail'}>
-                                <span className={'first-title'}>Pure</span>
-                                <span className={'label-text'}>Beer</span>
-                                <span className={'second-title'}>Moments</span>
-                                <span className={'description'}>
-                                   Elevate your experiences with our thoughtfully crafted brews, tailored to create unforgettable memories.
-                                </span>
-                            </div>
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={step}
+                                    transition={{duration: 0.4}}
+                                    initial={{ x: 300,opacity: 0 }}
+                                    animate={{ x: '0', opacity: 1 }}
+                                    exit={{ x: -300, opacity: 0 }}
+                                >
+                                    <div className={'detail'}>
+                                        <span className={'first-title'}>{detail[step].firstTile}</span>
+                                        <span style={{color: detail[step].color}} className={'label-text'}>{detail[step].label}</span>
+                                        <span className={'second-title'}>{detail[step].secondTitle}</span>
+                                        <span className={'description'}>
+                                            {detail[step].description}
+                                        </span>
+                                    </div>
+                                </motion.div>
+                            </AnimatePresence>
                         </div>
                     </Grid2>
                 </Grid2>
