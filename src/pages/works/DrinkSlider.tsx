@@ -1,13 +1,24 @@
-import {Button, Grid2} from "@mui/material";
-import logo from '../../assets/beer-logo.png'
-import beer from '../../assets/beer-video.mp4'
-import orangeBeer from '../../assets/orange-beer.png'
-import blueBeer from '../../assets/blue-beer.png'
 
+import {Button, Grid2} from "@mui/material";
 import './DrinkSlider.css'
 import {useState} from "react";
 import {AnimatePresence,motion} from "framer-motion";
 import * as React from "react";
+
+
+// ICONS ----------------------------------------
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+
+// IMAGES ----------------------------------------
+import logo from '../../assets/beer-logo.png'
+import beer from '../../assets/beer-video.mp4'
+import orangeBeer from '../../assets/orange-beer.png'
+import blueBeer from '../../assets/blue-beer.png'
+import greenBeer from '../../assets/green-beer.png'
+import redBeer from '../../assets/red-beer.png'
+
+
 
 export const DrinkSlider = () => {
 
@@ -21,13 +32,18 @@ export const DrinkSlider = () => {
     const bottleImg = [
         orangeBeer,
         blueBeer,
+        greenBeer,
+        redBeer,
     ]
 
     const [step, setStep] = useState(0)
 
-    const handleChange = () =>{
+    const handleNextStep  = () =>{
         setStep(prev => (prev + 1) % bottleImg.length)
     }
+    const handlePreviousStep = () => {
+        setStep(prev => (prev - 1 + bottleImg.length) % bottleImg.length);
+    };
 
     return(
         <>
@@ -42,8 +58,8 @@ export const DrinkSlider = () => {
                 </div>
                 <Grid2 container sx={{ height: '100vh' }}>
                     <Grid2
-                        size={{ xs: 12, sm: 12, md: 6, lg: 6 }}
-                        sx={{height: { xs: '50vh', sm: '50vh', md: '100vh', lg: '100vh' }}}
+                        size={{ xs: 12, sm: 12, md: 12, lg: 6 }}
+                        sx={{height: { xs: '50vh', sm: '50vh', md: '50vh', lg: '100vh' }}}
                     >
                         <div className="left-side">
                             <video
@@ -57,15 +73,15 @@ export const DrinkSlider = () => {
                     </Grid2>
 
                     <Grid2
-                        size={{ xs: 12, sm: 12, md: 6, lg: 6 }}
-                        sx={{height: { xs: '50vh', sm: '50vh', md: '100vh', lg: '100vh' }}}
+                        size={{ xs: 12, sm: 12, md: 12, lg: 6 }}
+                        sx={{height: { xs: '50vh', sm: '50vh', md: '50vh', lg: '100vh' }}}
                     >
                         <div className="right-side">
                             <div className={'detail'}>
-                                <h1>Pure</h1>
-                                <h2>Beer</h2>
-                                <h1>Moments</h1>
-                                <span>
+                                <span className={'first-title'}>Pure</span>
+                                <span className={'label-text'}>Beer</span>
+                                <span className={'second-title'}>Moments</span>
+                                <span className={'description'}>
                                    Elevate your experiences with our thoughtfully crafted brews, tailored to create unforgettable memories.
                                 </span>
                             </div>
@@ -85,10 +101,9 @@ export const DrinkSlider = () => {
                         </motion.img>
                     </AnimatePresence>
                 </div>
-                <div className={'btn-box'} onClick={() => handleChange()}>
-                    <Button>UP</Button>
-                    <Button>DOWN</Button>
-
+                <div className={'btn-box'} >
+                    <KeyboardArrowUpIcon   style={{cursor: 'pointer'}} size={'medium'}  onClick={() => handleNextStep ()}/>
+                    <KeyboardArrowDownIcon style={{cursor: 'pointer'}} size={'medium'} onClick={() => handlePreviousStep ()}/>
                 </div>
             </div>
 

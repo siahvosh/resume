@@ -15,18 +15,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /*align-items: center;*/
 }
-
 .logo-img{
     width: 150px;
 }
+
 
 .left-side{
     /*border: 2px solid red;*/
     height: 100%;
 }
-
 .right-side{
     /*border: 2px solid blue;*/
     height: 100%;
@@ -36,19 +34,29 @@
     background: #21181F;
     padding: 0 3rem 0 3rem;
 }
-
 .right-side .detail{
     padding: 3rem;
     z-index: 111;
+    display: flex;
+    flex-direction: column ;
 }
 
-.detail h1 , h2{
-    line-height: 0;
+
+.detail .first-title , .second-title {
+    line-height: 40px;
+    font-size: clamp(40px, 4vw, 4vw) ;
 }
 
-.detail h2 {
-    margin-left: 5rem;
+
+.detail .label-text {
+    margin-left: 5vw;
     color: #F19F00;
+    font-size: clamp(25px, 2vw, 3vw) ;
+}
+
+.detail .description{
+    margin-top: 1rem;
+    font-size: clamp(15px, 0.5vw, 1vw)
 }
 
 
@@ -56,12 +64,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 50%;
     object-fit: cover;
     z-index: -1;
 }
-
 .bottle-box{
     /*border: 2px solid red;*/
     position: absolute;
@@ -73,7 +78,6 @@
     align-items: center;
     z-index: 0;
 }
-
 .bottle{
     width: 15vw;
 }
@@ -83,5 +87,18 @@
     display: flex;
     bottom: 2rem;
     right: 2rem;
+}
 
+
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+    .bottle{
+        width: 25vw;
+        /*height: auto;*/
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .bottle{
+        width: 15vw;
+    }
 }
