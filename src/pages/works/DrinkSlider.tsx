@@ -18,6 +18,13 @@ import blueBeer from '../../assets/blue-beer.png'
 import greenBeer from '../../assets/green-beer.png'
 import redBeer from '../../assets/red-beer.png'
 
+import beach from '../../assets/beach-friends5.png'
+import cloudVideo from '../../assets/clouds.mp4'
+import greenBg from '../../assets/slide41.jpg'
+import burger from '../../assets/burger4.png'
+import burgerBg from '../../assets/burger-bg2.jpg'
+
+
 
 
 export const DrinkSlider = () => {
@@ -62,6 +69,32 @@ export const DrinkSlider = () => {
         redBeer,
     ]
 
+
+    const media = [
+        {
+            video: beer,
+            backgroundClass: '',
+            bg1: '',
+        },
+        {
+            video: cloudVideo,
+            backgroundClass: beach,
+            bg1: '',
+
+        },
+        {
+            backgroundClass: greenBg,
+            bg1: '',
+            video: '',
+        },
+        {
+            bg1: burgerBg,
+            backgroundClass: burger,
+            video: '',
+        },
+
+    ];
+
     const [step, setStep] = useState(0)
 
     const handleNextStep  = () =>{
@@ -74,10 +107,6 @@ export const DrinkSlider = () => {
         setDirection(1);
     };
 
-    useEffect(() => {
-        console.log({step: step})
-        console.log({direction: direction})
-    })
 
     const variants = {
         enter: (direction) => ({
@@ -125,14 +154,37 @@ export const DrinkSlider = () => {
                         sx={{height: { xs: '50vh', sm: '50vh', md: '100vh', lg: '100vh' }}}
                     >
                         <div className="left-side">
-                            <video
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                className={'video'}
-                                src={`${beer}`}/>
+                            <AnimatePresence mode="wait" custom={direction}>
+                                <motion.div
+                                    key="three"
+                                    style={{ height:'100vh'}}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                >
+                                    <video
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        className={'video'}
+                                        src={media[step]?.video}
+                                    />
+                                    <motion.img
+                                        key={step}
+                                        src={media[step]?.backgroundClass}
+                                        style={{ objectFit: 'cover',}}
+                                    />
+                                    <motion.img
+                                        key={step}
+                                        src={media[step]?.bg1}
+                                        style={{ objectFit: 'cover',}}
+                                    />
+
+                                </motion.div>
+                            </AnimatePresence>
                         </div>
+
                     </Grid2>
 
                     <Grid2
@@ -177,9 +229,9 @@ export const DrinkSlider = () => {
                         </motion.img>
                     </AnimatePresence>
                 </div>
-                <div className={'btn-box'} >
-                    <KeyboardArrowUpIcon   style={{cursor: 'pointer'}} size={'medium'} onClick={() => handlePreviousStep ()} />
-                    <KeyboardArrowDownIcon style={{cursor: 'pointer'}} size={'medium'} onClick={() => handleNextStep ()} />
+                <div className={'btn-box'}>
+                    <KeyboardArrowUpIcon   style={{cursor: 'pointer', fontSize: '40px'}} onClick={() => handlePreviousStep ()} />
+                    <KeyboardArrowDownIcon style={{cursor: 'pointer', fontSize: '40px'}} onClick={() => handleNextStep ()} />
                 </div>
             </div>
 
