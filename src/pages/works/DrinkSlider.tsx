@@ -1,7 +1,7 @@
 
 import {Button, Grid2} from "@mui/material";
 import './DrinkSlider.css'
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {AnimatePresence,motion} from "framer-motion";
 import * as React from "react";
 
@@ -27,31 +27,33 @@ export const DrinkSlider = () => {
             firstTile: 'Pure',
             secondTitle: 'Pleasure',
             label: 'Beer' ,
-            description : 'desc: "Where every sip becomes a moment to savor, indulging in a symphony of flavors that will leave a lasting impression.",\n',
+            description : 'Where every sip becomes a moment to savor, indulging in a symphony of flavors that will leave a lasting impression.',
             color: '#F19F00'
         },
         {
             firstTile: 'Crafted',
             secondTitle: 'Moments',
             label: 'For',
-            description : 'desc: "Elevate your experiences with our thoughtfully crafted brews, tailored to create unforgettable memories.",\n',
+            description : 'Elevate your experiences with our thoughtfully crafted brews, tailored to create unforgettable memories.',
             color: '#00B4C1'
         },
         {
             firstTile: 'Indulge',
             secondTitle: 'Repeat',
             label: 'Enjoy',
-            description: 'desc: "Let Sunshine Craft Beer Transport You to a Realm of Taste and Pleasure",\n',
+            description: 'Embrace the perfect blend of heritage and forward-thinking to savor unrivaled taste and craftsmanship.',
             color: '#4CD964'
         },
         {
             firstTile: 'Tradition',
             secondTitle: 'Innovation',
             label: 'And' ,
-            description : 'desc: "Embrace the perfect blend of heritage and forward-thinking to savor unrivaled taste and craftsmanship.",\n',
+            description : 'Embrace the perfect blend of heritage and forward-thinking to savor unrivaled taste and craftsmanship.',
             color: '#F91D00'
         }
     ])
+
+    const [direction, setDirection] = useState(-1);
 
     const bottleImg = [
         orangeBeer,
@@ -63,10 +65,47 @@ export const DrinkSlider = () => {
     const [step, setStep] = useState(0)
 
     const handleNextStep  = () =>{
-        setStep(prev => (prev + 1) % bottleImg.length)
+        setStep(step >= 3 ? 0 : step + 1)
+        setDirection(-1);
+
     }
     const handlePreviousStep = () => {
-        setStep(prev => (prev - 1 + bottleImg.length) % bottleImg.length);
+        setStep(step <= 0 ? 3 : step -1);
+        setDirection(1);
+    };
+
+    useEffect(() => {
+        console.log({step: step})
+        console.log({direction: direction})
+    })
+
+    const variants = {
+        enter: (direction) => ({
+            x: direction > 0 ? 500 : -500,
+            opacity: 0,
+        }),
+        center: {
+            x: 0,
+            opacity: 1,
+        },
+        exit: (direction) => ({
+            x: direction > 0 ? -500 : 500,
+            opacity: 0,
+        }),
+    };
+    const botVariants = {
+        enter: (direction) => ({
+            y: direction > 0 ? 500 : -500,
+            opacity: 0,
+        }),
+        center: {
+            y: 0,
+            opacity: 1,
+        },
+        exit: (direction) => ({
+            y: direction > 0 ? -500 : 500,
+            opacity: 0,
+        }),
     };
 
     return(
@@ -101,21 +140,22 @@ export const DrinkSlider = () => {
                         sx={{height: { xs: '50vh', sm: '50vh', md: '100vh', lg: '100vh' }}}
                     >
                         <div className="right-side">
-                            <AnimatePresence mode="wait">
+                            <AnimatePresence mode="wait" custom={direction}>
                                 <motion.div
                                     key={step}
-                                    transition={{duration: 0.4}}
-                                    initial={{ x: 300,opacity: 0 }}
-                                    animate={{ x: '0', opacity: 1 }}
-                                    exit={{ x: -300, opacity: 0 }}
+                                    custom={direction}
+                                    variants={variants}
+                                    initial="enter"
+                                    animate="center"
+                                    exit="exit"
+                                    transition={{ duration: 0.4 }}
+                                    className={'text-animation'}
                                 >
                                     <div className={'detail'}>
                                         <span className={'first-title'}>{detail[step].firstTile}</span>
                                         <span style={{color: detail[step].color}} className={'label-text'}>{detail[step].label}</span>
                                         <span className={'second-title'}>{detail[step].secondTitle}</span>
-                                        <span className={'description'}>
-                                            {detail[step].description}
-                                        </span>
+                                        <span className={'description'}>{detail[step].description}</span>
                                     </div>
                                 </motion.div>
                             </AnimatePresence>
@@ -123,21 +163,23 @@ export const DrinkSlider = () => {
                     </Grid2>
                 </Grid2>
                 <div className={'bottle-box'}>
-                    <AnimatePresence mode="wait">
+                    <AnimatePresence mode="wait" custom={direction}>
                         <motion.img
                             key={step}
                             className="bottle"
                             src={bottleImg[step]}
-                            transition={{duration: 0.3}}
-                            initial={{ y: -800 ,x: 0,  opacity: 0 }}
-                            animate={{ y: 0,x: 0,   opacity: 1}}
-                            exit={{ y: 800, x: 0, opacity: 0 }}>
+                            custom={direction}
+                            variants={botVariants}
+                            initial="enter"
+                            animate="center"
+                            exit="exit"
+                            transition={{ duration: 0.3 }}>
                         </motion.img>
                     </AnimatePresence>
                 </div>
                 <div className={'btn-box'} >
-                    <KeyboardArrowUpIcon   style={{cursor: 'pointer'}} size={'medium'}  onClick={() => handleNextStep ()}/>
-                    <KeyboardArrowDownIcon style={{cursor: 'pointer'}} size={'medium'} onClick={() => handlePreviousStep ()}/>
+                    <KeyboardArrowUpIcon   style={{cursor: 'pointer'}} size={'medium'} onClick={() => handlePreviousStep ()} />
+                    <KeyboardArrowDownIcon style={{cursor: 'pointer'}} size={'medium'} onClick={() => handleNextStep ()} />
                 </div>
             </div>
 
